@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Deutsch A1/A2
 
-## Getting Started
+A web app to learn German A1/A2 in **Tamil and English**, for a study group preparing for the Goethe exams and a move to Germany.
 
-First, run the development server:
+- Live app: https://deutsch-lernen-mu.vercel.app/
+- Code: https://github.com/Adhithya-R/deutsch-lernen
+- Read `docs/HANDOFF.md` first. It has the goals, decisions and what to do next.
+
+## Set up on a new computer
+
+1. Install **Node.js 22 or newer** (https://nodejs.org) and **Git**. VS Code is optional but recommended.
+2. Clone and install:
+
+   ```bash
+   git clone https://github.com/Adhithya-R/deutsch-lernen.git
+   cd deutsch-lernen
+   npm install
+   ```
+
+3. Copy `.env.example` to `.env.local` and fill in the values (see below). `.env.local` is never committed.
+4. Start the app and open http://localhost:3000:
+
+   ```bash
+   npm run dev
+   ```
+
+## Environment variables
+
+| Name | Where to find it |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase → Project Settings → API (Project URL) |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Supabase → Project Settings → API Keys (Publishable key) |
+| `INVITE_CODE` | The secret word friends type to sign up. You choose it. |
+
+The same three are set in Vercel under Settings → Environment Variables. Never commit the Supabase `secret` / `service_role` key or the database password.
+
+## Daily workflow (two computers)
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git pull            # before you start: get the latest from the other computer
+# ... make changes ...
+git add -A
+git commit -m "Describe what you changed"
+git push            # Vercel redeploys the live site automatically
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Always `git pull` before starting and `git push` before leaving, so the two computers never drift apart.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `npm run dev`: run locally
+- `npm run build`: production build (run before pushing bigger changes)
+- `npm run lint`: check code style
