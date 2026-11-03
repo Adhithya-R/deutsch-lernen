@@ -30,7 +30,7 @@ export type CaseRow = { gender: string; nom: string; akk: string; dat: string };
 export const definiteArticles: CaseRow[] = [
   { gender: "masculine / ஆண்", nom: "der", akk: "den", dat: "dem" },
   { gender: "feminine / பெண்", nom: "die", akk: "die", dat: "der" },
-  { gender: "neuter / அலி", nom: "das", akk: "das", dat: "dem" },
+  { gender: "neuter / நடுப்பால்", nom: "das", akk: "das", dat: "dem" },
   { gender: "plural / பன்மை", nom: "die", akk: "die", dat: "den (+n)" },
 ];
 
@@ -38,6 +38,6 @@ export const definiteArticles: CaseRow[] = [
 export const indefiniteArticles: CaseRow[] = [
   { gender: "masculine / ஆண்", nom: "ein", akk: "einen", dat: "einem" },
   { gender: "feminine / பெண்", nom: "eine", akk: "eine", dat: "einer" },
-  { gender: "neuter / அலி", nom: "ein", akk: "ein", dat: "einem" },
+  { gender: "neuter / நடுப்பால்", nom: "ein", akk: "ein", dat: "einem" },
   { gender: "plural / பன்மை", nom: "–", akk: "–", dat: "–" },
 ];
