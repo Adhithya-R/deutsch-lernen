@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import CaseTable from "@/components/CaseTable";
-import ProgressButton from "@/components/ProgressButton";
 import { logout } from "@/app/actions";
 import { definiteArticles, indefiniteArticles, lessons } from "@/content/lessons";
 import { createClient } from "@/lib/supabase/server";
@@ -51,7 +50,7 @@ async function HomeContent() {
         <section className="rounded-lg bg-slate-900 p-4 text-white">
           <p>Hallo{name ? `, ${name}` : ""}! 👋</p>
           {next ? (
-            <a href={`#${next.slug}`} className="mt-2 inline-block rounded bg-white px-3 py-1 font-medium text-slate-900">
+            <a href={`/lessons/${next.slug}`} className="mt-2 inline-block rounded bg-white px-3 py-1 font-medium text-slate-900">
               Continue: {next.title.en}
             </a>
           ) : (
@@ -70,26 +69,21 @@ async function HomeContent() {
         <CaseTable title="Indefinite articles (ein/eine)" rows={indefiniteArticles} />
       </section>
 
-      <section className="space-y-4">
-        <h2 className="text-xl font-semibold">Lessons</h2>
-        {lessons.map((l) => (
-          <article id={l.slug} key={l.slug} className="rounded-lg border border-slate-200 p-4">
-            <span className="text-xs font-bold text-slate-500">{l.level}</span>
-            <h3 className="font-semibold">{l.title.en}</h3>
-            <p lang="ta" className="text-slate-700">{l.title.ta}</p>
-            <p className="mt-2">{l.intro.en}</p>
-            <p lang="ta" className="text-slate-700">{l.intro.ta}</p>
-            <ul className="mt-3 space-y-2">
-              {l.points.map((p) => (
-                <li key={p.de} className="rounded bg-slate-50 p-2">
-                  <div className="font-medium">{p.de}</div>
-                  <div className="text-sm">{p.en}</div>
-                  <div lang="ta" className="text-sm">{p.ta}</div>
-                </li>
-              ))}
-            </ul>
-            {user && <ProgressButton slug={l.slug} completed={done.has(l.slug)} />}
-          </article>
+      <section className="space-y-3">
+        <h2 className="text-xl font-semibold">Lessons / பாடங்கள்</h2>
+        {lessons.map((l, i) => (
+          <Link
+            key={l.slug}
+            href={`/lessons/${l.slug}`}
+            className="flex items-center justify-between gap-3 rounded-lg border border-slate-200 p-3"
+          >
+            <div>
+              <span className="text-xs font-bold text-slate-500">{l.level} · {i + 1}</span>
+              <div className="font-semibold">{l.title.en}</div>
+              <div lang="ta" className="text-sm text-slate-700">{l.title.ta}</div>
+            </div>
+            <span className="text-xl">{done.has(l.slug) ? "✅" : "›"}</span>
+          </Link>
         ))}
       </section>
     </main>
