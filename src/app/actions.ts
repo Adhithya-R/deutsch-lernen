@@ -2,6 +2,8 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { cards } from "@/content/vocab";
+import { NEW_CARD, review, type CardState, type Grade } from "@/lib/srs";
 import { createClient } from "@/lib/supabase/server";
 
 export type FormState = { error?: string } | undefined;
@@ -60,4 +62,33 @@ export async function saveProgress(slug: string, status: "in_progress" | "comple
     updated_at: new Date().toISOString(),
   });
   revalidatePath("/");
+}
+
+export async function reviewCard(cardId: string, grade: number) {
+  if (!cards.some((c) => c.id === cardId) || ![0, 1, 2, 3].includes(grade)) return;
+
+  const supabase = await createClient();
+  const { data: auth } = await supabase.auth.getUser();
+  if (!auth.user) redirect("/login");
+
+  const { data: row } = await supabase
+    .from("flashcard_state")
+    .select("ease,interval_days,repetitions")
+    .eq("card_id", cardId)
+    .maybeSingle();
+
+  const current: CardState = row
+    ? { ease: row.ease, intervalDays: row.interval_days, repetitions: row.repetitions }
+    : NEW_CARD;
+  const next = review(current, grade as Grade, new Date());
+
+  await supabase.from("flashcard_state").upsert({
+    user_id: auth.user.id,
+    card_id: cardId,
+    ease: next.ease,
+    interval_days: next.intervalDays,
+    repetitions: next.repetitions,
+    due_at: next.dueAt.toISOString(),
+    updated_at: new Date().toISOString(),
+  });
 }

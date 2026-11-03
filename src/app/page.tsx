@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import CaseTable from "@/components/CaseTable";
 import { logout } from "@/app/actions";
 import { definiteArticles, indefiniteArticles, lessons } from "@/content/lessons";
+import { cards } from "@/content/vocab";
 import { createClient } from "@/lib/supabase/server";
 
 export default function Home() {
@@ -68,6 +69,11 @@ async function HomeContent() {
         <CaseTable title="Definite articles (der/die/das)" rows={definiteArticles} />
         <CaseTable title="Indefinite articles (ein/eine)" rows={indefiniteArticles} />
       </section>
+
+      <Link href="/flashcards" className="block rounded-lg border border-slate-200 p-3">
+        <div className="font-semibold">🃏 Vocabulary flashcards</div>
+        <div lang="ta" className="text-sm text-slate-700">சொல்லகராதி அட்டைகள் · {cards.length} words</div>
+      </Link>
 
       <section className="space-y-3">
         <h2 className="text-xl font-semibold">Lessons / பாடங்கள்</h2>
