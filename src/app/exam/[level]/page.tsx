@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import PageNav from "@/components/PageNav";
 import Icon, { type IconName } from "@/components/Icon";
 import ScreenTop from "@/components/ScreenTop";
 import { levelOf } from "@/content/exam";
@@ -11,7 +12,7 @@ export function generateStaticParams() {
 
 export default function LevelPage({ params }: PageProps<"/exam/[level]">) {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<div className="mx-auto mt-6 h-40 w-full max-w-md animate-pulse rounded-3xl bg-white/70 px-4" aria-hidden="true" />}>
       <Inner params={params} />
     </Suspense>
   );
@@ -67,6 +68,7 @@ async function Inner({ params }: { params: PageProps<"/exam/[level]">["params"] 
           ))}
         </ul>
         <p className="text-sm text-muted">Usually about 60% of the points are needed to pass.</p>
+        <PageNav back={{ href: "/exam", label: "Exam" }} next={{ href: `/exam/${e.level}/reading`, label: "Reading" }} />
       </div>
     </main>
   );

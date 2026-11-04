@@ -45,26 +45,26 @@ Duolingo-style, story-based, phone first. Five tabs, each with its own light war
 **Colour rule:** tokens in `globals.css`: `--tab-*` variables per `data-tab` (set by `ThemeShell` from the URL via `lib/tabs.ts`); Tailwind `pri`, `pri-dark`, `pill` follow the active tab. Buttons: `.btn3d` (chunky). Icons: only `Icon.tsx` (no emoji). Fonts: Baloo Thambi 2 (headings), Nunito (body), Noto Sans Tamil.
 
 ## Code map
-- Content (plain data, easy to edit): `content/chapters.ts` (story chapters, words, culture notes, checks, pass mark; `markChapter` marks answers), `content/lessons.ts` (7 grammar lessons + case tables), `content/vocab.ts` (47 flashcard words), `content/culture.ts`, `content/menu.ts` (older plan list, partly unused).
-- Server actions (`app/actions.ts`): signup (checks `INVITE_CODE`), login, logout, `saveProgress`, `reviewCard`, `submitChapter` (re-marks the answers on the server and stores `chapter-<slug>` in `lesson_progress`, so a pass cannot be faked from the browser).
-- `lib/progress.ts` (which chapters are done / unlocked), `lib/srs.ts` (SM-2 style scheduling, tested), `lib/speak.ts` + `components/useSpeak.ts` (plays recorded clips, falls back to a device voice, shows a message when neither works), `lib/tabs.ts`.
-- Components: `ThemeShell`, `SiteNav` (top bar), `TabBar` (bottom tabs on phones), `Skyline`, `ScreenTop`, `LearnHome`, `Story`, `ChapterCheck`, `Locked`, `FlashcardReview`, `Quiz`, `DataTable`, `CaseTable`, `Rows`, `LangToggle`, `Icon`, `SpeakButton`, `AuthForm`, `AuthLinks`.
-- `supabase/migrations/`: SQL run by hand in the Supabase SQL Editor. `001_init.sql` (profiles, lesson_progress, trigger), `002_flashcards.sql` (flashcard_state), `003_activity.sql` (daily_activity + `add_xp` function, for streak and XP), `004_group.sql` (`weekly_leaderboard` function for the study group). **Check that 002, 003 and 004 have been run**; flashcards cannot save without 002, and streak/XP stay at 0 without 003, and the group page shows a setup message without 004.
-- `docs/design/`: old mockups (history).
+- Content (plain data, easy to edit): `content/people.ts` (the 21 classmates and their assumed gender; `speaker()`, `role()`), `content/chapters.ts` (8 story chapters; speaker code `a` is always Adhi; every speaker has a gender that picks the voice), `content/lessons.ts` (21 grammar lessons), `content/cheatsheets.ts` (built from lesson tables), `content/vocab.ts` (103 cards in 11 decks; each deck has its own landmark pair and mood), `content/pics.ts` (animated emoji picture per card), `content/bruecke.ts` (10 culture topics with sections, German words with audio, quiz), `content/exam.ts` (original A1/A2 practice).
+- Server actions (`app/actions.ts`): signup (invite code), login, logout, `reviewCard` (grade 0/1/2), `submitChapter`, `saveQuiz` (lesson, exam, mock, culture), `saveDraft`, `checkSetup`. All return `SaveResult` and the UI shows errors with `SaveNote`; nothing fails silently.
+- Login check is `lib/supabase/session.ts` (`getClaims()`, no network call) and `proxy.ts` skips audio and images, which made navigation faster.
+- Study logic: `lib/deck-quiz.ts` (questions, typed answer check, grade from attempts; tested by `scripts/test-deck-quiz.mts`), `lib/srs.ts`, `lib/speak.ts` (recorded clips first, device voice fallback, `preload`).
+- Pages: `/` Home (path of stories, Grammar, Cheat sheets tiles), `/grammar`, `/lessons/[slug]`, `/cheatsheets[/slug]`, `/flashcards` (deck grid), `/flashcards/[deck]` (learn then test; `due` = repeat session), `/exam/...`, `/bruecke[/topic]`, `/me` (includes the Saving check), `/group`. Back / Home / Next at the bottom of pages (`PageNav`); focused screens (stories, flashcard study) have their own Back and Home buttons.
+- Skyline: `components/landmarks.tsx` + `landmarks2.tsx` + `landmark-parts.tsx` now draw all 50 places. `SkyScenes.tsx` has moods incl. steam, confetti, fireworks.
+- Database: **run `supabase/setup.sql` once** in the Supabase SQL editor (idempotent; older `migrations/` are history). The Me page "Check saving" button shows what is missing.
+- Checks to run before pushing: `npx tsc --noEmit`, `npx eslint src scripts`, `node --experimental-strip-types scripts/check-content.mts`, `node --experimental-strip-types scripts/test-deck-quiz.mts`, `npx next build`.
 
 ## Done and live
-- Sign-up with invite code, login, logout ("Confirm email" is OFF in Supabase on purpose).
-- Story chapters 1-5 (Ankunft, Neue Freunde, Die Wohnung, Auf dem Markt, Pongal in Berlin) with checks and unlocking (speakers: Priya, Lena, officer, landlord Herr Braun, market seller); 21 grammar lessons with quizzes (scores not saved); 103 flashcards in 11 decks; Brücke; Exam; Study group; Me with language switch; animated skylines per tab and chapter.
-- Recorded German audio for all current phrases (see Audio). Not yet confirmed by ear on a real phone.
-
-**Streak and XP:** XP is recorded by the server (`addXp` in `actions.ts`, via the `add_xp` SQL function): +2 per flashcard review, and on the *first* pass of a chapter +10 per correct answer +30 bonus (no XP for repeats). The browser sends its local date (`localDay`); the server only accepts a date within a day of its own (`plausibleDay`). The streak (`streakOf`, `lib/activity.ts`, tested) is the run of consecutive active days ending today or yesterday. The home screen shows streak, XP and cards due. If `daily_activity` does not exist, everything still works and shows 0.
+- Login, saving of chapters, lessons, flashcards, quizzes, exam practice, writing drafts, XP and streak, all restored on login.
+- Stories use all 21 classmates (Kavi is only mentioned: gender unknown). **Genders in `people.ts` are assumptions: ask the owner to confirm.** Voices: only two usable voices (Thorsten m, Kerstin f), so classmates of the same gender share a voice.
+- Flashcards: learn each word with picture, sound, Tamil help; then a test (choose meaning, listen and choose, type); wrong words come back; first try = full XP.
+- Emoji rule: the owner dislikes AI-looking icons in the UI chrome, so chrome uses `Icon.tsx` only. Emoji are allowed only as the small animated *vocabulary pictures* (`Pic`).
 
 ## Next (suggested order)
-1. Owner testing and feedback on the whole app (especially: audio on phones, logged-in flows, Tamil wording, German content, exam formats).
-2. A2 story chapters (two are teased on the path: Beim Arzt, Die Arbeit), each with its own landmark pair and mood.
-3. Save quiz and exam practice scores; daily goal; shared word lists; notifications/reminders.
-4. More drawings for the remaining catalogue places, more exam practice tasks, more flashcard decks.
-5. Optional: dark mode, a warm version of the logo, PWA/offline.
+1. Owner testing and feedback (audio on phones, logged-in flows, Tamil wording, German content, exam formats, assumed genders).
+2. A2 story chapters (Beim Arzt, Die Arbeit), each with its own landmark pair and mood.
+3. Daily goal; shared word lists; reminders; more exam tasks and decks.
+4. Set the Vercel Function Region to the same region as Supabase (check Supabase project region) for faster responses.
 
 ## Rules and caveats
 - **Do not copy Goethe exam papers** (copyrighted). Use the free official sample tests only to learn format and difficulty, then write original questions/stories.

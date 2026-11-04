@@ -41,13 +41,29 @@ export function warmUpVoices() {
   }
 }
 
+const preloaded = new Map<string, HTMLAudioElement>();
+
+/** Fetches a clip ahead of time so the next tap plays at once. Safe to call often. */
+export function preload(text: string) {
+  const key = audioKey(text);
+  if (typeof window === "undefined" || !key || preloaded.has(key) || (manifest && !manifest.has(key))) return;
+  try {
+    const a = new Audio(`/audio/${key}.mp3`);
+    a.preload = "auto";
+    preloaded.set(key, a);
+  } catch {
+    /* preloading is only a speed-up */
+  }
+}
+
 // Must start playing synchronously inside the tap, or iPhones refuse to play it.
 function playClip(text: string): Promise<boolean> {
   const key = audioKey(text);
   if (!key || (manifest && !manifest.has(key))) return Promise.resolve(false);
   try {
     current?.pause();
-    const audio = new Audio(`/audio/${key}.mp3`);
+    const audio = preloaded.get(key) ?? new Audio(`/audio/${key}.mp3`);
+    audio.currentTime = 0;
     current = audio;
     return audio.play().then(
       () => true,

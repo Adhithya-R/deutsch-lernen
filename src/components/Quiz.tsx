@@ -9,7 +9,7 @@ import { localDay } from "@/lib/activity";
 
 const norm = (s: string) => s.trim().toLowerCase();
 
-export default function Quiz({ exercises, refId }: { exercises: Exercise[]; refId: string }) {
+export default function Quiz({ exercises, refId, kind = "lesson" }: { exercises: Exercise[]; refId: string; kind?: "lesson" | "culture" }) {
   const [given, setGiven] = useState<Record<number, string>>({});
   const [checked, setChecked] = useState<Record<number, boolean>>({});
   const [note, setNote] = useState<SaveState>(null);
@@ -25,7 +25,7 @@ export default function Quiz({ exercises, refId }: { exercises: Exercise[]; refI
       const total = exercises.length;
       const right = exercises.filter((e, j) => norm(given[j] ?? "") === norm(e.answer)).length;
       setNote("saving");
-      saveQuiz("lesson", refId, right, total, localDay())
+      saveQuiz(kind, refId, right, total, localDay())
         .then(setNote)
         .catch(() => setNote({ ok: false, xp: 0, error: "Could not save. Check your connection." }));
     }

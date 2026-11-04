@@ -35,7 +35,7 @@ export default async function LessonPage({ params }: PageProps<"/lessons/[slug]"
       <header className="mt-2">
         <h1 className="text-[28px] font-extrabold leading-tight">{lesson.title.en}</h1>
         <p lang="ta" className="ta-only mt-1 text-lg font-medium text-pri">{lesson.title.ta}</p>
-        <Suspense fallback={null}>
+        <Suspense fallback={<div className="mt-3 h-6 w-32 animate-pulse rounded-full bg-white/70" aria-hidden="true" />}>
           <Status slug={lesson.slug} />
         </Suspense>
       </header>

@@ -3,7 +3,9 @@ import { Suspense } from "react";
 import { logout } from "@/app/actions";
 import Icon from "@/components/Icon";
 import LangToggle from "@/components/LangToggle";
+import PageNav from "@/components/PageNav";
 import ScreenTop from "@/components/ScreenTop";
+import SetupCheck from "@/components/SetupCheck";
 import { getSession } from "@/lib/supabase/session";
 
 export const metadata = { title: "Me · மொழி-Brücke" };
@@ -15,7 +17,7 @@ export default function MePage() {
     <main className="mx-auto w-full max-w-md lg:max-w-xl">
       <ScreenTop tab="me" kicker="Your profile" title="Me" />
       <div className="flex flex-col gap-3.5 px-4 pt-4">
-        <Suspense fallback={null}>
+        <Suspense fallback={<div className="h-24 animate-pulse rounded-3xl bg-white/70" aria-hidden="true" />}>
           <Account />
         </Suspense>
 
@@ -35,6 +37,8 @@ export default function MePage() {
           <span className="flex-1">Study group</span>
           <Icon name="chev" size={20} className="text-muted" />
         </Link>
+        <SetupCheck />
+        <PageNav back={{ href: "/bruecke", label: "Brücke" }} />
       </div>
     </main>
   );

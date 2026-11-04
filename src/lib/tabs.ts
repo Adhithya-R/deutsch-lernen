@@ -3,7 +3,7 @@ import type { IconName } from "@/components/Icon";
 export type TabId = "learn" | "words" | "exam" | "bruecke" | "me";
 
 export const TABS: { id: TabId; label: string; href: string; icon: IconName }[] = [
-  { id: "learn", label: "Learn", href: "/", icon: "book" },
+  { id: "learn", label: "Home", href: "/", icon: "home" },
   { id: "words", label: "Words", href: "/flashcards", icon: "cards" },
   { id: "exam", label: "Exam", href: "/exam", icon: "grad" },
   { id: "bruecke", label: "Brücke", href: "/bruecke", icon: "bridge" },

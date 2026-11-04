@@ -11,7 +11,7 @@ export function generateStaticParams() {
 
 export default function StoryPage({ params }: PageProps<"/learn/[slug]">) {
   return (
-    <Suspense fallback={<p className="p-6 text-muted">Loading…</p>}>
+    <Suspense fallback={<div className="mx-auto mt-10 h-48 max-w-md animate-pulse rounded-3xl bg-white/70" aria-hidden="true" />}>
       <Inner params={params} />
     </Suspense>
   );

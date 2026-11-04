@@ -2,14 +2,10 @@
 // Drawn so far: only the places current screens use. Everything else falls back to a simple shape
 // by building type (see `kindOf`), so any of the 50 ids can already appear on a screen.
 // To draw a new one: add a component below and register it in DRAWINGS with its preferred width.
-import type { ComponentType, ReactNode } from "react";
+import type { ComponentType } from "react";
 
-const Arch = ({ x, y, w, h }: { x: number; y: number; w: number; h: number }) => (
-  <path className="lit" d={`M${x} ${y + h}v${-(h - w / 2)}a${w / 2} ${w / 2} 0 0 1 ${w} 0v${h - w / 2}z`} />
-);
-const Svg = ({ vb, children }: { vb: string; children: ReactNode }) => (
-  <svg viewBox={vb} aria-hidden="true">{children}</svg>
-);
+import { Arch, Svg } from "./landmark-parts";
+import { MORE } from "./landmarks2";
 
 /** Stepped gable outline (Staffelgiebel) as an SVG path. */
 function gable(x: number, w: number, yb: number, hWall: number, hGable: number, n: number) {
@@ -707,6 +703,7 @@ export const DRAWINGS: Record<string, { w: number; C: ComponentType }> = {
   DE007: { w: 150, C: CharlottenburgPalace },
   DE017: { w: 124, C: Wartburg },
   DE019: { w: 120, C: NewTownHall },
+  ...MORE,
 };
 
 export const drawingFor = (id: string, type: string) => DRAWINGS[id] ?? PLACEHOLDERS[kindOf(type)];

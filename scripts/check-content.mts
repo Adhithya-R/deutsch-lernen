@@ -5,6 +5,7 @@ import { exams, clipKey } from "../src/content/exam.ts";
 import { cards, decks } from "../src/content/vocab.ts";
 import { analyse, fieldOk } from "../src/lib/writing.ts";
 import { readFileSync } from "node:fs";
+import { topics } from "../src/content/bruecke.ts";
 import { NAMES } from "../src/content/people.ts";
 
 const LANDMARK_IDS = new Set((JSON.parse(readFileSync(new URL("../src/content/landmarks.json", import.meta.url), "utf8")) as { id: string }[]).map((l) => l.id));
@@ -42,7 +43,7 @@ chapters.forEach((c) => Object.entries(c.speakers).forEach(([k, sp]) => !["m", "
 const storyText = JSON.stringify(chapters);
 NAMES.forEach((n) => !storyText.includes(n) && bad(`classmate ${n} is not in any story`));
 const OLD = /\b(Tom|Priya|Nina|Maria|Julia|Anna|Eva|Jan|Katja|Peter|Lisa|Weber|Keller|Braun|Krishnan|Lopez|Müller|Wagner|Lena)\b/;
-const allText = JSON.stringify([chapters, lessons, cards, exams]);
+const allText = JSON.stringify([chapters, lessons, cards, exams, topics]);
 const oldHit = allText.match(OLD);
 if (oldHit) bad(`old name still used: ${oldHit[0]}`);
 const moods = chapters.map((c) => c.mood);
@@ -50,6 +51,13 @@ if (new Set(moods).size !== moods.length) bad("two chapters share a mood: " + mo
 const pairs = chapters.map((c) => c.landmarks.join("+"));
 if (new Set(pairs).size !== pairs.length) bad("two chapters share a landmark pair");
 
+for (const t of topics) {
+  if (t.sections.length < 3 && t.id !== "weather") bad(`topic ${t.id}: needs at least 3 sections`);
+  t.sections.forEach((s) => (!s.tn.length || !s.de.length) && bad(`topic ${t.id}/${s.id}: needs Tamil Nadu and Germany items`));
+  t.quiz.forEach((q, i) => !q.options?.includes(q.answer) && bad(`topic ${t.id} Q${i + 1}: answer not in options`));
+  t.sky.forEach((id) => !landmark(id) && bad(`topic ${t.id}: unknown landmark ${id}`));
+}
+if (new Set(topics.map((t) => t.id)).size !== topics.length) bad("duplicate topic ids");
 const deckIds = new Set(decks.map((d) => d.id));
 cards.forEach((c) => !deckIds.has(c.deck) && bad(`card ${c.id}: unknown deck ${c.deck}`));
 decks.forEach((d) => !cards.some((c) => c.deck === d.id) && bad(`deck ${d.id} is empty`));

@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Icon from "@/components/Icon";
 import Skyline from "@/components/Skyline";
 import { useSpeak } from "@/components/useSpeak";
+import { preload } from "@/lib/speak";
 import type { Chapter } from "@/content/chapters";
 
 const plain = (parts: Chapter["lines"][number]["parts"]) => parts.map((p) => (typeof p === "string" ? p : p.t)).join("");
@@ -15,6 +16,10 @@ export default function Story({ chapter }: { chapter: Chapter }) {
   const { say, note } = useSpeak();
   const last = step >= chapter.lines.length - 1;
   const word = sheet ? chapter.words[sheet] : null;
+
+  useEffect(() => {
+    chapter.lines.slice(step, step + 3).forEach((l) => preload(plain(l.parts)));
+  }, [chapter, step]);
 
   return (
     <div className="mx-auto flex min-h-dvh max-w-md flex-col">

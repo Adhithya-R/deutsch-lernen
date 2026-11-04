@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import FormPractice from "@/components/FormPractice";
 import Icon from "@/components/Icon";
+import PageNav from "@/components/PageNav";
 import PracticeRunner, { type PTask } from "@/components/PracticeRunner";
 import SpeakButton from "@/components/SpeakButton";
 import WritingCoach from "@/components/WritingCoach";
@@ -18,7 +19,7 @@ export function generateStaticParams() {
 
 export default function SkillPage({ params }: PageProps<"/exam/[level]/[skill]">) {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<div className="mx-auto mt-6 h-40 w-full max-w-md animate-pulse rounded-3xl bg-white/70 px-4" aria-hidden="true" />}>
       <Inner params={params} />
     </Suspense>
   );
@@ -33,6 +34,7 @@ async function Inner({ params }: { params: PageProps<"/exam/[level]/[skill]">["p
   const e = levelOf(level);
   if (!e || !(SKILLS as readonly string[]).includes(skill)) notFound();
 
+  const skillIdx = SKILLS.indexOf(skill as (typeof SKILLS)[number]);
   return (
     <main className="mx-auto w-full max-w-md px-4 pt-4 lg:max-w-xl lg:pt-8">
       <Link href={`/exam/${e.level}`} className="inline-flex items-center gap-1 py-2 text-sm font-extrabold text-muted hover:text-ink">
@@ -95,6 +97,10 @@ async function Inner({ params }: { params: PageProps<"/exam/[level]/[skill]">["p
           ))}
         </div>
       )}
+      <PageNav
+        back={{ href: skillIdx > 0 ? `/exam/${e.level}/${SKILLS[skillIdx - 1]}` : `/exam/${e.level}`, label: skillIdx > 0 ? TITLES[SKILLS[skillIdx - 1]] : `${e.name} exam` }}
+        next={skillIdx < SKILLS.length - 1 ? { href: `/exam/${e.level}/${SKILLS[skillIdx + 1]}`, label: TITLES[SKILLS[skillIdx + 1]] } : { href: "/exam", label: "Exam" }}
+      />
     </main>
   );
 }

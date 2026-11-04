@@ -2,7 +2,7 @@
 // Run: node --experimental-strip-types scripts/audio-texts.mts
 import { writeFileSync } from "node:fs";
 import { chapters } from "../src/content/chapters.ts";
-import { pairs } from "../src/content/culture.ts";
+import { topics } from "../src/content/bruecke.ts";
 import { clipKey, exams, phrases } from "../src/content/exam.ts";
 import { lessons } from "../src/content/lessons.ts";
 import { cards } from "../src/content/vocab.ts";
@@ -37,7 +37,7 @@ chapters.forEach((ch) => {
   });
 });
 lessons.forEach((l) => l.points.forEach((p) => add(p.de)));
-pairs.forEach((p) => add(p.de.big));
+topics.forEach((t) => t.sections.forEach((s) => s.de.forEach((it) => add(it.big))));
 phrases.forEach((p) => add(p.de));
 
 for (const lvl of Object.values(exams)) {

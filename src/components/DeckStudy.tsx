@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { reviewCard, type SaveResult } from "@/app/actions";
 import Icon from "@/components/Icon";
 import Pic from "@/components/Pic";
@@ -10,6 +10,7 @@ import { useSpeak } from "@/components/useSpeak";
 import { cards as ALL, type Card } from "@/content/vocab";
 import { picFor } from "@/content/pics";
 import { localDay } from "@/lib/activity";
+import { preload } from "@/lib/speak";
 import { buildQuestion, gradeFor, isRight, kindFor, type Q } from "@/lib/deck-quiz";
 
 type Props = { ids: string[]; title: string; learn: boolean; loggedIn: boolean; back: string };
@@ -32,6 +33,11 @@ export default function DeckStudy({ ids, title, learn, loggedIn, back }: Props) 
   const [saves, setSaves] = useState<SaveResult[]>([]);
   const [solved, setSolved] = useState(0);
   const [firstTry, setFirstTry] = useState(0);
+
+  useEffect(() => {
+    if (phase === "learn") [deck[i], deck[i + 1]].forEach((c) => c && (preload(c.de), c.example && preload(c.example.de)));
+    else queue.slice(0, 2).forEach((q) => q.kind !== "type" && preload(q.prompt));
+  }, [phase, i, deck, queue]);
 
   if (total === 0) {
     return (

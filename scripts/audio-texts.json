@@ -1540,28 +1540,428 @@
   "voice": "m"
  },
  {
+  "key": "das-broetchen",
+  "text": "das Brötchen",
+  "voice": "m"
+ },
+ {
+  "key": "das-muesli",
+  "text": "das Müsli",
+  "voice": "m"
+ },
+ {
+  "key": "das-ei",
+  "text": "das Ei",
+  "voice": "m"
+ },
+ {
+  "key": "die-marmelade",
+  "text": "die Marmelade",
+  "voice": "m"
+ },
+ {
+  "key": "die-kartoffeln",
+  "text": "die Kartoffeln",
+  "voice": "m"
+ },
+ {
+  "key": "die-nudeln",
+  "text": "die Nudeln",
+  "voice": "m"
+ },
+ {
+  "key": "die-suppe",
+  "text": "die Suppe",
+  "voice": "m"
+ },
+ {
+  "key": "das-schnitzel",
+  "text": "das Schnitzel",
+  "voice": "m"
+ },
+ {
+  "key": "das-abendbrot",
+  "text": "das Abendbrot",
+  "voice": "m"
+ },
+ {
+  "key": "der-salat",
+  "text": "der Salat",
+  "voice": "m"
+ },
+ {
+  "key": "der-kaese",
+  "text": "der Käse",
+  "voice": "m"
+ },
+ {
+  "key": "die-wurst",
+  "text": "die Wurst",
+  "voice": "m"
+ },
+ {
   "key": "kaffee-und-kuchen",
   "text": "Kaffee und Kuchen",
   "voice": "m"
  },
  {
-  "key": "broetchen",
-  "text": "Brötchen",
+  "key": "die-brezel",
+  "text": "die Brezel",
   "voice": "m"
  },
  {
-  "key": "erntedankfest",
-  "text": "Erntedankfest",
+  "key": "die-apfelschorle",
+  "text": "die Apfelschorle",
   "voice": "m"
  },
  {
-  "key": "weihnachtsmarkt",
-  "text": "Weihnachtsmarkt",
+  "key": "das-mineralwasser",
+  "text": "das Mineralwasser",
   "voice": "m"
  },
  {
-  "key": "koelner-dom",
-  "text": "Kölner Dom",
+  "key": "sie-und-du",
+  "text": "Sie und du",
+  "voice": "m"
+ },
+ {
+  "key": "herr-frau",
+  "text": "Herr / Frau",
+  "voice": "m"
+ },
+ {
+  "key": "der-termin",
+  "text": "der Termin",
+  "voice": "m"
+ },
+ {
+  "key": "anmelden",
+  "text": "anmelden",
+  "voice": "m"
+ },
+ {
+  "key": "das-gastgeschenk",
+  "text": "das Gastgeschenk",
+  "voice": "m"
+ },
+ {
+  "key": "die-ruhezeit",
+  "text": "die Ruhezeit",
+  "voice": "m"
+ },
+ {
+  "key": "das-besteck",
+  "text": "das Besteck",
+  "voice": "m"
+ },
+ {
+  "key": "prost",
+  "text": "Prost!",
+  "voice": "m"
+ },
+ {
+  "key": "aufstehen",
+  "text": "aufstehen",
+  "voice": "m"
+ },
+ {
+  "key": "das-fruehstueck",
+  "text": "das Frühstück",
+  "voice": "m"
+ },
+ {
+  "key": "die-pause",
+  "text": "die Pause",
+  "voice": "m"
+ },
+ {
+  "key": "feierabend",
+  "text": "Feierabend",
+  "voice": "m"
+ },
+ {
+  "key": "der-supermarkt",
+  "text": "der Supermarkt",
+  "voice": "m"
+ },
+ {
+  "key": "das-pfand",
+  "text": "das Pfand",
+  "voice": "m"
+ },
+ {
+  "key": "der-muell",
+  "text": "der Müll",
+  "voice": "m"
+ },
+ {
+  "key": "die-u-bahn-s-bahn",
+  "text": "die U-Bahn / S-Bahn",
+  "voice": "m"
+ },
+ {
+  "key": "die-strassenbahn",
+  "text": "die Straßenbahn",
+  "voice": "m"
+ },
+ {
+  "key": "der-bus",
+  "text": "der Bus",
+  "voice": "m"
+ },
+ {
+  "key": "das-fahrrad",
+  "text": "das Fahrrad",
+  "voice": "m"
+ },
+ {
+  "key": "die-fahrkarte",
+  "text": "die Fahrkarte",
+  "voice": "m"
+ },
+ {
+  "key": "entwerten",
+  "text": "entwerten",
+  "voice": "m"
+ },
+ {
+  "key": "das-deutschlandticket",
+  "text": "das Deutschlandticket",
+  "voice": "m"
+ },
+ {
+  "key": "der-ice",
+  "text": "der ICE",
+  "voice": "m"
+ },
+ {
+  "key": "die-verspaetung",
+  "text": "die Verspätung",
+  "voice": "m"
+ },
+ {
+  "key": "das-gleis",
+  "text": "das Gleis",
+  "voice": "m"
+ },
+ {
+  "key": "rechts-fahren",
+  "text": "rechts fahren",
+  "voice": "m"
+ },
+ {
+  "key": "die-jeans",
+  "text": "die Jeans",
+  "voice": "m"
+ },
+ {
+  "key": "das-hemd",
+  "text": "das Hemd",
+  "voice": "m"
+ },
+ {
+  "key": "das-kleid",
+  "text": "das Kleid",
+  "voice": "m"
+ },
+ {
+  "key": "das-dirndl",
+  "text": "das Dirndl",
+  "voice": "m"
+ },
+ {
+  "key": "die-lederhose",
+  "text": "die Lederhose",
+  "voice": "m"
+ },
+ {
+  "key": "die-jacke",
+  "text": "die Jacke",
+  "voice": "m"
+ },
+ {
+  "key": "die-muetze",
+  "text": "die Mütze",
+  "voice": "m"
+ },
+ {
+  "key": "der-schal",
+  "text": "der Schal",
+  "voice": "m"
+ },
+ {
+  "key": "die-handschuhe",
+  "text": "die Handschuhe",
+  "voice": "m"
+ },
+ {
+  "key": "das-erntedankfest",
+  "text": "das Erntedankfest",
+  "voice": "m"
+ },
+ {
+  "key": "der-lebkuchen",
+  "text": "der Lebkuchen",
+  "voice": "m"
+ },
+ {
+  "key": "silvester",
+  "text": "Silvester",
+  "voice": "m"
+ },
+ {
+  "key": "ostern",
+  "text": "Ostern",
+  "voice": "m"
+ },
+ {
+  "key": "das-osterei",
+  "text": "das Osterei",
+  "voice": "m"
+ },
+ {
+  "key": "die-mietwohnung",
+  "text": "die Mietwohnung",
+  "voice": "m"
+ },
+ {
+  "key": "die-wg",
+  "text": "die WG",
+  "voice": "m"
+ },
+ {
+  "key": "die-kaltmiete",
+  "text": "die Kaltmiete",
+  "voice": "m"
+ },
+ {
+  "key": "die-warmmiete",
+  "text": "die Warmmiete",
+  "voice": "m"
+ },
+ {
+  "key": "die-kaution",
+  "text": "die Kaution",
+  "voice": "m"
+ },
+ {
+  "key": "die-heizung",
+  "text": "die Heizung",
+  "voice": "m"
+ },
+ {
+  "key": "lueften",
+  "text": "lüften",
+  "voice": "m"
+ },
+ {
+  "key": "frau-herr",
+  "text": "Frau / Herr",
+  "voice": "m"
+ },
+ {
+  "key": "die-lehrerin-der-lehrer",
+  "text": "die Lehrerin / der Lehrer",
+  "voice": "m"
+ },
+ {
+  "key": "die-note",
+  "text": "die Note",
+  "voice": "m"
+ },
+ {
+  "key": "bestanden",
+  "text": "bestanden",
+  "voice": "m"
+ },
+ {
+  "key": "der-deutschkurs",
+  "text": "der Deutschkurs",
+  "voice": "m"
+ },
+ {
+  "key": "die-hausaufgabe",
+  "text": "die Hausaufgabe",
+  "voice": "m"
+ },
+ {
+  "key": "der-fruehling",
+  "text": "der Frühling",
+  "voice": "m"
+ },
+ {
+  "key": "der-sommer",
+  "text": "der Sommer",
+  "voice": "m"
+ },
+ {
+  "key": "der-herbst",
+  "text": "der Herbst",
+  "voice": "m"
+ },
+ {
+  "key": "der-winter",
+  "text": "der Winter",
+  "voice": "m"
+ },
+ {
+  "key": "der-regen",
+  "text": "der Regen",
+  "voice": "m"
+ },
+ {
+  "key": "der-schnee",
+  "text": "der Schnee",
+  "voice": "m"
+ },
+ {
+  "key": "der-regenschirm",
+  "text": "der Regenschirm",
+  "voice": "m"
+ },
+ {
+  "key": "hell-dunkel",
+  "text": "hell / dunkel",
+  "voice": "m"
+ },
+ {
+  "key": "die-sommerzeit",
+  "text": "die Sommerzeit",
+  "voice": "m"
+ },
+ {
+  "key": "bar",
+  "text": "bar",
+  "voice": "m"
+ },
+ {
+  "key": "die-karte",
+  "text": "die Karte",
+  "voice": "m"
+ },
+ {
+  "key": "das-konto",
+  "text": "das Konto",
+  "voice": "m"
+ },
+ {
+  "key": "der-festpreis",
+  "text": "der Festpreis",
+  "voice": "m"
+ },
+ {
+  "key": "der-rabatt",
+  "text": "der Rabatt",
+  "voice": "m"
+ },
+ {
+  "key": "die-tuete",
+  "text": "die Tüte",
+  "voice": "m"
+ },
+ {
+  "key": "der-kassenzettel",
+  "text": "der Kassenzettel",
   "voice": "m"
  },
  {
