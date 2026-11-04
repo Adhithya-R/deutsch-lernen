@@ -1,32 +1,73 @@
 @import "tailwindcss";
 
-:root {
-  --background: #fffbf7;
-  --foreground: #2b2018;
+/* ---------- Colour worlds: each tab has its own light warm palette ---------- */
+:root,
+[data-tab="learn"] {
+  --tab-bg: #fff0dd;
+  --tab-band: #ffd9a8;
+  --tab-acc: #c2540a;
+  --tab-accd: #8f3d05;
+  --tab-soft: #ffe3c2;
+}
+[data-tab="words"] {
+  --tab-bg: #fff8d8;
+  --tab-band: #ffe98a;
+  --tab-acc: #8a6500;
+  --tab-accd: #5e4400;
+  --tab-soft: #fff0a8;
+}
+[data-tab="exam"] {
+  --tab-bg: #ffe9ec;
+  --tab-band: #ffc9d1;
+  --tab-acc: #b3294e;
+  --tab-accd: #7e1b36;
+  --tab-soft: #ffd6dc;
+}
+[data-tab="bruecke"] {
+  --tab-bg: #f7ebdd;
+  --tab-band: #ebcfaf;
+  --tab-acc: #8c4a1c;
+  --tab-accd: #5f3010;
+  --tab-soft: #f2ddc6;
+}
+[data-tab="me"] {
+  --tab-bg: #fff4e8;
+  --tab-band: #ffdcb8;
+  --tab-acc: #c2540a;
+  --tab-accd: #8f3d05;
+  --tab-soft: #ffe6cc;
 }
 
-/* Warm palette. --pri is darkened slightly so white text on it passes contrast (4.5:1). */
+:root {
+  --background: #fffbf7;
+  --foreground: #3a2418;
+}
+
+/* pri / pill follow the active tab, so every existing component re-colours automatically. */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-ink: #2b2018;
+  --color-ink: #3a2418;
   --color-muted: #6f6256;
-  --color-line: #eadbc9;
+  --color-line: #f0dcc6;
   --color-sand: #f7eee3;
   --color-sand-2: #fbf1e5;
-  --color-pri: #c2540a;
-  --color-pri-dark: #a14507;
-  --color-pill: #fbe3cc;
-  --color-peach: #ffe6cc;
-  --color-peach-ink: #5a2800;
+  --color-pri: var(--tab-acc);
+  --color-pri-dark: var(--tab-accd);
+  --color-pill: var(--tab-soft);
+  --color-tab-bg: var(--tab-bg);
+  --color-tab-band: var(--tab-band);
+  --color-peach: var(--tab-soft);
+  --color-peach-ink: #4a2a12;
   --color-butter: #fff1c2;
   --color-butter-ink: #4a3600;
   --color-ok: #2e7d32;
-  --color-ok-bg: #e8f3e8;
+  --color-ok-bg: #dff3e0;
   --color-bad: #b3261e;
-  --color-bad-bg: #fff1f0;
+  --color-bad-bg: #ffe1de;
   --color-teal: #0f6b64;
-  --font-sans: var(--font-dm-sans);
+  --font-sans: var(--font-nunito);
+  --font-display: var(--font-baloo);
 }
 
 html {
@@ -36,14 +77,308 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-family: var(--font-nunito), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-baloo), var(--font-nunito), system-ui, sans-serif;
+  text-wrap: balance;
 }
 
 [lang="ta"] {
-  font-family: var(--font-tamil), var(--font-dm-sans), sans-serif;
+  font-family: var(--font-tamil), var(--font-nunito), sans-serif;
+}
+
+/* English-only mode hides every Tamil explanation (the switch sets data-lang on <html>). */
+html[data-lang="en"] .ta-only {
+  display: none !important;
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-pri);
+  outline: 3px solid var(--tab-acc);
   outline-offset: 2px;
+}
+
+/* ---------- Chunky buttons ---------- */
+.btn3d {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 3.25rem;
+  border-radius: 1rem;
+  border: 0;
+  border-bottom: 5px solid var(--tab-accd);
+  background: var(--tab-acc);
+  color: #fff;
+  font-family: var(--font-baloo), var(--font-nunito), sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+.btn3d:active {
+  transform: translateY(3px);
+  border-bottom-width: 2px;
+}
+.btn3d[disabled] {
+  background: #e6d6c4;
+  border-bottom-color: #cdb89f;
+  color: #8a7462;
+  cursor: not-allowed;
+  transform: none;
+}
+.btn3d.ok {
+  background: #2e8a47;
+  border-bottom-color: #1d6d33;
+}
+.btn3d.bad {
+  background: #c93a3a;
+  border-bottom-color: #8f2323;
+}
+.btn3d-ghost {
+  background: #fff;
+  color: var(--tab-acc);
+  border: 2px solid var(--color-line, #f0dcc6);
+  border-bottom-width: 5px;
+}
+
+/* ---------- Skyline: Tamil Nadu and German landmarks ---------- */
+.sky {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(var(--tab-band), var(--tab-bg));
+  border-radius: 0 0 32px 32px;
+}
+.sky .sun {
+  position: absolute;
+  right: 26%;
+  top: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffc93c;
+  box-shadow: 0 0 0 9px rgba(255, 201, 60, 0.28);
+  animation: sky-rise 1.6s ease-out both;
+}
+.sky .cloud {
+  position: absolute;
+  height: 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.75);
+  animation: sky-drift linear infinite;
+}
+.sky .cloud::before,
+.sky .cloud::after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
+}
+.sky .cloud::before {
+  width: 20px;
+  height: 20px;
+  left: 8px;
+  top: -9px;
+}
+.sky .cloud::after {
+  width: 26px;
+  height: 26px;
+  left: 26px;
+  top: -13px;
+}
+.sky .bird {
+  position: absolute;
+  width: 16px;
+  height: 8px;
+  animation: sky-fly linear infinite;
+}
+.sky .bird path {
+  fill: none;
+  stroke: var(--tab-accd);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+.sky .lm {
+  position: absolute;
+  bottom: 22px;
+}
+.sky .lm svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  fill: var(--tab-accd);
+}
+.sky .lm.far {
+  opacity: 0.28;
+}
+.sky .lit {
+  fill: var(--tab-band);
+  animation: sky-flick 3.4s ease-in-out infinite;
+}
+.sky .lit:nth-of-type(3n) {
+  animation-delay: 0.7s;
+}
+.sky .lit:nth-of-type(4n) {
+  animation-delay: 1.5s;
+}
+.sky .lit:nth-of-type(5n) {
+  animation-delay: 2.1s;
+}
+.sky .ground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 22px;
+  background-color: var(--tab-accd);
+  background-image: radial-gradient(circle, var(--tab-band) 1.5px, transparent 2px);
+  background-size: 14px 11px;
+}
+.sky .flagline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: linear-gradient(#000 0 33%, #d00000 33% 66%, #ffce00 66%);
+}
+.sky .flag {
+  position: absolute;
+  right: 14px;
+  bottom: 26px;
+  width: 34px;
+  height: 60px;
+}
+.sky .flag i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 60px;
+  background: var(--tab-accd);
+}
+.sky .flag b {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 30px;
+  height: 7px;
+  transform-origin: left center;
+  animation: sky-wave 2.2s ease-in-out infinite;
+  background: #000;
+}
+.sky .flag b:nth-of-type(2) {
+  top: 9px;
+  background: #d00000;
+  animation-delay: 0.12s;
+}
+.sky .flag b:nth-of-type(3) {
+  top: 16px;
+  background: #ffce00;
+  animation-delay: 0.24s;
+}
+
+@keyframes sky-rise {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes sky-drift {
+  from {
+    transform: translateX(-90px);
+  }
+  to {
+    transform: translateX(480px);
+  }
+}
+@keyframes sky-fly {
+  from {
+    transform: translate(-30px, 0);
+  }
+  50% {
+    transform: translate(200px, -10px);
+  }
+  to {
+    transform: translate(460px, 4px);
+  }
+}
+@keyframes sky-flick {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+@keyframes sky-wave {
+  0%,
+  100% {
+    transform: skewY(-5deg) scaleX(1);
+  }
+  50% {
+    transform: skewY(5deg) scaleX(0.93);
+  }
+}
+@keyframes node-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(194, 84, 10, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 18px rgba(194, 84, 10, 0);
+  }
+}
+@keyframes bob {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -4px);
+  }
+}
+@keyframes pop {
+  from {
+    transform: translateY(10px) scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.pop {
+  animation: pop 0.35s ease-out both;
+}
+.sheet-up {
+  animation: sheet-up 0.25s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }

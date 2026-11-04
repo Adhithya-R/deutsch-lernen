@@ -20,7 +20,7 @@ export default function Quiz({ exercises }: { exercises: Exercise[] }) {
         const done = checked[i];
         const ok = done && isOk(i);
         return (
-          <div key={i} className="rounded-2xl border border-line bg-white p-4">
+          <div key={i} className="rounded-2xl border-2 border-line bg-white p-4 shadow-[0_3px_0_var(--color-line)]">
             <p className="font-semibold">{i + 1}. {e.q}</p>
 
             {e.options ? (
@@ -61,7 +61,7 @@ export default function Quiz({ exercises }: { exercises: Exercise[] }) {
               <button
                 disabled={!given[i]}
                 onClick={() => setChecked({ ...checked, [i]: true })}
-                className="mt-3 h-11 rounded-full bg-pri px-6 text-sm font-semibold text-white hover:bg-pri-dark disabled:opacity-40"
+                className="btn3d mt-3 !min-h-11 !w-auto !text-sm px-6 !border-b-4"
               >
                 Check
               </button>
@@ -73,7 +73,7 @@ export default function Quiz({ exercises }: { exercises: Exercise[] }) {
                 </p>
                 {e.tip && (
                   <p className="mt-1 text-muted">
-                    {e.tip.en} <span lang="ta">{e.tip.ta}</span>
+                    {e.tip.en} <span lang="ta" className="ta-only">{e.tip.ta}</span>
                   </p>
                 )}
               </div>
@@ -82,7 +82,7 @@ export default function Quiz({ exercises }: { exercises: Exercise[] }) {
         );
       })}
       {allChecked && (
-        <p className="rounded-2xl bg-butter p-4 font-bold text-butter-ink">
+        <p className="rounded-2xl bg-butter p-4 font-extrabold text-butter-ink">
           Score: {correct} / {exercises.length}
         </p>
       )}

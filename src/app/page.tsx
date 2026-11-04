@@ -1,43 +1,36 @@
 import { Suspense } from "react";
-import HomeView from "@/components/HomeView";
+import LearnHome from "@/components/LearnHome";
 import { cards } from "@/content/vocab";
+import { chapterProgress } from "@/lib/progress";
 import { createClient } from "@/lib/supabase/server";
 
-const NEW_PER_SESSION = 10;
+const EMPTY = { loggedIn: false, done: [], words: 0, due: 0 };
 
 export default function Home() {
   return (
-    <Suspense fallback={<HomeView data={{ name: null, done: [], due: 0, fresh: 0, started: 0 }} />}>
-      <HomeLoader />
+    <Suspense fallback={<LearnHome data={EMPTY} />}>
+      <Loader />
     </Suspense>
   );
 }
 
-async function HomeLoader() {
+async function Loader() {
+  const { loggedIn, done } = await chapterProgress();
+  if (!loggedIn) return <LearnHome data={EMPTY} />;
+
   const supabase = await createClient();
-  const { data: auth } = await supabase.auth.getUser();
-  if (!auth.user) return <HomeView data={{ name: null, done: [], due: 0, fresh: 0, started: 0 }} />;
-
-  const [{ data: progress }, { data: profile }, { data: states }] = await Promise.all([
-    supabase.from("lesson_progress").select("lesson_slug,status"),
-    supabase.from("profiles").select("display_name").maybeSingle(),
-    supabase.from("flashcard_state").select("card_id,due_at"),
-  ]);
-
+  const { data: states } = await supabase.from("flashcard_state").select("card_id,due_at");
+  const valid = new Set(cards.map((c) => c.id));
+  const mine = (states ?? []).filter((s) => valid.has(String(s.card_id)));
   const now = new Date();
-  const known = new Map((states ?? []).map((s) => [s.card_id as string, new Date(s.due_at as string)]));
-  const validIds = new Set(cards.map((c) => c.id));
-  const started = [...known.keys()].filter((id) => validIds.has(id)).length;
-  const due = [...known.entries()].filter(([id, d]) => validIds.has(id) && d <= now).length;
 
   return (
-    <HomeView
+    <LearnHome
       data={{
-        name: profile?.display_name ?? "",
-        done: (progress ?? []).filter((r) => r.status === "completed").map((r) => r.lesson_slug as string),
-        due,
-        fresh: Math.min(NEW_PER_SESSION, cards.length - started),
-        started,
+        loggedIn: true,
+        done: [...done],
+        words: mine.length,
+        due: mine.filter((s) => new Date(String(s.due_at)) <= now).length,
       }}
     />
   );

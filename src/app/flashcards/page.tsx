@@ -1,18 +1,19 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import FlashcardReview from "@/components/FlashcardReview";
+import ScreenTop from "@/components/ScreenTop";
 import { cards, decks } from "@/content/vocab";
 import { createClient } from "@/lib/supabase/server";
 
-export const metadata = { title: "Flashcards · மொழி-Brücke" };
+export const metadata = { title: "Words · மொழி-Brücke" };
 
 const NEW_PER_SESSION = 10;
 const MAX_SESSION = 30;
 
 export default function FlashcardsPage({ searchParams }: PageProps<"/flashcards">) {
   return (
-    <main className="mx-auto w-full max-w-md px-4 pt-6 lg:pt-10">
-      <Suspense fallback={<p className="text-muted">Loading…</p>}>
+    <main className="mx-auto w-full max-w-md lg:max-w-xl">
+      <Suspense fallback={<ScreenTop tab="words" kicker="Flashcards" title="Words" />}>
         <Session searchParams={searchParams} />
       </Suspense>
     </main>
@@ -26,13 +27,12 @@ async function Session({ searchParams }: { searchParams: PageProps<"/flashcards"
   const pool = deck ? cards.filter((c) => c.deck === deck.id) : cards;
 
   const chip = (on: boolean) =>
-    `shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-sm font-medium ${on ? "border-pri bg-pill text-pri-dark" : "border-line bg-white"}`;
+    `shrink-0 whitespace-nowrap rounded-full border-2 border-b-4 px-4 py-2 text-sm font-extrabold ${on ? "border-pri bg-pill text-pri-dark" : "border-line bg-white text-muted"}`;
 
   const header = (
     <>
-      <h1 className="text-3xl font-bold tracking-tight">{deck ? deck.en : "Flashcards"}</h1>
-      <p lang="ta" className="mt-1 text-lg text-muted">{deck ? deck.ta : "சொல்லகராதி"}</p>
-      <div className="-mx-4 mt-4 flex gap-2 overflow-x-auto px-4 pb-1">
+      <ScreenTop tab="words" kicker={deck ? "Deck" : "Flashcards"} title={deck ? deck.en : "Words"} />
+      <div className="mt-3 flex gap-2 overflow-x-auto px-4 pb-1">
         <Link href="/flashcards" className={chip(!deck)}>All words</Link>
         {decks.map((d) => (
           <Link key={d.id} href={`/flashcards?deck=${d.id}`} className={chip(deck?.id === d.id)}>{d.en}</Link>
@@ -47,8 +47,8 @@ async function Session({ searchParams }: { searchParams: PageProps<"/flashcards"
     return (
       <>
         {header}
-        <p className="mt-5 rounded-2xl bg-sand p-4 text-muted">
-          <Link href="/login" className="font-semibold text-pri underline">Log in</Link> to study flashcards and save your progress.
+        <p className="mx-4 mt-5 rounded-2xl bg-white p-4 text-muted shadow-[0_3px_0_var(--color-line)]">
+          <Link href="/login" className="font-extrabold text-pri underline">Log in</Link> to study flashcards and save your progress.
         </p>
       </>
     );
@@ -68,10 +68,12 @@ async function Session({ searchParams }: { searchParams: PageProps<"/flashcards"
   return (
     <>
       {header}
-      <p className="mt-4 text-sm text-muted">
-        {due.length} due · {fresh.length} new · {started} / {pool.length} started
-      </p>
-      <FlashcardReview key={deck?.id ?? "all"} cards={queue} total={queue.length} />
+      <div className="px-4">
+        <p className="mt-4 text-sm font-semibold text-muted">
+          {due.length} due · {fresh.length} new · {started} / {pool.length} started
+        </p>
+        <FlashcardReview key={deck?.id ?? "all"} cards={queue} total={queue.length} />
+      </div>
     </>
   );
 }

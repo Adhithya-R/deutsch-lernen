@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { logout } from "@/app/actions";
 import { createClient } from "@/lib/supabase/server";
 
 export default async function AuthLinks() {
@@ -8,9 +7,9 @@ export default async function AuthLinks() {
 
   if (!data.user) {
     return (
-      <div className="flex items-center gap-1 text-sm font-semibold">
-        <Link href="/login" className="whitespace-nowrap rounded-full px-3 py-2 hover:bg-sand">Log in</Link>
-        <Link href="/signup" className="whitespace-nowrap rounded-full bg-pri px-4 py-2 text-white hover:bg-pri-dark">
+      <div className="flex items-center gap-1 text-sm font-extrabold">
+        <Link href="/login" className="whitespace-nowrap rounded-xl px-3 py-2 hover:bg-sand">Log in</Link>
+        <Link href="/signup" className="btn3d !min-h-10 !w-auto whitespace-nowrap !rounded-xl !border-b-4 px-4 !text-sm">
           Sign up
         </Link>
       </div>
@@ -21,17 +20,12 @@ export default async function AuthLinks() {
   const initial = (profile?.display_name || data.user.email || "?").trim().charAt(0).toUpperCase();
 
   return (
-    <div className="flex items-center gap-3">
-      <form action={logout} className="hidden lg:block">
-        <button className="rounded-full border border-line px-4 py-2 text-sm font-semibold hover:bg-sand">Log out</button>
-      </form>
-      <Link
-        href="/more"
-        aria-label="Account"
-        className="grid h-9 w-9 place-items-center rounded-full bg-pri text-sm font-bold text-white"
-      >
-        {initial}
-      </Link>
-    </div>
+    <Link
+      href="/me"
+      aria-label="Your profile"
+      className="grid h-10 w-10 place-items-center rounded-full border-b-4 border-pri-dark bg-pri font-display text-lg font-extrabold text-white"
+    >
+      {initial}
+    </Link>
   );
 }

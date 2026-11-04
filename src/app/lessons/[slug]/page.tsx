@@ -21,10 +21,10 @@ export default async function LessonPage({ params }: PageProps<"/lessons/[slug]"
   const next = lessons[index + 1];
 
   return (
-    <main className="mx-auto w-full max-w-2xl px-4 pt-4 lg:px-8 lg:pt-8">
+    <main className="mx-auto w-full max-w-md px-4 pt-4 lg:max-w-xl lg:pt-8">
       <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-sm text-muted">
-        <Link href="/lessons" className="inline-flex items-center gap-1 py-2 hover:text-ink">
-          <Icon name="back" size={18} /> Lessons
+        <Link href="/cheatsheets" className="inline-flex items-center gap-1 py-2 font-extrabold hover:text-ink">
+          <Icon name="back" size={18} /> Grammar
         </Link>
         <span aria-hidden="true">·</span>
         <span>{lesson.level} · Lesson {index + 1} of {lessons.length}</span>
@@ -32,12 +32,12 @@ export default async function LessonPage({ params }: PageProps<"/lessons/[slug]"
 
       <header className="mt-2">
         <h1 className="text-[28px] font-bold leading-tight tracking-tight">{lesson.title.en}</h1>
-        <p lang="ta" className="mt-1 text-lg font-medium text-pri">{lesson.title.ta}</p>
+        <p lang="ta" className="ta-only mt-1 text-lg font-medium text-pri">{lesson.title.ta}</p>
       </header>
 
       <section className="mt-4 space-y-1 text-[16px] leading-relaxed">
         <p>{lesson.intro.en}</p>
-        <p lang="ta" className="text-muted">{lesson.intro.ta}</p>
+        <p lang="ta" className="ta-only text-muted">{lesson.intro.ta}</p>
       </section>
 
       <div className="mt-5 space-y-4">
@@ -45,14 +45,14 @@ export default async function LessonPage({ params }: PageProps<"/lessons/[slug]"
       </div>
 
       <section className="mt-8">
-        <h2 className="text-xl font-bold">Examples <span lang="ta" className="text-base font-medium text-muted">/ எடுத்துக்காட்டுகள்</span></h2>
+        <h2 className="text-xl font-extrabold">Examples</h2>
         <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
           {lesson.points.map((p) => (
-            <li key={p.de} className="flex items-start justify-between gap-2 rounded-2xl border border-line bg-white p-4">
+            <li key={p.de} className="flex items-start justify-between gap-2 rounded-2xl border-2 border-line bg-white p-4 shadow-[0_3px_0_var(--color-line)]">
               <div>
                 <p className="font-semibold">{p.de}</p>
                 <p className="text-sm text-muted">{p.en}</p>
-                <p lang="ta" className="text-sm">{p.ta}</p>
+                <p lang="ta" className="ta-only text-sm">{p.ta}</p>
               </div>
               <SpeakButton text={p.de} />
             </li>
@@ -61,7 +61,7 @@ export default async function LessonPage({ params }: PageProps<"/lessons/[slug]"
       </section>
 
       <section className="mt-8">
-        <h2 className="text-xl font-bold">Practice <span lang="ta" className="text-base font-medium text-muted">/ பயிற்சி</span></h2>
+        <h2 className="text-xl font-extrabold">Practice</h2>
         <div className="mt-3">
           <Quiz exercises={lesson.exercises} />
         </div>
@@ -74,10 +74,10 @@ export default async function LessonPage({ params }: PageProps<"/lessons/[slug]"
         {next && (
           <Link
             href={`/lessons/${next.slug}`}
-            className="flex items-center justify-between gap-3 rounded-3xl bg-peach p-5 font-semibold text-peach-ink"
+            className="btn3d btn3d-ghost !justify-between !normal-case !p-5 !text-base"
           >
             <span>
-              <span className="block text-xs font-bold uppercase tracking-wider opacity-80">Next lesson</span>
+              <span className="block text-xs uppercase tracking-wider text-muted">Next lesson</span>
               {next.title.en}
             </span>
             <Icon name="arrow" size={22} />
@@ -93,7 +93,7 @@ async function Progress({ slug }: { slug: string }) {
   const { data: auth } = await supabase.auth.getUser();
   if (!auth.user) {
     return (
-      <p className="rounded-2xl bg-sand p-4 text-sm text-muted">
+      <p className="rounded-2xl bg-white p-4 text-sm text-muted shadow-[0_3px_0_var(--color-line)]">
         <Link href="/login" className="font-semibold text-pri underline">Log in</Link> to save your progress.
       </p>
     );

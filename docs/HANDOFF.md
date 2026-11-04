@@ -26,46 +26,38 @@ Next.js **16.4** (App Router, TypeScript, Tailwind v4) + Supabase (Postgres + Au
 - `export const dynamicParams` is not allowed with this config.
 - `PageProps<"/route">` / `LayoutProps<"/">` are global type helpers.
 
+## Product shape (redesigned 2026-11-04, approved by the owner)
+Duolingo-style, story-based, phone first. Five tabs, each with its own light warm colour world and an animated skyline of Tamil Nadu and German landmarks (Meenakshi gopuram, Brihadeeswarar vimana, Brandenburg Gate, Cologne Cathedral, Berlin TV tower; pure SVG + CSS in `Skyline.tsx`, animations in `globals.css`, off with reduced-motion):
+- **Learn** (`/`): a path of story chapters ("Priya's Reise": Priya from Madurai moves to Germany). Each chapter = story (`/learn/[slug]`, tap underlined words for meanings, culture note) then a **chapter check** (`/learn/[slug]/check`). Pass mark (2 of 3) unlocks the next chapter. Chapters 3-5 are shown locked as "soon".
+- **Words** (`/flashcards[?deck=id]`): spaced-repetition flashcards.
+- **Exam** (`/exam`): coming-soon cards (A1 Start Deutsch 1, A2, Email coach).
+- **Brücke** (`/bruecke`): Tamil Nadu next to Germany culture pairs (`content/culture.ts`).
+- **Me** (`/me`): account, **Language help** switch, links to Cheat sheets & grammar (`/cheatsheets`, `/cheatsheets/cases`, `/lessons/[slug]` = the 7 grammar lessons; `/lessons` redirects to `/cheatsheets`).
+
+**Language rule:** the UI is English only. Tamil is shown only as *help* (word meanings, translations, tips) and always carries the class `ta-only`. The Me tab switch ("English only" / "English + தமிழ்") sets `<html data-lang>` (saved in localStorage, applied before paint by a script in `layout.tsx`); CSS hides `.ta-only` when `data-lang="en"`. Do not put Tamil in headings, labels or menus. `src/lib/tamil.tsx` hides Tamil columns/segments in tables automatically.
+
+**Colour rule:** tokens in `globals.css`: `--tab-*` variables per `data-tab` (set by `ThemeShell` from the URL via `lib/tabs.ts`); Tailwind `pri`, `pri-dark`, `pill` follow the active tab. Buttons: `.btn3d` (chunky). Icons: only `Icon.tsx` (no emoji). Fonts: Baloo Thambi 2 (headings), Nunito (body), Noto Sans Tamil.
+
 ## Code map
-- `src/content/lessons.ts`: lessons (bilingual) with `tables`, `points` (examples), `exercises` (multiple choice if `options`, else typed answer). Add a lesson by adding an object. Also holds the case-article tables.
-- `src/content/vocab.ts`: 47 flashcard words in 6 decks. Card `id`s are stable; never rename ones users studied.
-- `src/content/menu.ts`: the whole navigation. Items with `href` are live; items marked `soon` show a "Soon" badge. Switch an item on by giving it an `href`.
-- `src/lib/srs.ts`: spaced repetition (SM-2 style), pure functions, tested.
-- `src/app/actions.ts`: server actions: signup (checks `INVITE_CODE`), login, logout, `saveProgress`, `reviewCard`.
-- `src/components/`: `SiteNav` (top bar; section drop-downs on laptops only), `TabBar` (bottom tab bar on phones: Home, Lessons, Cards, Exam, More), `Icon` (the only icon set; no emoji), `Rows` (list rows), `HomeView`, `SpeakButton`, `AuthLinks`, `AuthForm`, `Quiz`, `DataTable`, `CaseTable`, `FlashcardReview`, `ProgressButton`.
-- Routes: `/`, `/lessons`, `/lessons/[slug]`, `/flashcards[?deck=id]`, `/cheatsheets/cases`, `/exam` (coming-soon list), `/more` (account + all other menu items), `/login`, `/signup`.
-- Styling: colour tokens live in `src/app/globals.css` (`@theme`): `pri` orange (darkened for contrast), `peach`, `butter`, `sand`, `line`, `ink`, `muted`, `ok`, `bad`. Font: DM Sans + Noto Sans Tamil. Phone first: min tap size 44-48px, test at 390px. The old green theme (`brand-*`, `cream`, `gold`) is gone.
-- `supabase/migrations/`: SQL run by hand in Supabase SQL Editor. `001_init.sql` (profiles, lesson_progress, trigger). `002_flashcards.sql` (flashcard_state). **Check that 002 has been run in Supabase**; flashcards cannot save without it.
-- `docs/design/`: design mockups (see below).
+- Content (plain data, easy to edit): `content/chapters.ts` (story chapters, words, culture notes, checks, pass mark; `markChapter` marks answers), `content/lessons.ts` (7 grammar lessons + case tables), `content/vocab.ts` (47 flashcard words), `content/culture.ts`, `content/menu.ts` (older plan list, partly unused).
+- Server actions (`app/actions.ts`): signup (checks `INVITE_CODE`), login, logout, `saveProgress`, `reviewCard`, `submitChapter` (re-marks the answers on the server and stores `chapter-<slug>` in `lesson_progress`, so a pass cannot be faked from the browser).
+- `lib/progress.ts` (which chapters are done / unlocked), `lib/srs.ts` (SM-2 style scheduling, tested), `lib/speak.ts` + `components/useSpeak.ts` (German text-to-speech: waits for voices, picks a German one, shows a message when the device has none), `lib/tabs.ts`.
+- Components: `ThemeShell`, `SiteNav` (top bar), `TabBar` (bottom tabs on phones), `Skyline`, `ScreenTop`, `LearnHome`, `Story`, `ChapterCheck`, `Locked`, `FlashcardReview`, `Quiz`, `DataTable`, `CaseTable`, `Rows`, `LangToggle`, `Icon`, `SpeakButton`, `AuthForm`, `AuthLinks`.
+- `supabase/migrations/`: SQL run by hand in the Supabase SQL Editor. `001_init.sql` (profiles, lesson_progress, trigger), `002_flashcards.sql` (flashcard_state). **Check that 002 has been run**; flashcards cannot save without it.
+- `docs/design/`: old mockups (history).
 
 ## Done and live
-- Sign-up with invite code, login, logout (Supabase Auth; "Confirm email" is OFF in Supabase on purpose, no email-confirm flow exists).
-- 7 A1 lessons: pronouns, sein/haben, regular verbs, sentence order, questions, negation, possessives. Each has tables, examples (DE/EN/TA) and quizzes (quiz scores are not saved).
-- Progress saving, "Continue" button on home.
-- Flashcards with spaced repetition and browser German text-to-speech (`de-DE`). Written and built, **not yet tested end-to-end on the live site**.
-- Header with logo and 6-section menu (Lernen, Spickzettel, Wortschatz, Prüfung, Üben, Gruppe) with sub-menus; many sub-items are "Soon".
-- Cases cheat sheet page. Logo in `public/logo.webp`, favicon `src/app/icon.png`.
+- Sign-up with invite code, login, logout ("Confirm email" is OFF in Supabase on purpose).
+- Story chapters 1 (Ankunft) and 2 (Neue Freunde) with checks and unlocking; 7 grammar lessons with quizzes (scores not saved); flashcards; Brücke; Me with language switch; animated skylines per tab.
+- Audio fix (voice selection). **Not verified on a real device yet** (cannot hear sound in the build environment). If it stays silent, the reliable fix is pre-recorded German audio files.
 
-## UI redesign: DONE (direction A, mobile-first) on 2026-11-04. The text below is the history.
-Owner feedback: the logo is fine, but the current theme (green) does not suit the app. They want a **neat, clean, mostly warm-coloured** UI like Google / Microsoft / Meta / Oracle products, and **not** "AI-looking" (no emoji icons, gradients, glow).
-
-Three mockups were made (images in `docs/design/*.webp`; each direction has a home page and a lesson page):
-- **A · Sunrise** (Material style): top bar with tabs, tonal peach/butter cards, orange `#D9600B`, DM Sans.
-- **B · Fluent Warm** (Microsoft style): left sidebar, breadcrumb bar, "On this page" panel, flat cards, burnt orange `#C8400A` on warm grey `#F6F2EC`, Inter.
-- **C · Redwood** (Oracle style): top bar, sand hero, hairlines, rust `#B5421C`, IBM Plex Sans.
-
-**Update: most users (the friends) will use PHONES.** So the design must be mobile-first. New recommendation: **A's friendly tonal cards + a bottom tab bar** (Home, Lessons, Cards, Exam, More), with thumb-sized buttons (min 48px). A phone mockup is in `docs/design/mobile-A.webp` (Home, Lesson, Flashcard, More menu). On laptops, B's layout (sidebar) can be the wide-screen version. Phones are the priority; test at 390px width.
-
-Earlier recommendation (before the phone-first note): **B** (sidebar scales to many sections and turns into a slide-out on phones); A as second choice. **Owner has not made the final choice yet (waiting on their reply to the phone mockup).**
-Open questions for the owner: which direction (or mix); make a warm (cream/rust) version of the logo, or keep the green one as a small mark; dark mode now or later; phone mockup before building.
-Build plan after choosing: (1) design tokens in `globals.css`, (2) shared components, (3) nav + home, (4) lesson, flashcards, login, cheat sheets restyled, (5) phone layout tested at 390px. Push after each step. Use simple line SVG icons only.
-
-## Next features (suggested order)
-1. Apply the chosen design.
-2. Exam section (A1 Start Deutsch 1, A2): formats, tips, email/message writing guide with checklist and autosaved drafts, mock tests.
-3. Story-based vocabulary exercises.
-4. A2 lessons (Perfekt, Dativ, modal verbs, subordinate clauses, …) and more A1 (articles/plural, Akkusativ, modal verbs, separable verbs, numbers/time, imperative).
-5. Save quiz scores, group leaderboard, shared word lists, PWA/offline cheat sheets.
+## Next (suggested order)
+1. Verify audio and the whole logged-in flow on a real phone; fix what the owner reports.
+2. Streak and XP (needs a new table: activity per day), then a daily goal.
+3. Chapters 3-5 (Die Wohnung, Auf dem Markt, Pongal in Berlin) and more A1 topics inside the story path; then A2 chapters.
+4. Exam section (A1/A2 formats, email-writing coach with autosaved drafts, original mock tests).
+5. Story-based vocabulary exercises, listening, speaking practice; group leaderboard and shared word lists.
+6. Optional: pre-recorded audio, dark mode, a warm version of the logo, PWA/offline.
 
 ## Rules and caveats
 - **Do not copy Goethe exam papers** (copyrighted). Use the free official sample tests only to learn format and difficulty, then write original questions/stories.

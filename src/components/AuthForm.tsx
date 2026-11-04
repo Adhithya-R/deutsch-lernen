@@ -13,9 +13,8 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
   return (
     <main className="mx-auto w-full max-w-sm px-4 py-8">
       <h1 className="text-3xl font-bold tracking-tight">{isLogin ? "Welcome back" : "Create your account"}</h1>
-      <p lang="ta" className="mt-1 text-muted">{isLogin ? "மீண்டும் வருக" : "புதிய கணக்கு உருவாக்குங்கள்"}</p>
 
-      <form action={action} className="mt-6 space-y-3 rounded-3xl border border-line bg-white p-5">
+      <form action={action} className="mt-6 space-y-3 rounded-3xl bg-white p-5 shadow-[0_3px_0_var(--color-line)]">
         {!isLogin && (
           <>
             <label className="block text-sm font-semibold">
@@ -44,7 +43,7 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
           />
         </label>
         {state?.error && <p role="alert" className="text-sm font-medium text-bad">{state.error}</p>}
-        <button disabled={pending} className="h-12 w-full rounded-full bg-pri font-semibold text-white hover:bg-pri-dark disabled:opacity-50">
+        <button disabled={pending} className="btn3d">
           {pending ? "Please wait…" : isLogin ? "Log in" : "Sign up"}
         </button>
       </form>

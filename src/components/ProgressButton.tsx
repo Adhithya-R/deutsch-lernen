@@ -10,12 +10,10 @@ export default function ProgressButton({ slug, completed }: { slug: string; comp
     <button
       disabled={pending}
       onClick={() => start(() => saveProgress(slug, completed ? "in_progress" : "completed", 0))}
-      className={`inline-flex h-12 items-center gap-2 rounded-full px-6 font-semibold disabled:opacity-50 ${
-        completed ? "bg-ok-bg text-ok" : "bg-pri text-white hover:bg-pri-dark"
-      }`}
+      className={`btn3d ${completed ? "ok" : ""}`}
     >
       {completed && <Icon name="checkc" size={20} />}
-      {completed ? "Completed (tap to undo)" : "Mark as completed"}
+      {completed ? "Completed" : "Mark as completed"}
     </button>
   );
 }

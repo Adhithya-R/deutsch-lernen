@@ -8,12 +8,12 @@ export const metadata = { title: "Cases cheat sheet · மொழி-Brücke" };
 
 export default function CasesPage() {
   return (
-    <main className="mx-auto w-full max-w-2xl px-4 pt-4 lg:px-8 lg:pt-8">
-      <Link href="/more" className="inline-flex items-center gap-1 py-2 text-sm text-muted hover:text-ink">
-        <Icon name="back" size={18} /> More
+    <main className="mx-auto w-full max-w-md px-4 pt-4 lg:max-w-xl lg:pt-8">
+      <Link href="/cheatsheets" className="inline-flex items-center gap-1 py-2 text-sm font-extrabold text-muted hover:text-ink">
+        <Icon name="back" size={18} /> Cheat sheets
       </Link>
       <h1 className="mt-2 text-[28px] font-bold leading-tight tracking-tight">Cases cheat sheet</h1>
-      <p lang="ta" className="mt-1 text-lg font-medium text-pri">வேற்றுமை குறிப்பு அட்டவணை</p>
+      <p lang="ta" className="ta-only mt-1 text-lg font-medium text-pri">வேற்றுமை குறிப்பு அட்டவணை</p>
 
       <div className="mt-5 space-y-4">
         <DataTable

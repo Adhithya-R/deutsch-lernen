@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { chapterBySlug, doneKey, markChapter } from "@/content/chapters";
 import { cards } from "@/content/vocab";
 import { NEW_CARD, review, type CardState, type Grade } from "@/lib/srs";
 import { createClient } from "@/lib/supabase/server";
@@ -91,4 +92,26 @@ export async function reviewCard(cardId: string, grade: number) {
     due_at: next.dueAt.toISOString(),
     updated_at: new Date().toISOString(),
   });
+}
+
+export async function submitChapter(slug: string, answers: string[]) {
+  const chapter = chapterBySlug(slug);
+  if (!chapter || !Array.isArray(answers)) return { score: 0, total: 0, passed: false, saved: false };
+
+  const result = markChapter(chapter, answers.map(String));
+  const supabase = await createClient();
+  const { data: auth } = await supabase.auth.getUser();
+  if (!auth.user) return { ...result, saved: false };
+
+  if (result.passed) {
+    await supabase.from("lesson_progress").upsert({
+      user_id: auth.user.id,
+      lesson_slug: doneKey(slug),
+      status: "completed",
+      position: result.score,
+      updated_at: new Date().toISOString(),
+    });
+    revalidatePath("/");
+  }
+  return { ...result, saved: result.passed };
 }
