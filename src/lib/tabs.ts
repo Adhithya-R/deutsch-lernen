@@ -15,6 +15,6 @@ export function tabFor(pathname: string): TabId {
   if (pathname.startsWith("/flashcards")) return "words";
   if (pathname.startsWith("/exam")) return "exam";
   if (pathname.startsWith("/bruecke")) return "bruecke";
-  if (["/me", "/login", "/signup"].some((p) => pathname.startsWith(p))) return "me";
+  if (["/me", "/login", "/signup", "/group"].some((p) => pathname.startsWith(p))) return "me";
   return "learn";
 }

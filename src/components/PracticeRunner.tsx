@@ -111,7 +111,7 @@ export default function PracticeRunner({ tasks, minutes }: { tasks: PTask[]; min
                     <p className={`mt-2 flex items-start gap-2 text-sm font-extrabold ${ok ? "text-ok" : "text-bad"}`} role="status">
                       <Icon name={ok ? "checkc" : "crossc"} size={18} className="mt-0.5 shrink-0" />
                       <span>
-                        {ok ? "Richtig!" : answers[id] ? `Falsch. Answer: ${it.answer}` : `Not answered. Answer: ${it.answer}`}
+                        {ok ? "Richtig!" : answers[id] ? `Not quite. Correct answer: ${it.answer}` : `Not answered. Correct answer: ${it.answer}`}
                         {it.tip && <span className="block font-normal text-muted">{it.tip}</span>}
                       </span>
                     </p>

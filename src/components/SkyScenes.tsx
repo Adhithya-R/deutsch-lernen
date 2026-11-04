@@ -207,8 +207,8 @@ export function SceneBack({ mood }: { mood: Mood }) {
             ))}
           </svg>
           <Balloon x="18%" y={16} w={30} color="#d64545" dur={9} delay={0} />
-          <Balloon x="64%" y={26} w={24} color="#ffce00" dur={11} delay={3} />
-          <Balloon x="76%" y={6} w={28} color="#0f6b64" dur={10} delay={6} />
+          <Balloon x="62%" y={44} w={22} color="#ffce00" dur={11} delay={3} />
+          <Balloon x="76%" y={22} w={26} color="#0f6b64" dur={10} delay={6} />
         </>
       );
     case "festival": // Pongal in Berlin: bunting, floating lanterns, sparkles
@@ -249,7 +249,7 @@ export function SceneFront({ mood }: { mood: Mood }) {
     return (
       <>
         {[4, 11, 18, 26, 33, 41, 48, 56, 63, 71, 78, 86, 93].map((x, i) => (
-          <Flake key={x} x={`${x}%`} s={3 + (i % 3) * 1.5} dur={6 + (i % 5)} delay={(i * 1.3) % 7} />
+          <Flake key={x} x={`${x}%`} s={5 + (i % 3) * 2} dur={6 + (i % 5)} delay={(i * 1.3) % 7} />
         ))}
       </>
     );

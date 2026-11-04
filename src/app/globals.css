@@ -559,7 +559,7 @@ html[data-lang="en"] .ta-only {
   top: -10px;
   border-radius: 50%;
   background: #fff;
-  opacity: 0.95;
+  box-shadow: 0 0 0 1px rgba(143, 61, 5, 0.18), 0 1px 4px rgba(143, 61, 5, 0.35);
   animation: flake-fall linear infinite;
 }
 .sky .balloon {
@@ -579,11 +579,12 @@ html[data-lang="en"] .ta-only {
 .sky .lantern {
   position: absolute;
   bottom: 24px;
-  width: 12px;
-  height: 15px;
-  border-radius: 3px 3px 5px 5px;
-  background: #ffb347;
-  box-shadow: 0 0 10px 4px rgba(255, 179, 71, 0.55);
+  width: 14px;
+  height: 18px;
+  border-radius: 4px 4px 6px 6px;
+  background: #ff8a1f;
+  border: 1.5px solid #c2540a;
+  box-shadow: 0 0 12px 5px rgba(255, 138, 31, 0.5);
   animation: lantern-rise linear infinite;
 }
 .sky .rainbow {

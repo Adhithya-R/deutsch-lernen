@@ -13,7 +13,7 @@ export type LearnData = {
   xp: number; // total XP
 };
 
-const X = [50, 30, 70, 30, 50]; // zig-zag position of each stop, in %
+const X = [50, 30, 70, 30, 50, 70, 30, 50, 70, 30]; // zig-zag position of each stop, in % (enough for 10 stops)
 const ROW = 152;
 
 type Stop = { title: string; sub: string; state: "done" | "cur" | "lock"; href?: string };
@@ -32,7 +32,6 @@ function Chip({ icon, value, label }: { icon: IconName; value: string | number; 
 
 export default function LearnHome({ data }: { data: LearnData }) {
   const done = new Set(data.done);
-  const total = chapters.length + upcoming.length;
   const stops: Stop[] = [];
   let currentFound = false;
   let currentChapter: (typeof chapters)[number] | undefined;
@@ -54,7 +53,7 @@ export default function LearnHome({ data }: { data: LearnData }) {
       <Skyline ids={currentChapter?.landmarks ?? SKY_IDS.learn} mood={currentChapter?.mood ?? SKY_MOOD.learn} height={170} />
       <div className="px-4 pt-4">
         <p className="text-[13px] font-extrabold uppercase tracking-wider text-pri">
-          Priya&apos;s Reise · Chapter {Math.min(done.size + 1, total)} of {total}
+          Priya&apos;s Reise · Chapter {Math.min(done.size + 1, chapters.length)} of {chapters.length}
         </p>
         <h1 className="text-3xl font-extrabold">{current ? current.title : "Alle Kapitel geschafft!"}</h1>
 

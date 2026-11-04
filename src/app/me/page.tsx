@@ -30,11 +30,11 @@ export default function MePage() {
           <span className="flex-1">Cheat sheets &amp; grammar</span>
           <Icon name="chev" size={20} className="text-muted" />
         </Link>
-        <div className={`${card} flex items-center gap-3 font-extrabold opacity-60`} aria-disabled="true">
+        <Link href="/group" className={`${card} flex items-center gap-3 font-extrabold`}>
           <Icon name="users" size={22} className="text-pri" />
-          <span className="flex-1">Study group <span className="ml-1 rounded-md bg-butter px-1.5 py-0.5 text-[10px] text-butter-ink">Soon</span></span>
-          <Icon name="lock" size={18} className="text-muted" />
-        </div>
+          <span className="flex-1">Study group</span>
+          <Icon name="chev" size={20} className="text-muted" />
+        </Link>
       </div>
     </main>
   );
