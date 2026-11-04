@@ -15,7 +15,7 @@ export type Landmark = {
 };
 
 /** Weather / time of day behind a skyline. Every module should use a different one. */
-export type Mood = "dawn" | "noon" | "evening" | "rain" | "sunset" | "autumn";
+export type Mood = "dawn" | "noon" | "evening" | "rain" | "sunset" | "autumn" | "snow" | "balloons" | "festival" | "rainbow";
 
 export const LANDMARKS = data as Landmark[];
 export const landmark = (id: string) => LANDMARKS.find((l) => l.id === id);

@@ -352,6 +352,219 @@ function TvTower() {
   );
 }
 
+
+// TN009 Chettinad Palace, Karaikudi: a mansion with a pillared verandah
+function ChettinadPalace() {
+  return (
+    <Svg vb="0 0 160 100">
+      <rect x="4" y="90" width="152" height="10" />
+      <rect x="8" y="58" width="38" height="32" />
+      <rect x="114" y="58" width="38" height="32" />
+      <polygon points="4,58 50,58 42,46 12,46" />
+      <polygon points="110,58 156,58 148,46 118,46" />
+      <rect x="46" y="44" width="68" height="46" />
+      <polygon points="42,44 118,44 104,28 56,28" />
+      <polygon points="64,28 96,28 80,14" />
+      <circle cx="80" cy="11" r="2.5" />
+      <rect x="79" y="2" width="2" height="6" />
+      {Array.from({ length: 7 }, (_, i) => (
+        <rect key={i} x={50 + i * 9.5} y={56} width={4} height={34} />
+      ))}
+      {Array.from({ length: 6 }, (_, i) => (
+        <Arch key={i} x={54 + i * 9.5 + 0.7} y={66} w={4} h={11} />
+      ))}
+      {[18, 30, 124, 136].map((x) => (
+        <Arch key={x} x={x} y={64} w={6} h={13} />
+      ))}
+    </Svg>
+  );
+}
+
+// DE007 Charlottenburg Palace, Berlin: long baroque palace with a domed centre
+function CharlottenburgPalace() {
+  return (
+    <Svg vb="0 0 180 110">
+      <rect x="2" y="100" width="176" height="10" />
+      <rect x="2" y="58" width="176" height="7" />
+      <rect x="6" y="64" width="168" height="36" />
+      <rect x="62" y="48" width="56" height="52" />
+      <rect x="74" y="30" width="32" height="20" />
+      <path d="M72 30A18 24 0 0 1 108 30z" />
+      <rect x="87" y="0" width="6" height="9" />
+      {[14, 26, 38, 50, 130, 142, 154, 166].map((x) => (
+        <g key={x}>
+          <Arch x={x} y={70} w={6} h={10} />
+          <Arch x={x} y={85} w={6} h={10} />
+        </g>
+      ))}
+      {[68, 80, 92, 104].map((x) => (
+        <g key={x}>
+          <Arch x={x} y={58} w={6} h={12} />
+          <Arch x={x} y={80} w={6} h={14} />
+        </g>
+      ))}
+    </Svg>
+  );
+}
+
+// TN018 Thirumalai Nayakkar Mahal, Madurai: huge columns and arches
+function NayakkarMahal() {
+  return (
+    <Svg vb="0 0 160 110">
+      <rect x="2" y="100" width="156" height="10" />
+      <rect x="10" y="36" width="140" height="64" />
+      <rect x="6" y="30" width="148" height="8" />
+      {Array.from({ length: 5 }, (_, i) => (
+        <Arch key={i} x={26 + i * 24} y={58} w={12} h={42} />
+      ))}
+      {[24, 80, 136].map((x) => (
+        <g key={x}>
+          <rect x={x - 8} y={24} width={16} height={8} />
+          <ellipse cx={x} cy={22} rx={9} ry={8} />
+        </g>
+      ))}
+      <rect x="64" y="14" width="32" height="12" />
+      <ellipse cx="80" cy="14" rx="16" ry="12" />
+      <rect x="79" y="0" width="2" height="6" />
+    </Svg>
+  );
+}
+
+// DE019 New Town Hall, Munich: neo-Gothic with a tall clock tower
+function NewTownHall() {
+  return (
+    <Svg vb="0 0 160 130">
+      <rect x="2" y="120" width="156" height="10" />
+      <rect x="6" y="54" width="148" height="7" />
+      <rect x="10" y="60" width="140" height="60" />
+      {Array.from({ length: 10 }, (_, i) => (
+        <polygon key={i} points={`${10 + i * 14},54 ${18 + i * 14},54 ${14 + i * 14},38`} />
+      ))}
+      <rect x="66" y="34" width="28" height="86" />
+      <polygon points="64,34 96,34 80,0" />
+      <circle cx="80" cy="50" r="6" className="lit" />
+      <Arch x={77} y={68} w={6} h={14} />
+      <Arch x={77} y={92} w={6} h={14} />
+      {[14, 132].map((x) => (
+        <g key={x}>
+          <rect x={x} y={40} width={14} height={20} />
+          <polygon points={`${x - 2},40 ${x + 16},40 ${x + 7},22`} />
+        </g>
+      ))}
+      {[20, 34, 48, 104, 118, 132].map((x) => (
+        <g key={x}>
+          <Arch x={x} y={68} w={6} h={12} />
+          <Arch x={x} y={92} w={6} h={12} />
+        </g>
+      ))}
+      <Arch x={71} y={104} w={18} h={16} />
+    </Svg>
+  );
+}
+
+// TN008 Ramanathaswamy Temple, Rameswaram: two gopurams and the long pillared corridor
+function RamanathaswamyTemple() {
+  const gopuram = (cx: number) =>
+    [44, 38, 32, 26, 20].map((w, i) => {
+      const y = 100 - (i + 1) * 12;
+      return (
+        <g key={`${cx}-${i}`}>
+          <rect x={cx - w / 2} y={y} width={w} height={12} />
+          <rect x={cx - w / 2 - 2} y={y} width={w + 4} height={2.5} />
+          {w >= 26 && <Arch x={cx - 2.5} y={y + 3} w={5} h={8} />}
+        </g>
+      );
+    });
+  return (
+    <Svg vb="0 0 180 110">
+      <rect x="2" y="100" width="176" height="10" />
+      {gopuram(26)}
+      <ellipse cx="26" cy="36" rx="9" ry="7" />
+      <rect x="25" y="22" width="2" height="8" />
+      {gopuram(154)}
+      <ellipse cx="154" cy="36" rx="9" ry="7" />
+      <rect x="153" y="22" width="2" height="8" />
+      <rect x="40" y="64" width="100" height="7" />
+      <rect x="44" y="70" width="92" height="30" />
+      {Array.from({ length: 15 }, (_, i) => (
+        <rect key={i} x={48 + i * 5.8} y={74} width={2.4} height={26} className="lit" />
+      ))}
+      <rect x="80" y="58" width="20" height="7" />
+      <ellipse cx="90" cy="58" rx="12" ry="9" />
+    </Svg>
+  );
+}
+
+// DE005 Berlin Cathedral: a great dome with four corner towers
+function BerlinCathedral() {
+  return (
+    <Svg vb="0 0 150 120">
+      <rect x="4" y="108" width="142" height="10" />
+      <rect x="40" y="100" width="70" height="8" />
+      <rect x="10" y="64" width="130" height="7" />
+      <rect x="14" y="70" width="122" height="38" />
+      <rect x="52" y="44" width="46" height="22" />
+      {Array.from({ length: 6 }, (_, i) => (
+        <Arch key={i} x={56 + i * 7.2} y={49} w={4} h={13} />
+      ))}
+      <path d="M50 44A25 30 0 0 1 100 44z" />
+      <rect x="70" y="4" width="10" height="10" />
+      <rect x="74" y="0" width="2" height="5" />
+      {[14, 116].map((x) => (
+        <g key={x}>
+          <rect x={x} y={46} width={20} height={20} />
+          <ellipse cx={x + 10} cy={46} rx={10} ry={9} />
+        </g>
+      ))}
+      {Array.from({ length: 7 }, (_, i) => (
+        <Arch key={i} x={26 + i * 14} y={80} w={6} h={18} />
+      ))}
+    </Svg>
+  );
+}
+
+// TN017 Rockfort Temple, Tiruchirappalli: a temple on top of an ancient rock
+function RockfortTemple() {
+  return (
+    <Svg vb="0 0 140 130">
+      <rect x="0" y="122" width="140" height="8" />
+      <polygon points="6,122 18,84 34,70 52,56 72,40 98,34 112,52 124,80 134,122" />
+      {Array.from({ length: 8 }, (_, i) => (
+        <rect key={i} x={24 + i * 8} y={108 - i * 9} width={5} height={2.5} className="lit" />
+      ))}
+      <rect x="82" y="20" width="26" height="14" />
+      <rect x="86" y="12" width="18" height="8" />
+      <rect x="90" y="6" width="10" height="6" />
+      <circle cx="95" cy="4" r="2.5" />
+      <rect x="108" y="26" width="12" height="8" />
+    </Svg>
+  );
+}
+
+// DE017 Wartburg Castle, Eisenach: a hall and keep above the hill
+function Wartburg() {
+  return (
+    <Svg vb="0 0 160 120">
+      <rect x="0" y="112" width="160" height="8" />
+      <polygon points="0,120 14,96 40,82 80,76 120,80 146,94 160,120" />
+      {Array.from({ length: 10 }, (_, i) => (
+        <rect key={i} x={30 + i * 10} y={72} width={6} height={7} />
+      ))}
+      <rect x="30" y="78" width="100" height="20" />
+      <rect x="44" y="46" width="62" height="34" />
+      <polygon points="40,46 110,46 96,30 54,30" />
+      <polygon points="62,30 74,30 68,20" />
+      <polygon points="84,30 96,30 90,20" />
+      <rect x="108" y="34" width="18" height="46" />
+      <polygon points="106,34 128,34 117,8" />
+      {[50, 62, 74, 86, 98].map((x) => (
+        <Arch key={x} x={x} y={54} w={5} h={9} />
+      ))}
+      <Arch x={114.5} y={46} w={5} h={9} />
+    </Svg>
+  );
+}
+
 /* ---------- Placeholders by building type, for places not drawn yet ---------- */
 
 function PlaceholderTemple() {
@@ -486,6 +699,14 @@ export const DRAWINGS: Record<string, { w: number; C: ComponentType }> = {
   DE010: { w: 126, C: Roemer },
   DE018: { w: 118, C: Holstentor },
   DE025: { w: 34, C: TvTower },
+  TN008: { w: 150, C: RamanathaswamyTemple },
+  TN009: { w: 124, C: ChettinadPalace },
+  TN017: { w: 108, C: RockfortTemple },
+  TN018: { w: 130, C: NayakkarMahal },
+  DE005: { w: 118, C: BerlinCathedral },
+  DE007: { w: 150, C: CharlottenburgPalace },
+  DE017: { w: 124, C: Wartburg },
+  DE019: { w: 120, C: NewTownHall },
 };
 
 export const drawingFor = (id: string, type: string) => DRAWINGS[id] ?? PLACEHOLDERS[kindOf(type)];

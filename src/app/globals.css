@@ -553,6 +553,85 @@ html[data-lang="en"] .ta-only {
   }
 }
 
+/* snow, balloons, festival, rainbow */
+.sky .flake {
+  position: absolute;
+  top: -10px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.95;
+  animation: flake-fall linear infinite;
+}
+.sky .balloon {
+  position: absolute;
+  animation: balloon-bob ease-in-out infinite alternate;
+}
+.sky .pennant {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 16px solid #d00000;
+  transform-origin: 50% 0;
+  animation: sway 3s ease-in-out infinite;
+}
+.sky .lantern {
+  position: absolute;
+  bottom: 24px;
+  width: 12px;
+  height: 15px;
+  border-radius: 3px 3px 5px 5px;
+  background: #ffb347;
+  box-shadow: 0 0 10px 4px rgba(255, 179, 71, 0.55);
+  animation: lantern-rise linear infinite;
+}
+.sky .rainbow {
+  position: absolute;
+  opacity: 0.7;
+  animation: rainbow-glow 5s ease-in-out infinite;
+}
+@keyframes flake-fall {
+  from {
+    top: -10px;
+    transform: translateX(0);
+  }
+  to {
+    top: 100%;
+    transform: translateX(22px);
+  }
+}
+@keyframes balloon-bob {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(10px, -14px);
+  }
+}
+@keyframes lantern-rise {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+}
+@keyframes rainbow-glow {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
 .pop {
   animation: pop 0.35s ease-out both;
 }

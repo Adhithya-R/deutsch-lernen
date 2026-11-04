@@ -66,6 +66,63 @@ function Bridge() {
   );
 }
 
+
+const Balloon = ({ x, y, w, color, dur, delay }: { x: string; y: number; w: number; color: string; dur: number; delay: number }) => (
+  <svg
+    className="balloon"
+    style={{ left: x, top: y, animationDuration: `${dur}s`, animationDelay: `${-delay}s` }}
+    width={w}
+    height={(w * 44) / 30}
+    viewBox="0 0 30 44"
+    aria-hidden="true"
+  >
+    <path d="M15 0C25 0 30 8 30 15C30 24 21 30 17 34H13C9 30 0 24 0 15C0 8 5 0 15 0z" fill={color} />
+    <path d="M15 0C11 6 10 14 13 34H17C20 14 19 6 15 0z" fill="#fff" opacity="0.75" />
+    <path d="M13 34L12 37M17 34L18 37" stroke="#5f3010" strokeWidth="0.8" />
+    <rect x="11.5" y="37" width="7" height="5" fill="#5f3010" />
+  </svg>
+);
+
+const Flake = ({ x, s, dur, delay }: { x: string; s: number; dur: number; delay: number }) => (
+  <div className="flake" style={{ left: x, width: s, height: s, animationDuration: `${dur}s`, animationDelay: `${-delay}s` }} aria-hidden="true" />
+);
+
+const Lantern = ({ x, dur, delay }: { x: string; dur: number; delay: number }) => (
+  <div className="lantern" style={{ left: x, animationDuration: `${dur}s`, animationDelay: `${-delay}s` }} aria-hidden="true" />
+);
+
+const PENNANTS = ["#d00000", "#ffce00", "#0f6b64", "#e8470f", "#ffffff", "#8a6500"];
+function Bunting() {
+  // flags hang along a gentle curve from one side to the other
+  const xs = Array.from({ length: 13 }, (_, i) => 4 + i * 7.7);
+  return (
+    <>
+      <svg className="abs" style={{ left: 0, right: 0, top: 0, width: "100%", height: 36 }} viewBox="0 0 100 36" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 2Q50 30 100 2" fill="none" stroke="var(--tab-accd)" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
+      </svg>
+      {xs.map((x, i) => (
+        <div
+          key={i}
+          className="pennant"
+          style={{ left: `${x}%`, top: 2 + 24 * Math.sin((Math.PI * x) / 100) * 0.95, borderTopColor: PENNANTS[i % PENNANTS.length], animationDelay: `${(i % 4) * 0.25}s` }}
+          aria-hidden="true"
+        />
+      ))}
+    </>
+  );
+}
+
+function Rainbow() {
+  const colors = ["#d64545", "#f08a24", "#ffce00", "#4caf50", "#4a90d9"];
+  return (
+    <svg className="abs rainbow" style={{ left: "16%", width: "68%", bottom: 26, height: "78%" }} viewBox="0 0 200 100" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+      {colors.map((c, i) => (
+        <path key={c} d={`M${10 + i * 7} 100A${90 - i * 7} ${90 - i * 7} 0 0 1 ${190 - i * 7} 100`} fill="none" stroke={c} strokeWidth="6" />
+      ))}
+    </svg>
+  );
+}
+
 /** Things behind the buildings (sun, moon, clouds, lamps...). */
 export function SceneBack({ mood }: { mood: Mood }) {
   switch (mood) {
@@ -132,6 +189,49 @@ export function SceneBack({ mood }: { mood: Mood }) {
           <Cloud top={62} w={64} dur={60} delay={25} />
         </>
       );
+    case "snow": // a winter flat visit: soft clouds and a pale sun
+      return (
+        <>
+          <div className="abs" style={{ right: "30%", top: 16, width: 34, height: 34, borderRadius: "50%", background: "#fff3c4", boxShadow: "0 0 0 8px rgba(255,243,196,.5)" }} aria-hidden="true" />
+          <Cloud top={20} w={92} dur={60} dark />
+          <Cloud top={52} w={64} dur={70} delay={30} dark />
+        </>
+      );
+    case "balloons": // a bright morning with hot-air balloons
+      return (
+        <>
+          <svg className="abs rays" style={{ left: "44%", top: 8 }} width="56" height="56" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="13" fill="#ffc93c" />
+            {Array.from({ length: 8 }, (_, i) => (
+              <path key={i} d="M32 4V12" stroke="#ffb300" strokeWidth="3.5" strokeLinecap="round" transform={`rotate(${i * 45} 32 32)`} />
+            ))}
+          </svg>
+          <Balloon x="18%" y={16} w={30} color="#d64545" dur={9} delay={0} />
+          <Balloon x="64%" y={26} w={24} color="#ffce00" dur={11} delay={3} />
+          <Balloon x="76%" y={6} w={28} color="#0f6b64" dur={10} delay={6} />
+        </>
+      );
+    case "festival": // Pongal in Berlin: bunting, floating lanterns, sparkles
+      return (
+        <>
+          <Bunting />
+          <Lantern x="14%" dur={9} delay={0} />
+          <Lantern x="34%" dur={11} delay={4} />
+          <Lantern x="60%" dur={10} delay={2} />
+          <Lantern x="84%" dur={12} delay={7} />
+          <Sparkle x="26%" y={58} d={0} />
+          <Sparkle x="50%" y={74} d={0.9} />
+          <Sparkle x="72%" y={50} d={1.7} />
+        </>
+      );
+    case "rainbow": // after the rain: a rainbow and a clear sky
+      return (
+        <>
+          <Rainbow />
+          <div className="abs" style={{ left: "8%", top: 14, width: 30, height: 30, borderRadius: "50%", background: "#ffc93c", boxShadow: "0 0 0 8px rgba(255,201,60,.28)" }} aria-hidden="true" />
+          <Cloud top={40} w={56} dur={52} delay={12} />
+        </>
+      );
     case "autumn": // Me: a small sun and falling leaves
       return (
         <>
@@ -145,6 +245,14 @@ export function SceneBack({ mood }: { mood: Mood }) {
 /** Things in front of the buildings (rain, falling leaves). */
 export function SceneFront({ mood }: { mood: Mood }) {
   if (mood === "rain") return <div className="rain" aria-hidden="true" />;
+  if (mood === "snow")
+    return (
+      <>
+        {[4, 11, 18, 26, 33, 41, 48, 56, 63, 71, 78, 86, 93].map((x, i) => (
+          <Flake key={x} x={`${x}%`} s={3 + (i % 3) * 1.5} dur={6 + (i % 5)} delay={(i * 1.3) % 7} />
+        ))}
+      </>
+    );
   if (mood === "autumn")
     return (
       <>
