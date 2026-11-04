@@ -4,32 +4,56 @@ import Link from "next/link";
 import { useActionState } from "react";
 import { login, signup } from "@/app/actions";
 
+const input = "h-12 w-full rounded-xl border border-line bg-white px-4 text-[16px] placeholder:text-muted/70";
+
 export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
   const [state, action, pending] = useActionState(mode === "login" ? login : signup, undefined);
-  const input = "w-full rounded border border-slate-300 p-2";
+  const isLogin = mode === "login";
 
   return (
-    <main className="mx-auto w-full max-w-sm space-y-4 p-4">
-      <h1 className="text-2xl font-bold">{mode === "login" ? "Log in" : "Create account"}</h1>
-      <form action={action} className="space-y-3">
-        {mode === "signup" && (
+    <main className="mx-auto w-full max-w-sm px-4 py-8">
+      <h1 className="text-3xl font-bold tracking-tight">{isLogin ? "Welcome back" : "Create your account"}</h1>
+      <p lang="ta" className="mt-1 text-muted">{isLogin ? "மீண்டும் வருக" : "புதிய கணக்கு உருவாக்குங்கள்"}</p>
+
+      <form action={action} className="mt-6 space-y-3 rounded-3xl border border-line bg-white p-5">
+        {!isLogin && (
           <>
-            <input name="name" placeholder="Your name" className={input} required />
-            <input name="invite" placeholder="Invite code" className={input} required />
+            <label className="block text-sm font-semibold">
+              Your name
+              <input name="name" autoComplete="name" className={`${input} mt-1 font-normal`} required />
+            </label>
+            <label className="block text-sm font-semibold">
+              Invite code
+              <input name="invite" autoComplete="off" className={`${input} mt-1 font-normal`} required />
+            </label>
           </>
         )}
-        <input name="email" type="email" placeholder="Email" className={input} required />
-        <input name="password" type="password" placeholder="Password" className={input} required minLength={8} />
-        {state?.error && <p className="text-sm text-red-600">{state.error}</p>}
-        <button disabled={pending} className="w-full rounded bg-slate-900 p-2 text-white disabled:opacity-50">
-          {pending ? "Please wait…" : mode === "login" ? "Log in" : "Sign up"}
+        <label className="block text-sm font-semibold">
+          Email
+          <input name="email" type="email" autoComplete="email" className={`${input} mt-1 font-normal`} required />
+        </label>
+        <label className="block text-sm font-semibold">
+          Password
+          <input
+            name="password"
+            type="password"
+            autoComplete={isLogin ? "current-password" : "new-password"}
+            minLength={8}
+            className={`${input} mt-1 font-normal`}
+            required
+          />
+        </label>
+        {state?.error && <p role="alert" className="text-sm font-medium text-bad">{state.error}</p>}
+        <button disabled={pending} className="h-12 w-full rounded-full bg-pri font-semibold text-white hover:bg-pri-dark disabled:opacity-50">
+          {pending ? "Please wait…" : isLogin ? "Log in" : "Sign up"}
         </button>
       </form>
-      <p className="text-sm">
-        {mode === "login" ? (
-          <>New here? <Link href="/signup" className="underline">Create an account</Link></>
+
+      <p className="mt-5 text-center text-sm text-muted">
+        {isLogin ? (
+          <>New here? <Link href="/signup" className="font-semibold text-pri underline">Create an account</Link></>
         ) : (
-          <>Already have an account? <Link href="/login" className="underline">Log in</Link></>
+          <>Already have an account? <Link href="/login" className="font-semibold text-pri underline">Log in</Link></>
         )}
       </p>
     </main>

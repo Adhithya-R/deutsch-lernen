@@ -32,8 +32,9 @@ Next.js **16.4** (App Router, TypeScript, Tailwind v4) + Supabase (Postgres + Au
 - `src/content/menu.ts`: the whole navigation. Items with `href` are live; items marked `soon` show a "Soon" badge. Switch an item on by giving it an `href`.
 - `src/lib/srs.ts`: spaced repetition (SM-2 style), pure functions, tested.
 - `src/app/actions.ts`: server actions: signup (checks `INVITE_CODE`), login, logout, `saveProgress`, `reviewCard`.
-- `src/components/`: `SiteNav` (header + dropdown/mobile menu), `AuthLinks`, `AuthForm`, `Quiz`, `DataTable`, `CaseTable`, `FlashcardReview`, `ProgressButton`.
-- Routes: `/`, `/lessons/[slug]`, `/flashcards[?deck=id]`, `/cheatsheets/cases`, `/login`, `/signup`.
+- `src/components/`: `SiteNav` (top bar; section drop-downs on laptops only), `TabBar` (bottom tab bar on phones: Home, Lessons, Cards, Exam, More), `Icon` (the only icon set; no emoji), `Rows` (list rows), `HomeView`, `SpeakButton`, `AuthLinks`, `AuthForm`, `Quiz`, `DataTable`, `CaseTable`, `FlashcardReview`, `ProgressButton`.
+- Routes: `/`, `/lessons`, `/lessons/[slug]`, `/flashcards[?deck=id]`, `/cheatsheets/cases`, `/exam` (coming-soon list), `/more` (account + all other menu items), `/login`, `/signup`.
+- Styling: colour tokens live in `src/app/globals.css` (`@theme`): `pri` orange (darkened for contrast), `peach`, `butter`, `sand`, `line`, `ink`, `muted`, `ok`, `bad`. Font: DM Sans + Noto Sans Tamil. Phone first: min tap size 44-48px, test at 390px. The old green theme (`brand-*`, `cream`, `gold`) is gone.
 - `supabase/migrations/`: SQL run by hand in Supabase SQL Editor. `001_init.sql` (profiles, lesson_progress, trigger). `002_flashcards.sql` (flashcard_state). **Check that 002 has been run in Supabase**; flashcards cannot save without it.
 - `docs/design/`: design mockups (see below).
 
@@ -45,7 +46,7 @@ Next.js **16.4** (App Router, TypeScript, Tailwind v4) + Supabase (Postgres + Au
 - Header with logo and 6-section menu (Lernen, Spickzettel, Wortschatz, Prüfung, Üben, Gruppe) with sub-menus; many sub-items are "Soon".
 - Cases cheat sheet page. Logo in `public/logo.webp`, favicon `src/app/icon.png`.
 
-## Current decision in progress: UI redesign (nothing implemented yet)
+## UI redesign: DONE (direction A, mobile-first) on 2026-11-04. The text below is the history.
 Owner feedback: the logo is fine, but the current theme (green) does not suit the app. They want a **neat, clean, mostly warm-coloured** UI like Google / Microsoft / Meta / Oracle products, and **not** "AI-looking" (no emoji icons, gradients, glow).
 
 Three mockups were made (images in `docs/design/*.webp`; each direction has a home page and a lesson page):

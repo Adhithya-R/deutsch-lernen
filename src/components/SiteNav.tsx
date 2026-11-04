@@ -5,45 +5,38 @@ import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { isLive, menu, type MenuItem } from "@/content/menu";
 
-function Entry({ item, onNavigate, dark }: { item: MenuItem; onNavigate: () => void; dark?: boolean }) {
-  const base = "block rounded px-2 py-1 text-sm leading-snug";
+function Entry({ item, onNavigate }: { item: MenuItem; onNavigate: () => void }) {
+  const base = "block rounded-lg px-3 py-1.5 text-sm leading-snug";
   if (isLive(item)) {
     return (
-      <Link
-        href={item.href!}
-        onClick={onNavigate}
-        className={`${base} ${dark ? "hover:bg-white/10" : "hover:bg-brand-100"}`}
-      >
-        <span className="block">{item.en}</span>
-        <span lang="ta" className="block text-xs opacity-70">{item.ta}</span>
+      <Link href={item.href!} onClick={onNavigate} className={`${base} hover:bg-sand`}>
+        <span className="block font-medium">{item.en}</span>
+        <span lang="ta" className="block text-xs text-muted">{item.ta}</span>
       </Link>
     );
   }
   return (
-    <span aria-disabled="true" className={`${base} cursor-default opacity-50`}>
+    <span aria-disabled="true" className={`${base} cursor-default opacity-55`}>
       <span className="block">
-        {item.en} <em className="ml-1 rounded bg-gold/80 px-1 text-[10px] font-semibold not-italic text-brand-950">Soon</em>
+        {item.en}{" "}
+        <em className="ml-1 rounded bg-butter px-1.5 py-0.5 text-[10px] font-bold not-italic text-butter-ink">Soon</em>
       </span>
-      <span lang="ta" className="block text-xs">{item.ta}</span>
+      <span lang="ta" className="block text-xs text-muted">{item.ta}</span>
     </span>
   );
 }
 
+// Top bar. On phones it shows only the brand and account; navigation is the bottom tab bar.
+// On laptops it also shows the section menus with drop-downs.
 export default function SiteNav({ auth }: { auth: ReactNode }) {
   const [open, setOpen] = useState<string | null>(null);
-  const [mobile, setMobile] = useState(false);
   const bar = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
       if (bar.current && !bar.current.contains(e.target as Node)) setOpen(null);
     };
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setOpen(null);
-        setMobile(false);
-      }
-    };
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(null);
     document.addEventListener("mousedown", onClick);
     document.addEventListener("keydown", onKey);
     return () => {
@@ -52,28 +45,23 @@ export default function SiteNav({ auth }: { auth: ReactNode }) {
     };
   }, []);
 
-  const close = () => {
-    setOpen(null);
-    setMobile(false);
-  };
-
   return (
-    <header ref={bar} className="sticky top-0 z-40 border-b-4 border-gold bg-brand-800 text-cream shadow">
-      <div className="mx-auto flex max-w-6xl items-center gap-2 px-3 py-2 sm:gap-3 sm:px-4">
-        <Link href="/" onClick={close} className="flex shrink-0 items-center gap-2">
-          <Image src="/logo.webp" alt="" width={40} height={40} className="rounded-lg" priority />
-          <span className="whitespace-nowrap text-base font-bold leading-none sm:text-lg">
+    <header ref={bar} className="sticky top-0 z-40 border-b border-line bg-white">
+      <div className="mx-auto flex h-14 max-w-6xl items-center gap-4 px-4 lg:h-16 lg:gap-6 lg:px-8">
+        <Link href="/" onClick={() => setOpen(null)} className="flex shrink-0 items-center gap-2.5">
+          <Image src="/logo.webp" alt="" width={36} height={36} className="rounded-[9px]" priority />
+          <span className="whitespace-nowrap text-lg font-bold tracking-tight">
             <span lang="ta">மொழி</span>-Brücke
           </span>
         </Link>
 
-        <nav aria-label="Main" className="ml-4 hidden flex-1 items-center gap-1 lg:flex">
+        <nav aria-label="Sections" className="ml-2 hidden h-full flex-1 items-stretch lg:flex">
           {menu.map((s, idx) => {
-            const wide = s.groups.length >= 3;
+            const cols = s.groups.length >= 3 ? "w-[46rem] grid-cols-3" : s.groups.length === 2 ? "w-[34rem] grid-cols-2" : "w-[20rem]";
             return (
               <div
                 key={s.id}
-                className="relative"
+                className="relative flex"
                 onMouseEnter={() => setOpen(s.id)}
                 onMouseLeave={() => setOpen((o) => (o === s.id ? null : o))}
               >
@@ -81,27 +69,25 @@ export default function SiteNav({ auth }: { auth: ReactNode }) {
                   aria-expanded={open === s.id}
                   aria-haspopup="true"
                   onClick={() => setOpen(open === s.id ? null : s.id)}
-                  className={`rounded px-3 py-1 text-left hover:bg-white/10 ${open === s.id ? "bg-white/10" : ""}`}
+                  className={`border-b-[3px] px-3.5 text-sm font-medium ${
+                    open === s.id ? "border-pri text-pri" : "border-transparent text-muted hover:text-ink"
+                  }`}
                 >
-                  <span className="block text-sm font-semibold leading-tight">{s.de} ▾</span>
-                  <span lang="ta" className="block text-[11px] leading-tight opacity-75">{s.ta}</span>
+                  {s.de}
+                  <span lang="ta" className="block text-[11px] font-normal leading-none opacity-80">{s.ta}</span>
                 </button>
                 {open === s.id && (
-                  <div
-                    className={`absolute top-full z-50 pt-1 ${idx >= 3 ? "right-0" : "left-0"}`}
-                  >
+                  <div className={`absolute top-full z-50 pt-0 ${idx >= 3 ? "right-0" : "left-0"}`}>
                     <div
-                      className={`grid max-h-[75vh] gap-4 overflow-y-auto rounded-lg border border-brand-700 bg-cream p-4 text-brand-950 shadow-xl ${
-                        wide ? "w-[46rem] grid-cols-3" : s.groups.length === 2 ? "w-[34rem] grid-cols-2" : "w-[20rem]"
-                      }`}
+                      className={`grid max-h-[75vh] gap-4 overflow-y-auto rounded-2xl border border-line bg-white p-4 shadow-xl ${cols}`}
                     >
                       {s.groups.map((g) => (
                         <div key={g.heading}>
-                          <p className="mb-1 border-b-2 border-gold pb-1 text-xs font-bold uppercase tracking-wide text-brand-700">
+                          <p className="mb-1 border-b border-line pb-1 text-[11px] font-bold uppercase tracking-wider text-pri">
                             {g.heading}
                           </p>
                           {g.items.map((i) => (
-                            <Entry key={i.en + i.ta} item={i} onNavigate={close} />
+                            <Entry key={i.en + i.ta} item={i} onNavigate={() => setOpen(null)} />
                           ))}
                         </div>
                       ))}
@@ -113,38 +99,8 @@ export default function SiteNav({ auth }: { auth: ReactNode }) {
           })}
         </nav>
 
-        <div className="ml-auto flex items-center gap-2">
-          {auth}
-          <button
-            aria-label="Menu"
-            aria-expanded={mobile}
-            onClick={() => setMobile(!mobile)}
-            className="rounded border border-cream/40 px-2.5 py-1.5 text-lg leading-none lg:hidden"
-          >
-            {mobile ? "✕" : "☰"}
-          </button>
-        </div>
+        <div className="ml-auto">{auth}</div>
       </div>
-
-      {mobile && (
-        <nav aria-label="Main mobile" className="max-h-[80vh] overflow-y-auto border-t border-white/20 bg-brand-900 px-4 pb-4 lg:hidden">
-          {menu.map((s) => (
-            <details key={s.id} className="border-b border-white/10 py-1">
-              <summary className="cursor-pointer py-2 font-semibold">
-                {s.de} <span lang="ta" className="text-sm font-normal opacity-75">· {s.ta}</span>
-              </summary>
-              {s.groups.map((g) => (
-                <div key={g.heading} className="mb-2 pl-2">
-                  <p className="mt-1 text-xs font-bold uppercase tracking-wide text-gold">{g.heading}</p>
-                  {g.items.map((i) => (
-                    <Entry key={i.en + i.ta} item={i} onNavigate={close} dark />
-                  ))}
-                </div>
-              ))}
-            </details>
-          ))}
-        </nav>
-      )}
     </header>
   );
 }

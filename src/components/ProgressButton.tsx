@@ -2,6 +2,7 @@
 
 import { useTransition } from "react";
 import { saveProgress } from "@/app/actions";
+import Icon from "@/components/Icon";
 
 export default function ProgressButton({ slug, completed }: { slug: string; completed: boolean }) {
   const [pending, start] = useTransition();
@@ -9,9 +10,12 @@ export default function ProgressButton({ slug, completed }: { slug: string; comp
     <button
       disabled={pending}
       onClick={() => start(() => saveProgress(slug, completed ? "in_progress" : "completed", 0))}
-      className="mt-3 rounded border border-slate-300 px-3 py-1 text-sm disabled:opacity-50"
+      className={`inline-flex h-12 items-center gap-2 rounded-full px-6 font-semibold disabled:opacity-50 ${
+        completed ? "bg-ok-bg text-ok" : "bg-pri text-white hover:bg-pri-dark"
+      }`}
     >
-      {completed ? "✓ Completed (tap to undo)" : "Mark as completed"}
+      {completed && <Icon name="checkc" size={20} />}
+      {completed ? "Completed (tap to undo)" : "Mark as completed"}
     </button>
   );
 }

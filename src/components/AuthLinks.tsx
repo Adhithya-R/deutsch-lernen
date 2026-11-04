@@ -8,16 +8,30 @@ export default async function AuthLinks() {
 
   if (!data.user) {
     return (
-      <div className="flex items-center gap-1 text-sm sm:gap-2">
-        <Link href="/login" className="whitespace-nowrap rounded px-2 py-1.5 hover:bg-white/10 sm:px-3">Log in</Link>
-        <Link href="/signup" className="whitespace-nowrap rounded bg-gold px-2.5 py-1.5 font-semibold text-brand-950 sm:px-3">Sign up</Link>
+      <div className="flex items-center gap-1 text-sm font-semibold">
+        <Link href="/login" className="whitespace-nowrap rounded-full px-3 py-2 hover:bg-sand">Log in</Link>
+        <Link href="/signup" className="whitespace-nowrap rounded-full bg-pri px-4 py-2 text-white hover:bg-pri-dark">
+          Sign up
+        </Link>
       </div>
     );
   }
 
+  const { data: profile } = await supabase.from("profiles").select("display_name").maybeSingle();
+  const initial = (profile?.display_name || data.user.email || "?").trim().charAt(0).toUpperCase();
+
   return (
-    <form action={logout}>
-      <button className="whitespace-nowrap rounded border border-cream/40 px-3 py-1.5 text-sm hover:bg-white/10">Log out</button>
-    </form>
+    <div className="flex items-center gap-3">
+      <form action={logout} className="hidden lg:block">
+        <button className="rounded-full border border-line px-4 py-2 text-sm font-semibold hover:bg-sand">Log out</button>
+      </form>
+      <Link
+        href="/more"
+        aria-label="Account"
+        className="grid h-9 w-9 place-items-center rounded-full bg-pri text-sm font-bold text-white"
+      >
+        {initial}
+      </Link>
+    </div>
   );
 }

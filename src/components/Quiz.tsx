@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Icon from "@/components/Icon";
 import type { Exercise } from "@/content/lessons";
 
 const norm = (s: string) => s.trim().toLowerCase();
@@ -9,56 +10,69 @@ export default function Quiz({ exercises }: { exercises: Exercise[] }) {
   const [given, setGiven] = useState<Record<number, string>>({});
   const [checked, setChecked] = useState<Record<number, boolean>>({});
 
-  const correct = exercises.filter((e, i) => checked[i] && norm(given[i] ?? "") === norm(e.answer)).length;
+  const isOk = (i: number) => norm(given[i] ?? "") === norm(exercises[i].answer);
+  const correct = exercises.filter((_, i) => checked[i] && isOk(i)).length;
   const allChecked = exercises.every((_, i) => checked[i]);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       {exercises.map((e, i) => {
-        const isDone = checked[i];
-        const ok = isDone && norm(given[i] ?? "") === norm(e.answer);
+        const done = checked[i];
+        const ok = done && isOk(i);
         return (
-          <div key={i} className="rounded-lg border border-slate-200 p-3">
-            <p className="font-medium">{i + 1}. {e.q}</p>
+          <div key={i} className="rounded-2xl border border-line bg-white p-4">
+            <p className="font-semibold">{i + 1}. {e.q}</p>
+
             {e.options ? (
-              <div className="mt-2 flex flex-wrap gap-2">
-                {e.options.map((o) => (
-                  <button
-                    key={o}
-                    disabled={isDone}
-                    onClick={() => setGiven({ ...given, [i]: o })}
-                    className={`rounded border px-3 py-1 text-sm ${
-                      given[i] === o ? "border-slate-900 bg-slate-900 text-white" : "border-slate-300"
-                    }`}
-                  >
-                    {o}
-                  </button>
-                ))}
+              <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Choose an answer">
+                {e.options.map((o) => {
+                  const sel = given[i] === o;
+                  const state = !done
+                    ? sel ? "border-pri bg-pill text-pri-dark font-semibold" : "border-line hover:border-pri"
+                    : o === e.answer ? "border-ok bg-ok-bg text-ok font-semibold"
+                    : sel ? "border-bad bg-bad-bg text-bad" : "border-line opacity-60";
+                  return (
+                    <button
+                      key={o}
+                      disabled={done}
+                      aria-pressed={sel}
+                      onClick={() => setGiven({ ...given, [i]: o })}
+                      className={`min-h-11 rounded-full border px-5 text-[15px] ${state}`}
+                    >
+                      {o}
+                    </button>
+                  );
+                })}
               </div>
             ) : (
               <input
-                disabled={isDone}
+                disabled={done}
                 value={given[i] ?? ""}
                 onChange={(ev) => setGiven({ ...given, [i]: ev.target.value })}
                 placeholder="Type your answer"
-                className="mt-2 w-full rounded border border-slate-300 p-2 text-sm"
+                autoCapitalize="none"
+                autoCorrect="off"
+                spellCheck={false}
+                className="mt-3 h-12 w-full rounded-xl border border-line bg-white px-4 text-[16px] disabled:bg-sand"
               />
             )}
-            {!isDone ? (
+
+            {!done ? (
               <button
                 disabled={!given[i]}
                 onClick={() => setChecked({ ...checked, [i]: true })}
-                className="mt-2 rounded bg-slate-900 px-3 py-1 text-sm text-white disabled:opacity-40"
+                className="mt-3 h-11 rounded-full bg-pri px-6 text-sm font-semibold text-white hover:bg-pri-dark disabled:opacity-40"
               >
                 Check
               </button>
             ) : (
-              <div className="mt-2 text-sm">
-                <p className={ok ? "text-green-700" : "text-red-600"}>
-                  {ok ? "✓ Richtig!" : `✗ Falsch. Answer: ${e.answer}`}
+              <div className="mt-3 text-sm" role="status">
+                <p className={`flex items-center gap-2 font-semibold ${ok ? "text-ok" : "text-bad"}`}>
+                  <Icon name={ok ? "checkc" : "crossc"} size={18} />
+                  {ok ? "Richtig!" : `Falsch. Answer: ${e.answer}`}
                 </p>
                 {e.tip && (
-                  <p className="text-slate-600">
+                  <p className="mt-1 text-muted">
                     {e.tip.en} <span lang="ta">{e.tip.ta}</span>
                   </p>
                 )}
@@ -68,7 +82,7 @@ export default function Quiz({ exercises }: { exercises: Exercise[] }) {
         );
       })}
       {allChecked && (
-        <p className="rounded-lg bg-slate-100 p-3 font-semibold">
+        <p className="rounded-2xl bg-butter p-4 font-bold text-butter-ink">
           Score: {correct} / {exercises.length}
         </p>
       )}
