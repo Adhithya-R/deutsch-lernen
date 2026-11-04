@@ -53,7 +53,9 @@ Three mockups were made (images in `docs/design/*.webp`; each direction has a ho
 - **B · Fluent Warm** (Microsoft style): left sidebar, breadcrumb bar, "On this page" panel, flat cards, burnt orange `#C8400A` on warm grey `#F6F2EC`, Inter.
 - **C · Redwood** (Oracle style): top bar, sand hero, hairlines, rust `#B5421C`, IBM Plex Sans.
 
-Recommendation given: **B** (sidebar scales to many sections and turns into a slide-out on phones); A as second choice. **Owner has not chosen yet.**
+**Update: most users (the friends) will use PHONES.** So the design must be mobile-first. New recommendation: **A's friendly tonal cards + a bottom tab bar** (Home, Lessons, Cards, Exam, More), with thumb-sized buttons (min 48px). A phone mockup is in `docs/design/mobile-A.webp` (Home, Lesson, Flashcard, More menu). On laptops, B's layout (sidebar) can be the wide-screen version. Phones are the priority; test at 390px width.
+
+Earlier recommendation (before the phone-first note): **B** (sidebar scales to many sections and turns into a slide-out on phones); A as second choice. **Owner has not made the final choice yet (waiting on their reply to the phone mockup).**
 Open questions for the owner: which direction (or mix); make a warm (cream/rust) version of the logo, or keep the green one as a small mark; dark mode now or later; phone mockup before building.
 Build plan after choosing: (1) design tokens in `globals.css`, (2) shared components, (3) nav + home, (4) lesson, flashcards, login, cheat sheets restyled, (5) phone layout tested at 390px. Push after each step. Use simple line SVG icons only.
 
