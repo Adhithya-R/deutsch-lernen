@@ -8,17 +8,17 @@ export type Card = {
 };
 
 export const decks = [
-  { id: "greetings", en: "Greetings", ta: "வாழ்த்துகள்" },
-  { id: "family", en: "Family", ta: "குடும்பம்" },
-  { id: "food", en: "Food and drink", ta: "உணவு, பானம்" },
-  { id: "places", en: "Home and places", ta: "வீடு, இடங்கள்" },
-  { id: "time", en: "Time", ta: "நேரம்" },
-  { id: "verbs", en: "Common verbs", ta: "முக்கிய வினைகள்" },
-  { id: "home", en: "Flat and furniture", ta: "வீடு, பொருட்கள்" },
-  { id: "market", en: "Market and shopping", ta: "சந்தை, கடை" },
-  { id: "numbers", en: "Numbers", ta: "எண்கள்" },
-  { id: "days", en: "Days of the week", ta: "வார நாட்கள்" },
-  { id: "festival", en: "Festival and invitations", ta: "திருவிழா, அழைப்பு" },
+  { id: "greetings", en: "Greetings", ta: "வாழ்த்துகள்", sky: ["TN010", "DE024"] as [string, string], mood: "dawn" as const },
+  { id: "family", en: "Family", ta: "குடும்பம்", sky: ["TN022", "DE013"] as [string, string], mood: "noon" as const },
+  { id: "food", en: "Food and drink", ta: "உணவு, பானம்", sky: ["TN025", "DE016"] as [string, string], mood: "steam" as const },
+  { id: "places", en: "Home and places", ta: "வீடு, இடங்கள்", sky: ["TN014", "DE012"] as [string, string], mood: "evening" as const },
+  { id: "time", en: "Time", ta: "நேரம்", sky: ["TN015", "DE014"] as [string, string], mood: "sunset" as const },
+  { id: "verbs", en: "Common verbs", ta: "முக்கிய வினைகள்", sky: ["TN019", "DE009"] as [string, string], mood: "rainbow" as const },
+  { id: "home", en: "Flat and furniture", ta: "வீடு, பொருட்கள்", sky: ["TN023", "DE021"] as [string, string], mood: "snow" as const },
+  { id: "market", en: "Market and shopping", ta: "சந்தை, கடை", sky: ["TN024", "DE015"] as [string, string], mood: "balloons" as const },
+  { id: "numbers", en: "Numbers", ta: "எண்கள்", sky: ["TN013", "DE011"] as [string, string], mood: "confetti" as const },
+  { id: "days", en: "Days of the week", ta: "வார நாட்கள்", sky: ["TN020", "DE008"] as [string, string], mood: "autumn" as const },
+  { id: "festival", en: "Festival and invitations", ta: "திருவிழா, அழைப்பு", sky: ["TN008", "DE005"] as [string, string], mood: "festival" as const },
 ];
 
 const c = (deck: string, id: string, de: string, en: string, ta: string, example?: Card["example"]): Card => ({

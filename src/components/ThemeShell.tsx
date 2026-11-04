@@ -8,7 +8,7 @@ import { tabFor } from "@/lib/tabs";
 // Sets the colour world for the current tab and hosts the page chrome.
 export default function ThemeShell({ header, footer, children }: { header: ReactNode; footer: ReactNode; children: ReactNode }) {
   const pathname = usePathname();
-  const focus = pathname.startsWith("/learn/"); // story and chapter check hide the chrome
+  const focus = pathname.startsWith("/learn/") || pathname.startsWith("/flashcards/"); // story and chapter check hide the chrome
   return (
     <div data-tab={tabFor(pathname)} className="flex min-h-dvh flex-col" style={{ background: "var(--tab-bg)" }}>
       {!focus && header}

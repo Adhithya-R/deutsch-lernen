@@ -1,79 +1,95 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import FlashcardReview from "@/components/FlashcardReview";
+import Icon from "@/components/Icon";
+import PageNav from "@/components/PageNav";
 import ScreenTop from "@/components/ScreenTop";
 import { cards, decks } from "@/content/vocab";
-import { createClient } from "@/lib/supabase/server";
+import { getSession } from "@/lib/supabase/session";
 
 export const metadata = { title: "Words · மொழி-Brücke" };
 
-const NEW_PER_SESSION = 10;
-const MAX_SESSION = 30;
+type Stat = { started: number; due: number };
 
-export default function FlashcardsPage({ searchParams }: PageProps<"/flashcards">) {
+export default function FlashcardsPage() {
   return (
     <main className="mx-auto w-full max-w-md lg:max-w-xl">
-      <Suspense fallback={<ScreenTop tab="words" kicker="Flashcards" title="Words" />}>
-        <Session searchParams={searchParams} />
-      </Suspense>
+      <ScreenTop tab="words" kicker="Flashcards" title="Words" />
+      <div className="px-4 pb-6">
+        <Suspense fallback={<Decks stats={null} loggedIn={false} dueTotal={0} />}>
+          <Loader />
+        </Suspense>
+        <PageNav back={{ href: "/", label: "Home" }} next={{ href: "/exam", label: "Exam" }} />
+      </div>
     </main>
   );
 }
 
-async function Session({ searchParams }: { searchParams: PageProps<"/flashcards">["searchParams"] }) {
-  const sp = await searchParams;
-  const deckParam = typeof sp.deck === "string" ? sp.deck : undefined;
-  const deck = decks.find((d) => d.id === deckParam);
-  const pool = deck ? cards.filter((c) => c.deck === deck.id) : cards;
-
-  const chip = (on: boolean) =>
-    `shrink-0 whitespace-nowrap rounded-full border-2 border-b-4 px-4 py-2 text-sm font-extrabold ${on ? "border-pri bg-pill text-pri-dark" : "border-line bg-white text-muted"}`;
-
-  const header = (
-    <>
-      <ScreenTop tab="words" kicker={deck ? "Deck" : "Flashcards"} title={deck ? deck.en : "Words"} />
-      <div className="mt-3 flex gap-2 overflow-x-auto px-4 pb-1">
-        <Link href="/flashcards" className={chip(!deck)}>All words</Link>
-        {decks.map((d) => (
-          <Link key={d.id} href={`/flashcards?deck=${d.id}`} className={chip(deck?.id === d.id)}>{d.en}</Link>
-        ))}
-      </div>
-    </>
-  );
-
-  const supabase = await createClient();
-  const { data: auth } = await supabase.auth.getUser();
-  if (!auth.user) {
-    return (
-      <>
-        {header}
-        <p className="mx-4 mt-5 rounded-2xl bg-white p-4 text-muted shadow-[0_3px_0_var(--color-line)]">
-          <Link href="/login" className="font-extrabold text-pri underline">Log in</Link> to study flashcards and save your progress.
-        </p>
-      </>
-    );
+async function Loader() {
+  const { supabase, userId } = await getSession();
+  if (!userId) return <Decks stats={null} loggedIn={false} dueTotal={0} />;
+  const { data } = await supabase.from("flashcard_state").select("card_id,due_at");
+  const now = new Date().getTime();
+  const stats: Record<string, Stat> = {};
+  const deckOf = new Map(cards.map((c) => [c.id, c.deck]));
+  let dueTotal = 0;
+  for (const r of data ?? []) {
+    const d = deckOf.get(String(r.card_id));
+    if (!d) continue;
+    const s = (stats[d] ??= { started: 0, due: 0 });
+    s.started++;
+    if (new Date(String(r.due_at)).getTime() <= now) {
+      s.due++;
+      dueTotal++;
+    }
   }
+  return <Decks stats={stats} loggedIn dueTotal={dueTotal} />;
+}
 
-  const { data: rows } = await supabase.from("flashcard_state").select("card_id,due_at");
-  const states = new Map((rows ?? []).map((r) => [r.card_id as string, new Date(r.due_at as string)]));
-  const now = new Date();
-
-  const due = pool
-    .filter((c) => states.has(c.id) && states.get(c.id)! <= now)
-    .sort((a, b) => states.get(a.id)!.getTime() - states.get(b.id)!.getTime());
-  const fresh = pool.filter((c) => !states.has(c.id)).slice(0, NEW_PER_SESSION);
-  const queue = [...due, ...fresh].slice(0, MAX_SESSION);
-  const started = pool.filter((c) => states.has(c.id)).length;
-
+function Decks({ stats, loggedIn, dueTotal }: { stats: Record<string, Stat> | null; loggedIn: boolean; dueTotal: number }) {
   return (
     <>
-      {header}
-      <div className="px-4">
-        <p className="mt-4 text-sm font-semibold text-muted">
-          {due.length} due · {fresh.length} new · {started} / {pool.length} started
+      {loggedIn ? (
+        dueTotal > 0 ? (
+          <Link href="/flashcards/due" className="mt-4 flex items-center justify-between rounded-3xl bg-pri p-4 text-white shadow-[0_4px_0_var(--color-pri-dark)]">
+            <span>
+              <span className="block text-lg font-extrabold">Review {dueTotal} {dueTotal === 1 ? "word" : "words"}</span>
+              <span className="text-sm opacity-90">These are ready to be repeated now.</span>
+            </span>
+            <Icon name="arrow" size={24} />
+          </Link>
+        ) : (
+          <p className="mt-4 rounded-2xl bg-white p-4 text-sm text-muted shadow-[0_3px_0_var(--color-line)]">
+            No words to review right now. Learn a new deck below.
+          </p>
+        )
+      ) : (
+        <p className="mt-4 rounded-2xl bg-white p-4 text-sm text-muted shadow-[0_3px_0_var(--color-line)]">
+          You can try every deck. <Link href="/login" className="font-extrabold text-pri underline">Log in</Link> to save progress and earn XP.
         </p>
-        <FlashcardReview key={deck?.id ?? "all"} cards={queue} total={queue.length} />
-      </div>
+      )}
+
+      <h2 className="mt-6 text-xl font-extrabold">Choose a deck</h2>
+      <ul className="mt-3 grid grid-cols-2 gap-3">
+        {decks.map((d) => {
+          const total = cards.filter((c) => c.deck === d.id).length;
+          const s = stats?.[d.id];
+          const pct = s ? Math.min(100, Math.round((s.started / total) * 100)) : 0;
+          return (
+            <li key={d.id}>
+              <Link href={`/flashcards/${d.id}`} className="flex h-full flex-col justify-between rounded-2xl border-2 border-line bg-white p-3.5 shadow-[0_3px_0_var(--color-line)] active:translate-y-0.5">
+                <span>
+                  <span className="block font-extrabold leading-tight">{d.en}</span>
+                  <span lang="ta" className="ta-only block text-sm text-muted">{d.ta}</span>
+                </span>
+                <span className="mt-3 block">
+                  <span className="block h-2 overflow-hidden rounded-full bg-black/10"><span className="block h-full rounded-full bg-pri" style={{ width: `${pct}%` }} /></span>
+                  <span className="mt-1 block text-xs font-bold text-muted">{loggedIn ? `${s?.started ?? 0} / ${total} learned` : `${total} words`}</span>
+                </span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     </>
   );
 }
