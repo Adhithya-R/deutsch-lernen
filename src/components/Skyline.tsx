@@ -1,21 +1,18 @@
-// Animated skyline pairing a Tamil Nadu landmark with a German one. Which landmarks come from
-// content/landmarks.json by id; the look is pure SVG + CSS (see globals.css). Colours follow the active tab.
+// Animated skyline pairing a Tamil Nadu landmark with a German one, with the building names on the ground.
+// Which landmarks come from content/landmarks.json by id; the weather is a `mood` (see SkyScenes.tsx).
 import type { ReactNode } from "react";
 import { drawingFor } from "@/components/landmarks";
+import { SceneBack, SceneFront } from "@/components/SkyScenes";
 import SkyInfo from "@/components/SkyInfo";
-import { landmark, type Landmark } from "@/lib/landmarks";
+import { labelName, landmark, type Landmark, type Mood } from "@/lib/landmarks";
 
-export default function Skyline({ ids, height = 150, children }: { ids: string[]; height?: number; children?: ReactNode }) {
-  const k = Math.min(1, (height - 44) / 130);
+export default function Skyline({ ids, mood, height = 150, children }: { ids: string[]; mood: Mood; height?: number; children?: ReactNode }) {
+  const k = Math.min(1, (height - 50) / 130);
   const items = ids.slice(0, 3).map(landmark).filter((l): l is Landmark => !!l);
 
   return (
     <div className="sky" style={{ height }}>
-      <div className="sun" aria-hidden="true" />
-      <div className="cloud" style={{ top: 30, width: 56, animationDuration: "38s" }} aria-hidden="true" />
-      <div className="cloud" style={{ top: 74, width: 44, animationDuration: "52s", animationDelay: "-20s" }} aria-hidden="true" />
-      <svg className="bird" style={{ top: 50, animationDuration: "26s" }} viewBox="0 0 16 8" aria-hidden="true"><path d="M1 6Q4 0 8 5Q12 0 15 6" /></svg>
-      <svg className="bird" style={{ top: 84, animationDuration: "34s", animationDelay: "-12s" }} viewBox="0 0 16 8" aria-hidden="true"><path d="M1 6Q4 0 8 5Q12 0 15 6" /></svg>
+      <SceneBack mood={mood} />
 
       {items.map((l, i) => {
         const { w, C } = drawingFor(l.id, `${l.type} ${l.name}`);
@@ -30,9 +27,22 @@ export default function Skyline({ ids, height = 150, children }: { ids: string[]
         );
       })}
 
-      <div className="flag" aria-hidden="true"><i /><b /><b /><b /></div>
+      <SceneFront mood={mood} />
       <div className="ground" aria-hidden="true" />
       <div className="flagline" aria-hidden="true" />
+
+      {items.map((l, i) => {
+        const last = i === items.length - 1 && items.length > 1;
+        const middle = items.length === 3 && i === 1;
+        const crowded = items.length === 3;
+        const pos = middle ? { left: "36%", maxWidth: "30%" } : last ? { right: "2%", maxWidth: crowded ? "32%" : "46%" } : { left: "2%", maxWidth: crowded ? "34%" : "46%" };
+        return (
+          <span key={l.id} className="lm-label" style={pos} title={`${l.name}, ${l.city}`}>
+            {labelName(l, crowded)}
+          </span>
+        );
+      })}
+
       <SkyInfo items={items} />
       {children}
     </div>

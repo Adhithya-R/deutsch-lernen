@@ -14,6 +14,9 @@ export type Landmark = {
   description: string;
 };
 
+/** Weather / time of day behind a skyline. Every module should use a different one. */
+export type Mood = "dawn" | "noon" | "evening" | "rain" | "sunset" | "autumn";
+
 export const LANDMARKS = data as Landmark[];
 export const landmark = (id: string) => LANDMARKS.find((l) => l.id === id);
 
@@ -29,3 +32,25 @@ export const SKY_IDS: Record<TabId, string[]> = {
   bruecke: ["TN001", "DE004", "DE003"],
   me: ["TN011", "DE018"],
 };
+
+export const SKY_MOOD: Record<TabId, Mood> = {
+  learn: "noon",
+  words: "evening",
+  exam: "rain",
+  bruecke: "sunset",
+  me: "autumn",
+};
+
+// Shorter names for the labels on a skyline (the full name is in the "i" sheet).
+const SHORT: Record<string, string> = {
+  TN011: "Chennai Central",
+  TN021: "Velankanni Basilica",
+  TN012: "Ripon Building",
+  DE019: "New Town Hall",
+  DE015: "St. Michael's",
+};
+export function labelName(l: Landmark, crowded: boolean) {
+  if (SHORT[l.id]) return SHORT[l.id];
+  const n = l.name;
+  return crowded && n.length > 18 ? n.replace(/\s+(Temple|Castle|Palace|Building|Cathedral)$/, "") : n;
+}

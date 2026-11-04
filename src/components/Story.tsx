@@ -18,7 +18,7 @@ export default function Story({ chapter }: { chapter: Chapter }) {
 
   return (
     <div className="mx-auto flex min-h-dvh max-w-md flex-col">
-      <Skyline ids={chapter.landmarks} height={140}>
+      <Skyline ids={chapter.landmarks} mood={chapter.mood} height={150}>
         <div className="absolute inset-x-0 top-0 flex items-center gap-3 px-4 pt-3">
           <Link href="/" aria-label="Close story" className="grid h-10 w-10 place-items-center rounded-xl bg-white/75 text-pri-dark">
             <Icon name="x" size={20} />

@@ -1,3 +1,5 @@
+import type { Mood } from "@/lib/landmarks";
+
 // Story chapters: Priya moves from Madurai to Germany. Each chapter is a short scene, a few tappable
 // words, a culture note, and a check that must be passed to unlock the next chapter.
 
@@ -14,6 +16,7 @@ export type Chapter = {
   slug: string;
   n: number;
   landmarks: [string, string]; // ids from landmarks.json shown in the skyline: [Tamil Nadu, Germany]
+  mood: Mood; // weather / time of day behind the skyline
   title: string; // German title
   sub: string; // English subtitle
   speakers: Record<string, { initial: string; name: string }>;
@@ -29,6 +32,7 @@ export const chapters: Chapter[] = [
     slug: "ankunft",
     n: 1,
     landmarks: ["TN002", "DE010"], // Meenakshi Temple, Römer in Frankfurt
+    mood: "dawn", // arriving at dawn
     title: "Ankunft",
     sub: "Arrival in Frankfurt",
     speakers: { b: { initial: "B", name: "Border officer" }, p: { initial: "P", name: "Priya" } },
@@ -107,6 +111,7 @@ export const chapters: Chapter[] = [
     slug: "neue-freunde",
     n: 2,
     landmarks: ["TN003", "DE001"], // Shore Temple, Brandenburg Gate
+    mood: "noon", // a sunny day with new friends
     title: "Neue Freunde",
     sub: "Introduce yourself",
     speakers: { l: { initial: "L", name: "Lena" }, p: { initial: "P", name: "Priya" } },
