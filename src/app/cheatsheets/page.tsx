@@ -22,7 +22,6 @@ export default function CheatSheetsPage() {
         <Icon name="chev" size={20} className="text-muted" />
       </Link>
 
-      <h2 className="mt-7 text-xl font-extrabold">Grammar lessons</h2>
       <Suspense fallback={<List done={[]} />}>
         <Loaded />
       </Suspense>
@@ -33,9 +32,19 @@ export default function CheatSheetsPage() {
 function List({ done }: { done: string[] }) {
   const d = new Set(done);
   return (
-    <div className="mt-3 grid gap-2.5">
-      {lessons.map((l, i) => <LessonRow key={l.slug} lesson={l} index={i + 1} done={d.has(l.slug)} />)}
-    </div>
+    <>
+      {(["A1", "A2"] as const).map((level) => {
+        const group = lessons.filter((l) => l.level === level);
+        return (
+          <section key={level}>
+            <h2 className="mt-7 text-xl font-extrabold">{level} grammar</h2>
+            <div className="mt-3 grid gap-2.5">
+              {group.map((l, i) => <LessonRow key={l.slug} lesson={l} index={i + 1} done={d.has(l.slug)} />)}
+            </div>
+          </section>
+        );
+      })}
+    </>
   );
 }
 

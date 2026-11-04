@@ -15,10 +15,11 @@ export function generateStaticParams() {
 
 export default async function LessonPage({ params }: PageProps<"/lessons/[slug]">) {
   const { slug } = await params;
-  const index = lessons.findIndex((l) => l.slug === slug);
-  if (index === -1) notFound();
-  const lesson = lessons[index];
-  const next = lessons[index + 1];
+  const lesson = lessons.find((l) => l.slug === slug);
+  if (!lesson) notFound();
+  const sameLevel = lessons.filter((l) => l.level === lesson.level);
+  const index = sameLevel.indexOf(lesson);
+  const next = sameLevel[index + 1];
 
   return (
     <main className="mx-auto w-full max-w-md px-4 pt-4 lg:max-w-xl lg:pt-8">
@@ -27,7 +28,7 @@ export default async function LessonPage({ params }: PageProps<"/lessons/[slug]"
           <Icon name="back" size={18} /> Grammar
         </Link>
         <span aria-hidden="true">·</span>
-        <span>{lesson.level} · Lesson {index + 1} of {lessons.length}</span>
+        <span>{lesson.level} · Lesson {index + 1} of {sameLevel.length}</span>
       </nav>
 
       <header className="mt-2">
