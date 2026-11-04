@@ -42,13 +42,13 @@ export const lessons: Lesson[] = [
       },
     ],
     points: [
-      { de: "Ich bin Anna.", en: "I am Anna.", ta: "நான் அன்னா." },
+      { de: "Ich bin Poovai.", en: "I am Poovai.", ta: "நான் பூவை." },
       { de: "Er wohnt in Berlin.", en: "He lives in Berlin.", ta: "அவன் பெர்லினில் வசிக்கிறான்." },
       { de: "Wie heißen Sie?", en: "What is your name? (formal)", ta: "உங்கள் பெயர் என்ன? (மரியாதையாக)" },
     ],
     exercises: [
       { q: "___ bin müde. (I)", options: ["Ich", "Du", "Er"], answer: "Ich" },
-      { q: "Anna ist meine Freundin. ___ wohnt in Berlin.", options: ["Er", "Sie", "Es"], answer: "Sie" },
+      { q: "Poovai ist meine Freundin. ___ wohnt in Berlin.", options: ["Er", "Sie", "Es"], answer: "Sie" },
       { q: "Raj und ich lernen Deutsch. ___ lernen Deutsch.", options: ["Wir", "Ihr", "Sie"], answer: "Wir" },
       {
         q: "To your teacher: Wie heißen ___?",

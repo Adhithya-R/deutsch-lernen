@@ -1,60 +1,39 @@
 import Link from "next/link";
-import { Suspense } from "react";
 import Icon from "@/components/Icon";
-import { LessonRow } from "@/components/Rows";
-import { lessons } from "@/content/lessons";
-import { createClient } from "@/lib/supabase/server";
+import PageNav from "@/components/PageNav";
+import ScreenTop from "@/components/ScreenTop";
+import { sheets } from "@/content/cheatsheets";
 
 export const metadata = { title: "Cheat sheets · மொழி-Brücke" };
 
+const row = "flex items-center gap-3 rounded-2xl border-2 border-line bg-white p-4 shadow-[0_3px_0_var(--color-line)] hover:border-pri";
+
 export default function CheatSheetsPage() {
   return (
-    <main className="mx-auto w-full max-w-md px-4 pt-4 lg:max-w-xl">
-      <Link href="/" className="inline-flex items-center gap-1 py-2 text-sm font-extrabold text-muted">
-        <Icon name="back" size={18} /> Learn
-      </Link>
-      <h1 className="mt-1 text-3xl font-extrabold">Cheat sheets &amp; grammar</h1>
-      <p className="mt-1 text-muted">Quick tables to check, and short grammar lessons with practice.</p>
-
-      <Link href="/cheatsheets/cases" className="mt-5 flex items-center gap-3 rounded-2xl border-2 border-line bg-white p-4 font-extrabold shadow-[0_3px_0_var(--color-line)] hover:border-pri">
-        <Icon name="table" size={22} className="text-pri" />
-        <span className="flex-1">Cases: Nominativ, Akkusativ, Dativ</span>
-        <Icon name="chev" size={20} className="text-muted" />
-      </Link>
-
-      <Suspense fallback={<List done={[]} />}>
-        <Loaded />
-      </Suspense>
+    <main className="mx-auto w-full max-w-md lg:max-w-xl">
+      <ScreenTop tab="learn" ids={["TN012", "DE020"]} mood="sunset" kicker="Quick tables" title="Cheat sheets" />
+      <div className="flex flex-col gap-2.5 px-4 pt-3">
+        <p className="text-muted">The tables you need, on one page each. Use them while you practise.</p>
+        <Link href="/cheatsheets/cases" className={row}>
+          <Icon name="table" size={22} className="shrink-0 text-pri" />
+          <span className="min-w-0 flex-1">
+            <span className="block font-extrabold">Cases</span>
+            <span className="block text-sm text-muted">Nominativ, Akkusativ, Dativ, prepositions and verbs</span>
+          </span>
+          <Icon name="chev" size={20} className="text-muted" />
+        </Link>
+        {sheets.map((s) => (
+          <Link key={s.slug} href={`/cheatsheets/${s.slug}`} className={row}>
+            <Icon name="table" size={22} className="shrink-0 text-pri" />
+            <span className="min-w-0 flex-1">
+              <span className="block font-extrabold">{s.title}</span>
+              <span className="block text-sm text-muted">{s.desc}</span>
+            </span>
+            <Icon name="chev" size={20} className="text-muted" />
+          </Link>
+        ))}
+        <PageNav back={{ href: "/grammar", label: "Grammar" }} />
+      </div>
     </main>
   );
-}
-
-function List({ done }: { done: string[] }) {
-  const d = new Set(done);
-  return (
-    <>
-      {(["A1", "A2"] as const).map((level) => {
-        const group = lessons.filter((l) => l.level === level);
-        return (
-          <section key={level}>
-            <h2 className="mt-7 text-xl font-extrabold">{level} grammar</h2>
-            <div className="mt-3 grid gap-2.5">
-              {group.map((l, i) => <LessonRow key={l.slug} lesson={l} index={i + 1} done={d.has(l.slug)} />)}
-            </div>
-          </section>
-        );
-      })}
-    </>
-  );
-}
-
-async function Loaded() {
-  const supabase = await createClient();
-  const { data: auth } = await supabase.auth.getUser();
-  let done: string[] = [];
-  if (auth.user) {
-    const { data } = await supabase.from("lesson_progress").select("lesson_slug,status");
-    done = (data ?? []).filter((r) => r.status === "completed").map((r) => String(r.lesson_slug));
-  }
-  return <List done={done} />;
 }

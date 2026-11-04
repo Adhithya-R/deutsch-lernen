@@ -1,7 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { saveDraft } from "@/app/actions";
 import Icon from "@/components/Icon";
+import SaveNote, { type SaveState } from "@/components/SaveNote";
 import SpeakButton from "@/components/SpeakButton";
 import type { WriteTask } from "@/content/exam";
 import { analyse } from "@/lib/writing";
@@ -18,29 +20,44 @@ function Row({ ok, started, children }: { ok: boolean; started: boolean; childre
 
 // A writing task with a word counter, automatic checks (greeting, closing, length), a self-check list and a sample answer.
 // The draft is saved in this browser only.
-export default function WritingCoach({ task }: { task: WriteTask }) {
-  const [text, setText] = useState("");
+export default function WritingCoach({ task, initial, loggedIn }: { task: WriteTask; initial: string; loggedIn: boolean }) {
+  const [text, setText] = useState(initial);
   const [ticked, setTicked] = useState<boolean[]>(task.points.map(() => false));
+  const [save, setSave] = useState<SaveState>(null);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    // load a saved draft after the first paint (localStorage does not exist on the server)
+    if (loggedIn) return; // logged-in drafts come from the server
     const raf = requestAnimationFrame(() => {
       try {
-        setText(localStorage.getItem(KEY(task.id)) ?? "");
+        const v = localStorage.getItem(KEY(task.id));
+        if (v) setText(v);
       } catch {
         // private browsing: no saved draft
       }
     });
     return () => cancelAnimationFrame(raf);
-  }, [task.id]);
+  }, [task.id, loggedIn]);
+
+  useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
 
   function onChange(v: string) {
     setText(v);
-    try {
-      localStorage.setItem(KEY(task.id), v);
-    } catch {
-      // ignore
+    if (!loggedIn) {
+      try {
+        localStorage.setItem(KEY(task.id), v);
+      } catch {
+        // ignore
+      }
+      return;
     }
+    if (timer.current) clearTimeout(timer.current);
+    setSave("saving");
+    timer.current = setTimeout(() => {
+      saveDraft(task.id, v)
+        .then(setSave)
+        .catch(() => setSave({ ok: false, xp: 0, error: "Could not save your draft. Check your connection." }));
+    }, 1200);
   }
 
   const a = analyse(text, task.min, task.max);
@@ -85,6 +102,7 @@ export default function WritingCoach({ task }: { task: WriteTask }) {
           <Icon name={ticked.every(Boolean) ? "checkc" : "chev"} size={18} /> All three points ticked ({ticked.filter(Boolean).length}/3)
         </li>
       </ul>
+      <div className="mt-2">{loggedIn ? <SaveNote state={save} savedText="Draft saved" /> : <p className="text-xs text-muted">Your draft stays on this device. Log in to keep it on every device.</p>}</div>
       <p className="mt-2 text-xs text-muted">These checks cannot judge grammar or whether you answered each point. Compare with the sample answer and ask your teacher.</p>
 
       <details className="mt-3 rounded-2xl bg-pill p-3.5">

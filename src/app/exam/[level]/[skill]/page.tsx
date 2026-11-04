@@ -7,6 +7,7 @@ import PracticeRunner, { type PTask } from "@/components/PracticeRunner";
 import SpeakButton from "@/components/SpeakButton";
 import WritingCoach from "@/components/WritingCoach";
 import { clipKey, levelOf, type LevelContent } from "@/content/exam";
+import { getSession } from "@/lib/supabase/session";
 
 const SKILLS = ["reading", "listening", "writing", "speaking", "mock"] as const;
 const TITLES: Record<string, string> = { reading: "Reading", listening: "Listening", writing: "Writing", speaking: "Speaking", mock: "Mini mock test" };
@@ -40,11 +41,11 @@ async function Inner({ params }: { params: PageProps<"/exam/[level]/[skill]">["p
       <h1 className="mt-1 text-3xl font-extrabold">{TITLES[skill]}</h1>
       <p className="mb-4 mt-1 text-muted">{e.exam}</p>
 
-      {skill === "reading" && <PracticeRunner tasks={readingTasks(e)} />}
+      {skill === "reading" && <PracticeRunner tasks={readingTasks(e)} kind="exam" refId={`${e.level}-reading`} />}
       {skill === "listening" && (
         <>
           <p className="mb-4 rounded-2xl bg-butter p-3.5 text-sm text-butter-ink">Press a button to hear a recording. In the real exam you hear most texts twice. Read the answers first.</p>
-          <PracticeRunner tasks={listeningTasks(e)} />
+          <PracticeRunner tasks={listeningTasks(e)} kind="exam" refId={`${e.level}-listening`} />
         </>
       )}
       {skill === "mock" && (
@@ -52,7 +53,7 @@ async function Inner({ params }: { params: PageProps<"/exam/[level]/[skill]">["p
           <p className="mb-4 rounded-2xl bg-butter p-3.5 text-sm text-butter-ink">
             Reading and listening together, with a timer. Do it without looking at the tips. About 60% would be a pass.
           </p>
-          <PracticeRunner tasks={[...readingTasks(e), ...listeningTasks(e)]} minutes={e.level === "a1" ? 30 : 40} />
+          <PracticeRunner tasks={[...readingTasks(e), ...listeningTasks(e)]} minutes={e.level === "a1" ? 30 : 40} kind="mock" refId={`${e.level}-mock`} />
         </>
       )}
       {skill === "writing" && (
@@ -61,7 +62,7 @@ async function Inner({ params }: { params: PageProps<"/exam/[level]/[skill]">["p
             Not sure how to start? Open the email coach →
           </Link>
           {e.writing.form && <FormPractice task={e.writing.form} />}
-          {e.writing.tasks.map((t) => <WritingCoach key={t.id} task={t} />)}
+          <Drafts level={e} />
         </div>
       )}
       {skill === "speaking" && (
@@ -95,5 +96,22 @@ async function Inner({ params }: { params: PageProps<"/exam/[level]/[skill]">["p
         </div>
       )}
     </main>
+  );
+}
+
+// Writing tasks, each starting from the learner's saved draft
+async function Drafts({ level }: { level: LevelContent }) {
+  const { supabase, userId } = await getSession();
+  const saved = new Map<string, string>();
+  if (userId) {
+    const { data } = await supabase.from("writing_drafts").select("task_id,body").in("task_id", level.writing.tasks.map((t) => t.id));
+    (data ?? []).forEach((r) => saved.set(String(r.task_id), String(r.body)));
+  }
+  return (
+    <>
+      {level.writing.tasks.map((t) => (
+        <WritingCoach key={t.id} task={t} initial={saved.get(t.id) ?? ""} loggedIn={!!userId} />
+      ))}
+    </>
   );
 }

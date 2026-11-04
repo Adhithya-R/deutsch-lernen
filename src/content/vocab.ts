@@ -31,7 +31,7 @@ const c = (deck: string, id: string, de: string, en: string, ta: string, example
 });
 
 export const cards: Card[] = [
-  c("greetings", "hallo", "Hallo", "hello", "வணக்கம்", { de: "Hallo, ich bin Anna.", en: "Hello, I am Anna.", ta: "வணக்கம், நான் அன்னா." }),
+  c("greetings", "hallo", "Hallo", "hello", "வணக்கம்", { de: "Hallo, ich bin Poovai.", en: "Hello, I am Poovai.", ta: "வணக்கம், நான் பூவை." }),
   c("greetings", "morgen", "Guten Morgen", "good morning", "காலை வணக்கம்"),
   c("greetings", "tag", "Guten Tag", "good day / hello", "வணக்கம் (பகல் நேரத்தில்)"),
   c("greetings", "abend", "Guten Abend", "good evening", "மாலை வணக்கம்"),

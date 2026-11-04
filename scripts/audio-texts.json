@@ -5,8 +5,8 @@
   "voice": "m"
  },
  {
-  "key": "hallo-ich-bin-anna",
-  "text": "Hallo, ich bin Anna.",
+  "key": "hallo-ich-bin-poovai",
+  "text": "Hallo, ich bin Poovai.",
   "voice": "m"
  },
  {
@@ -597,7 +597,7 @@
  {
   "key": "guten-tag-hier-ist-mein-pass",
   "text": "Guten Tag. Hier ist mein Pass.",
-  "voice": "f"
+  "voice": "m"
  },
  {
   "key": "danke-woher-kommen-sie",
@@ -607,11 +607,26 @@
  {
   "key": "ich-komme-aus-indien-aus-madurai",
   "text": "Ich komme aus Indien, aus Madurai.",
-  "voice": "f"
+  "voice": "m"
  },
  {
   "key": "willkommen-in-deutschland",
   "text": "Willkommen in Deutschland!",
+  "voice": "m"
+ },
+ {
+  "key": "hallo-adhi-hier-sind-wir",
+  "text": "Hallo Adhi! Hier sind wir!",
+  "voice": "f"
+ },
+ {
+  "key": "willkommen-adhi-wie-war-der-flug",
+  "text": "Willkommen, Adhi! Wie war der Flug?",
+  "voice": "m"
+ },
+ {
+  "key": "er-war-lang-aber-gut-ich-bin-muede",
+  "text": "Er war lang, aber gut. Ich bin müde.",
   "voice": "m"
  },
  {
@@ -650,23 +665,53 @@
   "voice": "m"
  },
  {
-  "key": "hallo-ich-bin-lena-wie-heisst-du",
-  "text": "Hallo! Ich bin Lena. Wie heißt du?",
+  "key": "muede",
+  "text": "müde",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bin-muede",
+  "text": "Ich bin müde.",
+  "voice": "m"
+ },
+ {
+  "key": "guten-morgen-willkommen-im-deutschkurs-wie-heisst-du",
+  "text": "Guten Morgen! Willkommen im Deutschkurs. Wie heißt du?",
   "voice": "f"
  },
  {
-  "key": "hallo-lena-ich-heisse-priya-ich-komme-aus-madurai",
-  "text": "Hallo Lena! Ich heiße Priya. Ich komme aus Madurai.",
+  "key": "ich-heisse-adhi-ich-komme-aus-madurai",
+  "text": "Ich heiße Adhi. Ich komme aus Madurai.",
+  "voice": "m"
+ },
+ {
+  "key": "hallo-adhi-ich-heisse-thanisha-ich-komme-aus-chennai",
+  "text": "Hallo Adhi! Ich heiße Thanisha. Ich komme aus Chennai.",
   "voice": "f"
  },
  {
-  "key": "madurai-wo-ist-das",
-  "text": "Madurai? Wo ist das?",
+  "key": "hallo-ich-bin-mrithula-ich-wohne-in-berlin",
+  "text": "Hallo! Ich bin Mrithula. Ich wohne in Berlin.",
+  "voice": "f"
+ },
+ {
+  "key": "ich-heisse-sudharsan-und-das-ist-ruby-wir-kommen-aus-coimbatore",
+  "text": "Ich heiße Sudharsan. Und das ist Ruby. Wir kommen aus Coimbatore.",
+  "voice": "m"
+ },
+ {
+  "key": "hallo-adhi-wo-liegt-madurai",
+  "text": "Hallo Adhi! Wo liegt Madurai?",
   "voice": "f"
  },
  {
   "key": "in-indien-in-tamil-nadu-dort-gibt-es-einen-grossen-tempel",
   "text": "In Indien, in Tamil Nadu. Dort gibt es einen großen Tempel.",
+  "voice": "m"
+ },
+ {
+  "key": "sehr-gut-jetzt-arbeiten-wir-zusammen",
+  "text": "Sehr gut! Jetzt arbeiten wir zusammen.",
   "voice": "f"
  },
  {
@@ -675,8 +720,8 @@
   "voice": "m"
  },
  {
-  "key": "ich-heisse-priya",
-  "text": "Ich heiße Priya.",
+  "key": "ich-heisse-adhi",
+  "text": "Ich heiße Adhi.",
   "voice": "m"
  },
  {
@@ -687,6 +732,11 @@
  {
   "key": "ich-komme-aus-madurai",
   "text": "Ich komme aus Madurai.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-wohne-in-berlin",
+  "text": "Ich wohne in Berlin.",
   "voice": "m"
  },
  {
@@ -710,24 +760,24 @@
   "voice": "m"
  },
  {
-  "key": "guten-tag-frau-krishnan-willkommen-das-ist-die-wohnung",
-  "text": "Guten Tag, Frau Krishnan! Willkommen. Das ist die Wohnung.",
+  "key": "guten-tag-willkommen-das-ist-die-wohnung",
+  "text": "Guten Tag! Willkommen. Das ist die Wohnung.",
   "voice": "m"
  },
  {
-  "key": "guten-tag-herr-braun-die-wohnung-ist-schoen-wie-viele-zimmer-hat-sie",
-  "text": "Guten Tag, Herr Braun. Die Wohnung ist schön! Wie viele Zimmer hat sie?",
-  "voice": "f"
- },
- {
-  "key": "sie-hat-zwei-zimmer-eine-kueche-und-ein-bad-die-miete-ist-650-euro",
-  "text": "Sie hat zwei Zimmer, eine Küche und ein Bad. Die Miete ist 650 Euro.",
+  "key": "guten-tag-die-wohnung-ist-schoen-wie-viele-zimmer-hat-sie",
+  "text": "Guten Tag. Die Wohnung ist schön! Wie viele Zimmer hat sie?",
   "voice": "m"
  },
  {
-  "key": "ich-brauche-einen-tisch-und-ein-bett-gibt-es-einen-balkon",
-  "text": "Ich brauche einen Tisch und ein Bett. Gibt es einen Balkon?",
-  "voice": "f"
+  "key": "sie-hat-drei-zimmer-eine-kueche-und-ein-bad-die-miete-ist-900-euro",
+  "text": "Sie hat drei Zimmer, eine Küche und ein Bad. Die Miete ist 900 Euro.",
+  "voice": "m"
+ },
+ {
+  "key": "wir-brauchen-drei-betten-und-einen-tisch-gibt-es-einen-balkon",
+  "text": "Wir brauchen drei Betten und einen Tisch. Gibt es einen Balkon?",
+  "voice": "m"
  },
  {
   "key": "ja-der-balkon-ist-klein-aber-sonnig-moechten-sie-die-wohnung-nehmen",
@@ -735,8 +785,13 @@
   "voice": "m"
  },
  {
-  "key": "ja-ich-nehme-die-wohnung-danke",
-  "text": "Ja, ich nehme die Wohnung. Danke!",
+  "key": "ja-wir-nehmen-die-wohnung-danke",
+  "text": "Ja, wir nehmen die Wohnung. Danke!",
+  "voice": "m"
+ },
+ {
+  "key": "glueckwunsch-am-samstag-helfe-ich-euch-beim-umzug",
+  "text": "Glückwunsch! Am Samstag helfe ich euch beim Umzug.",
   "voice": "f"
  },
  {
@@ -785,9 +840,19 @@
   "voice": "m"
  },
  {
+  "key": "der-umzug",
+  "text": "der Umzug",
+  "voice": "m"
+ },
+ {
+  "key": "der-umzug-ist-am-samstag",
+  "text": "Der Umzug ist am Samstag.",
+  "voice": "m"
+ },
+ {
   "key": "guten-morgen-was-darf-es-sein",
   "text": "Guten Morgen! Was darf es sein?",
-  "voice": "f"
+  "voice": "m"
  },
  {
   "key": "guten-morgen-ich-moechte-ein-kilo-aepfel-und-zwei-bananen-bitte",
@@ -797,7 +862,7 @@
  {
   "key": "gern-sonst-noch-etwas",
   "text": "Gern. Sonst noch etwas?",
-  "voice": "f"
+  "voice": "m"
  },
  {
   "key": "ja-wie-viel-kostet-der-tee",
@@ -807,17 +872,17 @@
  {
   "key": "der-tee-kostet-vier-euro-fuenfzig",
   "text": "Der Tee kostet vier Euro fünfzig.",
-  "voice": "f"
+  "voice": "m"
  },
  {
   "key": "dann-nehme-ich-den-tee-auch-wie-viel-ist-das-zusammen",
   "text": "Dann nehme ich den Tee auch. Wie viel ist das zusammen?",
-  "voice": "f"
+  "voice": "m"
  },
  {
   "key": "das-macht-neun-euro-zwanzig-danke-und-einen-schoenen-tag",
   "text": "Das macht neun Euro zwanzig. Danke und einen schönen Tag!",
-  "voice": "f"
+  "voice": "m"
  },
  {
   "key": "was-darf-es-sein",
@@ -850,9 +915,9 @@
   "voice": "m"
  },
  {
-  "key": "hallo-lena-am-sonntag-feiere-ich-pongal-das-ist-ein-erntefest-in-indien",
-  "text": "Hallo Lena! Am Sonntag feiere ich Pongal. Das ist ein Erntefest in Indien.",
-  "voice": "f"
+  "key": "hallo-zusammen-am-sonntag-feiere-ich-pongal-das-ist-ein-erntefest-in-indien",
+  "text": "Hallo zusammen! Am Sonntag feiere ich Pongal. Das ist ein Erntefest in Indien.",
+  "voice": "m"
  },
  {
   "key": "wie-schoen-was-macht-man-bei-pongal",
@@ -862,17 +927,17 @@
  {
   "key": "wir-kochen-suessen-reis-in-einem-topf-der-reis-kocht-ueber-und-wir-rufen-pongalo-pongal",
   "text": "Wir kochen süßen Reis in einem Topf. Der Reis kocht über und wir rufen: Pongalo Pongal!",
-  "voice": "f"
+  "voice": "m"
  },
  {
   "key": "das-klingt-super-um-wie-viel-uhr-beginnt-es",
   "text": "Das klingt super! Um wie viel Uhr beginnt es?",
-  "voice": "f"
+  "voice": "m"
  },
  {
-  "key": "um-zehn-uhr-komm-bitte-puenktlich",
-  "text": "Um zehn Uhr. Komm bitte pünktlich!",
-  "voice": "f"
+  "key": "um-zehn-uhr-kommt-bitte-puenktlich",
+  "text": "Um zehn Uhr. Kommt bitte pünktlich!",
+  "voice": "m"
  },
  {
   "key": "gerne-ich-bringe-kuchen-mit",
@@ -880,9 +945,14 @@
   "voice": "f"
  },
  {
+  "key": "und-shylash-yuvan-medwin-und-kavi-bringen-das-essen-mit",
+  "text": "Und Shylash, Yuvan, Medwin und Kavi bringen das Essen mit.",
+  "voice": "m"
+ },
+ {
   "key": "wunderbar-bis-sonntag",
   "text": "Wunderbar. Bis Sonntag!",
-  "voice": "f"
+  "voice": "m"
  },
  {
   "key": "der-topf-ist-heiss",
@@ -925,8 +995,258 @@
   "voice": "m"
  },
  {
-  "key": "ich-bin-anna",
-  "text": "Ich bin Anna.",
+  "key": "adhi-ich-moechte-idli-kochen-hilfst-du-mir",
+  "text": "Adhi, ich möchte Idli kochen. Hilfst du mir?",
+  "voice": "f"
+ },
+ {
+  "key": "ja-gern-was-brauchen-wir",
+  "text": "Ja, gern! Was brauchen wir?",
+  "voice": "m"
+ },
+ {
+  "key": "wir-brauchen-reis-linsen-und-salz",
+  "text": "Wir brauchen Reis, Linsen und Salz.",
+  "voice": "f"
+ },
+ {
+  "key": "gut-ich-wasche-den-reis-und-die-linsen",
+  "text": "Gut. Ich wasche den Reis und die Linsen.",
+  "voice": "m"
+ },
+ {
+  "key": "hallo-ihr-zwei-mischt-den-teig-und-wartet-bis-morgen",
+  "text": "Hallo, ihr zwei! Mischt den Teig und wartet bis morgen.",
+  "voice": "f"
+ },
+ {
+  "key": "dann-kochen-wir-die-idli-im-dampf",
+  "text": "Dann kochen wir die Idli im Dampf.",
+  "voice": "f"
+ },
+ {
+  "key": "mmm-das-riecht-gut-wer-moechte-idli-essen",
+  "text": "Mmm, das riecht gut! Wer möchte Idli essen?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-und-ich-bringe-chutney-mit",
+  "text": "Ich! Und ich bringe Chutney mit.",
+  "voice": "f"
+ },
+ {
+  "key": "helfen",
+  "text": "helfen",
+  "voice": "m"
+ },
+ {
+  "key": "hilfst-du-mir",
+  "text": "Hilfst du mir?",
+  "voice": "m"
+ },
+ {
+  "key": "die-linsen",
+  "text": "die Linsen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-brauche-linsen",
+  "text": "Ich brauche Linsen.",
+  "voice": "m"
+ },
+ {
+  "key": "der-teig",
+  "text": "der Teig",
+  "voice": "m"
+ },
+ {
+  "key": "der-teig-ist-weich",
+  "text": "Der Teig ist weich.",
+  "voice": "m"
+ },
+ {
+  "key": "der-dampf",
+  "text": "der Dampf",
+  "voice": "m"
+ },
+ {
+  "key": "der-dampf-ist-heiss",
+  "text": "Der Dampf ist heiß.",
+  "voice": "m"
+ },
+ {
+  "key": "guten-morgen-was-machst-du-da",
+  "text": "Guten Morgen! Was machst du da?",
+  "voice": "m"
+ },
+ {
+  "key": "guten-morgen-ich-male-ein-kolam-vor-die-tuer",
+  "text": "Guten Morgen! Ich male ein Kolam vor die Tür.",
+  "voice": "f"
+ },
+ {
+  "key": "was-ist-ein-kolam",
+  "text": "Was ist ein Kolam?",
+  "voice": "m"
+ },
+ {
+  "key": "ein-kolam-ist-ein-muster-aus-reismehl-es-bringt-glueck",
+  "text": "Ein Kolam ist ein Muster aus Reismehl. Es bringt Glück.",
+  "voice": "f"
+ },
+ {
+  "key": "schoen-welche-farben-hast-du",
+  "text": "Schön! Welche Farben hast du?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-weiss-rot-und-gelb",
+  "text": "Ich habe Weiß, Rot und Gelb.",
+  "voice": "f"
+ },
+ {
+  "key": "hallo-rithika-darf-ich-auch-malen",
+  "text": "Hallo Rithika! Darf ich auch malen?",
+  "voice": "f"
+ },
+ {
+  "key": "ja-natuerlich-hier-ist-mehl-fuer-dich",
+  "text": "Ja, natürlich! Hier ist Mehl für dich.",
+  "voice": "m"
+ },
+ {
+  "key": "malen",
+  "text": "malen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-male-ein-bild",
+  "text": "Ich male ein Bild.",
+  "voice": "m"
+ },
+ {
+  "key": "das-muster",
+  "text": "das Muster",
+  "voice": "m"
+ },
+ {
+  "key": "das-muster-ist-schoen",
+  "text": "Das Muster ist schön.",
+  "voice": "m"
+ },
+ {
+  "key": "das-glueck",
+  "text": "das Glück",
+  "voice": "m"
+ },
+ {
+  "key": "viel-glueck",
+  "text": "Viel Glück!",
+  "voice": "m"
+ },
+ {
+  "key": "die-farben",
+  "text": "die Farben",
+  "voice": "m"
+ },
+ {
+  "key": "rot-und-gelb-sind-farben",
+  "text": "Rot und Gelb sind Farben.",
+  "voice": "m"
+ },
+ {
+  "key": "frohes-deepavali-medwin-heute-ist-das-lichterfest",
+  "text": "Frohes Deepavali, Medwin! Heute ist das Lichterfest.",
+  "voice": "m"
+ },
+ {
+  "key": "danke-adhi-frohes-deepavali-die-lichter-sind-sehr-schoen",
+  "text": "Danke, Adhi! Frohes Deepavali! Die Lichter sind sehr schön.",
+  "voice": "m"
+ },
+ {
+  "key": "wir-stellen-viele-kleine-lampen-vor-die-tuer",
+  "text": "Wir stellen viele kleine Lampen vor die Tür.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-suessigkeiten-fuer-alle-nimm-bitte",
+  "text": "Ich habe Süßigkeiten für alle. Nimm bitte!",
+  "voice": "m"
+ },
+ {
+  "key": "mmm-lecker-was-ist-das",
+  "text": "Mmm, lecker! Was ist das?",
+  "voice": "f"
+ },
+ {
+  "key": "das-sind-laddus-sie-sind-suess-und-rund",
+  "text": "Das sind Laddus. Sie sind süß und rund.",
+  "voice": "m"
+ },
+ {
+  "key": "im-dezember-gibt-es-in-berlin-den-weihnachtsmarkt-dort-sind-auch-viele-lichter",
+  "text": "Im Dezember gibt es in Berlin den Weihnachtsmarkt. Dort sind auch viele Lichter.",
+  "voice": "f"
+ },
+ {
+  "key": "stimmt-in-indien-und-in-deutschland-feiern-wir-mit-licht",
+  "text": "Stimmt! In Indien und in Deutschland feiern wir mit Licht.",
+  "voice": "m"
+ },
+ {
+  "key": "das-lichterfest",
+  "text": "das Lichterfest",
+  "voice": "m"
+ },
+ {
+  "key": "deepavali-ist-ein-lichterfest",
+  "text": "Deepavali ist ein Lichterfest.",
+  "voice": "m"
+ },
+ {
+  "key": "die-lampen",
+  "text": "die Lampen",
+  "voice": "m"
+ },
+ {
+  "key": "die-lampen-sind-klein",
+  "text": "Die Lampen sind klein.",
+  "voice": "m"
+ },
+ {
+  "key": "die-suessigkeiten",
+  "text": "die Süßigkeiten",
+  "voice": "m"
+ },
+ {
+  "key": "ich-esse-gern-suessigkeiten",
+  "text": "Ich esse gern Süßigkeiten.",
+  "voice": "m"
+ },
+ {
+  "key": "lecker",
+  "text": "lecker",
+  "voice": "m"
+ },
+ {
+  "key": "das-essen-ist-lecker",
+  "text": "Das Essen ist lecker.",
+  "voice": "m"
+ },
+ {
+  "key": "der-weihnachtsmarkt",
+  "text": "der Weihnachtsmarkt",
+  "voice": "m"
+ },
+ {
+  "key": "wir-gehen-auf-den-weihnachtsmarkt",
+  "text": "Wir gehen auf den Weihnachtsmarkt.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bin-poovai",
+  "text": "Ich bin Poovai.",
   "voice": "m"
  },
  {
@@ -937,11 +1257,6 @@
  {
   "key": "wie-heissen-sie",
   "text": "Wie heißen Sie?",
-  "voice": "m"
- },
- {
-  "key": "ich-bin-muede",
-  "text": "Ich bin müde.",
   "voice": "m"
  },
  {
@@ -1250,23 +1565,23 @@
   "voice": "m"
  },
  {
-  "key": "liebe-julia",
-  "text": "Liebe Julia,",
+  "key": "liebe-rithika",
+  "text": "Liebe Rithika,",
   "voice": "m"
  },
  {
-  "key": "lieber-tom",
-  "text": "Lieber Tom,",
+  "key": "lieber-akshay",
+  "text": "Lieber Akshay,",
   "voice": "m"
  },
  {
-  "key": "sehr-geehrte-frau-weber",
-  "text": "Sehr geehrte Frau Weber,",
+  "key": "sehr-geehrte-frau-kavitha",
+  "text": "Sehr geehrte Frau Kavitha,",
   "voice": "m"
  },
  {
-  "key": "sehr-geehrter-herr-braun",
-  "text": "Sehr geehrter Herr Braun,",
+  "key": "sehr-geehrter-herr-arvind",
+  "text": "Sehr geehrter Herr Arvind,",
   "voice": "m"
  },
  {
@@ -1373,7 +1688,7 @@
   "segments": [
    {
     "voice": "f",
-    "text": "Hallo Peter, hier ist Lisa. Wir treffen uns heute um Viertel nach sechs vor dem Kino. Bis später!"
+    "text": "Hallo Ram, hier ist Ruby. Wir treffen uns heute um Viertel nach sechs vor dem Kino. Bis später!"
    }
   ]
  },
@@ -1407,7 +1722,7 @@
    },
    {
     "voice": "f",
-    "text": "Ich heiße Maria Lopez."
+    "text": "Ich heiße Mrithula."
    },
    {
     "voice": "m",
@@ -1420,18 +1735,18 @@
   ]
  },
  {
-  "key": "liebe-eva-morgen-moechte-ich-einkaufen-treffen-wir-uns-um-10-uhr-vor-dem-supermarkt-ich-br",
-  "text": "Liebe Eva, morgen möchte ich einkaufen. Treffen wir uns um 10 Uhr vor dem Supermarkt? Ich brauche Obst und Brot. Kommst du mit? Viele Grüße, Priya",
+  "key": "liebe-thanisha-morgen-moechte-ich-einkaufen-treffen-wir-uns-um-10-uhr-vor-dem-supermarkt-i",
+  "text": "Liebe Thanisha, morgen möchte ich einkaufen. Treffen wir uns um 10 Uhr vor dem Supermarkt? Ich brauche Obst und Brot. Kommst du mit? Viele Grüße, Sadhana",
   "voice": "f"
  },
  {
-  "key": "lieber-tom-am-samstag-koche-ich-reis-und-curry-kommst-du-um-19-uhr-zu-mir-nach-hause-bring",
-  "text": "Lieber Tom, am Samstag koche ich Reis und Curry. Kommst du um 19 Uhr zu mir nach Hause? Bring bitte ein Getränk mit. Ich freue mich! Liebe Grüße, Priya",
+  "key": "lieber-akshay-am-samstag-koche-ich-reis-und-curry-kommst-du-um-19-uhr-zu-mir-nach-hause-br",
+  "text": "Lieber Akshay, am Samstag koche ich Reis und Curry. Kommst du um 19 Uhr zu mir nach Hause? Bring bitte ein Getränk mit. Ich freue mich! Liebe Grüße, Sadhana",
   "voice": "f"
  },
  {
-  "key": "ich-heisse-priya-krishnan",
-  "text": "Ich heiße Priya Krishnan.",
+  "key": "ich-heisse-sadhana",
+  "text": "Ich heiße Sadhana.",
   "voice": "f"
  },
  {
@@ -1463,11 +1778,6 @@
   "key": "wo-wohnen-sie",
   "text": "Wo wohnen Sie?",
   "voice": "m"
- },
- {
-  "key": "ich-wohne-in-berlin",
-  "text": "Ich wohne in Berlin.",
-  "voice": "f"
  },
  {
   "key": "wann-oeffnet-das-geschaeft",
@@ -1570,7 +1880,7 @@
   "segments": [
    {
     "voice": "f",
-    "text": "Guten Tag, hier ist die Praxis von Doktor Wagner. Sie haben morgen um halb zehn einen Termin. Leider ist der Arzt krank. Können Sie bitte übermorgen um zehn Uhr kommen? Rufen Sie uns bitte zurück. Danke."
+    "text": "Guten Tag, hier ist die Praxis von Doktor Yuvan. Sie haben morgen um halb zehn einen Termin. Leider ist der Arzt krank. Können Sie bitte übermorgen um zehn Uhr kommen? Rufen Sie uns bitte zurück. Danke."
    }
   ]
  },
@@ -1607,18 +1917,18 @@
   ]
  },
  {
-  "key": "liebe-frau-weber-ich-kann-morgen-leider-nicht-kommen-weil-ich-krank-bin-am-donnerstag-komm",
-  "text": "Liebe Frau Weber, ich kann morgen leider nicht kommen, weil ich krank bin. Am Donnerstag komme ich wieder. Können Sie mir bitte die Hausaufgaben schicken? Vielen Dank! Viele Grüße, Priya",
+  "key": "liebe-frau-kavitha-ich-kann-morgen-leider-nicht-kommen-weil-ich-krank-bin-am-donnerstag-ko",
+  "text": "Liebe Frau Kavitha, ich kann morgen leider nicht kommen, weil ich krank bin. Am Donnerstag komme ich wieder. Können Sie mir bitte die Hausaufgaben schicken? Vielen Dank! Viele Grüße, Sadhana",
   "voice": "f"
  },
  {
-  "key": "liebe-julia-vielen-dank-fuer-die-einladung-zu-deiner-party-ich-komme-sehr-gern-weil-ich-di",
-  "text": "Liebe Julia, vielen Dank für die Einladung zu deiner Party! Ich komme sehr gern, weil ich dich lange nicht gesehen habe. Soll ich einen Kuchen oder Getränke mitbringen? Bitte schreib mir kurz. Viele Grüße, Priya",
+  "key": "liebe-rithika-vielen-dank-fuer-die-einladung-zu-deiner-party-ich-komme-sehr-gern-weil-ich-",
+  "text": "Liebe Rithika, vielen Dank für die Einladung zu deiner Party! Ich komme sehr gern, weil ich dich lange nicht gesehen habe. Soll ich einen Kuchen oder Getränke mitbringen? Bitte schreib mir kurz. Viele Grüße, Sadhana",
   "voice": "f"
  },
  {
-  "key": "sehr-geehrter-herr-braun-ich-habe-ihre-anzeige-im-internet-gelesen-und-interessiere-mich-f",
-  "text": "Sehr geehrter Herr Braun, ich habe Ihre Anzeige im Internet gelesen und interessiere mich für die Wohnung. Wie hoch ist die Miete? Kann ich die Wohnung nächste Woche besichtigen? Vielen Dank für Ihre Antwort. Mit freundlichen Grüßen, Priya Krishnan",
+  "key": "sehr-geehrter-herr-arvind-ich-habe-ihre-anzeige-im-internet-gelesen-und-interessiere-mich-",
+  "text": "Sehr geehrter Herr Arvind, ich habe Ihre Anzeige im Internet gelesen und interessiere mich für die Wohnung. Wie hoch ist die Miete? Kann ich die Wohnung nächste Woche besichtigen? Vielen Dank für Ihre Antwort. Mit freundlichen Grüßen, Sadhana",
   "voice": "f"
  },
  {

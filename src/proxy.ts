@@ -20,10 +20,10 @@ export async function proxy(request: NextRequest) {
     },
   );
 
-  await supabase.auth.getUser();
+  await supabase.auth.getClaims(); // checks the token locally and refreshes it when needed
   return response;
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+  matcher: ["/((?!_next/static|_next/image|audio/|favicon.ico|.*\\.(?:png|webp|jpg|jpeg|svg|mp3|json|txt|ico)$).*)"],
 };

@@ -11,8 +11,6 @@ import { audioKey } from "../src/lib/audio-key.ts";
 type Voice = "m" | "f";
 type Item = { key: string; text?: string; voice: Voice; segments?: { voice: Voice; text: string }[] };
 
-// who speaks in the stories: Priya and Lena sound female, the officer, landlord are male, the seller is female
-const STORY_VOICE: Record<string, Voice> = { p: "f", l: "f", b: "m", v: "m", m: "f" };
 
 const items = new Map<string, Item>();
 const add = (text: string | undefined, voice: Voice = "m") => {
@@ -32,7 +30,7 @@ cards.forEach((c) => {
   add(c.example?.de);
 });
 chapters.forEach((ch) => {
-  ch.lines.forEach((l) => add(l.parts.map((p) => (typeof p === "string" ? p : p.t)).join(""), STORY_VOICE[l.who] ?? "m"));
+  ch.lines.forEach((l) => add(l.parts.map((p) => (typeof p === "string" ? p : p.t)).join(""), ch.speakers[l.who].gender));
   Object.values(ch.words).forEach((w) => {
     add(w.de);
     add(w.ex);

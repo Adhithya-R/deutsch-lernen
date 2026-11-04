@@ -5,6 +5,7 @@ import { exams, clipKey } from "../src/content/exam.ts";
 import { cards, decks } from "../src/content/vocab.ts";
 import { analyse, fieldOk } from "../src/lib/writing.ts";
 import { readFileSync } from "node:fs";
+import { NAMES } from "../src/content/people.ts";
 
 const LANDMARK_IDS = new Set((JSON.parse(readFileSync(new URL("../src/content/landmarks.json", import.meta.url), "utf8")) as { id: string }[]).map((l) => l.id));
 const landmark = (id: string) => LANDMARK_IDS.has(id);
@@ -37,6 +38,13 @@ for (const c of chapters) {
   });
   c.landmarks.forEach((id) => !landmark(id) && bad(`chapter ${c.slug}: unknown landmark ${id}`));
 }
+chapters.forEach((c) => Object.entries(c.speakers).forEach(([k, sp]) => !["m", "f"].includes(sp.gender) && bad(`chapter ${c.slug}: speaker ${k} has no gender`)));
+const storyText = JSON.stringify(chapters);
+NAMES.forEach((n) => !storyText.includes(n) && bad(`classmate ${n} is not in any story`));
+const OLD = /\b(Tom|Priya|Nina|Maria|Julia|Anna|Eva|Jan|Katja|Peter|Lisa|Weber|Keller|Braun|Krishnan|Lopez|Müller|Wagner|Lena)\b/;
+const allText = JSON.stringify([chapters, lessons, cards, exams]);
+const oldHit = allText.match(OLD);
+if (oldHit) bad(`old name still used: ${oldHit[0]}`);
 const moods = chapters.map((c) => c.mood);
 if (new Set(moods).size !== moods.length) bad("two chapters share a mood: " + moods.join(","));
 const pairs = chapters.map((c) => c.landmarks.join("+"));

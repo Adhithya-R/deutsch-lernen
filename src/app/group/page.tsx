@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import Icon from "@/components/Icon";
 import ScreenTop from "@/components/ScreenTop";
-import { createClient } from "@/lib/supabase/server";
+import { getSession } from "@/lib/supabase/session";
 
 export const metadata = { title: "Study group · மொழி-Brücke" };
 
@@ -25,9 +25,8 @@ export default function GroupPage() {
 type Row = { display_name: string; xp: number; is_me: boolean };
 
 async function Board() {
-  const supabase = await createClient();
-  const { data: auth } = await supabase.auth.getUser();
-  if (!auth.user) {
+  const { supabase, userId } = await getSession();
+  if (!userId) {
     return (
       <p className="mt-4 rounded-2xl bg-white p-4 text-muted shadow-[0_3px_0_var(--color-line)]">
         <Link href="/login" className="font-extrabold text-pri underline">Log in</Link> to see how your study group is doing this week.

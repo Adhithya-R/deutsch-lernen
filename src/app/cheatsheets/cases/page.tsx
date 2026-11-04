@@ -1,7 +1,6 @@
-import Link from "next/link";
 import CaseTable from "@/components/CaseTable";
 import DataTable from "@/components/DataTable";
-import Icon from "@/components/Icon";
+import PageNav from "@/components/PageNav";
 import { definiteArticles, indefiniteArticles } from "@/content/lessons";
 
 export const metadata = { title: "Cases cheat sheet · மொழி-Brücke" };
@@ -9,9 +8,7 @@ export const metadata = { title: "Cases cheat sheet · மொழி-Brücke" };
 export default function CasesPage() {
   return (
     <main className="mx-auto w-full max-w-md px-4 pt-4 lg:max-w-xl lg:pt-8">
-      <Link href="/cheatsheets" className="inline-flex items-center gap-1 py-2 text-sm font-extrabold text-muted hover:text-ink">
-        <Icon name="back" size={18} /> Cheat sheets
-      </Link>
+      
       <h1 className="mt-2 text-[28px] font-bold leading-tight tracking-tight">Cases cheat sheet</h1>
       <p lang="ta" className="ta-only mt-1 text-lg font-medium text-pri">வேற்றுமை குறிப்பு அட்டவணை</p>
 
@@ -53,6 +50,7 @@ export default function CasesPage() {
       <p className="mt-5 text-sm text-muted">
         Tamil case endings are only a rough guide. German cases are shown by the article, not by an ending on the noun.
       </p>
+      <PageNav back={{ href: "/cheatsheets", label: "Cheat sheets" }} next={{ href: "/cheatsheets/articles", label: "Articles" }} />
     </main>
   );
 }

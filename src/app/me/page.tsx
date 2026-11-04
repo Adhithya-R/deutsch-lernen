@@ -4,7 +4,7 @@ import { logout } from "@/app/actions";
 import Icon from "@/components/Icon";
 import LangToggle from "@/components/LangToggle";
 import ScreenTop from "@/components/ScreenTop";
-import { createClient } from "@/lib/supabase/server";
+import { getSession } from "@/lib/supabase/session";
 
 export const metadata = { title: "Me · மொழி-Brücke" };
 
@@ -41,10 +41,9 @@ export default function MePage() {
 }
 
 async function Account() {
-  const supabase = await createClient();
-  const { data } = await supabase.auth.getUser();
+  const { supabase, userId, email } = await getSession();
 
-  if (!data.user) {
+  if (!userId) {
     return (
       <section className={card}>
         <p className="text-muted">Log in to save your progress, flashcards and unlocked chapters.</p>
@@ -65,7 +64,7 @@ async function Account() {
       </span>
       <div className="min-w-0 flex-1">
         <p className="font-extrabold">{name}</p>
-        <p className="truncate text-sm text-muted">{data.user.email}</p>
+        <p className="truncate text-sm text-muted">{email}</p>
       </div>
       <form action={logout}>
         <button className="inline-flex h-11 items-center gap-2 rounded-xl border-2 border-line px-3 text-sm font-extrabold">

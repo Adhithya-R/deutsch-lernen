@@ -224,6 +224,36 @@ export function SceneBack({ mood }: { mood: Mood }) {
           <Sparkle x="72%" y={50} d={1.7} />
         </>
       );
+    case "steam": // Idli for all: a warm sky with rising steam puffs
+      return (
+        <>
+          <div className="abs" style={{ right: "14%", top: 14, width: 32, height: 32, borderRadius: "50%", background: "#ffd98a", boxShadow: "0 0 0 8px rgba(255,217,138,.4)" }} aria-hidden="true" />
+          {[18, 36, 54, 72].map((x, i) => (
+            <span key={x} className="puff" style={{ left: `${x}%`, animationDelay: `${i * 0.9}s` }} aria-hidden="true" />
+          ))}
+          <Cloud top={30} w={60} dur={55} delay={8} />
+        </>
+      );
+    case "confetti": // Kolam: colour dots drifting down
+      return (
+        <>
+          <div className="abs" style={{ left: "10%", top: 14, width: 32, height: 32, borderRadius: "50%", background: "#ffc93c", boxShadow: "0 0 0 8px rgba(255,201,60,.3)" }} aria-hidden="true" />
+          {["#d64545", "#ffce00", "#0f6b64", "#f08a24", "#4a90d9", "#e0457b", "#4caf50", "#d64545"].map((c, i) => (
+            <span key={i} className="conf" style={{ left: `${8 + i * 11}%`, background: c, animationDelay: `${(i * 0.7) % 4}s`, animationDuration: `${5 + (i % 3)}s` }} aria-hidden="true" />
+          ))}
+        </>
+      );
+    case "fireworks": // Deepavali: a night sky with bursts
+      return (
+        <>
+          <div className="abs" style={{ inset: 0, background: "linear-gradient(#26264a,#4a3a6a 80%)", opacity: 0.55 }} aria-hidden="true" />
+          {[[22, 20], [50, 34], [76, 18]].map(([x, y], i) => (
+            <span key={x} className="burst" style={{ left: `${x}%`, top: y, animationDelay: `${i * 1.2}s` }} aria-hidden="true" />
+          ))}
+          <Sparkle x="12%" y={60} d={0.4} />
+          <Sparkle x="88%" y={52} d={1.4} />
+        </>
+      );
     case "rainbow": // after the rain: a rainbow and a clear sky
       return (
         <>

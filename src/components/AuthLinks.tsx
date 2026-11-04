@@ -1,11 +1,10 @@
 import Link from "next/link";
-import { createClient } from "@/lib/supabase/server";
+import { getSession } from "@/lib/supabase/session";
 
 export default async function AuthLinks() {
-  const supabase = await createClient();
-  const { data } = await supabase.auth.getUser();
+  const { supabase, userId, email } = await getSession();
 
-  if (!data.user) {
+  if (!userId) {
     return (
       <div className="flex items-center gap-1 text-sm font-extrabold">
         <Link href="/login" className="whitespace-nowrap rounded-xl px-3 py-2 hover:bg-sand">Log in</Link>
@@ -17,7 +16,7 @@ export default async function AuthLinks() {
   }
 
   const { data: profile } = await supabase.from("profiles").select("display_name").maybeSingle();
-  const initial = (profile?.display_name || data.user.email || "?").trim().charAt(0).toUpperCase();
+  const initial = (profile?.display_name || email || "?").trim().charAt(0).toUpperCase();
 
   return (
     <Link

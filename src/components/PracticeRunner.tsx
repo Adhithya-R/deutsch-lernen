@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { saveQuiz } from "@/app/actions";
 import Icon from "@/components/Icon";
+import SaveNote, { type SaveState } from "@/components/SaveNote";
 import type { Item, Text } from "@/content/exam";
+import { localDay } from "@/lib/activity";
 
 export type PTask = {
   id: string;
@@ -16,11 +19,12 @@ export type PTask = {
 const fmt = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
 // Reading, listening and mock-test practice: answer everything, then check. Marked here in the browser (practice only).
-export default function PracticeRunner({ tasks, minutes }: { tasks: PTask[]; minutes?: number }) {
+export default function PracticeRunner({ tasks, minutes, kind, refId }: { tasks: PTask[]; minutes?: number; kind: "exam" | "mock"; refId: string }) {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [checked, setChecked] = useState(false);
   const [plays, setPlays] = useState<Record<string, number>>({});
   const [audioError, setAudioError] = useState(false);
+  const [note, setNote] = useState<SaveState>(null);
   const [left, setLeft] = useState(minutes ? minutes * 60 : 0);
   const current = useRef<HTMLAudioElement | null>(null);
 
@@ -46,7 +50,17 @@ export default function PracticeRunner({ tasks, minutes }: { tasks: PTask[]; min
     );
   }
 
+  function finish() {
+    setChecked(true);
+    const right = all.filter((a) => answers[a.id] === a.it.answer).length;
+    setNote("saving");
+    saveQuiz(kind, refId, right, all.length, localDay())
+      .then(setNote)
+      .catch(() => setNote({ ok: false, xp: 0, error: "Could not save. Check your connection." }));
+  }
+
   function reset() {
+    setNote(null);
     setAnswers({});
     setChecked(false);
     setPlays({});
@@ -126,7 +140,7 @@ export default function PracticeRunner({ tasks, minutes }: { tasks: PTask[]; min
       {audioError && <p role="alert" className="rounded-2xl bg-butter p-3 text-sm text-butter-ink">This recording could not be played. Check your connection and try again.</p>}
 
       {!checked ? (
-        <button className="btn3d" disabled={answered === 0} onClick={() => setChecked(true)}>
+        <button className="btn3d" disabled={answered === 0} onClick={finish}>
           Check my answers ({answered}/{all.length})
         </button>
       ) : (
@@ -136,6 +150,7 @@ export default function PracticeRunner({ tasks, minutes }: { tasks: PTask[]; min
           <p className="mt-2">
             {percent >= 60 ? "Gut gemacht! In the real exam about 60% is needed to pass, so this would be a pass." : "Keep practising. In the real exam about 60% is needed to pass. Read the tips and try again."}
           </p>
+          <div className="mt-3 flex justify-center"><SaveNote state={note} /></div>
           <button className="btn3d mt-4" onClick={reset}>Try again</button>
         </div>
       )}

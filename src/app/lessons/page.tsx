@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-// The grammar lessons now live under Cheat sheets & grammar.
+// The grammar lessons live at /grammar.
 export default function LessonsIndex() {
-  redirect("/cheatsheets");
+  redirect("/grammar");
 }

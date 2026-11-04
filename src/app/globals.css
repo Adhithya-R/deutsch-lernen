@@ -648,3 +648,17 @@ html[data-lang="en"] .ta-only {
     transition: none !important;
   }
 }
+
+/* a little animated picture next to a word */
+@keyframes pic-bob { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-5px) rotate(4deg); } }
+.pic-bob { display: inline-block; animation: pic-bob 1.8s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .pic-bob { animation: none; } }
+
+/* steam, confetti, fireworks scenes */
+@keyframes puff-up { 0% { transform: translateY(40px) scale(.5); opacity: 0; } 30% { opacity: .85; } 100% { transform: translateY(-20px) scale(1.4); opacity: 0; } }
+.puff { position: absolute; bottom: 24px; width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,.85); filter: blur(2px); animation: puff-up 3.6s ease-out infinite; }
+@keyframes conf-fall { 0% { transform: translateY(-10px) rotate(0); opacity: 0; } 15% { opacity: 1; } 100% { transform: translateY(110px) rotate(260deg); opacity: 0; } }
+.conf { position: absolute; top: 0; width: 8px; height: 12px; border-radius: 2px; animation: conf-fall 5s linear infinite; }
+@keyframes burst { 0% { transform: scale(.1); opacity: 0; } 15% { opacity: 1; } 70% { transform: scale(1); opacity: .9; } 100% { transform: scale(1.15); opacity: 0; } }
+.burst { position: absolute; width: 54px; height: 54px; border-radius: 50%; background: radial-gradient(circle, #fff 0 3px, transparent 4px), conic-gradient(from 0deg, #ffce00, #ff6b6b, #ffce00, #4fd1c5, #ffce00, #ff6b6b, #ffce00); -webkit-mask: radial-gradient(circle, transparent 0 8px, #000 9px 26px, transparent 27px); mask: radial-gradient(circle, transparent 0 8px, #000 9px 26px, transparent 27px); animation: burst 3.6s ease-out infinite; }
+@media (prefers-reduced-motion: reduce) { .puff, .conf, .burst { animation: none; opacity: .6; } }

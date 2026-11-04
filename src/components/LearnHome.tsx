@@ -7,8 +7,8 @@ import { SKY_IDS, SKY_MOOD } from "@/lib/landmarks";
 export type LearnData = {
   loggedIn: boolean;
   done: string[]; // chapter slugs passed
-  words: number; // flashcards started
-  due: number; // flashcards due now
+  learned: number; // flashcard words started
+  words: number; // all flashcard words
   streak: number; // days in a row with activity
   xp: number; // total XP
 };
@@ -53,14 +53,25 @@ export default function LearnHome({ data }: { data: LearnData }) {
       <Skyline ids={currentChapter?.landmarks ?? SKY_IDS.learn} mood={currentChapter?.mood ?? SKY_MOOD.learn} height={170} />
       <div className="px-4 pt-4">
         <p className="text-[13px] font-extrabold uppercase tracking-wider text-pri">
-          Priya&apos;s Reise · Chapter {Math.min(done.size + 1, chapters.length)} of {chapters.length}
+          Adhis Reise · Chapter {Math.min(done.size + 1, chapters.length)} of {chapters.length}
         </p>
         <h1 className="text-3xl font-extrabold">{current ? current.title : "Alle Kapitel geschafft!"}</h1>
 
         <div className="mt-3.5 flex gap-2">
           <Chip icon="flame" value={data.streak} label={data.streak === 1 ? "day streak" : "day streak"} />
           <Chip icon="star" value={data.xp} label="XP" />
-          <Chip icon="cards" value={data.due} label="cards due" />
+          <Chip icon="cards" value={`${data.learned}/${data.words}`} label="words learned" />
+        </div>
+
+        <div className="mt-3 grid grid-cols-2 gap-2.5">
+          <Link href="/grammar" className="flex items-center gap-2.5 rounded-2xl bg-white p-3.5 font-extrabold shadow-[0_3px_0_var(--color-line)]">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-pill text-pri"><Icon name="pencil" size={20} /></span>
+            Grammar
+          </Link>
+          <Link href="/cheatsheets" className="flex items-center gap-2.5 rounded-2xl bg-white p-3.5 font-extrabold shadow-[0_3px_0_var(--color-line)]">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-pill text-pri"><Icon name="table" size={20} /></span>
+            Cheat sheets
+          </Link>
         </div>
 
         {!data.loggedIn && (
@@ -109,8 +120,6 @@ export default function LearnHome({ data }: { data: LearnData }) {
             );
           })}
         </div>
-
-        <Link href="/cheatsheets" className="btn3d btn3d-ghost mb-4 mt-2">Cheat sheets &amp; grammar</Link>
       </div>
     </main>
   );

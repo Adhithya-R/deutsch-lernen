@@ -1,12 +1,11 @@
 import { chapters } from "@/content/chapters";
-import { createClient } from "@/lib/supabase/server";
+import { getSession } from "@/lib/supabase/session";
 
 /** Which story chapters this user has passed (stored in lesson_progress as "chapter-<slug>"). */
 export async function chapterProgress() {
-  const supabase = await createClient();
-  const { data: auth } = await supabase.auth.getUser();
+  const { supabase, userId } = await getSession();
   const done = new Set<string>();
-  if (!auth.user) return { loggedIn: false, done };
+  if (!userId) return { loggedIn: false, done };
 
   const { data } = await supabase.from("lesson_progress").select("lesson_slug,status");
   (data ?? []).forEach((r) => {

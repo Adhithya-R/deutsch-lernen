@@ -1,18 +1,35 @@
 "use client";
 
 import { useState } from "react";
+import { saveQuiz } from "@/app/actions";
 import Icon from "@/components/Icon";
+import SaveNote, { type SaveState } from "@/components/SaveNote";
 import type { Exercise } from "@/content/lessons";
+import { localDay } from "@/lib/activity";
 
 const norm = (s: string) => s.trim().toLowerCase();
 
-export default function Quiz({ exercises }: { exercises: Exercise[] }) {
+export default function Quiz({ exercises, refId }: { exercises: Exercise[]; refId: string }) {
   const [given, setGiven] = useState<Record<number, string>>({});
   const [checked, setChecked] = useState<Record<number, boolean>>({});
+  const [note, setNote] = useState<SaveState>(null);
 
   const isOk = (i: number) => norm(given[i] ?? "") === norm(exercises[i].answer);
   const correct = exercises.filter((_, i) => checked[i] && isOk(i)).length;
   const allChecked = exercises.every((_, i) => checked[i]);
+
+  function check(i: number) {
+    const next = { ...checked, [i]: true };
+    setChecked(next);
+    if (exercises.every((_, j) => next[j])) {
+      const total = exercises.length;
+      const right = exercises.filter((e, j) => norm(given[j] ?? "") === norm(e.answer)).length;
+      setNote("saving");
+      saveQuiz("lesson", refId, right, total, localDay())
+        .then(setNote)
+        .catch(() => setNote({ ok: false, xp: 0, error: "Could not save. Check your connection." }));
+    }
+  }
 
   return (
     <div className="space-y-3">
@@ -60,7 +77,7 @@ export default function Quiz({ exercises }: { exercises: Exercise[] }) {
             {!done ? (
               <button
                 disabled={!given[i]}
-                onClick={() => setChecked({ ...checked, [i]: true })}
+                onClick={() => check(i)}
                 className="btn3d mt-3 !min-h-11 !w-auto !text-sm px-6 !border-b-4"
               >
                 Check
@@ -82,9 +99,10 @@ export default function Quiz({ exercises }: { exercises: Exercise[] }) {
         );
       })}
       {allChecked && (
-        <p className="rounded-2xl bg-butter p-4 font-extrabold text-butter-ink">
-          Score: {correct} / {exercises.length}
-        </p>
+        <div className="flex flex-col gap-2 rounded-2xl bg-butter p-4 text-butter-ink">
+          <p className="font-extrabold">Score: {correct} / {exercises.length}{correct / exercises.length >= 0.6 ? " · lesson completed" : " · 60% completes the lesson"}</p>
+          <SaveNote state={note} />
+        </div>
       )}
     </div>
   );

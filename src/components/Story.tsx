@@ -35,7 +35,7 @@ export default function Story({ chapter }: { chapter: Chapter }) {
 
         <div className="mt-5 flex flex-col gap-3.5">
           {chapter.lines.slice(0, step + 1).map((l, i) => {
-            const me = l.who === "p";
+            const me = l.who === "a";
             const sp = chapter.speakers[l.who];
             return (
               <div key={i} className={`pop flex items-end gap-2.5 ${me ? "flex-row-reverse" : ""}`}>
@@ -97,12 +97,18 @@ export default function Story({ chapter }: { chapter: Chapter }) {
         ) : (
           <button onClick={() => setStep((s) => s + 1)} className="btn3d">Continue</button>
         )}
+        {step > 0 && (
+          <button onClick={() => setStep((s) => s - 1)} className="mt-2 w-full rounded-2xl py-2.5 text-sm font-extrabold text-pri-dark">
+            Back
+          </button>
+        )}
       </div>
 
       {word && (
         <div className="fixed inset-0 z-50 mx-auto flex max-w-md items-end bg-ink/45" onClick={() => setSheet(null)}>
           <div className="sheet-up w-full rounded-t-[28px] bg-white p-5 pb-8" role="dialog" aria-label={word.de} onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center gap-2">
+              {word.pic && <span aria-hidden="true" className="pic-bob text-4xl">{word.pic}</span>}
               <h2 className="text-2xl font-extrabold">{word.de}</h2>
               <button onClick={() => say(word.de)} aria-label="Listen" className="grid h-9 w-9 place-items-center rounded-full bg-pill text-pri">
                 <Icon name="volume" size={18} />
