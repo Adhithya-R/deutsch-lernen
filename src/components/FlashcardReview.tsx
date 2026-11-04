@@ -5,7 +5,7 @@ import { reviewCard } from "@/app/actions";
 import Icon from "@/components/Icon";
 import SpeakButton from "@/components/SpeakButton";
 import type { Card } from "@/content/vocab";
-import { speak } from "@/lib/speak";
+import { useSpeak } from "@/components/useSpeak";
 
 const GRADES = [
   { grade: 0, label: "Again", style: "border-bad/40 bg-bad-bg text-bad" },
@@ -19,6 +19,7 @@ export default function FlashcardReview({ cards, total }: { cards: Card[]; total
   const [revealed, setRevealed] = useState(false);
   const [reviewed, setReviewed] = useState(0);
   const [failed, setFailed] = useState(false);
+  const { say, note } = useSpeak();
 
   const card = queue[0];
   const startSize = total ?? cards.length;
@@ -57,7 +58,7 @@ export default function FlashcardReview({ cards, total }: { cards: Card[]; total
       <div className="rounded-3xl border border-line bg-white p-6 text-center">
         <p className="text-3xl font-bold">{card.de}</p>
         <button
-          onClick={() => speak(card.de)}
+          onClick={() => say(card.de)}
           className="mt-3 inline-flex h-11 items-center gap-2 rounded-full border border-line px-5 text-sm font-semibold text-pri hover:bg-sand"
         >
           <Icon name="volume" size={18} /> Listen
@@ -95,6 +96,7 @@ export default function FlashcardReview({ cards, total }: { cards: Card[]; total
         </div>
       )}
 
+      {note && <p role="alert" className="rounded-2xl bg-butter p-3 text-sm text-butter-ink">{note}</p>}
       {failed && <p role="alert" className="text-sm text-bad">Could not save the last answer. Check your connection.</p>}
     </div>
   );
