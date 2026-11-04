@@ -49,7 +49,7 @@ Duolingo-style, story-based, phone first. Five tabs, each with its own light war
 - Server actions (`app/actions.ts`): signup (checks `INVITE_CODE`), login, logout, `saveProgress`, `reviewCard`, `submitChapter` (re-marks the answers on the server and stores `chapter-<slug>` in `lesson_progress`, so a pass cannot be faked from the browser).
 - `lib/progress.ts` (which chapters are done / unlocked), `lib/srs.ts` (SM-2 style scheduling, tested), `lib/speak.ts` + `components/useSpeak.ts` (plays recorded clips, falls back to a device voice, shows a message when neither works), `lib/tabs.ts`.
 - Components: `ThemeShell`, `SiteNav` (top bar), `TabBar` (bottom tabs on phones), `Skyline`, `ScreenTop`, `LearnHome`, `Story`, `ChapterCheck`, `Locked`, `FlashcardReview`, `Quiz`, `DataTable`, `CaseTable`, `Rows`, `LangToggle`, `Icon`, `SpeakButton`, `AuthForm`, `AuthLinks`.
-- `supabase/migrations/`: SQL run by hand in the Supabase SQL Editor. `001_init.sql` (profiles, lesson_progress, trigger), `002_flashcards.sql` (flashcard_state). **Check that 002 has been run**; flashcards cannot save without it.
+- `supabase/migrations/`: SQL run by hand in the Supabase SQL Editor. `001_init.sql` (profiles, lesson_progress, trigger), `002_flashcards.sql` (flashcard_state), `003_activity.sql` (daily_activity + `add_xp` function, for streak and XP). **Check that 002 and 003 have been run**; flashcards cannot save without 002, and streak/XP stay at 0 without 003.
 - `docs/design/`: old mockups (history).
 
 ## Done and live
@@ -57,9 +57,11 @@ Duolingo-style, story-based, phone first. Five tabs, each with its own light war
 - Story chapters 1 (Ankunft) and 2 (Neue Freunde) with checks and unlocking; 7 grammar lessons with quizzes (scores not saved); flashcards; Brücke; Me with language switch; animated skylines per tab.
 - Recorded German audio for all current phrases (see Audio). Not yet confirmed by ear on a real phone.
 
+**Streak and XP:** XP is recorded by the server (`addXp` in `actions.ts`, via the `add_xp` SQL function): +2 per flashcard review, and on the *first* pass of a chapter +10 per correct answer +30 bonus (no XP for repeats). The browser sends its local date (`localDay`); the server only accepts a date within a day of its own (`plausibleDay`). The streak (`streakOf`, `lib/activity.ts`, tested) is the run of consecutive active days ending today or yesterday. The home screen shows streak, XP and cards due. If `daily_activity` does not exist, everything still works and shows 0.
+
 ## Next (suggested order)
 1. Verify audio and the whole logged-in flow on a real phone; fix what the owner reports.
-2. Streak and XP (needs a new table: activity per day), then a daily goal.
+2. Daily goal (streak and XP are done, see below).
 3. Chapters 3-5 (Die Wohnung, Auf dem Markt, Pongal in Berlin) and more A1 topics inside the story path; then A2 chapters.
 4. Exam section (A1/A2 formats, email-writing coach with autosaved drafts, original mock tests).
 5. Story-based vocabulary exercises, listening, speaking practice; group leaderboard and shared word lists.

@@ -9,6 +9,8 @@ export type LearnData = {
   done: string[]; // chapter slugs passed
   words: number; // flashcards started
   due: number; // flashcards due now
+  streak: number; // days in a row with activity
+  xp: number; // total XP
 };
 
 const X = [50, 30, 70, 30, 50]; // zig-zag position of each stop, in %
@@ -57,9 +59,9 @@ export default function LearnHome({ data }: { data: LearnData }) {
         <h1 className="text-3xl font-extrabold">{current ? current.title : "Alle Kapitel geschafft!"}</h1>
 
         <div className="mt-3.5 flex gap-2">
-          <Chip icon="book" value={`${done.size}/${total}`} label="chapters" />
-          <Chip icon="cards" value={data.words} label="words started" />
-          <Chip icon="star" value={data.due} label="cards due" />
+          <Chip icon="flame" value={data.streak} label={data.streak === 1 ? "day streak" : "day streak"} />
+          <Chip icon="star" value={data.xp} label="XP" />
+          <Chip icon="cards" value={data.due} label="cards due" />
         </div>
 
         {!data.loggedIn && (

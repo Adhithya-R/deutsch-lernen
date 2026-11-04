@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { chapterBySlug, doneKey, markChapter } from "@/content/chapters";
 import { cards } from "@/content/vocab";
+import { plausibleDay } from "@/lib/activity";
 import { NEW_CARD, review, type CardState, type Grade } from "@/lib/srs";
 import { createClient } from "@/lib/supabase/server";
 
@@ -65,7 +66,19 @@ export async function saveProgress(slug: string, status: "in_progress" | "comple
   revalidatePath("/");
 }
 
-export async function reviewCard(cardId: string, grade: number) {
+type Supabase = Awaited<ReturnType<typeof createClient>>;
+
+/** Adds XP for today. Never throws: if the activity table is missing, learning still works. */
+async function addXp(supabase: Supabase, day: string | undefined, xp: number) {
+  if (!day || !plausibleDay(day) || xp <= 0) return;
+  try {
+    await supabase.rpc("add_xp", { p_day: day, p_xp: xp });
+  } catch {
+    // ignore
+  }
+}
+
+export async function reviewCard(cardId: string, grade: number, day?: string) {
   if (!cards.some((c) => c.id === cardId) || ![0, 1, 2, 3].includes(grade)) return;
 
   const supabase = await createClient();
@@ -92,16 +105,22 @@ export async function reviewCard(cardId: string, grade: number) {
     due_at: next.dueAt.toISOString(),
     updated_at: new Date().toISOString(),
   });
+  await addXp(supabase, day, 2);
 }
 
-export async function submitChapter(slug: string, answers: string[]) {
+export async function submitChapter(slug: string, answers: string[], day?: string) {
   const chapter = chapterBySlug(slug);
-  if (!chapter || !Array.isArray(answers)) return { score: 0, total: 0, passed: false, saved: false };
+  if (!chapter || !Array.isArray(answers)) return { score: 0, total: 0, passed: false, saved: false, xp: 0 };
 
   const result = markChapter(chapter, answers.map(String));
   const supabase = await createClient();
   const { data: auth } = await supabase.auth.getUser();
-  if (!auth.user) return { ...result, saved: false };
+  if (!auth.user) return { ...result, saved: false, xp: 0 };
+
+  // XP only the first time a chapter is passed, so repeating it cannot be used to farm points.
+  const { data: before } = await supabase.from("lesson_progress").select("status").eq("lesson_slug", doneKey(slug)).maybeSingle();
+  const firstPass = result.passed && before?.status !== "completed";
+  const xp = firstPass ? result.score * 10 + 30 : 0;
 
   if (result.passed) {
     await supabase.from("lesson_progress").upsert({
@@ -111,7 +130,8 @@ export async function submitChapter(slug: string, answers: string[]) {
       position: result.score,
       updated_at: new Date().toISOString(),
     });
+    await addXp(supabase, day, xp);
     revalidatePath("/");
   }
-  return { ...result, saved: result.passed };
+  return { ...result, saved: result.passed, xp };
 }

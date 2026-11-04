@@ -6,8 +6,9 @@ import { submitChapter } from "@/app/actions";
 import Icon from "@/components/Icon";
 import Skyline from "@/components/Skyline";
 import type { Chapter } from "@/content/chapters";
+import { localDay } from "@/lib/activity";
 
-type Result = { score: number; total: number; passed: boolean; saved: boolean };
+type Result = { score: number; total: number; passed: boolean; saved: boolean; xp: number };
 
 export default function ChapterCheck({ chapter, nextTitle }: { chapter: Chapter; nextTitle?: string }) {
   const [qi, setQi] = useState(0);
@@ -37,7 +38,7 @@ export default function ChapterCheck({ chapter, nextTitle }: { chapter: Chapter;
     setError(false);
     start(async () => {
       try {
-        setResult(await submitChapter(chapter.slug, all));
+        setResult(await submitChapter(chapter.slug, all, localDay()));
       } catch {
         setError(true);
       }
@@ -55,6 +56,11 @@ export default function ChapterCheck({ chapter, nextTitle }: { chapter: Chapter;
             <>
               <p className="font-display text-7xl font-extrabold leading-none text-pri">{result.score}/{result.total}</p>
               <h1 className="mt-2 text-3xl font-extrabold">{result.passed ? "Kapitel geschafft!" : "Almost there"}</h1>
+              {result.xp > 0 && (
+                <p className="mx-auto mt-3 inline-flex items-center gap-1.5 rounded-xl bg-butter px-3 py-1 font-display text-lg font-extrabold text-butter-ink">
+                  <Icon name="star" size={18} /> +{result.xp} XP
+                </p>
+              )}
               <p className="mt-2 text-muted">
                 {result.passed
                   ? nextTitle

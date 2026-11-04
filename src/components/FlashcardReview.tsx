@@ -6,6 +6,7 @@ import Icon from "@/components/Icon";
 import SpeakButton from "@/components/SpeakButton";
 import { useSpeak } from "@/components/useSpeak";
 import type { Card } from "@/content/vocab";
+import { localDay } from "@/lib/activity";
 
 const GRADES = [
   { grade: 0, label: "Again", style: "border-[#f2b8b5] bg-bad-bg text-bad" },
@@ -38,7 +39,7 @@ export default function FlashcardReview({ cards, total }: { cards: Card[]; total
 
   function answer(grade: number) {
     setFailed(false);
-    reviewCard(card.id, grade).catch(() => setFailed(true));
+    reviewCard(card.id, grade, localDay()).catch(() => setFailed(true));
     setReviewed((n) => n + 1);
     setRevealed(false);
     setQueue((q) => (grade === 0 ? [...q.slice(1), q[0]] : q.slice(1)));
