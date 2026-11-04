@@ -47,7 +47,7 @@ export default function ChapterCheck({ chapter, nextTitle }: { chapter: Chapter;
   if (result || pending) {
     return (
       <div className="mx-auto flex min-h-dvh max-w-md flex-col">
-        <Skyline tab="learn" height={150} />
+        <Skyline ids={chapter.landmarks} height={150} />
         <div className="px-4 pt-8 text-center">
           {!result ? (
             <p className="text-lg font-extrabold">Checking your answers…</p>

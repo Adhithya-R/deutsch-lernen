@@ -13,6 +13,7 @@ export type Question =
 export type Chapter = {
   slug: string;
   n: number;
+  landmarks: [string, string]; // ids from landmarks.json shown in the skyline: [Tamil Nadu, Germany]
   title: string; // German title
   sub: string; // English subtitle
   speakers: Record<string, { initial: string; name: string }>;
@@ -27,6 +28,7 @@ export const chapters: Chapter[] = [
   {
     slug: "ankunft",
     n: 1,
+    landmarks: ["TN002", "DE010"], // Meenakshi Temple, Römer in Frankfurt
     title: "Ankunft",
     sub: "Arrival in Frankfurt",
     speakers: { b: { initial: "B", name: "Border officer" }, p: { initial: "P", name: "Priya" } },
@@ -104,6 +106,7 @@ export const chapters: Chapter[] = [
   {
     slug: "neue-freunde",
     n: 2,
+    landmarks: ["TN003", "DE001"], // Shore Temple, Brandenburg Gate
     title: "Neue Freunde",
     sub: "Introduce yourself",
     speakers: { l: { initial: "L", name: "Lena" }, p: { initial: "P", name: "Priya" } },

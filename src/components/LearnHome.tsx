@@ -2,6 +2,7 @@ import Link from "next/link";
 import Icon, { type IconName } from "@/components/Icon";
 import Skyline from "@/components/Skyline";
 import { chapters, upcoming } from "@/content/chapters";
+import { SKY_IDS } from "@/lib/landmarks";
 
 export type LearnData = {
   loggedIn: boolean;
@@ -32,10 +33,12 @@ export default function LearnHome({ data }: { data: LearnData }) {
   const total = chapters.length + upcoming.length;
   const stops: Stop[] = [];
   let currentFound = false;
+  let currentChapter: (typeof chapters)[number] | undefined;
   chapters.forEach((c) => {
     if (done.has(c.slug)) stops.push({ title: c.title, sub: c.sub, state: "done", href: `/learn/${c.slug}` });
     else if (!currentFound) {
       currentFound = true;
+      currentChapter = c;
       stops.push({ title: c.title, sub: c.sub, state: "cur", href: `/learn/${c.slug}` });
     } else stops.push({ title: c.title, sub: c.sub, state: "lock" });
   });
@@ -46,7 +49,7 @@ export default function LearnHome({ data }: { data: LearnData }) {
 
   return (
     <main className="mx-auto w-full max-w-md lg:max-w-xl">
-      <Skyline tab="learn" height={170} />
+      <Skyline ids={currentChapter?.landmarks ?? SKY_IDS.learn} height={170} />
       <div className="px-4 pt-4">
         <p className="text-[13px] font-extrabold uppercase tracking-wider text-pri">
           Priya&apos;s Reise · Chapter {Math.min(done.size + 1, total)} of {total}

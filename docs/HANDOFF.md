@@ -27,12 +27,16 @@ Next.js **16.4** (App Router, TypeScript, Tailwind v4) + Supabase (Postgres + Au
 - `PageProps<"/route">` / `LayoutProps<"/">` are global type helpers.
 
 ## Product shape (redesigned 2026-11-04, approved by the owner)
-Duolingo-style, story-based, phone first. Five tabs, each with its own light warm colour world and an animated skyline of Tamil Nadu and German landmarks (Meenakshi gopuram, Brihadeeswarar vimana, Brandenburg Gate, Cologne Cathedral, Berlin TV tower; pure SVG + CSS in `Skyline.tsx`, animations in `globals.css`, off with reduced-motion):
+Duolingo-style, story-based, phone first. Five tabs, each with its own light warm colour world and an animated skyline of Tamil Nadu and German landmarks (pure SVG + CSS in `Skyline.tsx`; animations in `globals.css`, off with reduced-motion):
 - **Learn** (`/`): a path of story chapters ("Priya's Reise": Priya from Madurai moves to Germany). Each chapter = story (`/learn/[slug]`, tap underlined words for meanings, culture note) then a **chapter check** (`/learn/[slug]/check`). Pass mark (2 of 3) unlocks the next chapter. Chapters 3-5 are shown locked as "soon".
 - **Words** (`/flashcards[?deck=id]`): spaced-repetition flashcards.
 - **Exam** (`/exam`): coming-soon cards (A1 Start Deutsch 1, A2, Email coach).
 - **Brücke** (`/bruecke`): Tamil Nadu next to Germany culture pairs (`content/culture.ts`).
 - **Me** (`/me`): account, **Language help** switch, links to Cheat sheets & grammar (`/cheatsheets`, `/cheatsheets/cases`, `/lessons/[slug]` = the 7 grammar lessons; `/lessons` redirects to `/cheatsheets`).
+
+**Landmarks (skylines):** the owner's catalogue of 50 places (25 Tamil Nadu `TN001`-`TN025`, 25 Germany `DE001`-`DE025`) is `src/content/landmarks.json`; do not change its fields. A skyline is `<Skyline ids={[...]}/>`: first id on the left, last on the right, a middle one faded. **Every module must use its own pair so screens do not repeat**: tabs are set in `SKY_IDS` (`lib/landmarks.ts`), each story chapter has `landmarks: [TN, DE]` in `content/chapters.ts`. A small "i" button on each skyline opens facts from the JSON. **Draw gradually**: only places used so far have a drawing (registered in `DRAWINGS` in `components/landmarks.tsx`: TN001-004, TN006, TN011, DE001-004, DE010, DE018, DE025); every other id automatically gets a simple placeholder shape chosen by its building type, so any id can be used straight away. When building a new module, pick unused ids and draw them (Arch helper, viewBox, register width). Already used: Learn/Ankunft TN002+DE010, Neue Freunde TN003+DE001, Words TN004+DE025, Exam TN006+DE002, Brücke TN001+DE004+DE003, Me TN011+DE018. Some catalogue entries look approximate (e.g. TN025 "Madhur Temple Tower", several year_built values); show them as given and ask the owner before correcting.
+
+**Audio:** every German phrase in the app is a recorded clip `public/audio/<key>.mp3` (key from `lib/audio-key.ts`; list in `public/audio/manifest.json`), so it plays on any device. `lib/speak.ts` plays the clip first and only falls back to the device voice when a phrase has no clip. **After adding or changing German text, regenerate clips**: `node --experimental-strip-types scripts/audio-texts.mts` then `scripts/make-audio.py` (needs Python, `pip install piper-tts`, ffmpeg and the free Thorsten voice from github.com/rhasspy/piper release v0.0.2; instructions at the top of the script; existing clips are kept). The script fixes a Piper quirk that would make "ich" sound like "ik". The clips were checked for length and loudness but not listened to; the owner should confirm they sound right.
 
 **Language rule:** the UI is English only. Tamil is shown only as *help* (word meanings, translations, tips) and always carries the class `ta-only`. The Me tab switch ("English only" / "English + தமிழ்") sets `<html data-lang>` (saved in localStorage, applied before paint by a script in `layout.tsx`); CSS hides `.ta-only` when `data-lang="en"`. Do not put Tamil in headings, labels or menus. `src/lib/tamil.tsx` hides Tamil columns/segments in tables automatically.
 
@@ -41,7 +45,7 @@ Duolingo-style, story-based, phone first. Five tabs, each with its own light war
 ## Code map
 - Content (plain data, easy to edit): `content/chapters.ts` (story chapters, words, culture notes, checks, pass mark; `markChapter` marks answers), `content/lessons.ts` (7 grammar lessons + case tables), `content/vocab.ts` (47 flashcard words), `content/culture.ts`, `content/menu.ts` (older plan list, partly unused).
 - Server actions (`app/actions.ts`): signup (checks `INVITE_CODE`), login, logout, `saveProgress`, `reviewCard`, `submitChapter` (re-marks the answers on the server and stores `chapter-<slug>` in `lesson_progress`, so a pass cannot be faked from the browser).
-- `lib/progress.ts` (which chapters are done / unlocked), `lib/srs.ts` (SM-2 style scheduling, tested), `lib/speak.ts` + `components/useSpeak.ts` (German text-to-speech: waits for voices, picks a German one, shows a message when the device has none), `lib/tabs.ts`.
+- `lib/progress.ts` (which chapters are done / unlocked), `lib/srs.ts` (SM-2 style scheduling, tested), `lib/speak.ts` + `components/useSpeak.ts` (plays recorded clips, falls back to a device voice, shows a message when neither works), `lib/tabs.ts`.
 - Components: `ThemeShell`, `SiteNav` (top bar), `TabBar` (bottom tabs on phones), `Skyline`, `ScreenTop`, `LearnHome`, `Story`, `ChapterCheck`, `Locked`, `FlashcardReview`, `Quiz`, `DataTable`, `CaseTable`, `Rows`, `LangToggle`, `Icon`, `SpeakButton`, `AuthForm`, `AuthLinks`.
 - `supabase/migrations/`: SQL run by hand in the Supabase SQL Editor. `001_init.sql` (profiles, lesson_progress, trigger), `002_flashcards.sql` (flashcard_state). **Check that 002 has been run**; flashcards cannot save without it.
 - `docs/design/`: old mockups (history).
@@ -49,7 +53,7 @@ Duolingo-style, story-based, phone first. Five tabs, each with its own light war
 ## Done and live
 - Sign-up with invite code, login, logout ("Confirm email" is OFF in Supabase on purpose).
 - Story chapters 1 (Ankunft) and 2 (Neue Freunde) with checks and unlocking; 7 grammar lessons with quizzes (scores not saved); flashcards; Brücke; Me with language switch; animated skylines per tab.
-- Audio fix (voice selection). **Not verified on a real device yet** (cannot hear sound in the build environment). If it stays silent, the reliable fix is pre-recorded German audio files.
+- Recorded German audio for all current phrases (see Audio). Not yet confirmed by ear on a real phone.
 
 ## Next (suggested order)
 1. Verify audio and the whole logged-in flow on a real phone; fix what the owner reports.

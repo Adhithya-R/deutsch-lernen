@@ -1,0 +1,422 @@
+[
+ {
+  "key": "hallo",
+  "text": "Hallo"
+ },
+ {
+  "key": "hallo-ich-bin-anna",
+  "text": "Hallo, ich bin Anna."
+ },
+ {
+  "key": "guten-morgen",
+  "text": "Guten Morgen"
+ },
+ {
+  "key": "guten-tag",
+  "text": "Guten Tag"
+ },
+ {
+  "key": "guten-abend",
+  "text": "Guten Abend"
+ },
+ {
+  "key": "gute-nacht",
+  "text": "Gute Nacht"
+ },
+ {
+  "key": "auf-wiedersehen",
+  "text": "Auf Wiedersehen"
+ },
+ {
+  "key": "tschuess",
+  "text": "Tschüss"
+ },
+ {
+  "key": "danke",
+  "text": "Danke"
+ },
+ {
+  "key": "danke-schoen",
+  "text": "Danke schön!"
+ },
+ {
+  "key": "bitte",
+  "text": "Bitte"
+ },
+ {
+  "key": "entschuldigung",
+  "text": "Entschuldigung"
+ },
+ {
+  "key": "ja",
+  "text": "Ja"
+ },
+ {
+  "key": "nein",
+  "text": "Nein"
+ },
+ {
+  "key": "die-mutter",
+  "text": "die Mutter"
+ },
+ {
+  "key": "meine-mutter-ist-lehrerin",
+  "text": "Meine Mutter ist Lehrerin."
+ },
+ {
+  "key": "der-vater",
+  "text": "der Vater"
+ },
+ {
+  "key": "der-bruder",
+  "text": "der Bruder"
+ },
+ {
+  "key": "die-schwester",
+  "text": "die Schwester"
+ },
+ {
+  "key": "das-kind",
+  "text": "das Kind"
+ },
+ {
+  "key": "die-familie",
+  "text": "die Familie"
+ },
+ {
+  "key": "der-freund",
+  "text": "der Freund"
+ },
+ {
+  "key": "die-freundin",
+  "text": "die Freundin"
+ },
+ {
+  "key": "das-wasser",
+  "text": "das Wasser"
+ },
+ {
+  "key": "ich-trinke-wasser",
+  "text": "Ich trinke Wasser."
+ },
+ {
+  "key": "der-tee",
+  "text": "der Tee"
+ },
+ {
+  "key": "der-kaffee",
+  "text": "der Kaffee"
+ },
+ {
+  "key": "die-milch",
+  "text": "die Milch"
+ },
+ {
+  "key": "das-brot",
+  "text": "das Brot"
+ },
+ {
+  "key": "der-reis",
+  "text": "der Reis"
+ },
+ {
+  "key": "der-apfel",
+  "text": "der Apfel"
+ },
+ {
+  "key": "das-essen",
+  "text": "das Essen"
+ },
+ {
+  "key": "das-haus",
+  "text": "das Haus"
+ },
+ {
+  "key": "die-wohnung",
+  "text": "die Wohnung"
+ },
+ {
+  "key": "ich-suche-eine-wohnung",
+  "text": "Ich suche eine Wohnung."
+ },
+ {
+  "key": "die-stadt",
+  "text": "die Stadt"
+ },
+ {
+  "key": "das-land",
+  "text": "das Land"
+ },
+ {
+  "key": "die-arbeit",
+  "text": "die Arbeit"
+ },
+ {
+  "key": "die-schule",
+  "text": "die Schule"
+ },
+ {
+  "key": "der-bahnhof",
+  "text": "der Bahnhof"
+ },
+ {
+  "key": "das-auto",
+  "text": "das Auto"
+ },
+ {
+  "key": "heute",
+  "text": "heute"
+ },
+ {
+  "key": "morgen",
+  "text": "morgen"
+ },
+ {
+  "key": "gestern",
+  "text": "gestern"
+ },
+ {
+  "key": "der-tag",
+  "text": "der Tag"
+ },
+ {
+  "key": "die-woche",
+  "text": "die Woche"
+ },
+ {
+  "key": "der-monat",
+  "text": "der Monat"
+ },
+ {
+  "key": "das-jahr",
+  "text": "das Jahr"
+ },
+ {
+  "key": "kommen",
+  "text": "kommen"
+ },
+ {
+  "key": "ich-komme-aus-indien",
+  "text": "Ich komme aus Indien."
+ },
+ {
+  "key": "gehen",
+  "text": "gehen"
+ },
+ {
+  "key": "essen",
+  "text": "essen"
+ },
+ {
+  "key": "trinken",
+  "text": "trinken"
+ },
+ {
+  "key": "sprechen",
+  "text": "sprechen"
+ },
+ {
+  "key": "lernen",
+  "text": "lernen"
+ },
+ {
+  "key": "wohnen",
+  "text": "wohnen"
+ },
+ {
+  "key": "arbeiten",
+  "text": "arbeiten"
+ },
+ {
+  "key": "guten-tag-ihren-pass-bitte",
+  "text": "Guten Tag! Ihren Pass, bitte."
+ },
+ {
+  "key": "guten-tag-hier-ist-mein-pass",
+  "text": "Guten Tag. Hier ist mein Pass."
+ },
+ {
+  "key": "danke-woher-kommen-sie",
+  "text": "Danke. Woher kommen Sie?"
+ },
+ {
+  "key": "ich-komme-aus-indien-aus-madurai",
+  "text": "Ich komme aus Indien, aus Madurai."
+ },
+ {
+  "key": "willkommen-in-deutschland",
+  "text": "Willkommen in Deutschland!"
+ },
+ {
+  "key": "der-pass",
+  "text": "der Pass"
+ },
+ {
+  "key": "hier-ist-mein-pass",
+  "text": "Hier ist mein Pass."
+ },
+ {
+  "key": "einen-tee-bitte",
+  "text": "Einen Tee, bitte."
+ },
+ {
+  "key": "woher",
+  "text": "woher"
+ },
+ {
+  "key": "woher-kommst-du",
+  "text": "Woher kommst du?"
+ },
+ {
+  "key": "willkommen",
+  "text": "willkommen"
+ },
+ {
+  "key": "willkommen-in-berlin",
+  "text": "Willkommen in Berlin!"
+ },
+ {
+  "key": "hallo-ich-bin-lena-wie-heisst-du",
+  "text": "Hallo! Ich bin Lena. Wie heißt du?"
+ },
+ {
+  "key": "hallo-lena-ich-heisse-priya-ich-komme-aus-madurai",
+  "text": "Hallo Lena! Ich heiße Priya. Ich komme aus Madurai."
+ },
+ {
+  "key": "madurai-wo-ist-das",
+  "text": "Madurai? Wo ist das?"
+ },
+ {
+  "key": "in-indien-in-tamil-nadu-dort-gibt-es-einen-grossen-tempel",
+  "text": "In Indien, in Tamil Nadu. Dort gibt es einen großen Tempel."
+ },
+ {
+  "key": "heissen",
+  "text": "heißen"
+ },
+ {
+  "key": "ich-heisse-priya",
+  "text": "Ich heiße Priya."
+ },
+ {
+  "key": "kommen-aus",
+  "text": "kommen aus"
+ },
+ {
+  "key": "ich-komme-aus-madurai",
+  "text": "Ich komme aus Madurai."
+ },
+ {
+  "key": "wo",
+  "text": "wo"
+ },
+ {
+  "key": "wo-ist-das",
+  "text": "Wo ist das?"
+ },
+ {
+  "key": "der-tempel",
+  "text": "der Tempel"
+ },
+ {
+  "key": "der-tempel-ist-gross",
+  "text": "Der Tempel ist groß."
+ },
+ {
+  "key": "ich-bin-anna",
+  "text": "Ich bin Anna."
+ },
+ {
+  "key": "er-wohnt-in-berlin",
+  "text": "Er wohnt in Berlin."
+ },
+ {
+  "key": "wie-heissen-sie",
+  "text": "Wie heißen Sie?"
+ },
+ {
+  "key": "ich-bin-muede",
+  "text": "Ich bin müde."
+ },
+ {
+  "key": "ich-habe-hunger",
+  "text": "Ich habe Hunger."
+ },
+ {
+  "key": "sie-hat-eine-schwester",
+  "text": "Sie hat eine Schwester."
+ },
+ {
+  "key": "ich-lerne-deutsch",
+  "text": "Ich lerne Deutsch."
+ },
+ {
+  "key": "du-wohnst-in-chennai",
+  "text": "Du wohnst in Chennai."
+ },
+ {
+  "key": "wir-trinken-tee",
+  "text": "Wir trinken Tee."
+ },
+ {
+  "key": "ich-lerne-heute-deutsch",
+  "text": "Ich lerne heute Deutsch."
+ },
+ {
+  "key": "heute-lerne-ich-deutsch",
+  "text": "Heute lerne ich Deutsch."
+ },
+ {
+  "key": "wo-wohnst-du",
+  "text": "Wo wohnst du?"
+ },
+ {
+  "key": "kommst-du-aus-indien",
+  "text": "Kommst du aus Indien?"
+ },
+ {
+  "key": "ich-habe-keine-zeit",
+  "text": "Ich habe keine Zeit."
+ },
+ {
+  "key": "das-ist-kein-auto",
+  "text": "Das ist kein Auto."
+ },
+ {
+  "key": "ich-bin-nicht-muede",
+  "text": "Ich bin nicht müde."
+ },
+ {
+  "key": "das-ist-mein-buch",
+  "text": "Das ist mein Buch."
+ },
+ {
+  "key": "ich-sehe-meinen-bruder",
+  "text": "Ich sehe meinen Bruder."
+ },
+ {
+  "key": "ich-helfe-meiner-schwester",
+  "text": "Ich helfe meiner Schwester."
+ },
+ {
+  "key": "kaffee-und-kuchen",
+  "text": "Kaffee und Kuchen"
+ },
+ {
+  "key": "broetchen",
+  "text": "Brötchen"
+ },
+ {
+  "key": "erntedankfest",
+  "text": "Erntedankfest"
+ },
+ {
+  "key": "weihnachtsmarkt",
+  "text": "Weihnachtsmarkt"
+ },
+ {
+  "key": "koelner-dom",
+  "text": "Kölner Dom"
+ }
+]
