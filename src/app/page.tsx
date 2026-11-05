@@ -37,6 +37,7 @@ async function Loader() {
         learned,
         words: cards.length,
         streak: streakOf(days, new Date().toISOString().slice(0, 10)),
+        byDay: Object.fromEntries((activity.data ?? []).map((r) => [String(r.day), Number(r.xp)])),
         xp: (activity.data ?? []).reduce((sum, r) => sum + Number(r.xp), 0),
       }}
     />

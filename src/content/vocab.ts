@@ -167,6 +167,7 @@ export const cards: Card[] = [
   c("work", "vertrag", "der Vertrag", "contract", "ஒப்பந்தம்", { de: "Ich unterschreibe den Vertrag.", en: "I sign the contract.", ta: "நான் ஒப்பந்தத்தில் கையெழுத்திடுகிறேன்." }),
   c("work", "pause", "die Pause", "break", "இடைவேளை", { de: "Wir machen Pause.", en: "We take a break.", ta: "நாங்கள் இடைவேளை எடுக்கிறோம்." }),
   c("work", "bewerben", "sich bewerben", "to apply", "விண்ணப்பி", { de: "Ich bewerbe mich um die Stelle.", en: "I apply for the job.", ta: "நான் வேலைக்கு விண்ணப்பிக்கிறேன்." }),
+  c("work", "arbeitgeber", "der Arbeitgeber", "employer", "வேலை வழங்குபவர்", { de: "Mein Arbeitgeber ist eine Firma in Berlin.", en: "My employer is a company in Berlin.", ta: "என் வேலை வழங்குபவர் பெர்லினில் உள்ள ஒரு நிறுவனம்." }),
   c("work", "urlaub", "der Urlaub", "holiday, leave", "விடுமுறை", { de: "Ich habe nächste Woche Urlaub.", en: "I have leave next week.", ta: "அடுத்த வாரம் எனக்கு விடுமுறை." }),
   c("travel", "zug", "der Zug", "train", "ரயில்", { de: "Der Zug kommt gleich.", en: "The train is coming soon.", ta: "ரயில் இதோ வருகிறது." }),
   c("travel", "bus", "der Bus", "bus", "பேருந்து", { de: "Ich fahre mit dem Bus.", en: "I go by bus.", ta: "நான் பேருந்தில் போகிறேன்." }),

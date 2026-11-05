@@ -790,6 +790,16 @@
   "voice": "m"
  },
  {
+  "key": "der-arbeitgeber",
+  "text": "der Arbeitgeber",
+  "voice": "m"
+ },
+ {
+  "key": "mein-arbeitgeber-ist-eine-firma-in-berlin",
+  "text": "Mein Arbeitgeber ist eine Firma in Berlin.",
+  "voice": "m"
+ },
+ {
   "key": "der-urlaub",
   "text": "der Urlaub",
   "voice": "m"

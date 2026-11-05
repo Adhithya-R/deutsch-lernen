@@ -124,6 +124,7 @@ export const PICS: Record<string, string> = {
   "work-vertrag": "📝",
   "work-pause": "☕",
   "work-bewerben": "📨",
+  "work-arbeitgeber": "🏭",
   "work-urlaub": "🏖️",
   "travel-zug": "🚆",
   "travel-bus": "🚌",

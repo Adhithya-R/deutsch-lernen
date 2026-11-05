@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DailyGoal from "@/components/DailyGoal";
 import Icon, { type IconName } from "@/components/Icon";
 import Skyline from "@/components/Skyline";
 import { chapters, upcoming } from "@/content/chapters";
@@ -11,6 +12,7 @@ export type LearnData = {
   words: number; // all flashcard words
   streak: number; // days in a row with activity
   xp: number; // total XP
+  byDay?: Record<string, number>; // XP per day (recent days)
 };
 
 const X = [50, 30, 70, 30, 50, 70, 30, 50, 70, 30, 50, 70, 30, 50, 70, 30]; // zig-zag position of each stop, in % (enough for 16 stops)
@@ -64,6 +66,8 @@ export default function LearnHome({ data, loading = false }: { data: LearnData; 
           <Chip icon="star" value={loading ? "–" : data.xp} label="XP" />
           <Chip icon="cards" value={loading ? "–" : `${data.learned}/${data.words}`} label="words learned" />
         </div>
+
+        {data.loggedIn && !loading && <DailyGoal byDay={data.byDay ?? {}} />}
 
         <div className="mt-3 grid grid-cols-2 gap-2.5">
           <Link href="/grammar" className="flex items-center gap-2.5 rounded-2xl bg-white p-3.5 font-extrabold shadow-[0_3px_0_var(--color-line)]">
