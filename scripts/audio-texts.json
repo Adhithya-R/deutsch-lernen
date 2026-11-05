@@ -590,6 +590,426 @@
   "voice": "m"
  },
  {
+  "key": "der-kopf",
+  "text": "der Kopf",
+  "voice": "m"
+ },
+ {
+  "key": "mein-kopf-tut-weh",
+  "text": "Mein Kopf tut weh.",
+  "voice": "m"
+ },
+ {
+  "key": "der-hals",
+  "text": "der Hals",
+  "voice": "m"
+ },
+ {
+  "key": "mein-hals-tut-weh",
+  "text": "Mein Hals tut weh.",
+  "voice": "m"
+ },
+ {
+  "key": "der-bauch",
+  "text": "der Bauch",
+  "voice": "m"
+ },
+ {
+  "key": "mein-bauch-tut-weh",
+  "text": "Mein Bauch tut weh.",
+  "voice": "m"
+ },
+ {
+  "key": "der-ruecken",
+  "text": "der Rücken",
+  "voice": "m"
+ },
+ {
+  "key": "mein-ruecken-tut-weh",
+  "text": "Mein Rücken tut weh.",
+  "voice": "m"
+ },
+ {
+  "key": "die-hand",
+  "text": "die Hand",
+  "voice": "m"
+ },
+ {
+  "key": "gib-mir-die-hand",
+  "text": "Gib mir die Hand.",
+  "voice": "m"
+ },
+ {
+  "key": "der-fuss",
+  "text": "der Fuß",
+  "voice": "m"
+ },
+ {
+  "key": "mein-fuss-ist-muede",
+  "text": "Mein Fuß ist müde.",
+  "voice": "m"
+ },
+ {
+  "key": "der-arzt",
+  "text": "der Arzt",
+  "voice": "m"
+ },
+ {
+  "key": "ich-gehe-zum-arzt",
+  "text": "Ich gehe zum Arzt.",
+  "voice": "m"
+ },
+ {
+  "key": "die-apotheke",
+  "text": "die Apotheke",
+  "voice": "m"
+ },
+ {
+  "key": "die-apotheke-ist-hier",
+  "text": "Die Apotheke ist hier.",
+  "voice": "m"
+ },
+ {
+  "key": "krank",
+  "text": "krank",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bin-krank",
+  "text": "Ich bin krank.",
+  "voice": "m"
+ },
+ {
+  "key": "gesund",
+  "text": "gesund",
+  "voice": "m"
+ },
+ {
+  "key": "tee-ist-gesund",
+  "text": "Tee ist gesund.",
+  "voice": "m"
+ },
+ {
+  "key": "die-schmerzen",
+  "text": "die Schmerzen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-schmerzen",
+  "text": "Ich habe Schmerzen.",
+  "voice": "m"
+ },
+ {
+  "key": "das-buero",
+  "text": "das Büro",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bin-im-buero",
+  "text": "Ich bin im Büro.",
+  "voice": "m"
+ },
+ {
+  "key": "der-chef",
+  "text": "der Chef",
+  "voice": "m"
+ },
+ {
+  "key": "der-chef-ist-nett",
+  "text": "Der Chef ist nett.",
+  "voice": "m"
+ },
+ {
+  "key": "der-kollege",
+  "text": "der Kollege",
+  "voice": "m"
+ },
+ {
+  "key": "mein-kollege-hilft-mir",
+  "text": "Mein Kollege hilft mir.",
+  "voice": "m"
+ },
+ {
+  "key": "der-computer",
+  "text": "der Computer",
+  "voice": "m"
+ },
+ {
+  "key": "ich-arbeite-am-computer",
+  "text": "Ich arbeite am Computer.",
+  "voice": "m"
+ },
+ {
+  "key": "die-besprechung",
+  "text": "die Besprechung",
+  "voice": "m"
+ },
+ {
+  "key": "die-besprechung-beginnt-um-zehn",
+  "text": "Die Besprechung beginnt um zehn.",
+  "voice": "m"
+ },
+ {
+  "key": "das-gehalt",
+  "text": "das Gehalt",
+  "voice": "m"
+ },
+ {
+  "key": "das-gehalt-ist-gut",
+  "text": "Das Gehalt ist gut.",
+  "voice": "m"
+ },
+ {
+  "key": "der-vertrag",
+  "text": "der Vertrag",
+  "voice": "m"
+ },
+ {
+  "key": "ich-unterschreibe-den-vertrag",
+  "text": "Ich unterschreibe den Vertrag.",
+  "voice": "m"
+ },
+ {
+  "key": "die-pause",
+  "text": "die Pause",
+  "voice": "m"
+ },
+ {
+  "key": "wir-machen-pause",
+  "text": "Wir machen Pause.",
+  "voice": "m"
+ },
+ {
+  "key": "sich-bewerben",
+  "text": "sich bewerben",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bewerbe-mich-um-die-stelle",
+  "text": "Ich bewerbe mich um die Stelle.",
+  "voice": "m"
+ },
+ {
+  "key": "der-urlaub",
+  "text": "der Urlaub",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-naechste-woche-urlaub",
+  "text": "Ich habe nächste Woche Urlaub.",
+  "voice": "m"
+ },
+ {
+  "key": "der-zug",
+  "text": "der Zug",
+  "voice": "m"
+ },
+ {
+  "key": "der-zug-kommt-gleich",
+  "text": "Der Zug kommt gleich.",
+  "voice": "m"
+ },
+ {
+  "key": "der-bus",
+  "text": "der Bus",
+  "voice": "m"
+ },
+ {
+  "key": "ich-fahre-mit-dem-bus",
+  "text": "Ich fahre mit dem Bus.",
+  "voice": "m"
+ },
+ {
+  "key": "der-flughafen",
+  "text": "der Flughafen",
+  "voice": "m"
+ },
+ {
+  "key": "der-flughafen-ist-gross",
+  "text": "Der Flughafen ist groß.",
+  "voice": "m"
+ },
+ {
+  "key": "die-fahrkarte",
+  "text": "die Fahrkarte",
+  "voice": "m"
+ },
+ {
+  "key": "ich-kaufe-eine-fahrkarte",
+  "text": "Ich kaufe eine Fahrkarte.",
+  "voice": "m"
+ },
+ {
+  "key": "das-gleis",
+  "text": "das Gleis",
+  "voice": "m"
+ },
+ {
+  "key": "der-zug-faehrt-auf-gleis-drei",
+  "text": "Der Zug fährt auf Gleis drei.",
+  "voice": "m"
+ },
+ {
+  "key": "der-koffer",
+  "text": "der Koffer",
+  "voice": "m"
+ },
+ {
+  "key": "mein-koffer-ist-schwer",
+  "text": "Mein Koffer ist schwer.",
+  "voice": "m"
+ },
+ {
+  "key": "die-reise",
+  "text": "die Reise",
+  "voice": "m"
+ },
+ {
+  "key": "die-reise-war-lang",
+  "text": "Die Reise war lang.",
+  "voice": "m"
+ },
+ {
+  "key": "das-hotel",
+  "text": "das Hotel",
+  "voice": "m"
+ },
+ {
+  "key": "das-hotel-ist-gemuetlich",
+  "text": "Das Hotel ist gemütlich.",
+  "voice": "m"
+ },
+ {
+  "key": "abfahren",
+  "text": "abfahren",
+  "voice": "m"
+ },
+ {
+  "key": "der-zug-faehrt-um-acht-ab",
+  "text": "Der Zug fährt um acht ab.",
+  "voice": "m"
+ },
+ {
+  "key": "ankommen",
+  "text": "ankommen",
+  "voice": "m"
+ },
+ {
+  "key": "wir-kommen-um-zehn-an",
+  "text": "Wir kommen um zehn an.",
+  "voice": "m"
+ },
+ {
+  "key": "das-hobby",
+  "text": "das Hobby",
+  "voice": "m"
+ },
+ {
+  "key": "mein-hobby-ist-musik",
+  "text": "Mein Hobby ist Musik.",
+  "voice": "m"
+ },
+ {
+  "key": "die-musik",
+  "text": "die Musik",
+  "voice": "m"
+ },
+ {
+  "key": "ich-hoere-gern-musik",
+  "text": "Ich höre gern Musik.",
+  "voice": "m"
+ },
+ {
+  "key": "der-film",
+  "text": "der Film",
+  "voice": "m"
+ },
+ {
+  "key": "der-film-ist-spannend",
+  "text": "Der Film ist spannend.",
+  "voice": "m"
+ },
+ {
+  "key": "das-cricket",
+  "text": "das Cricket",
+  "voice": "m"
+ },
+ {
+  "key": "wir-spielen-cricket",
+  "text": "Wir spielen Cricket.",
+  "voice": "m"
+ },
+ {
+  "key": "der-fussball",
+  "text": "der Fußball",
+  "voice": "m"
+ },
+ {
+  "key": "er-spielt-fussball",
+  "text": "Er spielt Fußball.",
+  "voice": "m"
+ },
+ {
+  "key": "kochen",
+  "text": "kochen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-koche-gern",
+  "text": "Ich koche gern.",
+  "voice": "m"
+ },
+ {
+  "key": "lesen",
+  "text": "lesen",
+  "voice": "m"
+ },
+ {
+  "key": "sie-liest-ein-buch",
+  "text": "Sie liest ein Buch.",
+  "voice": "m"
+ },
+ {
+  "key": "schwimmen",
+  "text": "schwimmen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-schwimme-im-see",
+  "text": "Ich schwimme im See.",
+  "voice": "m"
+ },
+ {
+  "key": "tanzen",
+  "text": "tanzen",
+  "voice": "m"
+ },
+ {
+  "key": "wir-tanzen-zusammen",
+  "text": "Wir tanzen zusammen.",
+  "voice": "m"
+ },
+ {
+  "key": "spazieren-gehen",
+  "text": "spazieren gehen",
+  "voice": "m"
+ },
+ {
+  "key": "wir-gehen-im-park-spazieren",
+  "text": "Wir gehen im Park spazieren.",
+  "voice": "m"
+ },
+ {
+  "key": "das-buch",
+  "text": "das Buch",
+  "voice": "m"
+ },
+ {
+  "key": "das-buch-ist-interessant",
+  "text": "Das Buch ist interessant.",
+  "voice": "m"
+ },
+ {
   "key": "guten-tag-ihren-pass-bitte",
   "text": "Guten Tag! Ihren Pass, bitte.",
   "voice": "m"
@@ -1480,18 +1900,8 @@
   "voice": "m"
  },
  {
-  "key": "das-gleis",
-  "text": "das Gleis",
-  "voice": "m"
- },
- {
   "key": "der-zug-faehrt-auf-gleis-fuenf",
   "text": "Der Zug fährt auf Gleis fünf.",
-  "voice": "m"
- },
- {
-  "key": "die-fahrkarte",
-  "text": "die Fahrkarte",
   "voice": "m"
  },
  {
@@ -2005,11 +2415,6 @@
   "voice": "m"
  },
  {
-  "key": "die-pause",
-  "text": "die Pause",
-  "voice": "m"
- },
- {
   "key": "feierabend",
   "text": "Feierabend",
   "voice": "m"
@@ -2037,11 +2442,6 @@
  {
   "key": "die-strassenbahn",
   "text": "die Straßenbahn",
-  "voice": "m"
- },
- {
-  "key": "der-bus",
-  "text": "der Bus",
   "voice": "m"
  },
  {
