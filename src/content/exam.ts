@@ -286,6 +286,60 @@ const a2: LevelContent = {
         { q: "Was besuchen viele Touristen?", options: ["Das Brandenburger Tor und den Fernsehturm", "Den Kölner Dom", "Das Schloss Neuschwanstein"], answer: "Das Brandenburger Tor und den Fernsehturm" },
       ],
     },
+    {
+      id: "a2-r3",
+      title: "Notices",
+      instruction: "Read the notices and answer the questions.",
+      texts: [
+        {
+          label: "Notice from a language school",
+          lines: [
+            "Deutschkurs A2 · Neuer Kurs ab 6. Oktober",
+            "Montag und Mittwoch, 18.00–20.15 Uhr",
+            "Anmeldung im Sekretariat oder online",
+            "Kosten: 240 Euro, Bücher extra (35 Euro)",
+            "Wer sich bis zum 30. September anmeldet, bekommt 10 % Rabatt.",
+          ],
+        },
+        {
+          label: "Notice in a house",
+          lines: [
+            "Liebe Nachbarn,",
+            "am Samstag gibt es von 9 bis 15 Uhr kein Wasser im Haus, weil die Rohre repariert werden.",
+            "Bitte füllen Sie am Freitag genug Wasser in Flaschen. Bei Fragen rufen Sie die Hausverwaltung an.",
+            "Hausmeister Medwin",
+          ],
+        },
+      ],
+      items: [
+        { q: "An welchen Tagen ist der Kurs?", options: ["Montag und Mittwoch", "Dienstag und Donnerstag", "Samstag und Sonntag"], answer: "Montag und Mittwoch" },
+        { q: "Was kostet der Kurs ohne Bücher?", options: ["35 Euro", "240 Euro", "275 Euro"], answer: "240 Euro" },
+        { q: "Wer bekommt 10 % Rabatt?", options: ["Wer sich bis zum 30. September anmeldet", "Alle Schüler", "Wer Bücher kauft"], answer: "Wer sich bis zum 30. September anmeldet" },
+        { q: "Am Samstag gibt es den ganzen Tag kein Wasser.", options: TF, answer: "Falsch", tip: "Only from 9 to 15 Uhr." },
+        { q: "Was sollen die Nachbarn am Freitag tun?", options: ["Wasser in Flaschen füllen", "Die Hausverwaltung besuchen", "Die Rohre reparieren"], answer: "Wasser in Flaschen füllen" },
+      ],
+    },
+    {
+      id: "a2-r4",
+      title: "A chat",
+      instruction: "Read the messages and answer the questions.",
+      texts: [
+        {
+          label: "Chat between Thanisha and Ram",
+          lines: [
+            "Thanisha: Hallo Ram, ich habe gestern eine Wohnung gesehen. Sie hat zwei Zimmer und kostet 750 Euro warm. Sie ist aber im vierten Stock und es gibt keinen Aufzug.",
+            "Ram: Das ist günstig! Aber vier Stockwerke ohne Aufzug sind anstrengend. Ist die Wohnung hell?",
+            "Thanisha: Ja, sehr hell, mit einem Balkon. Ich gehe morgen noch einmal hin und mache Fotos.",
+          ],
+        },
+      ],
+      items: [
+        { q: "Wie viel kostet die Wohnung?", options: ["750 Euro warm", "750 Euro kalt", "570 Euro warm"], answer: "750 Euro warm" },
+        { q: "Was ist das Problem?", options: ["Es gibt keinen Aufzug.", "Es gibt keinen Balkon.", "Die Wohnung ist dunkel."], answer: "Es gibt keinen Aufzug." },
+        { q: "Die Wohnung ist dunkel.", options: TF, answer: "Falsch", tip: "“sehr hell”" },
+        { q: "Was macht Thanisha morgen?", options: ["Sie geht noch einmal hin und macht Fotos.", "Sie unterschreibt den Vertrag.", "Sie ruft Ram an."], answer: "Sie geht noch einmal hin und macht Fotos." },
+      ],
+    },
   ],
   listening: [
     {
@@ -323,6 +377,40 @@ const a2: LevelContent = {
         { q: "Announcement: Wann schließt das Kaufhaus?", options: ["Um 17 Uhr", "Um 19 Uhr", "Um 21 Uhr"], answer: "Um 19 Uhr", tip: "neunzehn Uhr = 19:00." },
       ],
     },
+    {
+      id: "a2-l3",
+      title: "Two short dialogues",
+      instruction: "Listen and choose the answers. You may play each dialogue twice.",
+      clips: [
+        {
+          id: "1",
+          label: "At the doctor's office",
+          segments: [
+            { voice: "f", text: "Praxis Doktor Yuvan, guten Tag." },
+            { voice: "m", text: "Guten Tag, hier ist Adhi. Ich habe seit drei Tagen Rückenschmerzen. Kann ich heute noch kommen?" },
+            { voice: "f", text: "Heute ist leider alles voll. Morgen um elf Uhr geht es." },
+            { voice: "m", text: "Gut, dann komme ich morgen um elf." },
+          ],
+        },
+        {
+          id: "2",
+          label: "At the station",
+          segments: [
+            { voice: "m", text: "Entschuldigung, von welchem Gleis fährt der Zug nach Hamburg?" },
+            { voice: "f", text: "Von Gleis sieben, aber er hat zehn Minuten Verspätung." },
+            { voice: "m", text: "Danke. Wo kann ich eine Fahrkarte kaufen?" },
+            { voice: "f", text: "Dort hinten am Automaten." },
+          ],
+        },
+      ],
+      items: [
+        { q: "Doctor: Seit wann hat Adhi Rückenschmerzen?", options: ["Seit einem Tag", "Seit drei Tagen", "Seit einer Woche"], answer: "Seit drei Tagen" },
+        { q: "Doctor: Wann ist der Termin?", options: ["Heute", "Morgen um elf Uhr", "Morgen um zwölf Uhr"], answer: "Morgen um elf Uhr" },
+        { q: "Station: Von welchem Gleis fährt der Zug?", options: ["Gleis fünf", "Gleis sieben", "Gleis zehn"], answer: "Gleis sieben" },
+        { q: "Station: Wie viel Verspätung hat der Zug?", options: ["Zehn Minuten", "Zwanzig Minuten", "Keine"], answer: "Zehn Minuten" },
+        { q: "Station: Wo kann man eine Fahrkarte kaufen?", options: ["Am Automaten", "Im Zug", "Im Hotel"], answer: "Am Automaten" },
+      ],
+    },
   ],
   writing: {
     tasks: [
@@ -355,6 +443,16 @@ const a2: LevelContent = {
         min: 30,
         max: 55,
         sample: "Sehr geehrter Herr Arvind, ich habe Ihre Anzeige im Internet gelesen und interessiere mich für die Wohnung. Wie hoch ist die Miete? Kann ich die Wohnung nächste Woche besichtigen? Vielen Dank für Ihre Antwort. Mit freundlichen Grüßen, Sadhana",
+      },
+      {
+        id: "a2-w4",
+        kind: "email",
+        title: "Part 2: tell a friend about your new job",
+        situation: "Sie haben einen neuen Job. Schreiben Sie an Ihre Freundin Ruby.",
+        points: ["Wo arbeiten Sie?", "Was machen Sie dort?", "Wie sind der Chef und die Kollegen?"],
+        min: 40,
+        max: 70,
+        sample: "Liebe Ruby, ich habe seit Montag einen neuen Job in einer Firma in Berlin. Ich arbeite im Büro und schreibe viele E-Mails. Mein Chef ist sehr nett und die Kollegen helfen mir. Hast du am Wochenende Zeit? Dann erzähle ich dir mehr. Viele Grüße, Adhi",
       },
     ],
   },

@@ -3037,6 +3037,50 @@
   ]
  },
  {
+  "key": "exam-a2-l3-1",
+  "voice": "m",
+  "segments": [
+   {
+    "voice": "f",
+    "text": "Praxis Doktor Yuvan, guten Tag."
+   },
+   {
+    "voice": "m",
+    "text": "Guten Tag, hier ist Adhi. Ich habe seit drei Tagen Rückenschmerzen. Kann ich heute noch kommen?"
+   },
+   {
+    "voice": "f",
+    "text": "Heute ist leider alles voll. Morgen um elf Uhr geht es."
+   },
+   {
+    "voice": "m",
+    "text": "Gut, dann komme ich morgen um elf."
+   }
+  ]
+ },
+ {
+  "key": "exam-a2-l3-2",
+  "voice": "m",
+  "segments": [
+   {
+    "voice": "m",
+    "text": "Entschuldigung, von welchem Gleis fährt der Zug nach Hamburg?"
+   },
+   {
+    "voice": "f",
+    "text": "Von Gleis sieben, aber er hat zehn Minuten Verspätung."
+   },
+   {
+    "voice": "m",
+    "text": "Danke. Wo kann ich eine Fahrkarte kaufen?"
+   },
+   {
+    "voice": "f",
+    "text": "Dort hinten am Automaten."
+   }
+  ]
+ },
+ {
   "key": "liebe-frau-kavitha-ich-kann-morgen-leider-nicht-kommen-weil-ich-krank-bin-am-donnerstag-ko",
   "text": "Liebe Frau Kavitha, ich kann morgen leider nicht kommen, weil ich krank bin. Am Donnerstag komme ich wieder. Können Sie mir bitte die Hausaufgaben schicken? Vielen Dank! Viele Grüße, Sadhana",
   "voice": "f"
@@ -3049,6 +3093,11 @@
  {
   "key": "sehr-geehrter-herr-arvind-ich-habe-ihre-anzeige-im-internet-gelesen-und-interessiere-mich-",
   "text": "Sehr geehrter Herr Arvind, ich habe Ihre Anzeige im Internet gelesen und interessiere mich für die Wohnung. Wie hoch ist die Miete? Kann ich die Wohnung nächste Woche besichtigen? Vielen Dank für Ihre Antwort. Mit freundlichen Grüßen, Sadhana",
+  "voice": "f"
+ },
+ {
+  "key": "liebe-ruby-ich-habe-seit-montag-einen-neuen-job-in-einer-firma-in-berlin-ich-arbeite-im-bu",
+  "text": "Liebe Ruby, ich habe seit Montag einen neuen Job in einer Firma in Berlin. Ich arbeite im Büro und schreibe viele E-Mails. Mein Chef ist sehr nett und die Kollegen helfen mir. Hast du am Wochenende Zeit? Dann erzähle ich dir mehr. Viele Grüße, Adhi",
   "voice": "f"
  },
  {
