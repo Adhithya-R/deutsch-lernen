@@ -1440,6 +1440,406 @@
   "voice": "m"
  },
  {
+  "key": "der-lehrer",
+  "text": "der Lehrer",
+  "voice": "m"
+ },
+ {
+  "key": "mein-lehrer-ist-sehr-nett",
+  "text": "Mein Lehrer ist sehr nett.",
+  "voice": "m"
+ },
+ {
+  "key": "die-krankenschwester",
+  "text": "die Krankenschwester",
+  "voice": "m"
+ },
+ {
+  "key": "die-krankenschwester-hilft-dem-arzt",
+  "text": "Die Krankenschwester hilft dem Arzt.",
+  "voice": "m"
+ },
+ {
+  "key": "der-ingenieur",
+  "text": "der Ingenieur",
+  "voice": "m"
+ },
+ {
+  "key": "er-ist-ingenieur-bei-einer-firma",
+  "text": "Er ist Ingenieur bei einer Firma.",
+  "voice": "m"
+ },
+ {
+  "key": "der-verkaeufer",
+  "text": "der Verkäufer",
+  "voice": "m"
+ },
+ {
+  "key": "der-verkaeufer-ist-freundlich",
+  "text": "Der Verkäufer ist freundlich.",
+  "voice": "m"
+ },
+ {
+  "key": "der-fahrer",
+  "text": "der Fahrer",
+  "voice": "m"
+ },
+ {
+  "key": "der-fahrer-wartet-vor-dem-haus",
+  "text": "Der Fahrer wartet vor dem Haus.",
+  "voice": "m"
+ },
+ {
+  "key": "der-koch",
+  "text": "der Koch",
+  "voice": "m"
+ },
+ {
+  "key": "der-koch-macht-eine-suppe",
+  "text": "Der Koch macht eine Suppe.",
+  "voice": "m"
+ },
+ {
+  "key": "der-student",
+  "text": "der Student",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bin-student",
+  "text": "Ich bin Student.",
+  "voice": "m"
+ },
+ {
+  "key": "der-beruf",
+  "text": "der Beruf",
+  "voice": "m"
+ },
+ {
+  "key": "was-ist-ihr-beruf",
+  "text": "Was ist Ihr Beruf?",
+  "voice": "m"
+ },
+ {
+  "key": "die-stelle",
+  "text": "die Stelle",
+  "voice": "m"
+ },
+ {
+  "key": "ich-suche-eine-neue-stelle",
+  "text": "Ich suche eine neue Stelle.",
+  "voice": "m"
+ },
+ {
+  "key": "der-lebenslauf",
+  "text": "der Lebenslauf",
+  "voice": "m"
+ },
+ {
+  "key": "ich-schreibe-meinen-lebenslauf",
+  "text": "Ich schreibe meinen Lebenslauf.",
+  "voice": "m"
+ },
+ {
+  "key": "gluecklich",
+  "text": "glücklich",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bin-sehr-gluecklich",
+  "text": "Ich bin sehr glücklich.",
+  "voice": "m"
+ },
+ {
+  "key": "traurig",
+  "text": "traurig",
+  "voice": "m"
+ },
+ {
+  "key": "er-ist-heute-traurig",
+  "text": "Er ist heute traurig.",
+  "voice": "m"
+ },
+ {
+  "key": "aufgeregt",
+  "text": "aufgeregt",
+  "voice": "m"
+ },
+ {
+  "key": "wir-sind-vor-der-reise-aufgeregt",
+  "text": "Wir sind vor der Reise aufgeregt.",
+  "voice": "m"
+ },
+ {
+  "key": "nervoes",
+  "text": "nervös",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bin-vor-der-pruefung-nervoes",
+  "text": "Ich bin vor der Prüfung nervös.",
+  "voice": "m"
+ },
+ {
+  "key": "freundlich",
+  "text": "freundlich",
+  "voice": "m"
+ },
+ {
+  "key": "die-nachbarin-ist-freundlich",
+  "text": "Die Nachbarin ist freundlich.",
+  "voice": "m"
+ },
+ {
+  "key": "nett",
+  "text": "nett",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-sehr-nett-von-dir",
+  "text": "Das ist sehr nett von dir.",
+  "voice": "m"
+ },
+ {
+  "key": "geduldig",
+  "text": "geduldig",
+  "voice": "m"
+ },
+ {
+  "key": "die-lehrerin-ist-geduldig",
+  "text": "Die Lehrerin ist geduldig.",
+  "voice": "m"
+ },
+ {
+  "key": "wuetend",
+  "text": "wütend",
+  "voice": "m"
+ },
+ {
+  "key": "er-ist-wuetend-weil-der-zug-zu-spaet-ist",
+  "text": "Er ist wütend, weil der Zug zu spät ist.",
+  "voice": "m"
+ },
+ {
+  "key": "stolz",
+  "text": "stolz",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bin-stolz-auf-dich",
+  "text": "Ich bin stolz auf dich.",
+  "voice": "m"
+ },
+ {
+  "key": "allein",
+  "text": "allein",
+  "voice": "m"
+ },
+ {
+  "key": "ich-wohne-allein",
+  "text": "Ich wohne allein.",
+  "voice": "m"
+ },
+ {
+  "key": "das-handy",
+  "text": "das Handy",
+  "voice": "m"
+ },
+ {
+  "key": "mein-handy-ist-neu",
+  "text": "Mein Handy ist neu.",
+  "voice": "m"
+ },
+ {
+  "key": "das-internet",
+  "text": "das Internet",
+  "voice": "m"
+ },
+ {
+  "key": "das-internet-ist-langsam",
+  "text": "Das Internet ist langsam.",
+  "voice": "m"
+ },
+ {
+  "key": "die-e-mail",
+  "text": "die E-Mail",
+  "voice": "m"
+ },
+ {
+  "key": "ich-schreibe-eine-e-mail",
+  "text": "Ich schreibe eine E-Mail.",
+  "voice": "m"
+ },
+ {
+  "key": "die-nachricht",
+  "text": "die Nachricht",
+  "voice": "m"
+ },
+ {
+  "key": "ich-schicke-dir-eine-nachricht",
+  "text": "Ich schicke dir eine Nachricht.",
+  "voice": "m"
+ },
+ {
+  "key": "anrufen",
+  "text": "anrufen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-rufe-dich-morgen-an",
+  "text": "Ich rufe dich morgen an.",
+  "voice": "m"
+ },
+ {
+  "key": "die-app",
+  "text": "die App",
+  "voice": "m"
+ },
+ {
+  "key": "die-app-ist-kostenlos",
+  "text": "Die App ist kostenlos.",
+  "voice": "m"
+ },
+ {
+  "key": "das-passwort",
+  "text": "das Passwort",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-mein-passwort-vergessen",
+  "text": "Ich habe mein Passwort vergessen.",
+  "voice": "m"
+ },
+ {
+  "key": "der-bildschirm",
+  "text": "der Bildschirm",
+  "voice": "m"
+ },
+ {
+  "key": "der-bildschirm-ist-kaputt",
+  "text": "Der Bildschirm ist kaputt.",
+  "voice": "m"
+ },
+ {
+  "key": "der-akku",
+  "text": "der Akku",
+  "voice": "m"
+ },
+ {
+  "key": "der-akku-ist-leer",
+  "text": "Der Akku ist leer.",
+  "voice": "m"
+ },
+ {
+  "key": "das-wlan",
+  "text": "das WLAN",
+  "voice": "m"
+ },
+ {
+  "key": "gibt-es-hier-wlan",
+  "text": "Gibt es hier WLAN?",
+  "voice": "m"
+ },
+ {
+  "key": "das-konto",
+  "text": "das Konto",
+  "voice": "m"
+ },
+ {
+  "key": "ich-moechte-ein-konto-eroeffnen",
+  "text": "Ich möchte ein Konto eröffnen.",
+  "voice": "m"
+ },
+ {
+  "key": "das-geld",
+  "text": "das Geld",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-kein-geld-dabei",
+  "text": "Ich habe kein Geld dabei.",
+  "voice": "m"
+ },
+ {
+  "key": "das-bargeld",
+  "text": "das Bargeld",
+  "voice": "m"
+ },
+ {
+  "key": "ich-zahle-mit-bargeld",
+  "text": "Ich zahle mit Bargeld.",
+  "voice": "m"
+ },
+ {
+  "key": "die-ueberweisung",
+  "text": "die Überweisung",
+  "voice": "m"
+ },
+ {
+  "key": "die-miete-zahle-ich-per-ueberweisung",
+  "text": "Die Miete zahle ich per Überweisung.",
+  "voice": "m"
+ },
+ {
+  "key": "der-brief",
+  "text": "der Brief",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bekomme-einen-brief",
+  "text": "Ich bekomme einen Brief.",
+  "voice": "m"
+ },
+ {
+  "key": "das-paket",
+  "text": "das Paket",
+  "voice": "m"
+ },
+ {
+  "key": "das-paket-kommt-morgen",
+  "text": "Das Paket kommt morgen.",
+  "voice": "m"
+ },
+ {
+  "key": "die-briefmarke",
+  "text": "die Briefmarke",
+  "voice": "m"
+ },
+ {
+  "key": "ich-brauche-eine-briefmarke",
+  "text": "Ich brauche eine Briefmarke.",
+  "voice": "m"
+ },
+ {
+  "key": "die-adresse",
+  "text": "die Adresse",
+  "voice": "m"
+ },
+ {
+  "key": "wie-ist-ihre-adresse",
+  "text": "Wie ist Ihre Adresse?",
+  "voice": "m"
+ },
+ {
+  "key": "die-unterschrift",
+  "text": "die Unterschrift",
+  "voice": "m"
+ },
+ {
+  "key": "hier-fehlt-ihre-unterschrift",
+  "text": "Hier fehlt Ihre Unterschrift.",
+  "voice": "m"
+ },
+ {
+  "key": "das-amt",
+  "text": "das Amt",
+  "voice": "m"
+ },
+ {
+  "key": "das-amt-ist-heute-geschlossen",
+  "text": "Das Amt ist heute geschlossen.",
+  "voice": "m"
+ },
+ {
   "key": "guten-tag-ihren-pass-bitte",
   "text": "Guten Tag! Ihren Pass, bitte.",
   "voice": "m"
@@ -3467,11 +3867,6 @@
  {
   "key": "die-karte",
   "text": "die Karte",
-  "voice": "m"
- },
- {
-  "key": "das-konto",
-  "text": "das Konto",
   "voice": "m"
  },
  {
