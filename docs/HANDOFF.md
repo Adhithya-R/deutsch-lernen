@@ -64,7 +64,7 @@ Duolingo-style, story-based, phone first. Five tabs, each with its own light war
 1. Owner testing and feedback (audio on phones, logged-in flows, Tamil wording, German content, exam formats, assumed genders).
 2. A2 story chapters (Beim Arzt, Die Arbeit), each with its own landmark pair and mood.
 3. Daily goal; shared word lists; reminders; more exam tasks and decks.
-4. Set the Vercel Function Region to the same region as Supabase (check Supabase project region) for faster responses.
+4. Vercel Function Region is set to Mumbai (`bom1`) in `vercel.json` to match the Supabase project (ap-south-1). Keep them in the same region. JWT signing keys are ECC (P-256), so login checks are local.
 
 ## Rules and caveats
 - **Do not copy Goethe exam papers** (copyrighted). Use the free official sample tests only to learn format and difficulty, then write original questions/stories.
