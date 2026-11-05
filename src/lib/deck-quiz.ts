@@ -50,13 +50,13 @@ export function shuffle<T>(a: T[]): T[] {
   return r;
 }
 
-export function buildQuestion<T extends C>(card: T, kind: Kind, deck: T[], all: T[]): Q {
+export function buildQuestion<T extends C>(card: T, kind: Kind, deck: T[], all: T[], shuf: <U>(a: U[]) => U[] = shuffle): Q {
   const pool = deck.length >= 4 ? deck : all;
   if (kind === "meaning") {
-    return { cardId: card.id, kind, prompt: card.de, answer: card.en, options: shuffle([card.en, ...distractors(card, pool, "en")]) };
+    return { cardId: card.id, kind, prompt: card.de, answer: card.en, options: shuf([card.en, ...distractors(card, pool, "en", 3, shuf)]) };
   }
   if (kind === "listen") {
-    return { cardId: card.id, kind, prompt: card.de, answer: card.de, options: shuffle([card.de, ...distractors(card, pool, "de")]) };
+    return { cardId: card.id, kind, prompt: card.de, answer: card.de, options: shuf([card.de, ...distractors(card, pool, "de", 3, shuf)]) };
   }
   return { cardId: card.id, kind, prompt: card.en, answer: card.de };
 }

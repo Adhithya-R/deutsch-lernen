@@ -31,3 +31,16 @@ for (const c of cards) {
 const ids = new Set(cards.map((c) => c.id));
 Object.keys(PICS).forEach((k) => assert.ok(ids.has(k), `picture for unknown card ${k}`));
 console.log(`deck quiz ok for ${cards.length} cards`);
+
+// ---- weekly quiz ----
+import { pickForWeek, weekId } from "../src/lib/weekly.ts";
+assert.equal(weekId(new Date("2026-11-05T10:00:00Z")), "2026-w45");
+assert.equal(weekId(new Date("2026-11-02T00:00:00Z")), "2026-w45", "Monday starts the week");
+assert.equal(weekId(new Date("2026-11-08T23:59:00Z")), "2026-w45", "Sunday ends the week");
+assert.equal(weekId(new Date("2026-11-09T00:00:00Z")), "2026-w46");
+assert.equal(weekId(new Date("2027-01-01T00:00:00Z")), "2026-w53");
+const a = pickForWeek("2026-w45", cards).map((c) => c.id);
+assert.deepEqual(a, pickForWeek("2026-w45", [...cards].reverse()).map((c) => c.id), "same words whatever the order");
+assert.equal(new Set(a).size, 10);
+assert.notDeepEqual(a, pickForWeek("2026-w46", cards).map((c) => c.id));
+console.log("weekly quiz ok");

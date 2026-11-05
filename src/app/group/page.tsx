@@ -14,7 +14,7 @@ export default function GroupPage() {
       <ScreenTop tab="me" ids={["TN017", "DE017"]} mood="rainbow" kicker="Learn together" title="Study group" />
       <div className="px-4 pt-4">
         <Link href="/me" className="inline-flex items-center gap-1 py-1 text-sm font-extrabold text-muted"><Icon name="back" size={18} /> Me</Link>
-        <Suspense fallback={<p className="mt-4 text-muted">Loading…</p>}>
+        <Suspense fallback={<div className="mt-4 h-32 animate-pulse rounded-3xl bg-white/70" aria-hidden="true" />}>
           <Board />
         </Suspense>
       </div>
@@ -38,7 +38,7 @@ async function Board() {
   if (error) {
     return (
       <p className="mt-4 rounded-2xl bg-butter p-4 text-sm text-butter-ink" role="alert">
-        The leaderboard is not set up yet. Run the group SQL script in Supabase (supabase/migrations/004_group.sql) and reload.
+        The leaderboard is not set up yet. Run supabase/setup.sql in the Supabase SQL editor, then reload.
       </p>
     );
   }
@@ -61,6 +61,14 @@ async function Board() {
         </p>
         <p className="mt-1 text-sm">Pass chapter checks and review flashcards to earn XP. The week starts on Monday.</p>
       </section>
+
+      <Link href="/group/weekly" className="mt-4 flex items-center justify-between rounded-3xl bg-pri p-4 text-white shadow-[0_4px_0_var(--color-pri-dark)]">
+        <span>
+          <span className="block text-lg font-extrabold">Play the weekly quiz</span>
+          <span className="text-sm opacity-90">10 words, the same for the whole class. Earn XP and climb the ranking.</span>
+        </span>
+        <Icon name="arrow" size={24} />
+      </Link>
 
       <h2 className="mt-6 text-xl font-extrabold">This week&apos;s ranking</h2>
       {rows.length === 0 ? (
