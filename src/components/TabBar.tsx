@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Icon from "@/components/Icon";
+import NavPending from "@/components/NavPending";
 import { TABS, tabFor } from "@/lib/tabs";
 
 // Bottom navigation on phones. On laptops the same five links sit in the top bar.
@@ -21,12 +22,13 @@ export default function TabBar() {
             key={t.id}
             href={t.href}
             aria-current={on ? "page" : undefined}
-            className={`flex flex-col items-center gap-0.5 py-1 text-[11.5px] font-extrabold ${on ? "text-ink" : "text-muted"}`}
+            className={`relative flex flex-col items-center gap-0.5 py-1 text-[11.5px] font-extrabold ${on ? "text-ink" : "text-muted"}`}
           >
             <span className={`grid h-9 w-14 place-items-center rounded-xl ${on ? "bg-pill text-pri ring-2 ring-pri" : ""}`}>
               <Icon name={t.icon} size={22} />
             </span>
             {t.label}
+            <NavPending />
           </Link>
         );
       })}

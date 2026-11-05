@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { createClient } from "@/lib/supabase/server";
 
 /**
@@ -5,7 +6,8 @@ import { createClient } from "@/lib/supabase/server";
  * (it only calls Supabase when the token needs refreshing). The database itself still enforces
  * who may read and write what (row-level security), so this is safe to use for pages and actions.
  */
-export async function getSession() {
+// cache(): the top bar, the page and its data parts all ask who is logged in; this checks once per request.
+export const getSession = cache(async () => {
   const supabase = await createClient();
   const { data } = await supabase.auth.getClaims();
   const claims = data?.claims;
@@ -14,4 +16,4 @@ export async function getSession() {
     userId: (claims?.sub as string | undefined) ?? null,
     email: claims?.email as string | undefined,
   };
-}
+});

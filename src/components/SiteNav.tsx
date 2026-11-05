@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
+import NavPending from "@/components/NavPending";
 import { TABS, tabFor } from "@/lib/tabs";
 
 // Top bar: brand and account. On laptops it also carries the five section links.
@@ -25,11 +26,12 @@ export default function SiteNav({ auth }: { auth: ReactNode }) {
               key={t.id}
               href={t.href}
               aria-current={t.id === current ? "page" : undefined}
-              className={`rounded-xl px-4 py-2 text-[15px] font-extrabold ${
+              className={`relative rounded-xl px-4 py-2 text-[15px] font-extrabold ${
                 t.id === current ? "bg-pill text-pri" : "text-muted hover:bg-sand"
               }`}
             >
               {t.label}
+              <NavPending />
             </Link>
           ))}
         </nav>

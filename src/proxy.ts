@@ -3,6 +3,9 @@ import { NextResponse, type NextRequest } from "next/server";
 
 // Keeps the Supabase login session fresh on every request.
 export async function proxy(request: NextRequest) {
+  // Visitors who are not logged in have no Supabase cookie: nothing to refresh, so answer at once.
+  if (!request.cookies.getAll().some((c) => c.name.startsWith("sb-"))) return NextResponse.next();
+
   let response = NextResponse.next({ request });
 
   const supabase = createServerClient(
