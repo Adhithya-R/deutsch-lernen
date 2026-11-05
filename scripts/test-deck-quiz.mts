@@ -44,3 +44,15 @@ assert.deepEqual(a, pickForWeek("2026-w45", [...cards].reverse()).map((c) => c.i
 assert.equal(new Set(a).size, 10);
 assert.notDeepEqual(a, pickForWeek("2026-w46", cards).map((c) => c.id));
 console.log("weekly quiz ok");
+
+// ---- speaking match ----
+import { bestMatch, matchSpeech } from "../src/lib/speech-match.ts";
+assert.equal(matchSpeech("Ich heiße Adhi.", "ich heisse adhi").score, 1);
+assert.ok(matchSpeech("Ich komme aus Indien, aus Madurai.", "ich komme aus indien aus madurai").pass);
+assert.ok(!matchSpeech("Ich komme aus Indien.", "hallo").pass);
+assert.equal(matchSpeech("Ich komme aus Indien.", "").score, 0);
+assert.ok(matchSpeech("Ich spreche Englisch.", "ich spreche englich").pass, "one wrong letter in a long word is accepted");
+assert.ok(!matchSpeech("aus aus aus aus", "aus").pass, "a repeated word cannot be matched with a single spoken word");
+assert.equal(bestMatch("Guten Tag", ["gute nacht", "guten tag"]).score, 1);
+assert.deepEqual(matchSpeech("Wo ist die Bank?", "wo ist bank").words.map((w) => w.ok), [true, true, false, true]);
+console.log("speech match ok");

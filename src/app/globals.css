@@ -667,3 +667,7 @@ html[data-lang="en"] .ta-only {
 @keyframes nav-pulse { 0%,100% { opacity: .25; } 50% { opacity: 1; } }
 .nav-pending { position: absolute; left: 50%; top: -7px; width: 28px; height: 4px; margin-left: -14px; border-radius: 4px; background: var(--color-pri); animation: nav-pulse .7s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) { .nav-pending { animation: none; } }
+
+@keyframes mic-pulse { 0%,100% { box-shadow: 0 5px 0 var(--color-pri-dark), 0 0 0 0 rgba(214,69,69,.5); } 50% { box-shadow: 0 5px 0 var(--color-pri-dark), 0 0 0 14px rgba(214,69,69,0); } }
+.nav-pulse-bg { animation: mic-pulse 1.1s ease-out infinite; }
+@media (prefers-reduced-motion: reduce) { .nav-pulse-bg { animation: none; } }
