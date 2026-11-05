@@ -10,5 +10,6 @@ export const sheets: Sheet[] = [
   { slug: "prepositions", title: "Prepositions", desc: "with Dativ and the two-way prepositions", lessons: ["dativ-prepositions", "two-way-prepositions"] },
   { slug: "numbers", title: "Numbers and time", desc: "numbers, the clock, prices", lessons: ["numbers-time"] },
   { slug: "adjectives", title: "Adjectives and comparison", desc: "endings and bigger / biggest", lessons: ["adjective-endings", "comparison"] },
+  { slug: "advanced", title: "Late A2 grammar", desc: "Konjunktiv II, the passive and relative clauses", lessons: ["konjunktiv-2", "passiv", "relative-clauses"] },
   { slug: "polite", title: "Polite phrases", desc: "möchte, hätte gern, könnten Sie", lessons: ["polite-requests"] },
 ];

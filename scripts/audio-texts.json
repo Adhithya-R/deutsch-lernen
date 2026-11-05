@@ -3095,6 +3095,61 @@
   "voice": "m"
  },
  {
+  "key": "ich-haette-gern-ein-glas-wasser",
+  "text": "Ich hätte gern ein Glas Wasser.",
+  "voice": "m"
+ },
+ {
+  "key": "das-waere-schoen",
+  "text": "Das wäre schön!",
+  "voice": "m"
+ },
+ {
+  "key": "wenn-ich-mehr-zeit-haette-wuerde-ich-oefter-kochen",
+  "text": "Wenn ich mehr Zeit hätte, würde ich öfter kochen.",
+  "voice": "m"
+ },
+ {
+  "key": "hier-wird-deutsch-gesprochen",
+  "text": "Hier wird Deutsch gesprochen.",
+  "voice": "m"
+ },
+ {
+  "key": "die-wohnung-wird-renoviert",
+  "text": "Die Wohnung wird renoviert.",
+  "voice": "m"
+ },
+ {
+  "key": "der-brief-wird-von-adhi-geschrieben",
+  "text": "Der Brief wird von Adhi geschrieben.",
+  "voice": "m"
+ },
+ {
+  "key": "das-haus-wurde-1990-gebaut",
+  "text": "Das Haus wurde 1990 gebaut.",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-der-mann-der-in-berlin-wohnt",
+  "text": "Das ist der Mann, der in Berlin wohnt.",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-die-frau-die-ich-kenne",
+  "text": "Das ist die Frau, die ich kenne.",
+  "voice": "m"
+ },
+ {
+  "key": "das-buch-das-ich-lese-ist-spannend",
+  "text": "Das Buch, das ich lese, ist spannend.",
+  "voice": "m"
+ },
+ {
+  "key": "die-freunde-mit-denen-ich-lerne-sind-nett",
+  "text": "Die Freunde, mit denen ich lerne, sind nett.",
+  "voice": "m"
+ },
+ {
   "key": "das-broetchen",
   "text": "das Brötchen",
   "voice": "m"

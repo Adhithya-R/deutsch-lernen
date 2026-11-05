@@ -788,6 +788,127 @@ export const lessons: Lesson[] = [
       { q: "Würden Sie bitte das Fenster ___? (öffnen)", options: ["öffnen", "öffnet", "geöffnet"], answer: "öffnen" },
     ],
   },
+  {
+    slug: "konjunktiv-2",
+    level: "A2",
+    title: { en: "Polite wishes and advice (Konjunktiv II)", ta: "பணிவான விருப்பம், அறிவுரை (Konjunktiv II)" },
+    intro: {
+      en: "Konjunktiv II sounds polite and softer. At A2 you mainly need hätte, wäre, könnte and würde + infinitive. Use it for polite requests (Könnten Sie …?), wishes (Ich hätte gern …), advice (Du solltest …) and unreal ideas (Wenn ich Zeit hätte, würde ich reisen).",
+      ta: "Konjunktiv II பணிவாகவும் மென்மையாகவும் ஒலிக்கும். A2 இல் hätte, wäre, könnte, würde + வினை போதும். பணிவான கோரிக்கை (Könnten Sie …?), விருப்பம் (Ich hätte gern …), அறிவுரை (Du solltest …), நடக்காத கற்பனை (Wenn ich Zeit hätte, würde ich reisen).",
+    },
+    tables: [
+      {
+        title: "The four forms you need",
+        headers: ["Pronoun", "haben", "sein", "können", "werden"],
+        rows: [
+          ["ich", "hätte", "wäre", "könnte", "würde"],
+          ["du", "hättest", "wärst", "könntest", "würdest"],
+          ["er / sie / es", "hätte", "wäre", "könnte", "würde"],
+          ["wir", "hätten", "wären", "könnten", "würden"],
+          ["ihr", "hättet", "wärt", "könntet", "würdet"],
+          ["sie / Sie", "hätten", "wären", "könnten", "würden"],
+        ],
+      },
+      {
+        title: "When to use it",
+        headers: ["Use", "Example"],
+        rows: [
+          ["Polite request", "Könnten Sie mir bitte helfen?"],
+          ["Polite wish", "Ich hätte gern einen Tee."],
+          ["Advice", "Du solltest mehr üben."],
+          ["Unreal idea", "Wenn ich Zeit hätte, würde ich reisen."],
+        ],
+      },
+    ],
+    points: [
+      { de: "Könnten Sie das bitte wiederholen?", en: "Could you please repeat that?", ta: "இதை மீண்டும் சொல்ல முடியுமா?" },
+      { de: "Ich hätte gern ein Glas Wasser.", en: "I would like a glass of water.", ta: "எனக்கு ஒரு கிளாஸ் தண்ணீர் வேண்டும்." },
+      { de: "Das wäre schön!", en: "That would be nice!", ta: "அது நன்றாக இருக்கும்!" },
+      { de: "Wenn ich mehr Zeit hätte, würde ich öfter kochen.", en: "If I had more time, I would cook more often.", ta: "எனக்கு அதிக நேரம் இருந்தால் நான் அடிக்கடி சமைப்பேன்." },
+    ],
+    exercises: [
+      { q: "___ Sie mir bitte helfen? (polite)", options: ["Könnten", "Können", "Konnten"], answer: "Könnten", tip: { en: "Könnten is the polite form of können.", ta: "Könnten என்பது können இன் பணிவான வடிவம்." } },
+      { q: "Ich ___ gern einen Kaffee.", options: ["hätte", "habe", "hatte"], answer: "hätte" },
+      { q: "Wenn ich Zeit ___, würde ich reisen.", options: ["hätte", "habe", "hat"], answer: "hätte", tip: { en: "An unreal wish: Wenn ich Zeit hätte …", ta: "நடக்காத விருப்பம்: Wenn ich Zeit hätte …" } },
+      { q: "Das ___ schön!", options: ["wäre", "ist", "war"], answer: "wäre" },
+    ],
+  },
+  {
+    slug: "passiv",
+    level: "A2",
+    title: { en: "The passive (Passiv)", ta: "செயப்பாட்டு வடிவம் (Passiv)" },
+    intro: {
+      en: "The passive says what happens to something, not who does it. Build it with werden + Partizip II (at the end). Name the doer only if needed, with von + Dativ. For the past use wurde + Partizip II.",
+      ta: "செயப்பாட்டு வடிவம் ஒரு பொருளுக்கு என்ன நடக்கிறது என்பதைச் சொல்லும், யார் செய்கிறார் என்பதை அல்ல. werden + Partizip II (கடைசியில்). செய்பவரைச் சொல்ல வேண்டுமானால் von + Dativ. இறந்த காலத்துக்கு wurde + Partizip II.",
+    },
+    tables: [
+      {
+        title: "werden (present) and wurde (past)",
+        headers: ["Pronoun", "werden", "wurde"],
+        rows: [
+          ["ich", "werde", "wurde"],
+          ["du", "wirst", "wurdest"],
+          ["er / sie / es", "wird", "wurde"],
+          ["wir", "werden", "wurden"],
+          ["ihr", "werdet", "wurdet"],
+          ["sie / Sie", "werden", "wurden"],
+        ],
+      },
+      {
+        title: "Active and passive",
+        headers: ["Active", "Passive"],
+        rows: [
+          ["Man spricht hier Deutsch.", "Hier wird Deutsch gesprochen."],
+          ["Der Chef schreibt den Brief.", "Der Brief wird (vom Chef) geschrieben."],
+          ["Man baute das Haus 1990.", "Das Haus wurde 1990 gebaut."],
+        ],
+      },
+    ],
+    points: [
+      { de: "Hier wird Deutsch gesprochen.", en: "German is spoken here.", ta: "இங்கே ஜெர்மன் பேசப்படுகிறது." },
+      { de: "Die Wohnung wird renoviert.", en: "The flat is being renovated.", ta: "வீடு புதுப்பிக்கப்படுகிறது." },
+      { de: "Der Brief wird von Adhi geschrieben.", en: "The letter is written by Adhi.", ta: "கடிதம் ஆதியால் எழுதப்படுகிறது." },
+      { de: "Das Haus wurde 1990 gebaut.", en: "The house was built in 1990.", ta: "வீடு 1990 இல் கட்டப்பட்டது." },
+    ],
+    exercises: [
+      { q: "Hier ___ Deutsch gesprochen.", options: ["wird", "wirst", "werden"], answer: "wird", tip: { en: "Deutsch is singular, so wird.", ta: "Deutsch ஒருமை, ஆகவே wird." } },
+      { q: "Die Briefe werden ___.", options: ["geschrieben", "schreiben", "schrieb"], answer: "geschrieben", tip: { en: "The Partizip II goes to the end.", ta: "Partizip II கடைசியில் வரும்." } },
+      { q: "Das Haus ___ 1990 gebaut. (past)", options: ["wurde", "wird", "werde"], answer: "wurde" },
+      { q: "Die Tür ___ geöffnet. (present, one door)", options: ["wird", "werden", "wurden"], answer: "wird" },
+    ],
+  },
+  {
+    slug: "relative-clauses",
+    level: "A2",
+    title: { en: "Relative clauses", ta: "சார்பு உட்பிரிவுகள் (Relativsätze)" },
+    intro: {
+      en: "A relative clause adds information about a noun. It starts with der, die, das or die (plural), and the verb goes to the end. The pronoun has the same gender and number as the noun, but its case depends on its job in the clause. Always put a comma before it.",
+      ta: "சார்பு உட்பிரிவு ஒரு பெயர்ச்சொல்லைப் பற்றிய கூடுதல் தகவல் தரும். der, die, das அல்லது die (பன்மை) உடன் தொடங்கி வினை கடைசியில் செல்லும். அதன் முன் கமா போடவும்.",
+    },
+    tables: [
+      {
+        title: "Relative pronouns",
+        headers: ["Case", "masculine", "feminine", "neuter", "plural"],
+        rows: [
+          ["Nominativ", "der", "die", "das", "die"],
+          ["Akkusativ", "den", "die", "das", "die"],
+          ["Dativ", "dem", "der", "dem", "denen"],
+        ],
+      },
+    ],
+    points: [
+      { de: "Das ist der Mann, der in Berlin wohnt.", en: "That is the man who lives in Berlin.", ta: "இவர் பெர்லினில் வசிக்கும் மனிதர்." },
+      { de: "Das ist die Frau, die ich kenne.", en: "That is the woman whom I know.", ta: "இவர் எனக்குத் தெரிந்த பெண்." },
+      { de: "Das Buch, das ich lese, ist spannend.", en: "The book that I am reading is exciting.", ta: "நான் படிக்கும் புத்தகம் விறுவிறுப்பாக உள்ளது." },
+      { de: "Die Freunde, mit denen ich lerne, sind nett.", en: "The friends with whom I study are nice.", ta: "என்னுடன் படிக்கும் நண்பர்கள் நல்லவர்கள்." },
+    ],
+    exercises: [
+      { q: "Das ist der Lehrer, ___ Deutsch unterrichtet.", options: ["der", "den", "dem"], answer: "der", tip: { en: "The teacher does the teaching: Nominativ, masculine → der.", ta: "கற்பிப்பவர் ஆசிரியர்: Nominativ, ஆண்பால் → der." } },
+      { q: "Das ist die Stadt, ___ ich liebe.", options: ["die", "der", "das"], answer: "die" },
+      { q: "Das Buch, ___ ich lese, ist gut.", options: ["das", "den", "dem"], answer: "das" },
+      { q: "Der Mann, ___ ich helfe, ist alt. (helfen + Dativ)", options: ["dem", "den", "der"], answer: "dem", tip: { en: "helfen takes the Dativ: masculine → dem.", ta: "helfen உடன் Dativ: ஆண்பால் → dem." } },
+    ],
+  },
 ];
 
 export type CaseRow = { gender: string; nom: string; akk: string; dat: string };
