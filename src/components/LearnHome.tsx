@@ -30,13 +30,15 @@ function Chip({ icon, value, label }: { icon: IconName; value: string | number; 
   );
 }
 
-export default function LearnHome({ data }: { data: LearnData }) {
+/** `loading`: progress is still being fetched, so show neutral placeholders instead of the logged-out view. */
+export default function LearnHome({ data, loading = false }: { data: LearnData; loading?: boolean }) {
   const done = new Set(data.done);
   const stops: Stop[] = [];
   let currentFound = false;
   let currentChapter: (typeof chapters)[number] | undefined;
   chapters.forEach((c) => {
-    if (done.has(c.slug)) stops.push({ title: c.title, sub: c.sub, state: "done", href: `/learn/${c.slug}` });
+    if (loading) stops.push({ title: c.title, sub: c.sub, state: "lock" });
+    else if (done.has(c.slug)) stops.push({ title: c.title, sub: c.sub, state: "done", href: `/learn/${c.slug}` });
     else if (!currentFound) {
       currentFound = true;
       currentChapter = c;
@@ -58,9 +60,9 @@ export default function LearnHome({ data }: { data: LearnData }) {
         <h1 className="text-3xl font-extrabold">{current ? current.title : "Alle Kapitel geschafft!"}</h1>
 
         <div className="mt-3.5 flex gap-2">
-          <Chip icon="flame" value={data.streak} label={data.streak === 1 ? "day streak" : "day streak"} />
-          <Chip icon="star" value={data.xp} label="XP" />
-          <Chip icon="cards" value={`${data.learned}/${data.words}`} label="words learned" />
+          <Chip icon="flame" value={loading ? "–" : data.streak} label={data.streak === 1 ? "day streak" : "day streak"} />
+          <Chip icon="star" value={loading ? "–" : data.xp} label="XP" />
+          <Chip icon="cards" value={loading ? "–" : `${data.learned}/${data.words}`} label="words learned" />
         </div>
 
         <div className="mt-3 grid grid-cols-2 gap-2.5">
@@ -74,13 +76,13 @@ export default function LearnHome({ data }: { data: LearnData }) {
           </Link>
         </div>
 
-        {!data.loggedIn && (
+        {!loading && !data.loggedIn && (
           <p className="mt-4 rounded-2xl bg-white p-3.5 text-sm shadow-[0_3px_0_var(--color-line)]">
             <Link href="/signup" className="font-extrabold text-pri underline">Create an account</Link> to save your progress and unlock new chapters.
           </p>
         )}
 
-        <div className="relative mt-5">
+        <div className={`relative mt-5 ${loading ? "animate-pulse" : ""}`} aria-busy={loading}>
           <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox={`0 0 100 ${stops.length * ROW}`} preserveAspectRatio="none" aria-hidden="true">
             <path d={path} fill="none" stroke="var(--tab-band)" strokeWidth="6" strokeLinecap="round" strokeDasharray="1 14" vectorEffect="non-scaling-stroke" />
           </svg>

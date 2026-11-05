@@ -109,6 +109,8 @@ export async function reviewCard(cardId: string, grade: number, day?: string): P
 
   const xp = grade === 2 ? 3 : grade === 1 ? 1 : 0;
   const xpError = await addXp(supabase, day, xp);
+  revalidatePath("/");
+  revalidatePath("/flashcards");
   return xpError ? { ok: true, xp: 0, error: xpError } : { ok: true, xp };
 }
 

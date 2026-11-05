@@ -9,18 +9,18 @@ const EMPTY = { loggedIn: false, done: [], learned: 0, words: cards.length, stre
 
 export default function Home() {
   return (
-    <Suspense fallback={<LearnHome data={EMPTY} />}>
+    <Suspense fallback={<LearnHome data={EMPTY} loading />}>
       <Loader />
     </Suspense>
   );
 }
 
 async function Loader() {
-  const { loggedIn, done } = await chapterProgress();
-  if (!loggedIn) return <LearnHome data={EMPTY} />;
+  const { supabase, userId } = await getSession();
+  if (!userId) return <LearnHome data={EMPTY} />;
 
-  const { supabase } = await getSession();
-  const [{ data: states }, activity] = await Promise.all([
+  const [{ done }, { data: states }, activity] = await Promise.all([
+    chapterProgress(),
     supabase.from("flashcard_state").select("card_id"),
     supabase.from("daily_activity").select("day,xp"), // returns nothing if the table does not exist yet
   ]);
