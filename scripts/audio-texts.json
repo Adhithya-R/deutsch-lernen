@@ -2860,7 +2860,45 @@
    },
    {
     "voice": "f",
-    "text": "Aus Spanien."
+    "text": "Aus Indien."
+   }
+  ]
+ },
+ {
+  "key": "exam-a1-l3-1",
+  "voice": "m",
+  "segments": [
+   {
+    "voice": "f",
+    "text": "Guten Tag, kann ich Ihnen helfen?"
+   },
+   {
+    "voice": "m",
+    "text": "Ja, ich suche ein T-Shirt. Haben Sie das in Blau?"
+   },
+   {
+    "voice": "f",
+    "text": "Ja, hier. Es kostet zwölf Euro neunzig."
+   }
+  ]
+ },
+ {
+  "key": "exam-a1-l3-2",
+  "voice": "m",
+  "segments": [
+   {
+    "voice": "m",
+    "text": "Hallo Dhinesh, hier ist Ram. Ich kann heute nicht zum Deutschkurs kommen. Ich bin krank. Kannst du mir bitte die Hausaufgaben schicken? Danke!"
+   }
+  ]
+ },
+ {
+  "key": "exam-a1-l3-3",
+  "voice": "m",
+  "segments": [
+   {
+    "voice": "f",
+    "text": "Achtung, eine Durchsage. Das Schwimmbad schließt heute um achtzehn Uhr. Bitte verlassen Sie jetzt das Wasser."
    }
   ]
  },
@@ -2872,6 +2910,11 @@
  {
   "key": "lieber-akshay-am-samstag-koche-ich-reis-und-curry-kommst-du-um-19-uhr-zu-mir-nach-hause-br",
   "text": "Lieber Akshay, am Samstag koche ich Reis und Curry. Kommst du um 19 Uhr zu mir nach Hause? Bring bitte ein Getränk mit. Ich freue mich! Liebe Grüße, Sadhana",
+  "voice": "f"
+ },
+ {
+  "key": "liebe-frau-kavitha-ich-bin-krank-und-kann-morgen-nicht-kommen-am-montag-komme-ich-wieder-k",
+  "text": "Liebe Frau Kavitha, ich bin krank und kann morgen nicht kommen. Am Montag komme ich wieder. Können Sie mir bitte die Hausaufgaben schicken? Viele Grüße, Adhi",
   "voice": "f"
  },
  {

@@ -55,7 +55,7 @@ async function Inner({ params }: { params: PageProps<"/exam/[level]/[skill]">["p
           <p className="mb-4 rounded-2xl bg-butter p-3.5 text-sm text-butter-ink">
             Reading and listening together, with a timer. Do it without looking at the tips. About 60% would be a pass.
           </p>
-          <PracticeRunner tasks={[...readingTasks(e), ...listeningTasks(e)]} minutes={e.level === "a1" ? 30 : 55} kind="mock" refId={`${e.level}-mock`} />
+          <PracticeRunner tasks={[...readingTasks(e), ...listeningTasks(e)]} minutes={e.level === "a1" ? 40 : 55} kind="mock" refId={`${e.level}-mock`} />
         </>
       )}
       {skill === "writing" && (

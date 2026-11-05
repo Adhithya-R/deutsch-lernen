@@ -102,6 +102,24 @@ const a1: LevelContent = {
         { q: "Am Sonntag ist der Supermarkt offen.", options: TF, answer: "Falsch", tip: "Open Monday to Saturday." },
       ],
     },
+    {
+      id: "a1-r3",
+      title: "Everyday texts",
+      instruction: "Read the texts and answer the questions.",
+      texts: [
+        { label: "Message from Risha", lines: ["Hallo Sadhana,", "ich komme heute später. Mein Bus hat Verspätung.", "Wir treffen uns um 14 Uhr vor der Bibliothek.", "Bis gleich! Risha"] },
+        { label: "Sign at a swimming pool", lines: ["Schwimmbad Blauer See", "Dienstag bis Sonntag: 10–20 Uhr", "Montag: geschlossen", "Kinder bis 6 Jahre: frei", "Erwachsene: 4 Euro"] },
+        { label: "Invitation", lines: ["Liebe Nethra,", "ich habe am Freitag Geburtstag und mache ein Fest.", "Es beginnt um 18 Uhr bei mir zu Hause.", "Kommst du? Schreib mir bitte kurz.", "Liebe Grüße, Kavitha"] },
+      ],
+      items: [
+        { q: "Warum kommt Risha später?", options: ["Der Bus hat Verspätung.", "Sie ist krank.", "Sie hat keine Zeit."], answer: "Der Bus hat Verspätung." },
+        { q: "Wo treffen sich Risha und Sadhana?", options: ["Vor der Bibliothek", "Im Café", "Am Bahnhof"], answer: "Vor der Bibliothek" },
+        { q: "Das Schwimmbad ist am Montag offen.", options: TF, answer: "Falsch", tip: "Monday: geschlossen." },
+        { q: "Was kostet der Eintritt für Erwachsene?", options: ["4 Euro", "6 Euro", "Nichts"], answer: "4 Euro" },
+        { q: "Wann ist das Fest von Kavitha?", options: ["Am Freitag um 18 Uhr", "Am Samstag um 18 Uhr", "Am Freitag um 8 Uhr"], answer: "Am Freitag um 18 Uhr" },
+        { q: "Nethra soll Kavitha kurz schreiben.", options: TF, answer: "Richtig" },
+      ],
+    },
   ],
   listening: [
     {
@@ -126,12 +144,29 @@ const a1: LevelContent = {
       clips: [
         { id: "1", label: "Text 1", segments: [{ voice: "f", text: "Achtung, eine Durchsage. Der Zug nach München fährt heute von Gleis fünf. Der Zug hat zehn Minuten Verspätung." }] },
         { id: "2", label: "Text 2", segments: [{ voice: "m", text: "Liebe Kunden, heute gibt es Äpfel im Angebot. Ein Kilo kostet nur ein Euro neunzig." }] },
-        { id: "3", label: "Text 3", segments: [{ voice: "m", text: "Wie heißen Sie?" }, { voice: "f", text: "Ich heiße Mrithula." }, { voice: "m", text: "Und woher kommen Sie?" }, { voice: "f", text: "Aus Spanien." }] },
+        { id: "3", label: "Text 3", segments: [{ voice: "m", text: "Wie heißen Sie?" }, { voice: "f", text: "Ich heiße Mrithula." }, { voice: "m", text: "Und woher kommen Sie?" }, { voice: "f", text: "Aus Indien." }] },
       ],
       items: [
         { q: "Text 1: Von welchem Gleis fährt der Zug?", options: ["Gleis 3", "Gleis 5", "Gleis 10"], answer: "Gleis 5" },
         { q: "Text 2: Ein Kilo Äpfel kostet 1,90 Euro.", options: TF, answer: "Richtig" },
         { q: "Text 3: Woher kommt Mrithula?", options: ["Aus Indien", "Aus Italien", "Aus Mexiko"], answer: "Aus Indien" },
+      ],
+    },
+    {
+      id: "a1-l3",
+      title: "At the shop and on the phone",
+      instruction: "You hear three texts. Listen and choose the answer. You may play each one twice.",
+      clips: [
+        { id: "1", label: "Text 1", segments: [{ voice: "f", text: "Guten Tag, kann ich Ihnen helfen?" }, { voice: "m", text: "Ja, ich suche ein T-Shirt. Haben Sie das in Blau?" }, { voice: "f", text: "Ja, hier. Es kostet zwölf Euro neunzig." }] },
+        { id: "2", label: "Text 2", segments: [{ voice: "m", text: "Hallo Dhinesh, hier ist Ram. Ich kann heute nicht zum Deutschkurs kommen. Ich bin krank. Kannst du mir bitte die Hausaufgaben schicken? Danke!" }] },
+        { id: "3", label: "Text 3", segments: [{ voice: "f", text: "Achtung, eine Durchsage. Das Schwimmbad schließt heute um achtzehn Uhr. Bitte verlassen Sie jetzt das Wasser." }] },
+      ],
+      items: [
+        { q: "Text 1: Welche Farbe hat das T-Shirt?", options: ["Blau", "Rot", "Grün"], answer: "Blau" },
+        { q: "Text 1: Was kostet das T-Shirt?", options: ["12,09 €", "12,90 €", "19,20 €"], answer: "12,90 €", tip: "zwölf Euro neunzig = 12,90 €." },
+        { q: "Text 2: Warum kommt Ram nicht zum Kurs?", options: ["Er ist krank.", "Er hat Urlaub.", "Er arbeitet."], answer: "Er ist krank." },
+        { q: "Text 2: Was soll Dhinesh schicken?", options: ["Die Hausaufgaben", "Ein Buch", "Geld"], answer: "Die Hausaufgaben" },
+        { q: "Text 3: Wann schließt das Schwimmbad?", options: ["Um 16 Uhr", "Um 18 Uhr", "Um 20 Uhr"], answer: "Um 18 Uhr", tip: "achtzehn Uhr = 18:00." },
       ],
     },
   ],
@@ -169,6 +204,16 @@ const a1: LevelContent = {
         min: 20,
         max: 35,
         sample: "Lieber Akshay, am Samstag koche ich Reis und Curry. Kommst du um 19 Uhr zu mir nach Hause? Bring bitte ein Getränk mit. Ich freue mich! Liebe Grüße, Sadhana",
+      },
+      {
+        id: "a1-w3",
+        kind: "message",
+        title: "Short message: a sick day",
+        situation: "Sie sind krank und können morgen nicht zum Deutschkurs kommen. Schreiben Sie an Ihre Lehrerin.",
+        points: ["Warum kommen Sie nicht?", "Wann kommen Sie wieder?", "Was möchten Sie wissen?"],
+        min: 20,
+        max: 35,
+        sample: "Liebe Frau Kavitha, ich bin krank und kann morgen nicht kommen. Am Montag komme ich wieder. Können Sie mir bitte die Hausaufgaben schicken? Viele Grüße, Adhi",
       },
     ],
   },
