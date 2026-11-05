@@ -1020,6 +1020,426 @@
   "voice": "m"
  },
  {
+  "key": "rot",
+  "text": "rot",
+  "voice": "m"
+ },
+ {
+  "key": "der-apfel-ist-rot",
+  "text": "Der Apfel ist rot.",
+  "voice": "m"
+ },
+ {
+  "key": "blau",
+  "text": "blau",
+  "voice": "m"
+ },
+ {
+  "key": "der-himmel-ist-blau",
+  "text": "Der Himmel ist blau.",
+  "voice": "m"
+ },
+ {
+  "key": "gelb",
+  "text": "gelb",
+  "voice": "m"
+ },
+ {
+  "key": "die-banane-ist-gelb",
+  "text": "Die Banane ist gelb.",
+  "voice": "m"
+ },
+ {
+  "key": "gruen",
+  "text": "grün",
+  "voice": "m"
+ },
+ {
+  "key": "das-gras-ist-gruen",
+  "text": "Das Gras ist grün.",
+  "voice": "m"
+ },
+ {
+  "key": "weiss",
+  "text": "weiß",
+  "voice": "m"
+ },
+ {
+  "key": "der-reis-ist-weiss",
+  "text": "Der Reis ist weiß.",
+  "voice": "m"
+ },
+ {
+  "key": "schwarz",
+  "text": "schwarz",
+  "voice": "m"
+ },
+ {
+  "key": "die-tasche-ist-schwarz",
+  "text": "Die Tasche ist schwarz.",
+  "voice": "m"
+ },
+ {
+  "key": "das-hemd",
+  "text": "das Hemd",
+  "voice": "m"
+ },
+ {
+  "key": "das-hemd-ist-neu",
+  "text": "Das Hemd ist neu.",
+  "voice": "m"
+ },
+ {
+  "key": "die-hose",
+  "text": "die Hose",
+  "voice": "m"
+ },
+ {
+  "key": "die-hose-ist-zu-gross",
+  "text": "Die Hose ist zu groß.",
+  "voice": "m"
+ },
+ {
+  "key": "das-kleid",
+  "text": "das Kleid",
+  "voice": "m"
+ },
+ {
+  "key": "das-kleid-ist-schoen",
+  "text": "Das Kleid ist schön.",
+  "voice": "m"
+ },
+ {
+  "key": "die-schuhe",
+  "text": "die Schuhe",
+  "voice": "m"
+ },
+ {
+  "key": "ich-brauche-neue-schuhe",
+  "text": "Ich brauche neue Schuhe.",
+  "voice": "m"
+ },
+ {
+  "key": "die-jacke",
+  "text": "die Jacke",
+  "voice": "m"
+ },
+ {
+  "key": "die-jacke-ist-warm",
+  "text": "Die Jacke ist warm.",
+  "voice": "m"
+ },
+ {
+  "key": "das-wetter",
+  "text": "das Wetter",
+  "voice": "m"
+ },
+ {
+  "key": "das-wetter-ist-schoen",
+  "text": "Das Wetter ist schön.",
+  "voice": "m"
+ },
+ {
+  "key": "die-sonne",
+  "text": "die Sonne",
+  "voice": "m"
+ },
+ {
+  "key": "die-sonne-scheint",
+  "text": "Die Sonne scheint.",
+  "voice": "m"
+ },
+ {
+  "key": "der-regen",
+  "text": "der Regen",
+  "voice": "m"
+ },
+ {
+  "key": "der-regen-ist-stark",
+  "text": "Der Regen ist stark.",
+  "voice": "m"
+ },
+ {
+  "key": "der-schnee",
+  "text": "der Schnee",
+  "voice": "m"
+ },
+ {
+  "key": "im-winter-gibt-es-schnee",
+  "text": "Im Winter gibt es Schnee.",
+  "voice": "m"
+ },
+ {
+  "key": "der-wind",
+  "text": "der Wind",
+  "voice": "m"
+ },
+ {
+  "key": "der-wind-ist-kalt",
+  "text": "Der Wind ist kalt.",
+  "voice": "m"
+ },
+ {
+  "key": "warm",
+  "text": "warm",
+  "voice": "m"
+ },
+ {
+  "key": "heute-ist-es-warm",
+  "text": "Heute ist es warm.",
+  "voice": "m"
+ },
+ {
+  "key": "kalt",
+  "text": "kalt",
+  "voice": "m"
+ },
+ {
+  "key": "im-winter-ist-es-kalt",
+  "text": "Im Winter ist es kalt.",
+  "voice": "m"
+ },
+ {
+  "key": "der-fruehling",
+  "text": "der Frühling",
+  "voice": "m"
+ },
+ {
+  "key": "im-fruehling-bluehen-die-blumen",
+  "text": "Im Frühling blühen die Blumen.",
+  "voice": "m"
+ },
+ {
+  "key": "der-sommer",
+  "text": "der Sommer",
+  "voice": "m"
+ },
+ {
+  "key": "im-sommer-ist-es-heiss",
+  "text": "Im Sommer ist es heiß.",
+  "voice": "m"
+ },
+ {
+  "key": "der-herbst",
+  "text": "der Herbst",
+  "voice": "m"
+ },
+ {
+  "key": "im-herbst-fallen-die-blaetter",
+  "text": "Im Herbst fallen die Blätter.",
+  "voice": "m"
+ },
+ {
+  "key": "der-winter",
+  "text": "der Winter",
+  "voice": "m"
+ },
+ {
+  "key": "der-winter-ist-lang",
+  "text": "Der Winter ist lang.",
+  "voice": "m"
+ },
+ {
+  "key": "die-strasse",
+  "text": "die Straße",
+  "voice": "m"
+ },
+ {
+  "key": "die-strasse-ist-lang",
+  "text": "Die Straße ist lang.",
+  "voice": "m"
+ },
+ {
+  "key": "die-post",
+  "text": "die Post",
+  "voice": "m"
+ },
+ {
+  "key": "die-post-ist-neben-der-bank",
+  "text": "Die Post ist neben der Bank.",
+  "voice": "m"
+ },
+ {
+  "key": "die-bank",
+  "text": "die Bank",
+  "voice": "m"
+ },
+ {
+  "key": "die-bank-ist-geschlossen",
+  "text": "Die Bank ist geschlossen.",
+  "voice": "m"
+ },
+ {
+  "key": "das-kino",
+  "text": "das Kino",
+  "voice": "m"
+ },
+ {
+  "key": "wir-gehen-ins-kino",
+  "text": "Wir gehen ins Kino.",
+  "voice": "m"
+ },
+ {
+  "key": "der-park",
+  "text": "der Park",
+  "voice": "m"
+ },
+ {
+  "key": "der-park-ist-schoen",
+  "text": "Der Park ist schön.",
+  "voice": "m"
+ },
+ {
+  "key": "links",
+  "text": "links",
+  "voice": "m"
+ },
+ {
+  "key": "gehen-sie-links",
+  "text": "Gehen Sie links.",
+  "voice": "m"
+ },
+ {
+  "key": "rechts",
+  "text": "rechts",
+  "voice": "m"
+ },
+ {
+  "key": "gehen-sie-rechts",
+  "text": "Gehen Sie rechts.",
+  "voice": "m"
+ },
+ {
+  "key": "geradeaus",
+  "text": "geradeaus",
+  "voice": "m"
+ },
+ {
+  "key": "gehen-sie-geradeaus",
+  "text": "Gehen Sie geradeaus.",
+  "voice": "m"
+ },
+ {
+  "key": "neben",
+  "text": "neben",
+  "voice": "m"
+ },
+ {
+  "key": "die-bank-ist-neben-der-post",
+  "text": "Die Bank ist neben der Post.",
+  "voice": "m"
+ },
+ {
+  "key": "der-weg",
+  "text": "der Weg",
+  "voice": "m"
+ },
+ {
+  "key": "wo-ist-der-weg-zum-bahnhof",
+  "text": "Wo ist der Weg zum Bahnhof?",
+  "voice": "m"
+ },
+ {
+  "key": "wie-geht-s",
+  "text": "Wie geht's?",
+  "voice": "m"
+ },
+ {
+  "key": "hallo-wie-geht-s",
+  "text": "Hallo! Wie geht's?",
+  "voice": "m"
+ },
+ {
+  "key": "mir-geht-es-gut",
+  "text": "Mir geht es gut.",
+  "voice": "m"
+ },
+ {
+  "key": "danke-mir-geht-es-gut",
+  "text": "Danke, mir geht es gut.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-verstehe-nicht",
+  "text": "Ich verstehe nicht.",
+  "voice": "m"
+ },
+ {
+  "key": "entschuldigung-ich-verstehe-nicht",
+  "text": "Entschuldigung, ich verstehe nicht.",
+  "voice": "m"
+ },
+ {
+  "key": "bitte-wiederholen-sie",
+  "text": "Bitte wiederholen Sie.",
+  "voice": "m"
+ },
+ {
+  "key": "koennen-sie-das-bitte-wiederholen",
+  "text": "Können Sie das bitte wiederholen?",
+  "voice": "m"
+ },
+ {
+  "key": "sprechen-sie-langsam",
+  "text": "Sprechen Sie langsam.",
+  "voice": "m"
+ },
+ {
+  "key": "bitte-sprechen-sie-langsam",
+  "text": "Bitte sprechen Sie langsam.",
+  "voice": "m"
+ },
+ {
+  "key": "koennen-sie-mir-helfen",
+  "text": "Können Sie mir helfen?",
+  "voice": "m"
+ },
+ {
+  "key": "entschuldigung-koennen-sie-mir-helfen",
+  "text": "Entschuldigung, können Sie mir helfen?",
+  "voice": "m"
+ },
+ {
+  "key": "wo-ist",
+  "text": "Wo ist …?",
+  "voice": "m"
+ },
+ {
+  "key": "wo-ist-die-toilette",
+  "text": "Wo ist die Toilette?",
+  "voice": "m"
+ },
+ {
+  "key": "wie-viel-kostet-das",
+  "text": "Wie viel kostet das?",
+  "voice": "m"
+ },
+ {
+  "key": "wie-viel-kostet-das-brot",
+  "text": "Wie viel kostet das Brot?",
+  "voice": "m"
+ },
+ {
+  "key": "bitte-schoen",
+  "text": "Bitte schön.",
+  "voice": "m"
+ },
+ {
+  "key": "hier-ist-ihr-tee-bitte-schoen",
+  "text": "Hier ist Ihr Tee. Bitte schön.",
+  "voice": "m"
+ },
+ {
+  "key": "freut-mich",
+  "text": "Freut mich.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bin-adhi-freut-mich",
+  "text": "Ich bin Adhi. Freut mich!",
+  "voice": "m"
+ },
+ {
   "key": "guten-tag-ihren-pass-bitte",
   "text": "Guten Tag! Ihren Pass, bitte.",
   "voice": "m"
@@ -2485,16 +2905,6 @@
   "voice": "m"
  },
  {
-  "key": "das-hemd",
-  "text": "das Hemd",
-  "voice": "m"
- },
- {
-  "key": "das-kleid",
-  "text": "das Kleid",
-  "voice": "m"
- },
- {
   "key": "das-dirndl",
   "text": "das Dirndl",
   "voice": "m"
@@ -2502,11 +2912,6 @@
  {
   "key": "die-lederhose",
   "text": "die Lederhose",
-  "voice": "m"
- },
- {
-  "key": "die-jacke",
-  "text": "die Jacke",
   "voice": "m"
  },
  {
@@ -2612,36 +3017,6 @@
  {
   "key": "die-hausaufgabe",
   "text": "die Hausaufgabe",
-  "voice": "m"
- },
- {
-  "key": "der-fruehling",
-  "text": "der Frühling",
-  "voice": "m"
- },
- {
-  "key": "der-sommer",
-  "text": "der Sommer",
-  "voice": "m"
- },
- {
-  "key": "der-herbst",
-  "text": "der Herbst",
-  "voice": "m"
- },
- {
-  "key": "der-winter",
-  "text": "der Winter",
-  "voice": "m"
- },
- {
-  "key": "der-regen",
-  "text": "der Regen",
-  "voice": "m"
- },
- {
-  "key": "der-schnee",
-  "text": "der Schnee",
   "voice": "m"
  },
  {
