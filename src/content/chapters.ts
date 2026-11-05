@@ -488,6 +488,160 @@ export const chapters: Chapter[] = [
     ],
     pass: 2,
   },
+
+  /* ------------------------------------------------------------------ 13 (A2) */
+  {
+    slug: "im-restaurant",
+    n: 13,
+    landmarks: ["TN025", "DE013"], // Madhur temple tower, Nymphenburg Palace
+    mood: "rainbow",
+    title: "Im Restaurant",
+    sub: "A2 · Order a meal",
+    speakers: { a: ADHI, k: role("Der Kellner", "K", "m"), s: speaker("Shylash"), v: speaker("Kavitha") },
+    lines: [
+      { who: "k", parts: ["Guten Abend! Hier ist die ", W("Speisekarte", "speisekarte"), ". Was möchten Sie trinken?"], en: "Good evening! Here is the menu. What would you like to drink?", ta: "மாலை வணக்கம்! இதோ உணவுப் பட்டியல். என்ன குடிக்க விரும்புகிறீர்கள்?" },
+      { who: "s", parts: ["Ich nehme ein Wasser, bitte."], en: "I'll have a water, please.", ta: "நான் ஒரு தண்ணீர் எடுத்துக்கொள்கிறேன்." },
+      { who: "v", parts: ["Für mich einen Tee. Wir möchten gleich ", W("bestellen", "bestellen"), "."], en: "A tea for me. We would like to order right away.", ta: "எனக்கு ஒரு தேநீர். நாங்கள் உடனே ஆர்டர் செய்ய விரும்புகிறோம்." },
+      { who: "a", parts: ["Ich ", W("hätte gern", "haettegern"), " die Gemüsesuppe und danach Nudeln mit Tomatensoße."], en: "I would like the vegetable soup and then pasta with tomato sauce.", ta: "எனக்கு காய்கறி சூப்பும் பிறகு தக்காளி சாஸுடன் பாஸ்தாவும் வேண்டும்." },
+      { who: "v", parts: ["Ist der Salat frisch?"], en: "Is the salad fresh?", ta: "சாலட் புதியதா?" },
+      { who: "k", parts: ["Ja, alles kommt aus der Region."], en: "Yes, everything comes from the region.", ta: "ஆம், எல்லாம் இந்தப் பகுதியிலிருந்தே வருகிறது." },
+      { who: "a", parts: ["Das Essen war lecker! Die ", W("Rechnung", "rechnung"), ", bitte."], en: "The food was delicious! The bill, please.", ta: "உணவு சுவையாக இருந்தது! பில் தயவுசெய்து." },
+      { who: "k", parts: ["Zusammen oder ", W("getrennt", "getrennt"), "?"], en: "Together or separately?", ta: "சேர்த்தா, தனித்தனியாகவா?" },
+      { who: "s", parts: ["Zusammen. Stimmt so!"], en: "Together. Keep the change!", ta: "சேர்த்து. மீதியை வைத்துக்கொள்ளுங்கள்!" },
+    ],
+    words: {
+      speisekarte: { de: "die Speisekarte", en: "the menu", ta: "உணவுப் பட்டியல்", ex: "Die Speisekarte, bitte.", exEn: "The menu, please.", exTa: "உணவுப் பட்டியல் தயவுசெய்து.", pic: "📋" },
+      bestellen: { de: "bestellen", en: "to order", ta: "ஆர்டர் செய்", ex: "Wir bestellen Suppe.", exEn: "We order soup.", exTa: "நாங்கள் சூப் ஆர்டர் செய்கிறோம்.", pic: "🍽️" },
+      haettegern: { de: "ich hätte gern", en: "I would like", ta: "எனக்கு வேண்டும் (பணிவாக)", ex: "Ich hätte gern einen Kaffee.", exEn: "I would like a coffee.", exTa: "எனக்கு ஒரு காபி வேண்டும்.", pic: "🙋" },
+      rechnung: { de: "die Rechnung", en: "the bill", ta: "பில்", ex: "Die Rechnung, bitte.", exEn: "The bill, please.", exTa: "பில் தயவுசெய்து.", pic: "🧾" },
+      getrennt: { de: "getrennt", en: "separately", ta: "தனித்தனியாக", ex: "Wir zahlen getrennt.", exEn: "We pay separately.", exTa: "நாங்கள் தனித்தனியாகப் பணம் செலுத்துகிறோம்.", pic: "✂️" },
+    },
+    culture: {
+      tn: "In Tamil Nadu a meal is often served quickly on a banana leaf, and refills are offered without asking.",
+      de: "In Germany you often wait to be seated and pay at the table. A tip of about 5 to 10 percent is common: say “Stimmt so”.",
+    },
+    quiz: [
+      { type: "choice", q: "Ich ___ gern die Suppe.", options: ["hätte", "habe", "hat"], answer: "hätte", tipEn: "“Ich hätte gern …” is the polite way to order.", tipTa: "“Ich hätte gern …” என்பது பணிவான ஆர்டர் வாக்கியம்." },
+      { type: "choice", q: "Die ___, bitte! (you want to pay)", options: ["Rechnung", "Speisekarte", "Suppe"], answer: "Rechnung", tipEn: "You ask for the bill at the end of the meal.", tipTa: "உணவு முடிந்ததும் பில் கேட்கிறோம்." },
+      { type: "order", q: "Build the sentence: “We would like to order.”", tiles: ["Wir", "möchten", "bestellen", "möchte"], end: ".", answer: "Wir möchten bestellen.", tipEn: "wir → möchten, and the second verb goes to the end.", tipTa: "wir → möchten; இரண்டாவது வினை கடைசியில்." },
+    ],
+    pass: 2,
+  },
+
+  /* ------------------------------------------------------------------ 14 (A2) */
+  {
+    slug: "im-kino",
+    n: 14,
+    landmarks: ["TN014", "DE006"], // Kalaignar Library, Elbphilharmonie
+    mood: "night",
+    title: "Ein Abend im Kino",
+    sub: "A2 · Plan an evening out",
+    speakers: { a: ADHI, m: speaker("Medwin"), n: speaker("Nethra") },
+    lines: [
+      { who: "m", parts: ["Hast du am Freitag Zeit? Wir gehen ins Kino."], en: "Do you have time on Friday? We are going to the cinema.", ta: "வெள்ளிக்கிழமை உனக்கு நேரம் இருக்கிறதா? நாங்கள் திரையரங்குக்குப் போகிறோம்." },
+      { who: "a", parts: ["Gern! Welcher Film läuft denn?"], en: "Gladly! Which film is on?", ta: "மகிழ்ச்சி! எந்தப் படம் ஓடுகிறது?" },
+      { who: "n", parts: ["Eine ", W("Komödie", "komoedie"), ". Der Film ", W("beginnt", "beginnt"), " um zwanzig Uhr."], en: "A comedy. The film starts at eight in the evening.", ta: "ஒரு நகைச்சுவைப் படம். இரவு எட்டு மணிக்குத் தொடங்கும்." },
+      { who: "a", parts: ["Dann treffen wir uns um halb acht vor dem Kino."], en: "Then we meet at half past seven in front of the cinema.", ta: "அப்படியானால் ஏழரை மணிக்கு திரையரங்கின் முன் சந்திப்போம்." },
+      { who: "m", parts: ["Ich kaufe die ", W("Karten", "karten"), " online. Drei Karten kosten dreißig Euro."], en: "I'll buy the tickets online. Three tickets cost thirty euros.", ta: "நான் டிக்கெட்டுகளை ஆன்லைனில் வாங்குகிறேன். மூன்று டிக்கெட்டுகள் முப்பது யூரோ." },
+      { who: "n", parts: ["Super! Nach dem Film gehen wir noch etwas essen."], en: "Great! After the film we'll go and eat something.", ta: "அருமை! படத்துக்குப் பிறகு ஏதாவது சாப்பிடப் போவோம்." },
+      { who: "a", parts: ["Gute Idee! Ich habe schon lange keinen Film im Kino ", W("gesehen", "gesehen"), "."], en: "Good idea! I haven't seen a film in the cinema for a long time.", ta: "நல்ல யோசனை! நான் நீண்ட நாளாக திரையரங்கில் படம் பார்க்கவில்லை." },
+      { who: "m", parts: ["Ich auch nicht. Der Film ist ", W("bestimmt", "bestimmt"), " besser als der letzte."], en: "Me neither. The film is surely better than the last one.", ta: "நானும்தான். இந்தப் படம் கடைசிப் படத்தை விட நிச்சயம் நன்றாக இருக்கும்." },
+    ],
+    words: {
+      komoedie: { de: "die Komödie", en: "comedy", ta: "நகைச்சுவைப் படம்", ex: "Ich mag Komödien.", exEn: "I like comedies.", exTa: "எனக்கு நகைச்சுவைப் படங்கள் பிடிக்கும்.", pic: "😂" },
+      beginnt: { de: "beginnen", en: "to begin", ta: "தொடங்கு", ex: "Der Film beginnt um acht.", exEn: "The film begins at eight.", exTa: "படம் எட்டு மணிக்குத் தொடங்கும்.", pic: "▶️" },
+      karten: { de: "die Karten", en: "tickets", ta: "டிக்கெட்டுகள்", ex: "Zwei Karten, bitte.", exEn: "Two tickets, please.", exTa: "இரண்டு டிக்கெட்டுகள் தயவுசெய்து.", pic: "🎟️" },
+      gesehen: { de: "gesehen", en: "seen", ta: "பார்த்த", ex: "Ich habe den Film gesehen.", exEn: "I have seen the film.", exTa: "நான் படத்தைப் பார்த்தேன்.", pic: "👀" },
+      bestimmt: { de: "bestimmt", en: "surely, certainly", ta: "நிச்சயமாக", ex: "Das wird bestimmt gut.", exEn: "That will surely be good.", exTa: "இது நிச்சயம் நன்றாக இருக்கும்.", pic: "✅" },
+    },
+    culture: {
+      tn: "In Tamil Nadu cinema is a big part of life: a new film's first show can feel like a festival.",
+      de: "Many German cinemas show films dubbed in German. Look for “OmU” if you want the original language with subtitles.",
+    },
+    quiz: [
+      { type: "choice", q: "Der Film beginnt ___ zwanzig Uhr.", options: ["um", "in", "bei"], answer: "um", tipEn: "Use “um” for a clock time: um acht Uhr.", tipTa: "மணி நேரத்துக்கு “um”: um acht Uhr." },
+      { type: "choice", q: "Ich habe lange keinen Film ___.", options: ["gesehen", "sehen", "sah"], answer: "gesehen", tipEn: "Perfekt: habe … gesehen.", tipTa: "Perfekt: habe … gesehen." },
+      { type: "order", q: "Build the sentence: “We meet in front of the cinema.”", tiles: ["Wir", "treffen", "uns", "vor", "dem", "Kino", "treffe"], end: ".", answer: "Wir treffen uns vor dem Kino.", tipEn: "sich treffen: wir treffen uns. “vor” takes the Dativ here: vor dem Kino.", tipTa: "sich treffen: wir treffen uns. இங்கு “vor” உடன் Dativ: vor dem Kino." },
+    ],
+    pass: 2,
+  },
+
+  /* ------------------------------------------------------------------ 15 (A2) */
+  {
+    slug: "im-buergeramt",
+    n: 15,
+    landmarks: ["TN012", "DE011"], // Ripon Building, Sanssouci
+    mood: "petals",
+    title: "Im Bürgeramt",
+    sub: "A2 · Register your flat",
+    speakers: { a: ADHI, d: speaker("Dhinesh"), b: role("Die Beamtin", "B", "f") },
+    lines: [
+      { who: "d", parts: ["Adhi, hast du schon deine Wohnung ", W("angemeldet", "anmelden"), "?"], en: "Adhi, have you already registered your flat?", ta: "ஆதி, நீ உன் வீட்டை ஏற்கனவே பதிவு செய்துவிட்டாயா?" },
+      { who: "a", parts: ["Noch nicht. Ich habe nächste Woche einen Termin im Bürgeramt."], en: "Not yet. I have an appointment at the registration office next week.", ta: "இன்னும் இல்லை. அடுத்த வாரம் குடிமக்கள் அலுவலகத்தில் எனக்கு நேரம் உள்ளது." },
+      { who: "d", parts: ["Vergiss nicht, ", W("dass", "dass"), " du deinen Pass und den ", W("Mietvertrag", "mietvertrag"), " mitbringen musst."], en: "Don't forget that you have to bring your passport and the rental contract.", ta: "நீ உன் கடவுச்சீட்டையும் வாடகை ஒப்பந்தத்தையும் கொண்டு வர வேண்டும் என்பதை மறக்காதே." },
+      { who: "b", parts: ["Guten Tag. Wie kann ich Ihnen helfen?"], en: "Good day. How can I help you?", ta: "வணக்கம். நான் உங்களுக்கு எப்படி உதவலாம்?" },
+      { who: "a", parts: ["Guten Tag. Ich möchte meine Wohnung anmelden. Hier ist mein Pass."], en: "Good day. I would like to register my flat. Here is my passport.", ta: "வணக்கம். நான் என் வீட்டைப் பதிவு செய்ய விரும்புகிறேன். இதோ என் கடவுச்சீட்டு." },
+      { who: "b", parts: ["Bitte füllen Sie dieses ", W("Formular", "formular"), " aus und ", W("unterschreiben", "unterschreiben"), " Sie hier."], en: "Please fill in this form and sign here.", ta: "தயவுசெய்து இந்தப் படிவத்தை நிரப்பி இங்கே கையெழுத்திடுங்கள்." },
+      { who: "a", parts: ["Ist das so richtig?"], en: "Is that right?", ta: "இது சரியா?" },
+      { who: "b", parts: ["Ja, alles in Ordnung. Sie bekommen die ", W("Bestätigung", "bestaetigung"), " per Post."], en: "Yes, everything is fine. You will get the confirmation by post.", ta: "ஆம், எல்லாம் சரி. உறுதிப்படுத்தும் கடிதம் அஞ்சலில் வரும்." },
+    ],
+    words: {
+      anmelden: { de: "anmelden", en: "to register", ta: "பதிவு செய்", ex: "Ich melde meine Wohnung an.", exEn: "I register my flat.", exTa: "நான் என் வீட்டைப் பதிவு செய்கிறேன்.", pic: "📝" },
+      dass: { de: "dass", en: "that", ta: "என்று", ex: "Ich weiß, dass du kommst.", exEn: "I know that you are coming.", exTa: "நீ வருவாய் என்று எனக்குத் தெரியும்.", pic: "💬" },
+      mietvertrag: { de: "der Mietvertrag", en: "rental contract", ta: "வாடகை ஒப்பந்தம்", ex: "Hier ist der Mietvertrag.", exEn: "Here is the rental contract.", exTa: "இதோ வாடகை ஒப்பந்தம்.", pic: "📄" },
+      formular: { de: "das Formular", en: "form", ta: "படிவம்", ex: "Ich fülle das Formular aus.", exEn: "I fill in the form.", exTa: "நான் படிவத்தை நிரப்புகிறேன்.", pic: "📑" },
+      unterschreiben: { de: "unterschreiben", en: "to sign", ta: "கையெழுத்திடு", ex: "Bitte unterschreiben Sie hier.", exEn: "Please sign here.", exTa: "தயவுசெய்து இங்கே கையெழுத்திடுங்கள்.", pic: "✍️" },
+      bestaetigung: { de: "die Bestätigung", en: "confirmation", ta: "உறுதிப்படுத்தல்", ex: "Ich bekomme eine Bestätigung.", exEn: "I get a confirmation.", exTa: "எனக்கு உறுதிப்படுத்தல் கிடைக்கும்.", pic: "📬" },
+    },
+    culture: {
+      tn: "Many official tasks in Tamil Nadu are done in person at an office, often with photocopies and a clerk who guides you.",
+      de: "In Germany you usually have to register your address (Anmeldung) within about two weeks of moving in. Often you book an appointment first.",
+    },
+    quiz: [
+      { type: "choice", q: "Vergiss nicht, ___ du den Pass mitbringen musst.", options: ["dass", "das", "was"], answer: "dass", tipEn: "“dass” (with ss) starts a clause and sends the verb to the end.", tipTa: "“dass” (ss) ஒரு உட்பிரிவைத் தொடங்கி வினையை கடைசிக்கு அனுப்பும்." },
+      { type: "choice", q: "Bitte ___ Sie hier. (to sign)", options: ["unterschreiben", "unterschreibt", "unterschrieben"], answer: "unterschreiben", tipEn: "Polite command with Sie: verb first, then Sie.", tipTa: "Sie உடன் பணிவான கட்டளை: வினை முதலில், பிறகு Sie." },
+      { type: "order", q: "Build the sentence: “I would like to register my flat.”", tiles: ["Ich", "möchte", "meine", "Wohnung", "anmelden", "möchtest"], end: ".", answer: "Ich möchte meine Wohnung anmelden.", tipEn: "möchte + infinitive at the end.", tipTa: "möchte + வினை கடைசியில்." },
+    ],
+    pass: 2,
+  },
+
+  /* ------------------------------------------------------------------ 16 (A2) */
+  {
+    slug: "die-pruefung",
+    n: 16,
+    landmarks: ["TN015", "DE014"], // NIT Trichy clock tower, Ulm Minster
+    mood: "breeze",
+    title: "Die Prüfung",
+    sub: "A2 · Get ready for the exam",
+    speakers: { a: ADHI, l: role("Die Lehrerin", "L", "f"), s: speaker("Sudha"), u: speaker("Sudharsan") },
+    lines: [
+      { who: "l", parts: ["Nächsten Monat ist die Prüfung. Wie ", W("bereitet", "vorbereiten"), " ihr euch vor?"], en: "Next month is the exam. How are you preparing?", ta: "அடுத்த மாதம் தேர்வு. நீங்கள் எப்படி தயாராகிறீர்கள்?" },
+      { who: "s", parts: ["Ich lerne jeden Tag zwanzig Minuten Wörter."], en: "I learn words for twenty minutes every day.", ta: "நான் தினமும் இருபது நிமிடம் சொற்கள் கற்கிறேன்." },
+      { who: "u", parts: ["Und ich schreibe jede Woche eine E-Mail."], en: "And I write an email every week.", ta: "நான் ஒவ்வொரு வாரமும் ஒரு மின்னஞ்சல் எழுதுகிறேன்." },
+      { who: "a", parts: [W("Wenn", "wenn"), " ich viel übe, ", W("bestehe", "bestehen"), " ich die Prüfung."], en: "If I practise a lot, I will pass the exam.", ta: "நான் நிறைய பயிற்சி செய்தால் தேர்வில் தேறுவேன்." },
+      { who: "l", parts: ["Sehr gut! Üben Sie auch das Sprechen. Sprechen Sie mit Ihren Freunden Deutsch."], en: "Very good! Also practise speaking. Speak German with your friends.", ta: "மிக நல்லது! பேசவும் பயிற்சி செய்யுங்கள். நண்பர்களுடன் ஜெர்மனில் பேசுங்கள்." },
+      { who: "s", parts: ["Wir können uns jeden Abend eine halbe Stunde treffen."], en: "We can meet every evening for half an hour.", ta: "நாம் ஒவ்வொரு மாலையும் அரை மணி நேரம் சந்திக்கலாம்." },
+      { who: "a", parts: ["Gute Idee! Ich habe keine ", W("Angst", "angst"), " mehr."], en: "Good idea! I'm not afraid any more.", ta: "நல்ல யோசனை! எனக்கு இனி பயம் இல்லை." },
+      { who: "l", parts: ["Viel ", W("Erfolg", "erfolg"), "! Ihr schafft das."], en: "Good luck! You will manage it.", ta: "வெற்றி பெறுங்கள்! உங்களால் முடியும்." },
+    ],
+    words: {
+      vorbereiten: { de: "sich vorbereiten", en: "to prepare", ta: "தயாராகு", ex: "Ich bereite mich vor.", exEn: "I prepare.", exTa: "நான் தயாராகிறேன்.", pic: "🎒" },
+      wenn: { de: "wenn", en: "if, when", ta: "என்றால்", ex: "Wenn es regnet, bleibe ich zu Hause.", exEn: "If it rains, I stay at home.", exTa: "மழை பெய்தால் நான் வீட்டில் இருப்பேன்.", pic: "🔀" },
+      bestehen: { de: "bestehen", en: "to pass (an exam)", ta: "தேர்வில் தேறு", ex: "Ich bestehe die Prüfung.", exEn: "I pass the exam.", exTa: "நான் தேர்வில் தேறுவேன்.", pic: "🎓" },
+      angst: { de: "die Angst", en: "fear", ta: "பயம்", ex: "Ich habe keine Angst.", exEn: "I am not afraid.", exTa: "எனக்கு பயம் இல்லை.", pic: "😨" },
+      erfolg: { de: "der Erfolg", en: "success", ta: "வெற்றி", ex: "Viel Erfolg!", exEn: "Good luck!", exTa: "வெற்றி பெறுங்கள்!", pic: "🏆" },
+    },
+    culture: {
+      tn: "Many Tamil learners revise with notes and study in groups before an exam. Group study works well for languages too.",
+      de: "Goethe exams test reading, listening, writing and speaking. You usually need about 60 percent to pass.",
+    },
+    quiz: [
+      { type: "choice", q: "___ ich viel übe, bestehe ich die Prüfung.", options: ["Wenn", "Weil", "Dass"], answer: "Wenn", tipEn: "“Wenn” means “if”. The verb in that clause goes to the end, then the main clause starts with the verb.", tipTa: "“Wenn” = என்றால். அந்த உட்பிரிவில் வினை கடைசியில்." },
+      { type: "choice", q: "Viel ___! (good luck)", options: ["Erfolg", "Angst", "Prüfung"], answer: "Erfolg", tipEn: "“Viel Erfolg!” wishes someone success.", tipTa: "“Viel Erfolg!” = வெற்றி பெறுங்கள்!" },
+      { type: "order", q: "Build the sentence: “I learn words every day.”", tiles: ["Ich", "lerne", "jeden", "Tag", "Wörter", "lernst"], end: ".", answer: "Ich lerne jeden Tag Wörter.", tipEn: "jeden Tag = every day (Akkusativ of time).", tipTa: "jeden Tag = ஒவ்வொரு நாளும்." },
+    ],
+    pass: 2,
+  },
 ];
 
 // Chapters on the path that are planned but not written yet.

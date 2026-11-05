@@ -2425,6 +2425,381 @@
   "voice": "m"
  },
  {
+  "key": "guten-abend-hier-ist-die-speisekarte-was-moechten-sie-trinken",
+  "text": "Guten Abend! Hier ist die Speisekarte. Was möchten Sie trinken?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-nehme-ein-wasser-bitte",
+  "text": "Ich nehme ein Wasser, bitte.",
+  "voice": "m"
+ },
+ {
+  "key": "fuer-mich-einen-tee-wir-moechten-gleich-bestellen",
+  "text": "Für mich einen Tee. Wir möchten gleich bestellen.",
+  "voice": "f"
+ },
+ {
+  "key": "ich-haette-gern-die-gemuesesuppe-und-danach-nudeln-mit-tomatensosse",
+  "text": "Ich hätte gern die Gemüsesuppe und danach Nudeln mit Tomatensoße.",
+  "voice": "m"
+ },
+ {
+  "key": "ist-der-salat-frisch",
+  "text": "Ist der Salat frisch?",
+  "voice": "f"
+ },
+ {
+  "key": "ja-alles-kommt-aus-der-region",
+  "text": "Ja, alles kommt aus der Region.",
+  "voice": "m"
+ },
+ {
+  "key": "das-essen-war-lecker-die-rechnung-bitte",
+  "text": "Das Essen war lecker! Die Rechnung, bitte.",
+  "voice": "m"
+ },
+ {
+  "key": "zusammen-oder-getrennt",
+  "text": "Zusammen oder getrennt?",
+  "voice": "m"
+ },
+ {
+  "key": "zusammen-stimmt-so",
+  "text": "Zusammen. Stimmt so!",
+  "voice": "m"
+ },
+ {
+  "key": "die-speisekarte",
+  "text": "die Speisekarte",
+  "voice": "m"
+ },
+ {
+  "key": "die-speisekarte-bitte",
+  "text": "Die Speisekarte, bitte.",
+  "voice": "m"
+ },
+ {
+  "key": "bestellen",
+  "text": "bestellen",
+  "voice": "m"
+ },
+ {
+  "key": "wir-bestellen-suppe",
+  "text": "Wir bestellen Suppe.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-haette-gern",
+  "text": "ich hätte gern",
+  "voice": "m"
+ },
+ {
+  "key": "ich-haette-gern-einen-kaffee",
+  "text": "Ich hätte gern einen Kaffee.",
+  "voice": "m"
+ },
+ {
+  "key": "die-rechnung",
+  "text": "die Rechnung",
+  "voice": "m"
+ },
+ {
+  "key": "die-rechnung-bitte",
+  "text": "Die Rechnung, bitte.",
+  "voice": "m"
+ },
+ {
+  "key": "getrennt",
+  "text": "getrennt",
+  "voice": "m"
+ },
+ {
+  "key": "wir-zahlen-getrennt",
+  "text": "Wir zahlen getrennt.",
+  "voice": "m"
+ },
+ {
+  "key": "hast-du-am-freitag-zeit-wir-gehen-ins-kino",
+  "text": "Hast du am Freitag Zeit? Wir gehen ins Kino.",
+  "voice": "m"
+ },
+ {
+  "key": "gern-welcher-film-laeuft-denn",
+  "text": "Gern! Welcher Film läuft denn?",
+  "voice": "m"
+ },
+ {
+  "key": "eine-komoedie-der-film-beginnt-um-zwanzig-uhr",
+  "text": "Eine Komödie. Der Film beginnt um zwanzig Uhr.",
+  "voice": "f"
+ },
+ {
+  "key": "dann-treffen-wir-uns-um-halb-acht-vor-dem-kino",
+  "text": "Dann treffen wir uns um halb acht vor dem Kino.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-kaufe-die-karten-online-drei-karten-kosten-dreissig-euro",
+  "text": "Ich kaufe die Karten online. Drei Karten kosten dreißig Euro.",
+  "voice": "m"
+ },
+ {
+  "key": "super-nach-dem-film-gehen-wir-noch-etwas-essen",
+  "text": "Super! Nach dem Film gehen wir noch etwas essen.",
+  "voice": "f"
+ },
+ {
+  "key": "gute-idee-ich-habe-schon-lange-keinen-film-im-kino-gesehen",
+  "text": "Gute Idee! Ich habe schon lange keinen Film im Kino gesehen.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-auch-nicht-der-film-ist-bestimmt-besser-als-der-letzte",
+  "text": "Ich auch nicht. Der Film ist bestimmt besser als der letzte.",
+  "voice": "m"
+ },
+ {
+  "key": "die-komoedie",
+  "text": "die Komödie",
+  "voice": "m"
+ },
+ {
+  "key": "ich-mag-komoedien",
+  "text": "Ich mag Komödien.",
+  "voice": "m"
+ },
+ {
+  "key": "beginnen",
+  "text": "beginnen",
+  "voice": "m"
+ },
+ {
+  "key": "der-film-beginnt-um-acht",
+  "text": "Der Film beginnt um acht.",
+  "voice": "m"
+ },
+ {
+  "key": "die-karten",
+  "text": "die Karten",
+  "voice": "m"
+ },
+ {
+  "key": "zwei-karten-bitte",
+  "text": "Zwei Karten, bitte.",
+  "voice": "m"
+ },
+ {
+  "key": "gesehen",
+  "text": "gesehen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-den-film-gesehen",
+  "text": "Ich habe den Film gesehen.",
+  "voice": "m"
+ },
+ {
+  "key": "bestimmt",
+  "text": "bestimmt",
+  "voice": "m"
+ },
+ {
+  "key": "das-wird-bestimmt-gut",
+  "text": "Das wird bestimmt gut.",
+  "voice": "m"
+ },
+ {
+  "key": "adhi-hast-du-schon-deine-wohnung-angemeldet",
+  "text": "Adhi, hast du schon deine Wohnung angemeldet?",
+  "voice": "m"
+ },
+ {
+  "key": "noch-nicht-ich-habe-naechste-woche-einen-termin-im-buergeramt",
+  "text": "Noch nicht. Ich habe nächste Woche einen Termin im Bürgeramt.",
+  "voice": "m"
+ },
+ {
+  "key": "vergiss-nicht-dass-du-deinen-pass-und-den-mietvertrag-mitbringen-musst",
+  "text": "Vergiss nicht, dass du deinen Pass und den Mietvertrag mitbringen musst.",
+  "voice": "m"
+ },
+ {
+  "key": "guten-tag-wie-kann-ich-ihnen-helfen",
+  "text": "Guten Tag. Wie kann ich Ihnen helfen?",
+  "voice": "f"
+ },
+ {
+  "key": "guten-tag-ich-moechte-meine-wohnung-anmelden-hier-ist-mein-pass",
+  "text": "Guten Tag. Ich möchte meine Wohnung anmelden. Hier ist mein Pass.",
+  "voice": "m"
+ },
+ {
+  "key": "bitte-fuellen-sie-dieses-formular-aus-und-unterschreiben-sie-hier",
+  "text": "Bitte füllen Sie dieses Formular aus und unterschreiben Sie hier.",
+  "voice": "f"
+ },
+ {
+  "key": "ist-das-so-richtig",
+  "text": "Ist das so richtig?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-alles-in-ordnung-sie-bekommen-die-bestaetigung-per-post",
+  "text": "Ja, alles in Ordnung. Sie bekommen die Bestätigung per Post.",
+  "voice": "f"
+ },
+ {
+  "key": "anmelden",
+  "text": "anmelden",
+  "voice": "m"
+ },
+ {
+  "key": "ich-melde-meine-wohnung-an",
+  "text": "Ich melde meine Wohnung an.",
+  "voice": "m"
+ },
+ {
+  "key": "dass",
+  "text": "dass",
+  "voice": "m"
+ },
+ {
+  "key": "ich-weiss-dass-du-kommst",
+  "text": "Ich weiß, dass du kommst.",
+  "voice": "m"
+ },
+ {
+  "key": "der-mietvertrag",
+  "text": "der Mietvertrag",
+  "voice": "m"
+ },
+ {
+  "key": "hier-ist-der-mietvertrag",
+  "text": "Hier ist der Mietvertrag.",
+  "voice": "m"
+ },
+ {
+  "key": "das-formular",
+  "text": "das Formular",
+  "voice": "m"
+ },
+ {
+  "key": "ich-fuelle-das-formular-aus",
+  "text": "Ich fülle das Formular aus.",
+  "voice": "m"
+ },
+ {
+  "key": "unterschreiben",
+  "text": "unterschreiben",
+  "voice": "m"
+ },
+ {
+  "key": "bitte-unterschreiben-sie-hier",
+  "text": "Bitte unterschreiben Sie hier.",
+  "voice": "m"
+ },
+ {
+  "key": "die-bestaetigung",
+  "text": "die Bestätigung",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bekomme-eine-bestaetigung",
+  "text": "Ich bekomme eine Bestätigung.",
+  "voice": "m"
+ },
+ {
+  "key": "naechsten-monat-ist-die-pruefung-wie-bereitet-ihr-euch-vor",
+  "text": "Nächsten Monat ist die Prüfung. Wie bereitet ihr euch vor?",
+  "voice": "f"
+ },
+ {
+  "key": "ich-lerne-jeden-tag-zwanzig-minuten-woerter",
+  "text": "Ich lerne jeden Tag zwanzig Minuten Wörter.",
+  "voice": "f"
+ },
+ {
+  "key": "und-ich-schreibe-jede-woche-eine-e-mail",
+  "text": "Und ich schreibe jede Woche eine E-Mail.",
+  "voice": "m"
+ },
+ {
+  "key": "wenn-ich-viel-uebe-bestehe-ich-die-pruefung",
+  "text": "Wenn ich viel übe, bestehe ich die Prüfung.",
+  "voice": "m"
+ },
+ {
+  "key": "sehr-gut-ueben-sie-auch-das-sprechen-sprechen-sie-mit-ihren-freunden-deutsch",
+  "text": "Sehr gut! Üben Sie auch das Sprechen. Sprechen Sie mit Ihren Freunden Deutsch.",
+  "voice": "f"
+ },
+ {
+  "key": "wir-koennen-uns-jeden-abend-eine-halbe-stunde-treffen",
+  "text": "Wir können uns jeden Abend eine halbe Stunde treffen.",
+  "voice": "f"
+ },
+ {
+  "key": "gute-idee-ich-habe-keine-angst-mehr",
+  "text": "Gute Idee! Ich habe keine Angst mehr.",
+  "voice": "m"
+ },
+ {
+  "key": "viel-erfolg-ihr-schafft-das",
+  "text": "Viel Erfolg! Ihr schafft das.",
+  "voice": "f"
+ },
+ {
+  "key": "sich-vorbereiten",
+  "text": "sich vorbereiten",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bereite-mich-vor",
+  "text": "Ich bereite mich vor.",
+  "voice": "m"
+ },
+ {
+  "key": "wenn",
+  "text": "wenn",
+  "voice": "m"
+ },
+ {
+  "key": "wenn-es-regnet-bleibe-ich-zu-hause",
+  "text": "Wenn es regnet, bleibe ich zu Hause.",
+  "voice": "m"
+ },
+ {
+  "key": "bestehen",
+  "text": "bestehen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bestehe-die-pruefung",
+  "text": "Ich bestehe die Prüfung.",
+  "voice": "m"
+ },
+ {
+  "key": "die-angst",
+  "text": "die Angst",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-keine-angst",
+  "text": "Ich habe keine Angst.",
+  "voice": "m"
+ },
+ {
+  "key": "der-erfolg",
+  "text": "der Erfolg",
+  "voice": "m"
+ },
+ {
+  "key": "viel-erfolg",
+  "text": "Viel Erfolg!",
+  "voice": "m"
+ },
+ {
   "key": "ich-bin-poovai",
   "text": "Ich bin Poovai.",
   "voice": "m"
@@ -2807,11 +3182,6 @@
  {
   "key": "herr-frau",
   "text": "Herr / Frau",
-  "voice": "m"
- },
- {
-  "key": "anmelden",
-  "text": "anmelden",
   "voice": "m"
  },
  {

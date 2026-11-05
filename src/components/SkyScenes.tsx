@@ -254,6 +254,36 @@ export function SceneBack({ mood }: { mood: Mood }) {
           <Sparkle x="88%" y={52} d={1.4} />
         </>
       );
+    case "night": // an evening out: a big moon and many twinkling stars
+      return (
+        <>
+          <div className="abs" style={{ inset: 0, background: "linear-gradient(#1f2a55,#4a4a7a 85%)", opacity: 0.6 }} aria-hidden="true" />
+          <div className="abs" style={{ right: "16%", top: 12, width: 38, height: 38, borderRadius: "50%", background: "#fff3c4", boxShadow: "0 0 0 10px rgba(255,243,196,.25)" }} aria-hidden="true" />
+          {[[8, 14], [20, 40], [34, 18], [46, 52], [58, 24], [70, 60], [82, 38], [92, 16]].map(([x, y], i) => (
+            <Sparkle key={i} x={`${x}%`} y={y} d={(i * 0.45) % 3} />
+          ))}
+        </>
+      );
+    case "petals": // spring: a soft sun and a few clouds, petals fall in front
+      return (
+        <>
+          <div className="abs" style={{ left: "62%", top: 14, width: 34, height: 34, borderRadius: "50%", background: "#ffd873", boxShadow: "0 0 0 8px rgba(255,216,115,.35)" }} aria-hidden="true" />
+          <Cloud top={24} w={70} dur={50} />
+          <Cloud top={56} w={52} dur={62} delay={20} />
+        </>
+      );
+    case "breeze": // a windy day: fast clouds and flying birds
+      return (
+        <>
+          <div className="abs" style={{ left: "12%", top: 16, width: 32, height: 32, borderRadius: "50%", background: "#ffc93c", boxShadow: "0 0 0 8px rgba(255,201,60,.28)" }} aria-hidden="true" />
+          <Cloud top={18} w={86} dur={18} />
+          <Cloud top={44} w={60} dur={24} delay={6} />
+          <Cloud top={66} w={74} dur={20} delay={11} />
+          <div className="vbirds" style={{ top: 34 }} aria-hidden="true">
+            <Bird x={0} y={0} /><Bird x={-14} y={9} /><Bird x={14} y={9} />
+          </div>
+        </>
+      );
     case "rainbow": // after the rain: a rainbow and a clear sky
       return (
         <>
@@ -280,6 +310,14 @@ export function SceneFront({ mood }: { mood: Mood }) {
       <>
         {[4, 11, 18, 26, 33, 41, 48, 56, 63, 71, 78, 86, 93].map((x, i) => (
           <Flake key={x} x={`${x}%`} s={5 + (i % 3) * 2} dur={6 + (i % 5)} delay={(i * 1.3) % 7} />
+        ))}
+      </>
+    );
+  if (mood === "petals")
+    return (
+      <>
+        {["6%", "20%", "34%", "48%", "62%", "76%", "90%"].map((x, i) => (
+          <Leaf key={x} x={x} color={["#f4a6b8", "#f7c1cf", "#ee8fa8"][i % 3]} dur={8 + (i % 4)} delay={(i * 1.7) % 8} />
         ))}
       </>
     );
