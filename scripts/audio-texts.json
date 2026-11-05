@@ -1245,6 +1245,346 @@
   "voice": "m"
  },
  {
+  "key": "adhi-du-siehst-krank-aus-was-ist-los",
+  "text": "Adhi, du siehst krank aus. Was ist los?",
+  "voice": "f"
+ },
+ {
+  "key": "ich-habe-kopfschmerzen-und-fieber",
+  "text": "Ich habe Kopfschmerzen und Fieber.",
+  "voice": "m"
+ },
+ {
+  "key": "du-musst-zum-arzt-gehen-ich-rufe-an-und-mache-einen-termin",
+  "text": "Du musst zum Arzt gehen. Ich rufe an und mache einen Termin.",
+  "voice": "f"
+ },
+ {
+  "key": "guten-tag-adhi-setzen-sie-sich-bitte-seit-wann-haben-sie-fieber",
+  "text": "Guten Tag, Adhi. Setzen Sie sich bitte. Seit wann haben Sie Fieber?",
+  "voice": "f"
+ },
+ {
+  "key": "seit-gestern-und-mein-hals-tut-weh",
+  "text": "Seit gestern. Und mein Hals tut weh.",
+  "voice": "m"
+ },
+ {
+  "key": "sie-haben-eine-erkaeltung-sie-sollen-viel-tee-trinken-und-im-bett-bleiben",
+  "text": "Sie haben eine Erkältung. Sie sollen viel Tee trinken und im Bett bleiben.",
+  "voice": "f"
+ },
+ {
+  "key": "muss-ich-tabletten-nehmen",
+  "text": "Muss ich Tabletten nehmen?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-dreimal-am-tag-gute-besserung",
+  "text": "Ja, dreimal am Tag. Gute Besserung!",
+  "voice": "f"
+ },
+ {
+  "key": "die-kopfschmerzen",
+  "text": "die Kopfschmerzen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-kopfschmerzen",
+  "text": "Ich habe Kopfschmerzen.",
+  "voice": "m"
+ },
+ {
+  "key": "das-fieber",
+  "text": "das Fieber",
+  "voice": "m"
+ },
+ {
+  "key": "er-hat-fieber",
+  "text": "Er hat Fieber.",
+  "voice": "m"
+ },
+ {
+  "key": "der-termin",
+  "text": "der Termin",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-einen-termin",
+  "text": "Ich habe einen Termin.",
+  "voice": "m"
+ },
+ {
+  "key": "die-erkaeltung",
+  "text": "die Erkältung",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-eine-erkaeltung",
+  "text": "Ich habe eine Erkältung.",
+  "voice": "m"
+ },
+ {
+  "key": "die-tabletten",
+  "text": "die Tabletten",
+  "voice": "m"
+ },
+ {
+  "key": "nehmen-sie-die-tabletten",
+  "text": "Nehmen Sie die Tabletten.",
+  "voice": "m"
+ },
+ {
+  "key": "gute-besserung",
+  "text": "Gute Besserung!",
+  "voice": "m"
+ },
+ {
+  "key": "gute-besserung-adhi",
+  "text": "Gute Besserung, Adhi!",
+  "voice": "m"
+ },
+ {
+  "key": "guten-morgen-adhi-heute-ist-ihr-erster-arbeitstag-wie-war-die-fahrt",
+  "text": "Guten Morgen, Adhi. Heute ist Ihr erster Arbeitstag. Wie war die Fahrt?",
+  "voice": "m"
+ },
+ {
+  "key": "gut-danke-ich-bin-mit-der-u-bahn-gefahren",
+  "text": "Gut, danke. Ich bin mit der U-Bahn gefahren.",
+  "voice": "m"
+ },
+ {
+  "key": "hier-ist-ihr-platz-poovai-zeigt-ihnen-alles",
+  "text": "Hier ist Ihr Platz. Poovai zeigt Ihnen alles.",
+  "voice": "m"
+ },
+ {
+  "key": "hallo-adhi-hast-du-schon-kaffee-getrunken",
+  "text": "Hallo Adhi! Hast du schon Kaffee getrunken?",
+  "voice": "f"
+ },
+ {
+  "key": "nein-noch-nicht-wo-ist-die-kueche",
+  "text": "Nein, noch nicht. Wo ist die Küche?",
+  "voice": "m"
+ },
+ {
+  "key": "dort-links-wir-essen-um-zwoelf-uhr-weil-dann-die-kantine-oeffnet",
+  "text": "Dort links. Wir essen um zwölf Uhr, weil dann die Kantine öffnet.",
+  "voice": "f"
+ },
+ {
+  "key": "danke-ich-freue-mich-auf-die-arbeit",
+  "text": "Danke! Ich freue mich auf die Arbeit.",
+  "voice": "m"
+ },
+ {
+  "key": "der-arbeitstag",
+  "text": "der Arbeitstag",
+  "voice": "m"
+ },
+ {
+  "key": "der-arbeitstag-beginnt-um-neun",
+  "text": "Der Arbeitstag beginnt um neun.",
+  "voice": "m"
+ },
+ {
+  "key": "gefahren",
+  "text": "gefahren",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bin-nach-berlin-gefahren",
+  "text": "Ich bin nach Berlin gefahren.",
+  "voice": "m"
+ },
+ {
+  "key": "der-platz",
+  "text": "der Platz",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-mein-platz",
+  "text": "Das ist mein Platz.",
+  "voice": "m"
+ },
+ {
+  "key": "weil",
+  "text": "weil",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bin-muede-weil-ich-viel-gearbeitet-habe",
+  "text": "Ich bin müde, weil ich viel gearbeitet habe.",
+  "voice": "m"
+ },
+ {
+  "key": "die-kantine",
+  "text": "die Kantine",
+  "voice": "m"
+ },
+ {
+  "key": "die-kantine-ist-im-erdgeschoss",
+  "text": "Die Kantine ist im Erdgeschoss.",
+  "voice": "m"
+ },
+ {
+  "key": "adhi-wir-fahren-am-samstag-nach-hamburg-kommst-du-mit",
+  "text": "Adhi, wir fahren am Samstag nach Hamburg. Kommst du mit?",
+  "voice": "m"
+ },
+ {
+  "key": "gern-wie-kommen-wir-zum-bahnhof",
+  "text": "Gern! Wie kommen wir zum Bahnhof?",
+  "voice": "m"
+ },
+ {
+  "key": "mit-der-u-bahn-wir-treffen-uns-um-acht-uhr-am-gleis-fuenf",
+  "text": "Mit der U-Bahn. Wir treffen uns um acht Uhr am Gleis fünf.",
+  "voice": "m"
+ },
+ {
+  "key": "guten-tag-ihre-fahrkarten-bitte",
+  "text": "Guten Tag, Ihre Fahrkarten bitte.",
+  "voice": "f"
+ },
+ {
+  "key": "bitte-schoen-faehrt-dieser-zug-nach-hamburg",
+  "text": "Bitte schön. Fährt dieser Zug nach Hamburg?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-aber-er-hat-zwanzig-minuten-verspaetung",
+  "text": "Ja, aber er hat zwanzig Minuten Verspätung.",
+  "voice": "f"
+ },
+ {
+  "key": "kein-problem-wir-fahren-mit-dem-zug-und-sehen-die-stadt-spaeter",
+  "text": "Kein Problem. Wir fahren mit dem Zug und sehen die Stadt später.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-sitze-gern-am-fenster",
+  "text": "Ich sitze gern am Fenster.",
+  "voice": "m"
+ },
+ {
+  "key": "zum-zu-dem",
+  "text": "zum (zu dem)",
+  "voice": "m"
+ },
+ {
+  "key": "ich-gehe-zum-bahnhof",
+  "text": "Ich gehe zum Bahnhof.",
+  "voice": "m"
+ },
+ {
+  "key": "das-gleis",
+  "text": "das Gleis",
+  "voice": "m"
+ },
+ {
+  "key": "der-zug-faehrt-auf-gleis-fuenf",
+  "text": "Der Zug fährt auf Gleis fünf.",
+  "voice": "m"
+ },
+ {
+  "key": "die-fahrkarte",
+  "text": "die Fahrkarte",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-keine-fahrkarte",
+  "text": "Ich habe keine Fahrkarte.",
+  "voice": "m"
+ },
+ {
+  "key": "die-verspaetung",
+  "text": "die Verspätung",
+  "voice": "m"
+ },
+ {
+  "key": "der-zug-hat-verspaetung",
+  "text": "Der Zug hat Verspätung.",
+  "voice": "m"
+ },
+ {
+  "key": "was-hast-du-am-wochenende-gemacht-adhi",
+  "text": "Was hast du am Wochenende gemacht, Adhi?",
+  "voice": "f"
+ },
+ {
+  "key": "ich-habe-mit-akshay-einen-ausflug-gemacht-wir-sind-an-den-see-gefahren",
+  "text": "Ich habe mit Akshay einen Ausflug gemacht. Wir sind an den See gefahren.",
+  "voice": "m"
+ },
+ {
+  "key": "das-wasser-war-kalt-aber-die-sonne-war-schoen",
+  "text": "Das Wasser war kalt, aber die Sonne war schön.",
+  "voice": "m"
+ },
+ {
+  "key": "habt-ihr-euch-gut-erholt",
+  "text": "Habt ihr euch gut erholt?",
+  "voice": "f"
+ },
+ {
+  "key": "ja-ich-habe-mich-sehr-gefreut-berlin-ist-groesser-als-madurai-aber-der-see-ist-ruhiger",
+  "text": "Ja! Ich habe mich sehr gefreut. Berlin ist größer als Madurai, aber der See ist ruhiger.",
+  "voice": "m"
+ },
+ {
+  "key": "naechstes-wochenende-kommen-wir-mit-ich-freue-mich-schon",
+  "text": "Nächstes Wochenende kommen wir mit! Ich freue mich schon.",
+  "voice": "f"
+ },
+ {
+  "key": "wunderbar-dann-kochen-wir-zusammen-biryani-am-see",
+  "text": "Wunderbar. Dann kochen wir zusammen Biryani am See.",
+  "voice": "m"
+ },
+ {
+  "key": "der-ausflug",
+  "text": "der Ausflug",
+  "voice": "m"
+ },
+ {
+  "key": "wir-machen-einen-ausflug",
+  "text": "Wir machen einen Ausflug.",
+  "voice": "m"
+ },
+ {
+  "key": "sich-erholen",
+  "text": "sich erholen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-erhole-mich-am-sonntag",
+  "text": "Ich erhole mich am Sonntag.",
+  "voice": "m"
+ },
+ {
+  "key": "mich",
+  "text": "mich",
+  "voice": "m"
+ },
+ {
+  "key": "ich-freue-mich",
+  "text": "Ich freue mich.",
+  "voice": "m"
+ },
+ {
+  "key": "groesser-als",
+  "text": "größer (als)",
+  "voice": "m"
+ },
+ {
+  "key": "berlin-ist-groesser-als-bonn",
+  "text": "Berlin ist größer als Bonn.",
+  "voice": "m"
+ },
+ {
   "key": "ich-bin-poovai",
   "text": "Ich bin Poovai.",
   "voice": "m"
@@ -1630,11 +1970,6 @@
   "voice": "m"
  },
  {
-  "key": "der-termin",
-  "text": "der Termin",
-  "voice": "m"
- },
- {
   "key": "anmelden",
   "text": "anmelden",
   "voice": "m"
@@ -1715,11 +2050,6 @@
   "voice": "m"
  },
  {
-  "key": "die-fahrkarte",
-  "text": "die Fahrkarte",
-  "voice": "m"
- },
- {
   "key": "entwerten",
   "text": "entwerten",
   "voice": "m"
@@ -1732,16 +2062,6 @@
  {
   "key": "der-ice",
   "text": "der ICE",
-  "voice": "m"
- },
- {
-  "key": "die-verspaetung",
-  "text": "die Verspätung",
-  "voice": "m"
- },
- {
-  "key": "das-gleis",
-  "text": "das Gleis",
   "voice": "m"
  },
  {

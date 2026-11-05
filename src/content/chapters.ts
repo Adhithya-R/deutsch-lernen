@@ -339,13 +339,159 @@ export const chapters: Chapter[] = [
     ],
     pass: 2,
   },
+
+  /* ------------------------------------------------------------------ 9 (A2) */
+  {
+    slug: "beim-arzt",
+    n: 9,
+    landmarks: ["TN011", "DE020"], // Chennai Central, Zwinger Dresden
+    mood: "rain",
+    title: "Beim Arzt",
+    sub: "A2 · At the doctor",
+    speakers: { a: ADHI, t: speaker("Thanisha"), d: role("Die Ärztin", "Ä", "f") },
+    lines: [
+      { who: "t", parts: ["Adhi, du siehst krank aus. Was ist los?"], en: "Adhi, you look ill. What is wrong?", ta: "ஆதி, நீ உடம்பு சரியில்லாதவன் போல் இருக்கிறாய். என்ன ஆச்சு?" },
+      { who: "a", parts: ["Ich habe ", W("Kopfschmerzen", "kopfschmerzen"), " und ", W("Fieber", "fieber"), "."], en: "I have a headache and a fever.", ta: "எனக்கு தலைவலியும் காய்ச்சலும் இருக்கிறது." },
+      { who: "t", parts: ["Du musst zum Arzt gehen. Ich rufe an und mache einen ", W("Termin", "termin"), "."], en: "You must go to the doctor. I'll call and make an appointment.", ta: "நீ மருத்துவரிடம் போக வேண்டும். நான் அழைத்து நேரம் வாங்குகிறேன்." },
+      { who: "d", parts: ["Guten Tag, Adhi. Setzen Sie sich bitte. Seit wann haben Sie Fieber?"], en: "Good day, Adhi. Please sit down. Since when have you had a fever?", ta: "வணக்கம் ஆதி. தயவுசெய்து உட்காருங்கள். எப்போதிருந்து காய்ச்சல்?" },
+      { who: "a", parts: ["Seit gestern. Und mein Hals tut weh."], en: "Since yesterday. And my throat hurts.", ta: "நேற்றிலிருந்து. தொண்டையும் வலிக்கிறது." },
+      { who: "d", parts: ["Sie haben eine ", W("Erkältung", "erkaeltung"), ". Sie sollen viel Tee trinken und im Bett bleiben."], en: "You have a cold. You should drink a lot of tea and stay in bed.", ta: "உங்களுக்கு சளி பிடித்திருக்கிறது. நிறைய தேநீர் குடித்து படுக்கையில் இருக்க வேண்டும்." },
+      { who: "a", parts: ["Muss ich ", W("Tabletten", "tabletten"), " nehmen?"], en: "Do I have to take tablets?", ta: "நான் மாத்திரைகள் எடுக்க வேண்டுமா?" },
+      { who: "d", parts: ["Ja, dreimal am Tag. Gute ", W("Besserung", "besserung"), "!"], en: "Yes, three times a day. Get well soon!", ta: "ஆம், ஒரு நாளைக்கு மூன்று முறை. விரைவில் குணமடையுங்கள்!" },
+    ],
+    words: {
+      kopfschmerzen: { de: "die Kopfschmerzen", en: "headache", ta: "தலைவலி", ex: "Ich habe Kopfschmerzen.", exEn: "I have a headache.", exTa: "எனக்கு தலைவலி.", pic: "🤕" },
+      fieber: { de: "das Fieber", en: "fever", ta: "காய்ச்சல்", ex: "Er hat Fieber.", exEn: "He has a fever.", exTa: "அவனுக்கு காய்ச்சல்.", pic: "🌡️" },
+      termin: { de: "der Termin", en: "appointment", ta: "முன்பதிவு நேரம்", ex: "Ich habe einen Termin.", exEn: "I have an appointment.", exTa: "எனக்கு ஒரு நேரம் உள்ளது.", pic: "📅" },
+      erkaeltung: { de: "die Erkältung", en: "a cold", ta: "சளி", ex: "Ich habe eine Erkältung.", exEn: "I have a cold.", exTa: "எனக்கு சளி.", pic: "🤧" },
+      tabletten: { de: "die Tabletten", en: "tablets", ta: "மாத்திரைகள்", ex: "Nehmen Sie die Tabletten.", exEn: "Take the tablets.", exTa: "மாத்திரைகளை எடுங்கள்.", pic: "💊" },
+      besserung: { de: "Gute Besserung!", en: "Get well soon!", ta: "விரைவில் குணமடையுங்கள்!", ex: "Gute Besserung, Adhi!", exEn: "Get well soon, Adhi!", exTa: "விரைவில் குணமடையுங்கள், ஆதி!", pic: "💐" },
+    },
+    culture: {
+      tn: "Many families first try home remedies such as ginger tea or pepper rasam, and then visit a clinic.",
+      de: "In Germany you usually need an appointment (Termin) and bring your health insurance card (Versichertenkarte).",
+    },
+    quiz: [
+      { type: "choice", q: "Du ___ zum Arzt gehen.", options: ["musst", "muss", "müssen"], answer: "musst", tipEn: "With du the modal verb müssen becomes musst.", tipTa: "du உடன் müssen → musst." },
+      { type: "choice", q: "Seit wann haben Sie Fieber? – ___ gestern.", options: ["Seit", "Vor", "Bis"], answer: "Seit", tipEn: "“Seit” says since when something has lasted.", tipTa: "“Seit” = எப்போதிருந்து." },
+      { type: "order", q: "Build the sentence: “I have a headache.”", tiles: ["Ich", "habe", "Kopfschmerzen", "bin"], end: ".", answer: "Ich habe Kopfschmerzen.", tipEn: "Illnesses use haben: Ich habe …", tipTa: "நோய்களுக்கு haben: Ich habe …" },
+    ],
+    pass: 2,
+  },
+
+  /* ------------------------------------------------------------------ 10 (A2) */
+  {
+    slug: "die-arbeit",
+    n: 10,
+    landmarks: ["TN019", "DE016"], // Government Museum Chennai, Residenz Munich
+    mood: "evening",
+    title: "Die Arbeit",
+    sub: "A2 · Your first job",
+    speakers: { a: ADHI, c: role("Der Chef", "C", "m"), p: speaker("Poovai") },
+    lines: [
+      { who: "c", parts: ["Guten Morgen, Adhi. Heute ist Ihr erster ", W("Arbeitstag", "arbeitstag"), ". Wie war die Fahrt?"], en: "Good morning, Adhi. Today is your first working day. How was the journey?", ta: "காலை வணக்கம் ஆதி. இன்று உங்கள் முதல் வேலை நாள். பயணம் எப்படி இருந்தது?" },
+      { who: "a", parts: ["Gut, danke. Ich bin mit der U-Bahn ", W("gefahren", "gefahren"), "."], en: "Good, thanks. I went by underground.", ta: "நன்றாக இருந்தது, நன்றி. நான் மெட்ரோவில் வந்தேன்." },
+      { who: "c", parts: ["Hier ist Ihr ", W("Platz", "platz"), ". Poovai zeigt Ihnen alles."], en: "Here is your desk. Poovai will show you everything.", ta: "இதோ உங்கள் இடம். பூவை உங்களுக்கு எல்லாவற்றையும் காட்டுவார்." },
+      { who: "p", parts: ["Hallo Adhi! Hast du schon Kaffee getrunken?"], en: "Hello Adhi! Have you already had coffee?", ta: "வணக்கம் ஆதி! நீ ஏற்கனவே காபி குடித்தாயா?" },
+      { who: "a", parts: ["Nein, noch nicht. Wo ist die Küche?"], en: "No, not yet. Where is the kitchen?", ta: "இல்லை, இன்னும் இல்லை. சமையலறை எங்கே?" },
+      { who: "p", parts: ["Dort links. Wir essen um zwölf Uhr, ", W("weil", "weil"), " dann die ", W("Kantine", "kantine"), " öffnet."], en: "Over there on the left. We eat at twelve, because the canteen opens then.", ta: "அங்கே இடப்புறம். நாங்கள் பன்னிரண்டு மணிக்கு சாப்பிடுவோம், ஏனெனில் அப்போது உணவகம் திறக்கும்." },
+      { who: "a", parts: ["Danke! Ich freue mich auf die Arbeit."], en: "Thanks! I'm looking forward to the work.", ta: "நன்றி! வேலைக்காக ஆவலாக இருக்கிறேன்." },
+    ],
+    words: {
+      arbeitstag: { de: "der Arbeitstag", en: "working day", ta: "வேலை நாள்", ex: "Der Arbeitstag beginnt um neun.", exEn: "The working day starts at nine.", exTa: "வேலை நாள் ஒன்பது மணிக்குத் தொடங்கும்.", pic: "💼" },
+      gefahren: { de: "gefahren", en: "driven, travelled", ta: "பயணம் செய்த", ex: "Ich bin nach Berlin gefahren.", exEn: "I travelled to Berlin.", exTa: "நான் பெர்லினுக்குப் பயணம் செய்தேன்.", pic: "🚇" },
+      platz: { de: "der Platz", en: "place, seat, desk", ta: "இடம்", ex: "Das ist mein Platz.", exEn: "This is my seat.", exTa: "இது என் இடம்.", pic: "🪑" },
+      weil: { de: "weil", en: "because", ta: "ஏனெனில்", ex: "Ich bin müde, weil ich viel gearbeitet habe.", exEn: "I am tired because I worked a lot.", exTa: "நான் நிறைய வேலை செய்ததால் களைப்பாக இருக்கிறேன்.", pic: "💡" },
+      kantine: { de: "die Kantine", en: "canteen", ta: "உணவகம்", ex: "Die Kantine ist im Erdgeschoss.", exEn: "The canteen is on the ground floor.", exTa: "உணவகம் தரைத்தளத்தில் உள்ளது.", pic: "🍽️" },
+    },
+    culture: {
+      tn: "In Tamil Nadu offices people often address seniors as sir or madam, and many bring lunch from home in a tiffin box.",
+      de: "In many German workplaces colleagues use first names, start on time and keep their lunch break.",
+    },
+    quiz: [
+      { type: "choice", q: "Ich bin mit der U-Bahn ___.", options: ["gefahren", "gefahrt", "fahren"], answer: "gefahren", tipEn: "Perfekt of fahren: ich bin gefahren (with sein, because you move).", tipTa: "fahren இன் Perfekt: ich bin gefahren (இயக்கம் என்பதால் sein)." },
+      { type: "choice", q: "Wir essen um zwölf, ___ dann die Kantine öffnet.", options: ["weil", "und", "aber"], answer: "weil", tipEn: "“weil” gives a reason and sends the verb to the end: … weil die Kantine öffnet.", tipTa: "“weil” காரணம் சொல்லும்; வினை கடைசியில் செல்லும்." },
+      { type: "order", q: "Build the sentence: “I drank coffee.”", tiles: ["Ich", "habe", "Kaffee", "getrunken", "trinke"], end: ".", answer: "Ich habe Kaffee getrunken.", tipEn: "Perfekt: habe … getrunken. The participle goes to the end.", tipTa: "Perfekt: habe … getrunken. Participle கடைசியில்." },
+    ],
+    pass: 2,
+  },
+
+  /* ------------------------------------------------------------------ 11 (A2) */
+  {
+    slug: "mit-dem-zug",
+    n: 11,
+    landmarks: ["TN006", "DE018"], // Fort St. George, Holstentor Lübeck
+    mood: "autumn",
+    title: "Mit dem Zug",
+    sub: "A2 · A trip to Hamburg",
+    speakers: { a: ADHI, s: speaker("Sanjay"), k: role("Die Schaffnerin", "S", "f") },
+    lines: [
+      { who: "s", parts: ["Adhi, wir fahren am Samstag nach Hamburg. Kommst du mit?"], en: "Adhi, on Saturday we are going to Hamburg. Are you coming along?", ta: "ஆதி, சனிக்கிழமை நாங்கள் ஹாம்பர்க் போகிறோம். நீயும் வருகிறாயா?" },
+      { who: "a", parts: ["Gern! Wie kommen wir ", W("zum", "zum"), " Bahnhof?"], en: "Gladly! How do we get to the station?", ta: "மகிழ்ச்சியுடன்! ரயில் நிலையத்துக்கு எப்படிப் போவது?" },
+      { who: "s", parts: ["Mit der U-Bahn. Wir treffen uns um acht Uhr am ", W("Gleis", "gleis"), " fünf."], en: "By underground. We meet at eight o'clock at platform five.", ta: "மெட்ரோவில். எட்டு மணிக்கு ஐந்தாம் நடைமேடையில் சந்திப்போம்." },
+      { who: "k", parts: ["Guten Tag, Ihre ", W("Fahrkarten", "fahrkarte"), " bitte."], en: "Good day, your tickets please.", ta: "வணக்கம், உங்கள் பயணச்சீட்டுகள் தயவுசெய்து." },
+      { who: "a", parts: ["Bitte schön. Fährt dieser Zug nach Hamburg?"], en: "Here you are. Does this train go to Hamburg?", ta: "இதோ. இந்த ரயில் ஹாம்பர்க் போகுமா?" },
+      { who: "k", parts: ["Ja, aber er hat zwanzig Minuten ", W("Verspätung", "verspaetung"), "."], en: "Yes, but it is twenty minutes late.", ta: "ஆம், ஆனால் இருபது நிமிடம் தாமதம்." },
+      { who: "s", parts: ["Kein Problem. Wir fahren mit dem Zug und sehen die Stadt später."], en: "No problem. We go by train and see the city later.", ta: "பிரச்சினை இல்லை. நாம் ரயிலில் போய் நகரத்தை பிறகு பார்ப்போம்." },
+      { who: "a", parts: ["Ich sitze gern am Fenster."], en: "I like sitting by the window.", ta: "எனக்கு ஜன்னலோரம் உட்கார பிடிக்கும்." },
+    ],
+    words: {
+      zum: { de: "zum (zu dem)", en: "to the", ta: "…க்கு", ex: "Ich gehe zum Bahnhof.", exEn: "I go to the station.", exTa: "நான் ரயில் நிலையத்துக்குப் போகிறேன்.", pic: "➡️" },
+      gleis: { de: "das Gleis", en: "platform, track", ta: "நடைமேடை", ex: "Der Zug fährt auf Gleis fünf.", exEn: "The train leaves from platform five.", exTa: "ரயில் ஐந்தாம் நடைமேடையில் புறப்படும்.", pic: "🚉" },
+      fahrkarte: { de: "die Fahrkarte", en: "ticket", ta: "பயணச்சீட்டு", ex: "Ich habe keine Fahrkarte.", exEn: "I don't have a ticket.", exTa: "என்னிடம் பயணச்சீட்டு இல்லை.", pic: "🎫" },
+      verspaetung: { de: "die Verspätung", en: "delay", ta: "தாமதம்", ex: "Der Zug hat Verspätung.", exEn: "The train has a delay.", exTa: "ரயில் தாமதமாக உள்ளது.", pic: "⏳" },
+    },
+    culture: {
+      tn: "On Indian trains you reserve a seat ahead, and tea and snack vendors walk through the coaches.",
+      de: "German trains are often on time, but delays happen. Check the platform (Gleis) and the app before you go.",
+    },
+    quiz: [
+      { type: "choice", q: "Wir fahren ___ dem Zug.", options: ["mit", "nach", "zu"], answer: "mit", tipEn: "“mit” always takes the Dativ: mit dem Zug.", tipTa: "“mit” எப்போதும் Dativ: mit dem Zug." },
+      { type: "choice", q: "Wie kommen wir ___ Bahnhof?", options: ["zum", "zur", "nach"], answer: "zum", tipEn: "der Bahnhof: zu + dem = zum.", tipTa: "der Bahnhof: zu + dem = zum." },
+      { type: "order", q: "Build the sentence: “The train is late.”", tiles: ["Der", "Zug", "hat", "Verspätung", "ist"], end: ".", answer: "Der Zug hat Verspätung.", tipEn: "German says: the train HAS a delay.", tipTa: "ஜெர்மனில்: ரயிலுக்கு தாமதம் உள்ளது (hat)." },
+    ],
+    pass: 2,
+  },
+
+  /* ------------------------------------------------------------------ 12 (A2) */
+  {
+    slug: "das-wochenende",
+    n: 12,
+    landmarks: ["TN001", "DE009"], // Brihadeeswarar Temple, Frauenkirche Dresden
+    mood: "sunset",
+    title: "Das Wochenende",
+    sub: "A2 · What did you do?",
+    speakers: { a: ADHI, r: speaker("Ruby"), k: speaker("Akshay"), s: speaker("Sadhana") },
+    lines: [
+      { who: "r", parts: ["Was hast du am Wochenende gemacht, Adhi?"], en: "What did you do at the weekend, Adhi?", ta: "ஆதி, வார இறுதியில் என்ன செய்தாய்?" },
+      { who: "a", parts: ["Ich habe mit Akshay einen ", W("Ausflug", "ausflug"), " gemacht. Wir sind an den See gefahren."], en: "I went on a trip with Akshay. We went to the lake.", ta: "நான் அக்ஷயுடன் ஒரு சுற்றுலா போனேன். நாங்கள் ஏரிக்குப் போனோம்." },
+      { who: "k", parts: ["Das Wasser war kalt, aber die Sonne war schön."], en: "The water was cold, but the sun was lovely.", ta: "தண்ணீர் குளிராக இருந்தது, ஆனால் வெயில் அழகாக இருந்தது." },
+      { who: "r", parts: ["Habt ihr euch gut ", W("erholt", "erholen"), "?"], en: "Did you relax well?", ta: "நீங்கள் நன்றாக ஓய்வெடுத்தீர்களா?" },
+      { who: "a", parts: ["Ja! Ich habe ", W("mich", "mich"), " sehr gefreut. Berlin ist ", W("größer", "groesser"), " als Madurai, aber der See ist ruhiger."], en: "Yes! I was very happy. Berlin is bigger than Madurai, but the lake is quieter.", ta: "ஆம்! நான் மிகவும் மகிழ்ந்தேன். பெர்லின் மதுரையை விடப் பெரியது, ஆனால் ஏரி அமைதியானது." },
+      { who: "s", parts: ["Nächstes Wochenende kommen wir mit! Ich freue mich schon."], en: "Next weekend we'll come along! I'm already looking forward to it.", ta: "அடுத்த வார இறுதியில் நாங்களும் வருவோம்! நான் இப்போதே ஆவலாக இருக்கிறேன்." },
+      { who: "a", parts: ["Wunderbar. Dann kochen wir zusammen Biryani am See."], en: "Wonderful. Then we'll cook biryani together at the lake.", ta: "அருமை. அப்படியானால் ஏரிக்கரையில் ஒன்றாக பிரியாணி சமைப்போம்." },
+    ],
+    words: {
+      ausflug: { de: "der Ausflug", en: "trip, outing", ta: "சுற்றுலா", ex: "Wir machen einen Ausflug.", exEn: "We are going on a trip.", exTa: "நாங்கள் சுற்றுலா போகிறோம்.", pic: "🏞️" },
+      erholen: { de: "sich erholen", en: "to relax, recover", ta: "ஓய்வெடு", ex: "Ich erhole mich am Sonntag.", exEn: "I relax on Sunday.", exTa: "நான் ஞாயிறு ஓய்வெடுக்கிறேன்.", pic: "😌" },
+      mich: { de: "mich", en: "myself (with ich)", ta: "நானே (என்னை)", ex: "Ich freue mich.", exEn: "I am happy.", exTa: "நான் மகிழ்கிறேன்.", pic: "🙂" },
+      groesser: { de: "größer (als)", en: "bigger (than)", ta: "…ஐ விடப் பெரிய", ex: "Berlin ist größer als Bonn.", exEn: "Berlin is bigger than Bonn.", exTa: "பெர்லின் பானை விடப் பெரியது.", pic: "📏" },
+    },
+    culture: {
+      tn: "Weekend trips in Tamil Nadu often mean the beach, a temple town or a hill station such as Kodaikanal.",
+      de: "Many Germans spend weekends at lakes, in forests or hiking. Sundays are quiet, so plan ahead.",
+    },
+    quiz: [
+      { type: "choice", q: "Berlin ist ___ als Madurai.", options: ["größer", "groß", "am größten"], answer: "größer", tipEn: "The comparative adds -er, and “als” means “than”.", tipTa: "ஒப்பீடு: -er சேர்க்கவும்; “als” = விட." },
+      { type: "choice", q: "Ich habe ___ gefreut.", options: ["mich", "dich", "sich"], answer: "mich", tipEn: "Reflexive with ich: mich.", tipTa: "ich உடன் தன்வினை: mich." },
+      { type: "order", q: "Build the sentence: “We went to the lake.”", tiles: ["Wir", "sind", "an", "den", "See", "gefahren", "haben"], end: ".", answer: "Wir sind an den See gefahren.", tipEn: "Perfekt with sein: sind … gefahren.", tipTa: "sein உடன் Perfekt: sind … gefahren." },
+    ],
+    pass: 2,
+  },
 ];
 
 // Chapters on the path that are planned but not written yet.
-export const upcoming = [
-  { title: "Beim Arzt", sub: "A2 · At the doctor" },
-  { title: "Die Arbeit", sub: "A2 · Your first job" },
-];
+export const upcoming = [{ title: "B1 stories", sub: "Coming later" }];
 
 export const chapterBySlug = (slug: string) => chapters.find((c) => c.slug === slug);
 export const doneKey = (slug: string) => `chapter-${slug}`;

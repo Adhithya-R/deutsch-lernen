@@ -13,7 +13,7 @@ export type LearnData = {
   xp: number; // total XP
 };
 
-const X = [50, 30, 70, 30, 50, 70, 30, 50, 70, 30]; // zig-zag position of each stop, in % (enough for 10 stops)
+const X = [50, 30, 70, 30, 50, 70, 30, 50, 70, 30, 50, 70, 30, 50, 70, 30]; // zig-zag position of each stop, in % (enough for 16 stops)
 const ROW = 152;
 
 type Stop = { title: string; sub: string; state: "done" | "cur" | "lock"; href?: string };
