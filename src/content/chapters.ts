@@ -642,6 +642,158 @@ export const chapters: Chapter[] = [
     ],
     pass: 2,
   },
+
+  /* ------------------------------------------------------------------ 17 (A1 bonus) */
+  {
+    slug: "videoanruf",
+    n: 17,
+    landmarks: ["TN023", "DE010"], // Senate House, Römer
+    mood: "noon",
+    title: "Ein Videoanruf",
+    sub: "A1 bonus · Call home",
+    speakers: { a: ADHI, m: role("Die Mutter", "M", "f"), s: role("Die Schwester", "S", "f") },
+    lines: [
+      { who: "m", parts: ["Hallo Adhi! Wie geht es dir?"], en: "Hello Adhi! How are you?", ta: "வணக்கம் ஆதி! எப்படி இருக்கிறாய்?" },
+      { who: "a", parts: ["Mir geht es gut, Amma. Ich bin in Berlin und lerne Deutsch."], en: "I am fine, Amma. I am in Berlin and learning German.", ta: "நான் நலம், அம்மா. நான் பெர்லினில் இருக்கிறேன், ஜெர்மன் கற்கிறேன்." },
+      { who: "m", parts: ["Hast du schon ", W("gegessen", "gegessen"), "?"], en: "Have you eaten already?", ta: "நீ சாப்பிட்டுவிட்டாயா?" },
+      { who: "a", parts: ["Ja, ich habe Reis mit Gemüse gekocht."], en: "Yes, I cooked rice with vegetables.", ta: "ஆம், நான் காய்கறியுடன் சாதம் சமைத்தேன்." },
+      { who: "s", parts: ["Hallo, Bruder! Ich ", W("vermisse", "vermissen"), " dich."], en: "Hello, brother! I miss you.", ta: "வணக்கம் அண்ணா! நான் உன்னை நினைத்து ஏங்குகிறேன்." },
+      { who: "a", parts: ["Ich vermisse euch auch. Wie ist das ", W("Wetter", "wetter"), " in Madurai?"], en: "I miss you too. What is the weather like in Madurai?", ta: "நானும் உங்களை நினைக்கிறேன். மதுரையில் வானிலை எப்படி?" },
+      { who: "s", parts: ["Es ist heiß, aber heute regnet es ein bisschen."], en: "It is hot, but today it is raining a little.", ta: "வெப்பமாக உள்ளது, ஆனால் இன்று கொஞ்சம் மழை பெய்கிறது." },
+      { who: "m", parts: ["Komm bald zu ", W("Besuch", "besuch"), "! Wir kochen dein ", W("Lieblingsessen", "lieblingsessen"), "."], en: "Come and visit soon! We will cook your favourite food.", ta: "சீக்கிரம் வந்து பார்! உனக்குப் பிடித்த உணவை சமைப்போம்." },
+    ],
+    words: {
+      gegessen: { de: "gegessen", en: "eaten", ta: "சாப்பிட்ட", ex: "Ich habe schon gegessen.", exEn: "I have already eaten.", exTa: "நான் ஏற்கனவே சாப்பிட்டேன்.", pic: "🍛" },
+      vermissen: { de: "vermissen", en: "to miss (someone)", ta: "நினைத்து ஏங்கு", ex: "Ich vermisse meine Familie.", exEn: "I miss my family.", exTa: "நான் என் குடும்பத்தை நினைத்து ஏங்குகிறேன்.", pic: "💭" },
+      wetter: { de: "das Wetter", en: "weather", ta: "வானிலை", ex: "Das Wetter ist heute schön.", exEn: "The weather is nice today.", exTa: "இன்று வானிலை நன்றாக உள்ளது.", pic: "⛅" },
+      besuch: { de: "der Besuch", en: "visit", ta: "சந்திப்பு, வருகை", ex: "Wir haben Besuch.", exEn: "We have a visitor.", exTa: "எங்களுக்கு விருந்தினர் வந்திருக்கிறார்.", pic: "🚪" },
+      lieblingsessen: { de: "das Lieblingsessen", en: "favourite food", ta: "பிடித்த உணவு", ex: "Mein Lieblingsessen ist Dosa.", exEn: "My favourite food is dosa.", exTa: "எனக்குப் பிடித்த உணவு தோசை.", pic: "🥞" },
+    },
+    culture: {
+      tn: "In many Tamil homes the first question is “Have you eaten?”. Food is a way to show love and care.",
+      de: "Many people in Germany call or video-call their family on weekends. It is normal to plan a call in advance.",
+    },
+    quiz: [
+      { type: "choice", q: "Ich ___ dich.", options: ["vermisse", "vermisst", "vermissen"], answer: "vermisse", tipEn: "With ich the verb ends in -e.", tipTa: "ich உடன் வினை -e இல் முடியும்." },
+      { type: "choice", q: "Hast du schon ___?", options: ["gegessen", "essen", "aß"], answer: "gegessen", tipEn: "Perfekt: haben + Partizip II (gegessen).", tipTa: "Perfekt: haben + Partizip II (gegessen)." },
+      { type: "order", q: "Build the sentence: “I am learning German.”", tiles: ["Ich", "lerne", "Deutsch", "lernst"], end: ".", answer: "Ich lerne Deutsch.", tipEn: "ich → lerne.", tipTa: "ich → lerne." },
+    ],
+    pass: 2,
+  },
+
+  /* ------------------------------------------------------------------ 18 (A2) */
+  {
+    slug: "im-kaufhaus",
+    n: 18,
+    landmarks: ["TN020", "DE015"], // Rajaji Hall, St. Michael's Hamburg
+    mood: "balloons",
+    title: "Im Kaufhaus",
+    sub: "A2 · Buy clothes",
+    speakers: { a: ADHI, r: speaker("Ruby"), v: role("Die Verkäuferin", "V", "f") },
+    lines: [
+      { who: "v", parts: ["Guten Tag! Suchen Sie etwas Bestimmtes?"], en: "Good day! Are you looking for something in particular?", ta: "வணக்கம்! குறிப்பிட்ட ஏதாவது தேடுகிறீர்களா?" },
+      { who: "r", parts: ["Ja, ich suche eine warme Jacke. Haben Sie die auch in Grün?"], en: "Yes, I am looking for a warm jacket. Do you also have it in green?", ta: "ஆம், நான் ஒரு சூடான ஜாக்கெட் தேடுகிறேன். அது பச்சை நிறத்திலும் உள்ளதா?" },
+      { who: "v", parts: ["Ja, hier. Welche ", W("Größe", "groesse"), " haben Sie?"], en: "Yes, here. What size are you?", ta: "ஆம், இதோ. உங்கள் அளவு என்ன?" },
+      { who: "r", parts: ["Ich trage Größe M. Kann ich sie ", W("anprobieren", "anprobieren"), "?"], en: "I wear size M. Can I try it on?", ta: "நான் M அளவு அணிகிறேன். போட்டுப் பார்க்கலாமா?" },
+      { who: "v", parts: ["Natürlich. Die ", W("Umkleidekabine", "umkleidekabine"), " ist dort hinten."], en: "Of course. The changing room is over there at the back.", ta: "நிச்சயமாக. உடை மாற்றும் அறை அங்கே பின்னால் உள்ளது." },
+      { who: "a", parts: ["Die Jacke ", W("steht", "steht"), " dir gut, Ruby!"], en: "The jacket suits you, Ruby!", ta: "ஜாக்கெட் உனக்கு நன்றாகப் பொருந்துகிறது, ரூபி!" },
+      { who: "r", parts: ["Aber sie ist zu teuer. Haben Sie eine günstigere Jacke?"], en: "But it is too expensive. Do you have a cheaper jacket?", ta: "ஆனால் இது மிகவும் விலை அதிகம். மலிவான ஜாக்கெட் உள்ளதா?" },
+      { who: "v", parts: ["Diese hier kostet nur neunundvierzig Euro und ist im ", W("Angebot", "angebot"), "."], en: "This one costs only forty-nine euros and is on offer.", ta: "இது நாற்பத்தொன்பது யூரோ மட்டுமே, தள்ளுபடியில் உள்ளது." },
+    ],
+    words: {
+      groesse: { de: "die Größe", en: "size", ta: "அளவு", ex: "Welche Größe haben Sie?", exEn: "What size are you?", exTa: "உங்கள் அளவு என்ன?", pic: "📏" },
+      anprobieren: { de: "anprobieren", en: "to try on", ta: "போட்டுப் பார்", ex: "Ich probiere die Hose an.", exEn: "I try on the trousers.", exTa: "நான் கால்சட்டையைப் போட்டுப் பார்க்கிறேன்.", pic: "👗" },
+      umkleidekabine: { de: "die Umkleidekabine", en: "changing room", ta: "உடை மாற்றும் அறை", ex: "Wo ist die Umkleidekabine?", exEn: "Where is the changing room?", exTa: "உடை மாற்றும் அறை எங்கே?", pic: "🚪" },
+      steht: { de: "stehen (Das steht dir gut.)", en: "to suit", ta: "பொருந்து", ex: "Die Farbe steht dir gut.", exEn: "The colour suits you.", exTa: "இந்த நிறம் உனக்குப் பொருந்துகிறது.", pic: "✨" },
+      angebot: { de: "das Angebot", en: "offer, special price", ta: "தள்ளுபடி", ex: "Das ist im Angebot.", exEn: "That is on offer.", exTa: "இது தள்ளுபடியில் உள்ளது.", pic: "🏷️" },
+    },
+    culture: {
+      tn: "Many families buy new clothes for Pongal and Deepavali, often in big textile shops with many floors.",
+      de: "German clothing sizes differ from Indian sizes, so try things on. Sales and special offers (Angebote) are common.",
+    },
+    quiz: [
+      { type: "choice", q: "Die Jacke steht ___ gut.", options: ["dir", "dich", "du"], answer: "dir", tipEn: "“stehen” takes the Dativ: dir.", tipTa: "“stehen” உடன் Dativ: dir." },
+      { type: "choice", q: "Kann ich die Jacke ___?", options: ["anprobieren", "probieren an", "anprobiert"], answer: "anprobieren", tipEn: "After a modal verb the infinitive stays together at the end: anprobieren.", tipTa: "Modal வினைக்குப் பிறகு வினை கடைசியில்: anprobieren." },
+      { type: "order", q: "Build the sentence: “I am looking for a warm jacket.”", tiles: ["Ich", "suche", "eine", "warme", "Jacke", "suchen"], end: ".", answer: "Ich suche eine warme Jacke.", tipEn: "suchen + Akkusativ: eine warme Jacke.", tipTa: "suchen + Akkusativ: eine warme Jacke." },
+    ],
+    pass: 2,
+  },
+
+  /* ------------------------------------------------------------------ 19 (A2) */
+  {
+    slug: "die-heizung",
+    n: 19,
+    landmarks: ["TN019", "DE021"], // Government Museum, Linderhof
+    mood: "snow",
+    title: "Die Heizung ist kaputt",
+    sub: "A2 · Report a problem",
+    speakers: { a: ADHI, h: role("Der Hausmeister", "H", "m"), v: speaker("Arvind") },
+    lines: [
+      { who: "a", parts: ["Guten Tag, hier spricht Adhi aus Wohnung drei. Die ", W("Heizung", "heizung"), " ist ", W("kaputt", "kaputt"), "."], en: "Good day, this is Adhi from flat three. The heating is broken.", ta: "வணக்கம், நான் மூன்றாம் வீட்டிலிருந்து ஆதி பேசுகிறேன். வெப்பமூட்டி பழுதாகிவிட்டது." },
+      { who: "h", parts: ["Das tut mir leid. Seit wann ", W("funktioniert", "funktionieren"), " sie nicht?"], en: "I'm sorry about that. Since when has it not worked?", ta: "மன்னிக்கவும். எப்போதிருந்து அது வேலை செய்யவில்லை?" },
+      { who: "a", parts: ["Seit zwei Tagen. Es ist sehr kalt in der Wohnung."], en: "For two days. It is very cold in the flat.", ta: "இரண்டு நாட்களாக. வீட்டில் மிகவும் குளிராக உள்ளது." },
+      { who: "h", parts: ["Ich schicke morgen einen ", W("Techniker", "techniker"), ". Wären Sie dann zu Hause?"], en: "I'll send a technician tomorrow. Would you be at home then?", ta: "நாளை ஒரு தொழில்நுட்பரை அனுப்புகிறேன். அப்போது நீங்கள் வீட்டில் இருப்பீர்களா?" },
+      { who: "a", parts: ["Ja, morgen Vormittag bin ich da. Könnten Sie vielleicht früher kommen?"], en: "Yes, I'll be there tomorrow morning. Could you perhaps come earlier?", ta: "ஆம், நாளை காலை நான் இருப்பேன். சற்று முன்னதாக வர முடியுமா?" },
+      { who: "h", parts: ["Ich ", W("versuche", "versuchen"), " es. Ich rufe Sie in einer Stunde an."], en: "I'll try. I'll call you in an hour.", ta: "முயற்சிக்கிறேன். ஒரு மணி நேரத்தில் உங்களை அழைக்கிறேன்." },
+      { who: "v", parts: ["Adhi, wenn du möchtest, kannst du heute Abend bei mir essen. Bei mir ist es warm."], en: "Adhi, if you like you can eat at my place this evening. It is warm at mine.", ta: "ஆதி, விரும்பினால் இன்று மாலை என் வீட்டில் சாப்பிடலாம். என் வீட்டில் வெப்பமாக உள்ளது." },
+      { who: "a", parts: ["Das wäre sehr nett, Arvind. Vielen Dank!"], en: "That would be very kind, Arvind. Thank you very much!", ta: "அது மிகவும் அன்பாக இருக்கும் அரவிந்த். மிக்க நன்றி!" },
+    ],
+    words: {
+      heizung: { de: "die Heizung", en: "heating", ta: "வெப்பமூட்டி", ex: "Die Heizung ist an.", exEn: "The heating is on.", exTa: "வெப்பமூட்டி இயங்குகிறது.", pic: "🔥" },
+      kaputt: { de: "kaputt", en: "broken", ta: "பழுதான", ex: "Das Handy ist kaputt.", exEn: "The phone is broken.", exTa: "கைபேசி பழுதாகிவிட்டது.", pic: "🔧" },
+      funktionieren: { de: "funktionieren", en: "to work, function", ta: "வேலை செய்", ex: "Das Internet funktioniert nicht.", exEn: "The internet does not work.", exTa: "இணையம் வேலை செய்யவில்லை.", pic: "⚙️" },
+      techniker: { de: "der Techniker", en: "technician", ta: "தொழில்நுட்பர்", ex: "Der Techniker kommt morgen.", exEn: "The technician comes tomorrow.", exTa: "தொழில்நுட்பர் நாளை வருவார்.", pic: "🧰" },
+      versuchen: { de: "versuchen", en: "to try", ta: "முயற்சி செய்", ex: "Ich versuche es noch einmal.", exEn: "I'll try it once more.", exTa: "நான் மீண்டும் முயற்சி செய்கிறேன்.", pic: "💪" },
+    },
+    culture: {
+      tn: "When something breaks, a neighbour or relative often helps quickly and offers you a meal or tea.",
+      de: "In Germany you report repairs to the landlord or the Hausverwaltung, ideally by email so there is a written record.",
+    },
+    quiz: [
+      { type: "choice", q: "Die Heizung ___ nicht.", options: ["funktioniert", "funktionieren", "funktioniere"], answer: "funktioniert", tipEn: "die Heizung = sie → funktioniert.", tipTa: "die Heizung = sie → funktioniert." },
+      { type: "choice", q: "___ Sie früher kommen? (very polite)", options: ["Könnten", "Können", "Konnten"], answer: "Könnten", tipEn: "Könnten = polite form (Konjunktiv II).", tipTa: "Könnten = பணிவான வடிவம் (Konjunktiv II)." },
+      { type: "order", q: "Build the sentence: “The heating is broken.”", tiles: ["Die", "Heizung", "ist", "kaputt", "sind"], end: ".", answer: "Die Heizung ist kaputt.", tipEn: "kaputt can be used like an adjective after sein.", tipTa: "kaputt, sein க்குப் பிறகு பெயரடை போல வரும்." },
+    ],
+    pass: 2,
+  },
+
+  /* ------------------------------------------------------------------ 20 (A2) */
+  {
+    slug: "muell-trennen",
+    n: 20,
+    landmarks: ["TN016", "DE020"], // Kapaleeshwarar Temple, Zwinger
+    mood: "rainbow",
+    title: "Müll trennen",
+    sub: "A2 · Sorting rubbish",
+    speakers: { a: ADHI, v: speaker("Kavitha"), s: speaker("Sanjay") },
+    lines: [
+      { who: "v", parts: ["Adhi, in Deutschland trennt man den ", W("Müll", "muell"), "."], en: "Adhi, in Germany you separate the rubbish.", ta: "ஆதி, ஜெர்மனியில் குப்பையைப் பிரித்துப் போடுவார்கள்." },
+      { who: "a", parts: ["Ja, ich habe vier Mülltonnen gesehen. Was kommt wohin?"], en: "Yes, I saw four bins. What goes where?", ta: "ஆம், நான்கு குப்பைத் தொட்டிகளைப் பார்த்தேன். எது எங்கே போடுவது?" },
+      { who: "v", parts: ["Papier kommt in die blaue ", W("Tonne", "tonne"), ", Plastik meistens in die gelbe."], en: "Paper goes in the blue bin, plastic mostly in the yellow one.", ta: "காகிதம் நீலத் தொட்டியில், பிளாஸ்டிக் பெரும்பாலும் மஞ்சள் தொட்டியில்." },
+      { who: "a", parts: ["Und was passiert mit den Flaschen?"], en: "And what happens to the bottles?", ta: "பாட்டில்களுக்கு என்ன நடக்கும்?" },
+      { who: "v", parts: ["Flaschen werden zurückgebracht. Dafür bekommt man ", W("Pfand", "pfand"), "."], en: "Bottles are taken back. You get a deposit for them.", ta: "பாட்டில்கள் திருப்பித் தரப்படும். அதற்கு வைப்புத்தொகை கிடைக்கும்." },
+      { who: "s", parts: ["Das Papier wird gesammelt und ", W("recycelt", "recyceln"), "."], en: "The paper is collected and recycled.", ta: "காகிதம் சேகரிக்கப்பட்டு மறுசுழற்சி செய்யப்படுகிறது." },
+      { who: "a", parts: ["Das finde ich gut. In Madurai nehmen viele Leute eine Stofftasche zum Markt mit."], en: "I like that. In Madurai many people take a cloth bag to the market.", ta: "அது எனக்குப் பிடிக்கிறது. மதுரையில் பலர் சந்தைக்கு துணிப்பை எடுத்துச் செல்கிறார்கள்." },
+      { who: "v", parts: ["Das machen immer mehr Leute auch ", W("hier", "hier"), "."], en: "More and more people do that here too.", ta: "இங்கேயும் மேலும் மேலும் பலர் அதைச் செய்கிறார்கள்." },
+    ],
+    words: {
+      muell: { de: "der Müll", en: "rubbish", ta: "குப்பை", ex: "Wir trennen den Müll.", exEn: "We separate the rubbish.", exTa: "நாங்கள் குப்பையைப் பிரிக்கிறோம்.", pic: "🗑️" },
+      tonne: { de: "die Tonne", en: "bin", ta: "குப்பைத் தொட்டி", ex: "Die Tonne ist voll.", exEn: "The bin is full.", exTa: "தொட்டி நிரம்பிவிட்டது.", pic: "♻️" },
+      pfand: { de: "das Pfand", en: "deposit (on bottles)", ta: "வைப்புத்தொகை", ex: "Auf der Flasche ist Pfand.", exEn: "There is a deposit on the bottle.", exTa: "பாட்டிலுக்கு வைப்புத்தொகை உள்ளது.", pic: "🍾" },
+      recyceln: { de: "recyceln", en: "to recycle", ta: "மறுசுழற்சி செய்", ex: "Wir recyceln Papier.", exEn: "We recycle paper.", exTa: "நாங்கள் காகிதத்தை மறுசுழற்சி செய்கிறோம்.", pic: "🔄" },
+      hier: { de: "hier", en: "here", ta: "இங்கே", ex: "Ich wohne hier.", exEn: "I live here.", exTa: "நான் இங்கே வசிக்கிறேன்.", pic: "📍" },
+    },
+    culture: {
+      tn: "Many Tamil households reuse containers and carry a cloth bag (the “manjappai”) to the market.",
+      de: "Germany separates waste into several bins, and many bottles carry a deposit (Pfand) that you get back.",
+    },
+    quiz: [
+      { type: "choice", q: "Flaschen ___ zurückgebracht.", options: ["werden", "wird", "wurde"], answer: "werden", tipEn: "Passive plural: werden + Partizip II.", tipTa: "செயப்பாட்டு பன்மை: werden + Partizip II." },
+      { type: "choice", q: "Papier kommt in die blaue ___.", options: ["Tonne", "Tasche", "Flasche"], answer: "Tonne", tipEn: "die Tonne = the bin.", tipTa: "die Tonne = குப்பைத் தொட்டி." },
+      { type: "order", q: "Build the sentence: “The rubbish is separated.”", tiles: ["Der", "Müll", "wird", "getrennt", "werden"], end: ".", answer: "Der Müll wird getrennt.", tipEn: "Passive: wird + Partizip II at the end.", tipTa: "செயப்பாட்டு: wird + Partizip II கடைசியில்." },
+    ],
+    pass: 2,
+  },
 ];
 
 // Chapters on the path that are planned but not written yet.

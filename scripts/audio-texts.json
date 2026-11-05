@@ -3200,6 +3200,361 @@
   "voice": "m"
  },
  {
+  "key": "hallo-adhi-wie-geht-es-dir",
+  "text": "Hallo Adhi! Wie geht es dir?",
+  "voice": "f"
+ },
+ {
+  "key": "mir-geht-es-gut-amma-ich-bin-in-berlin-und-lerne-deutsch",
+  "text": "Mir geht es gut, Amma. Ich bin in Berlin und lerne Deutsch.",
+  "voice": "m"
+ },
+ {
+  "key": "hast-du-schon-gegessen",
+  "text": "Hast du schon gegessen?",
+  "voice": "f"
+ },
+ {
+  "key": "ja-ich-habe-reis-mit-gemuese-gekocht",
+  "text": "Ja, ich habe Reis mit Gemüse gekocht.",
+  "voice": "m"
+ },
+ {
+  "key": "hallo-bruder-ich-vermisse-dich",
+  "text": "Hallo, Bruder! Ich vermisse dich.",
+  "voice": "f"
+ },
+ {
+  "key": "ich-vermisse-euch-auch-wie-ist-das-wetter-in-madurai",
+  "text": "Ich vermisse euch auch. Wie ist das Wetter in Madurai?",
+  "voice": "m"
+ },
+ {
+  "key": "es-ist-heiss-aber-heute-regnet-es-ein-bisschen",
+  "text": "Es ist heiß, aber heute regnet es ein bisschen.",
+  "voice": "f"
+ },
+ {
+  "key": "komm-bald-zu-besuch-wir-kochen-dein-lieblingsessen",
+  "text": "Komm bald zu Besuch! Wir kochen dein Lieblingsessen.",
+  "voice": "f"
+ },
+ {
+  "key": "gegessen",
+  "text": "gegessen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-schon-gegessen",
+  "text": "Ich habe schon gegessen.",
+  "voice": "m"
+ },
+ {
+  "key": "vermissen",
+  "text": "vermissen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-vermisse-meine-familie",
+  "text": "Ich vermisse meine Familie.",
+  "voice": "m"
+ },
+ {
+  "key": "das-wetter-ist-heute-schoen",
+  "text": "Das Wetter ist heute schön.",
+  "voice": "m"
+ },
+ {
+  "key": "der-besuch",
+  "text": "der Besuch",
+  "voice": "m"
+ },
+ {
+  "key": "wir-haben-besuch",
+  "text": "Wir haben Besuch.",
+  "voice": "m"
+ },
+ {
+  "key": "das-lieblingsessen",
+  "text": "das Lieblingsessen",
+  "voice": "m"
+ },
+ {
+  "key": "mein-lieblingsessen-ist-dosa",
+  "text": "Mein Lieblingsessen ist Dosa.",
+  "voice": "m"
+ },
+ {
+  "key": "guten-tag-suchen-sie-etwas-bestimmtes",
+  "text": "Guten Tag! Suchen Sie etwas Bestimmtes?",
+  "voice": "f"
+ },
+ {
+  "key": "ja-ich-suche-eine-warme-jacke-haben-sie-die-auch-in-gruen",
+  "text": "Ja, ich suche eine warme Jacke. Haben Sie die auch in Grün?",
+  "voice": "f"
+ },
+ {
+  "key": "ja-hier-welche-groesse-haben-sie",
+  "text": "Ja, hier. Welche Größe haben Sie?",
+  "voice": "f"
+ },
+ {
+  "key": "ich-trage-groesse-m-kann-ich-sie-anprobieren",
+  "text": "Ich trage Größe M. Kann ich sie anprobieren?",
+  "voice": "f"
+ },
+ {
+  "key": "natuerlich-die-umkleidekabine-ist-dort-hinten",
+  "text": "Natürlich. Die Umkleidekabine ist dort hinten.",
+  "voice": "f"
+ },
+ {
+  "key": "die-jacke-steht-dir-gut-ruby",
+  "text": "Die Jacke steht dir gut, Ruby!",
+  "voice": "m"
+ },
+ {
+  "key": "aber-sie-ist-zu-teuer-haben-sie-eine-guenstigere-jacke",
+  "text": "Aber sie ist zu teuer. Haben Sie eine günstigere Jacke?",
+  "voice": "f"
+ },
+ {
+  "key": "diese-hier-kostet-nur-neunundvierzig-euro-und-ist-im-angebot",
+  "text": "Diese hier kostet nur neunundvierzig Euro und ist im Angebot.",
+  "voice": "f"
+ },
+ {
+  "key": "die-groesse",
+  "text": "die Größe",
+  "voice": "m"
+ },
+ {
+  "key": "welche-groesse-haben-sie",
+  "text": "Welche Größe haben Sie?",
+  "voice": "m"
+ },
+ {
+  "key": "anprobieren",
+  "text": "anprobieren",
+  "voice": "m"
+ },
+ {
+  "key": "ich-probiere-die-hose-an",
+  "text": "Ich probiere die Hose an.",
+  "voice": "m"
+ },
+ {
+  "key": "die-umkleidekabine",
+  "text": "die Umkleidekabine",
+  "voice": "m"
+ },
+ {
+  "key": "wo-ist-die-umkleidekabine",
+  "text": "Wo ist die Umkleidekabine?",
+  "voice": "m"
+ },
+ {
+  "key": "stehen-das-steht-dir-gut",
+  "text": "stehen (Das steht dir gut.)",
+  "voice": "m"
+ },
+ {
+  "key": "die-farbe-steht-dir-gut",
+  "text": "Die Farbe steht dir gut.",
+  "voice": "m"
+ },
+ {
+  "key": "das-angebot",
+  "text": "das Angebot",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-im-angebot",
+  "text": "Das ist im Angebot.",
+  "voice": "m"
+ },
+ {
+  "key": "guten-tag-hier-spricht-adhi-aus-wohnung-drei-die-heizung-ist-kaputt",
+  "text": "Guten Tag, hier spricht Adhi aus Wohnung drei. Die Heizung ist kaputt.",
+  "voice": "m"
+ },
+ {
+  "key": "das-tut-mir-leid-seit-wann-funktioniert-sie-nicht",
+  "text": "Das tut mir leid. Seit wann funktioniert sie nicht?",
+  "voice": "m"
+ },
+ {
+  "key": "seit-zwei-tagen-es-ist-sehr-kalt-in-der-wohnung",
+  "text": "Seit zwei Tagen. Es ist sehr kalt in der Wohnung.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-schicke-morgen-einen-techniker-waeren-sie-dann-zu-hause",
+  "text": "Ich schicke morgen einen Techniker. Wären Sie dann zu Hause?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-morgen-vormittag-bin-ich-da-koennten-sie-vielleicht-frueher-kommen",
+  "text": "Ja, morgen Vormittag bin ich da. Könnten Sie vielleicht früher kommen?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-versuche-es-ich-rufe-sie-in-einer-stunde-an",
+  "text": "Ich versuche es. Ich rufe Sie in einer Stunde an.",
+  "voice": "m"
+ },
+ {
+  "key": "adhi-wenn-du-moechtest-kannst-du-heute-abend-bei-mir-essen-bei-mir-ist-es-warm",
+  "text": "Adhi, wenn du möchtest, kannst du heute Abend bei mir essen. Bei mir ist es warm.",
+  "voice": "m"
+ },
+ {
+  "key": "das-waere-sehr-nett-arvind-vielen-dank",
+  "text": "Das wäre sehr nett, Arvind. Vielen Dank!",
+  "voice": "m"
+ },
+ {
+  "key": "die-heizung",
+  "text": "die Heizung",
+  "voice": "m"
+ },
+ {
+  "key": "die-heizung-ist-an",
+  "text": "Die Heizung ist an.",
+  "voice": "m"
+ },
+ {
+  "key": "kaputt",
+  "text": "kaputt",
+  "voice": "m"
+ },
+ {
+  "key": "das-handy-ist-kaputt",
+  "text": "Das Handy ist kaputt.",
+  "voice": "m"
+ },
+ {
+  "key": "funktionieren",
+  "text": "funktionieren",
+  "voice": "m"
+ },
+ {
+  "key": "das-internet-funktioniert-nicht",
+  "text": "Das Internet funktioniert nicht.",
+  "voice": "m"
+ },
+ {
+  "key": "der-techniker",
+  "text": "der Techniker",
+  "voice": "m"
+ },
+ {
+  "key": "der-techniker-kommt-morgen",
+  "text": "Der Techniker kommt morgen.",
+  "voice": "m"
+ },
+ {
+  "key": "versuchen",
+  "text": "versuchen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-versuche-es-noch-einmal",
+  "text": "Ich versuche es noch einmal.",
+  "voice": "m"
+ },
+ {
+  "key": "adhi-in-deutschland-trennt-man-den-muell",
+  "text": "Adhi, in Deutschland trennt man den Müll.",
+  "voice": "f"
+ },
+ {
+  "key": "ja-ich-habe-vier-muelltonnen-gesehen-was-kommt-wohin",
+  "text": "Ja, ich habe vier Mülltonnen gesehen. Was kommt wohin?",
+  "voice": "m"
+ },
+ {
+  "key": "papier-kommt-in-die-blaue-tonne-plastik-meistens-in-die-gelbe",
+  "text": "Papier kommt in die blaue Tonne, Plastik meistens in die gelbe.",
+  "voice": "f"
+ },
+ {
+  "key": "und-was-passiert-mit-den-flaschen",
+  "text": "Und was passiert mit den Flaschen?",
+  "voice": "m"
+ },
+ {
+  "key": "flaschen-werden-zurueckgebracht-dafuer-bekommt-man-pfand",
+  "text": "Flaschen werden zurückgebracht. Dafür bekommt man Pfand.",
+  "voice": "f"
+ },
+ {
+  "key": "das-papier-wird-gesammelt-und-recycelt",
+  "text": "Das Papier wird gesammelt und recycelt.",
+  "voice": "m"
+ },
+ {
+  "key": "das-finde-ich-gut-in-madurai-nehmen-viele-leute-eine-stofftasche-zum-markt-mit",
+  "text": "Das finde ich gut. In Madurai nehmen viele Leute eine Stofftasche zum Markt mit.",
+  "voice": "m"
+ },
+ {
+  "key": "das-machen-immer-mehr-leute-auch-hier",
+  "text": "Das machen immer mehr Leute auch hier.",
+  "voice": "f"
+ },
+ {
+  "key": "der-muell",
+  "text": "der Müll",
+  "voice": "m"
+ },
+ {
+  "key": "wir-trennen-den-muell",
+  "text": "Wir trennen den Müll.",
+  "voice": "m"
+ },
+ {
+  "key": "die-tonne",
+  "text": "die Tonne",
+  "voice": "m"
+ },
+ {
+  "key": "die-tonne-ist-voll",
+  "text": "Die Tonne ist voll.",
+  "voice": "m"
+ },
+ {
+  "key": "das-pfand",
+  "text": "das Pfand",
+  "voice": "m"
+ },
+ {
+  "key": "auf-der-flasche-ist-pfand",
+  "text": "Auf der Flasche ist Pfand.",
+  "voice": "m"
+ },
+ {
+  "key": "recyceln",
+  "text": "recyceln",
+  "voice": "m"
+ },
+ {
+  "key": "wir-recyceln-papier",
+  "text": "Wir recyceln Papier.",
+  "voice": "m"
+ },
+ {
+  "key": "hier",
+  "text": "hier",
+  "voice": "m"
+ },
+ {
+  "key": "ich-wohne-hier",
+  "text": "Ich wohne hier.",
+  "voice": "m"
+ },
+ {
   "key": "ich-bin-poovai",
   "text": "Ich bin Poovai.",
   "voice": "m"
@@ -3382,11 +3737,6 @@
  {
   "key": "am-sonntag-sind-wir-ins-kino-gegangen",
   "text": "Am Sonntag sind wir ins Kino gegangen.",
-  "voice": "m"
- },
- {
-  "key": "hast-du-schon-gegessen",
-  "text": "Hast du schon gegessen?",
   "voice": "m"
  },
  {
@@ -3680,16 +4030,6 @@
   "voice": "m"
  },
  {
-  "key": "das-pfand",
-  "text": "das Pfand",
-  "voice": "m"
- },
- {
-  "key": "der-muell",
-  "text": "der Müll",
-  "voice": "m"
- },
- {
   "key": "die-u-bahn-s-bahn",
   "text": "die U-Bahn / S-Bahn",
   "voice": "m"
@@ -3802,11 +4142,6 @@
  {
   "key": "die-kaution",
   "text": "die Kaution",
-  "voice": "m"
- },
- {
-  "key": "die-heizung",
-  "text": "die Heizung",
   "voice": "m"
  },
  {

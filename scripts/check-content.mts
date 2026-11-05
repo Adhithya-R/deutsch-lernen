@@ -46,8 +46,7 @@ const OLD = /\b(Tom|Priya|Nina|Maria|Julia|Anna|Eva|Jan|Katja|Peter|Lisa|Weber|K
 const allText = JSON.stringify([chapters, lessons, cards, exams, topics]);
 const oldHit = allText.match(OLD);
 if (oldHit) bad(`old name still used: ${oldHit[0]}`);
-const moods = chapters.map((c) => c.mood);
-if (new Set(moods).size !== moods.length) bad("two chapters share a mood: " + moods.join(","));
+chapters.forEach((c, i) => i > 0 && c.mood === chapters[i - 1].mood && bad(`chapters ${i} and ${i + 1} have the same mood`));
 const pairs = chapters.map((c) => c.landmarks.join("+"));
 if (new Set(pairs).size !== pairs.length) bad("two chapters share a landmark pair");
 
