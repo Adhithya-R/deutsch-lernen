@@ -13,7 +13,7 @@ export const TABS: { id: TabId; label: string; href: string; icon: IconName }[] 
 /** Which colour world a page belongs to. */
 export function tabFor(pathname: string): TabId {
   if (pathname.startsWith("/flashcards")) return "words";
-  if (pathname.startsWith("/exam") || pathname.startsWith("/speaking")) return "exam";
+  if (pathname.startsWith("/exam") || pathname.startsWith("/speaking") || pathname.startsWith("/conversation")) return "exam";
   if (pathname.startsWith("/bruecke")) return "bruecke";
   if (["/me", "/login", "/signup", "/group"].some((p) => pathname.startsWith(p))) return "me";
   return "learn";

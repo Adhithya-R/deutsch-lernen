@@ -2,6 +2,7 @@
 // Run: node --experimental-strip-types scripts/audio-texts.mts
 import { writeFileSync } from "node:fs";
 import { chapters } from "../src/content/chapters.ts";
+import { scenarios } from "../src/content/conversations.ts";
 import { topics } from "../src/content/bruecke.ts";
 import { clipKey, exams, phrases } from "../src/content/exam.ts";
 import { lessons } from "../src/content/lessons.ts";
@@ -12,6 +13,8 @@ type Voice = "m" | "f";
 type Item = { key: string; text?: string; voice: Voice; segments?: { voice: Voice; text: string }[] };
 
 
+// Only punctuation and capitals may differ: those read the same, so they can share one clip.
+const spoken = (x: string) => x.toLowerCase().replace(/[^\p{L}\p{N} ]/gu, "").replace(/\s+/g, " ").trim();
 const items = new Map<string, Item>();
 const add = (text: string | undefined, voice: Voice = "m") => {
   if (!text) return;
@@ -19,7 +22,7 @@ const add = (text: string | undefined, voice: Voice = "m") => {
   const key = audioKey(t);
   const old = items.get(key);
   if (old) {
-    if (old.text!.toLowerCase() !== t.toLowerCase()) throw new Error(`Audio name clash: "${t}" and "${old.text}"`);
+    if (spoken(old.text!) !== spoken(t)) throw new Error(`Audio name clash: "${t}" and "${old.text}"`);
     return; // same phrase already added; the first voice wins
   }
   items.set(key, { key, text: t, voice });
@@ -37,6 +40,12 @@ chapters.forEach((ch) => {
   });
 });
 lessons.forEach((l) => l.points.forEach((p) => add(p.de)));
+scenarios.forEach((sc) =>
+  sc.turns.forEach((t) => {
+    add(t.partner.de, sc.partner.gender); // the partner speaks with their own voice
+    t.options.forEach((o) => add(o.de, "m")); // your replies use Adhi's voice
+  }),
+);
 topics.forEach((t) => t.sections.forEach((s) => s.de.forEach((it) => add(it.big))));
 phrases.forEach((p) => add(p.de));
 

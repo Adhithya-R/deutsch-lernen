@@ -26,6 +26,15 @@ export default function ExamPage() {
           </Link>
         ))}
 
+        <Link href="/conversation" className={card}>
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-pill text-pri"><Icon name="users" size={24} /></span>
+          <span className="min-w-0 flex-1">
+            <span className="block font-extrabold">Conversation practice</span>
+            <span className="block text-sm text-muted">A partner speaks, you choose the reply that fits</span>
+          </span>
+          <Icon name="chev" size={20} className="text-muted" />
+        </Link>
+
         <Link href="/speaking" className={card}>
           <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-pill text-pri"><Icon name="mic" size={24} /></span>
           <span className="min-w-0 flex-1">

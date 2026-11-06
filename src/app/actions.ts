@@ -146,7 +146,7 @@ export async function submitChapter(slug: string, answers: string[], day?: strin
 
 /* ------------------------- quizzes, exam practice, culture ------------------- */
 
-const KINDS = ["lesson", "exam", "mock", "culture", "weekly"] as const;
+const KINDS = ["lesson", "exam", "mock", "culture", "weekly", "talk"] as const;
 type Kind = (typeof KINDS)[number];
 
 /**
@@ -165,7 +165,7 @@ export async function saveQuiz(kind: string, ref: string, score: number, total: 
   if (readError) return { ok: false, xp: 0, error: explain(readError) };
 
   const perfect = score === total;
-  const base: Record<Kind, number> = { lesson: score * 2 + (perfect ? 10 : 0), exam: score * 2, mock: score * 2, culture: score * 3 + (perfect ? 10 : 0), weekly: score * 3 + (perfect ? 15 : 0) };
+  const base: Record<Kind, number> = { lesson: score * 2 + (perfect ? 10 : 0), exam: score * 2, mock: score * 2, culture: score * 3 + (perfect ? 10 : 0), weekly: score * 3 + (perfect ? 15 : 0), talk: score * 3 + (perfect ? 10 : 0) };
   const xp = old ? 0 : base[kind as Kind];
 
   const { error } = await supabase.from("quiz_results").upsert({

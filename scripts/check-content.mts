@@ -6,6 +6,7 @@ import { cards, decks } from "../src/content/vocab.ts";
 import { analyse, fieldOk } from "../src/lib/writing.ts";
 import { readFileSync } from "node:fs";
 import { topics } from "../src/content/bruecke.ts";
+import { scenarios } from "../src/content/conversations.ts";
 import { NAMES } from "../src/content/people.ts";
 
 const LANDMARK_IDS = new Set((JSON.parse(readFileSync(new URL("../src/content/landmarks.json", import.meta.url), "utf8")) as { id: string }[]).map((l) => l.id));
@@ -43,7 +44,7 @@ chapters.forEach((c) => Object.entries(c.speakers).forEach(([k, sp]) => !["m", "
 const storyText = JSON.stringify(chapters);
 NAMES.forEach((n) => !storyText.includes(n) && bad(`classmate ${n} is not in any story`));
 const OLD = /\b(Tom|Priya|Nina|Maria|Julia|Anna|Eva|Jan|Katja|Peter|Lisa|Weber|Keller|Braun|Krishnan|Lopez|Müller|Wagner|Lena)\b/;
-const allText = JSON.stringify([chapters, lessons, cards, exams, topics]);
+const allText = JSON.stringify([chapters, lessons, cards, exams, topics, scenarios]);
 const oldHit = allText.match(OLD);
 if (oldHit) bad(`old name still used: ${oldHit[0]}`);
 chapters.forEach((c, i) => i > 0 && c.mood === chapters[i - 1].mood && bad(`chapters ${i} and ${i + 1} have the same mood`));
@@ -57,6 +58,16 @@ for (const t of topics) {
   t.sky.forEach((id) => !landmark(id) && bad(`topic ${t.id}: unknown landmark ${id}`));
 }
 if (new Set(topics.map((t) => t.id)).size !== topics.length) bad("duplicate topic ids");
+for (const sc of scenarios) {
+  if (!["m", "f"].includes(sc.partner.gender)) bad(`conversation ${sc.id}: partner has no gender`);
+  sc.landmarks.forEach((id) => !landmark(id) && bad(`conversation ${sc.id}: unknown landmark ${id}`));
+  sc.turns.forEach((t, i) => {
+    if (t.options.length !== 3) bad(`conversation ${sc.id} turn ${i + 1}: needs 3 options`);
+    if (t.options.filter((o) => o.ok).length !== 1) bad(`conversation ${sc.id} turn ${i + 1}: needs exactly one right reply`);
+    if (new Set(t.options.map((o) => o.de)).size !== t.options.length) bad(`conversation ${sc.id} turn ${i + 1}: duplicate options`);
+  });
+}
+if (new Set(scenarios.map((s) => s.id)).size !== scenarios.length) bad("duplicate conversation ids");
 const deckIds = new Set(decks.map((d) => d.id));
 cards.forEach((c) => !deckIds.has(c.deck) && bad(`card ${c.id}: unknown deck ${c.deck}`));
 decks.forEach((d) => !cards.some((c) => c.deck === d.id) && bad(`deck ${d.id} is empty`));

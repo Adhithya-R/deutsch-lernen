@@ -3900,6 +3900,406 @@
   "voice": "m"
  },
  {
+  "key": "guten-tag-was-moechten-sie-trinken",
+  "text": "Guten Tag! Was möchten Sie trinken?",
+  "voice": "f"
+ },
+ {
+  "key": "einen-kaffee-bitte",
+  "text": "Einen Kaffee, bitte.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bin-adhi",
+  "text": "Ich bin Adhi.",
+  "voice": "m"
+ },
+ {
+  "key": "ja-gern-danke",
+  "text": "Ja, gern, danke.",
+  "voice": "m"
+ },
+ {
+  "key": "moechten-sie-auch-etwas-essen",
+  "text": "Möchten Sie auch etwas essen?",
+  "voice": "f"
+ },
+ {
+  "key": "nein-ich-komme-aus-indien",
+  "text": "Nein, ich komme aus Indien.",
+  "voice": "m"
+ },
+ {
+  "key": "ja-ein-stueck-kuchen-bitte",
+  "text": "Ja, ein Stück Kuchen, bitte.",
+  "voice": "m"
+ },
+ {
+  "key": "der-kaffee-ist-heiss",
+  "text": "Der Kaffee ist heiß.",
+  "voice": "m"
+ },
+ {
+  "key": "das-macht-vier-euro-fuenfzig",
+  "text": "Das macht vier Euro fünfzig.",
+  "voice": "f"
+ },
+ {
+  "key": "wo-ist-der-bahnhof",
+  "text": "Wo ist der Bahnhof?",
+  "voice": "m"
+ },
+ {
+  "key": "hier-sind-fuenf-euro-stimmt-so",
+  "text": "Hier sind fünf Euro. Stimmt so.",
+  "voice": "m"
+ },
+ {
+  "key": "vielen-dank-einen-schoenen-tag-noch",
+  "text": "Vielen Dank! Einen schönen Tag noch!",
+  "voice": "f"
+ },
+ {
+  "key": "danke-gleichfalls-auf-wiedersehen",
+  "text": "Danke, gleichfalls! Auf Wiedersehen.",
+  "voice": "m"
+ },
+ {
+  "key": "guten-morgen-frau-doktor",
+  "text": "Guten Morgen, Frau Doktor!",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-zu-teuer",
+  "text": "Das ist zu teuer.",
+  "voice": "m"
+ },
+ {
+  "key": "hallo-ich-bin-ram-wie-heisst-du",
+  "text": "Hallo! Ich bin Ram. Wie heißt du?",
+  "voice": "m"
+ },
+ {
+  "key": "hallo-ram-ich-heisse-adhi",
+  "text": "Hallo Ram, ich heiße Adhi.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-wohne-in-einem-haus",
+  "text": "Ich wohne in einem Haus.",
+  "voice": "m"
+ },
+ {
+  "key": "mir-geht-es-gut-danke",
+  "text": "Mir geht es gut, danke.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bin-fuenfundzwanzig-jahre-alt",
+  "text": "Ich bin fünfundzwanzig Jahre alt.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-spreche-tamil",
+  "text": "Ich spreche Tamil.",
+  "voice": "m"
+ },
+ {
+  "key": "und-was-machst-du-in-berlin",
+  "text": "Und was machst du in Berlin?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-heisse-berlin",
+  "text": "Ich heiße Berlin.",
+  "voice": "m"
+ },
+ {
+  "key": "ja-das-ist-schoen",
+  "text": "Ja, das ist schön.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-lerne-deutsch-und-ich-arbeite",
+  "text": "Ich lerne Deutsch und ich arbeite.",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-toll-wollen-wir-mal-kaffee-trinken",
+  "text": "Das ist toll! Wollen wir mal Kaffee trinken?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-gern-wann-hast-du-zeit",
+  "text": "Ja, gern! Wann hast du Zeit?",
+  "voice": "m"
+ },
+ {
+  "key": "nein-ich-bin-ram",
+  "text": "Nein, ich bin Ram.",
+  "voice": "m"
+ },
+ {
+  "key": "guten-tag-was-fehlt-ihnen",
+  "text": "Guten Tag. Was fehlt Ihnen?",
+  "voice": "f"
+ },
+ {
+  "key": "ich-moechte-einen-kaffee",
+  "text": "Ich möchte einen Kaffee.",
+  "voice": "m"
+ },
+ {
+  "key": "mein-termin-ist-um-zehn",
+  "text": "Mein Termin ist um zehn.",
+  "voice": "m"
+ },
+ {
+  "key": "seit-wann-haben-sie-die-schmerzen",
+  "text": "Seit wann haben Sie die Schmerzen?",
+  "voice": "f"
+ },
+ {
+  "key": "naechste-woche",
+  "text": "Nächste Woche.",
+  "voice": "m"
+ },
+ {
+  "key": "seit-gestern-abend",
+  "text": "Seit gestern Abend.",
+  "voice": "m"
+ },
+ {
+  "key": "mit-dem-bus",
+  "text": "Mit dem Bus.",
+  "voice": "m"
+ },
+ {
+  "key": "haben-sie-auch-husten",
+  "text": "Haben Sie auch Husten?",
+  "voice": "f"
+ },
+ {
+  "key": "ja-ich-wohne-in-berlin",
+  "text": "Ja, ich wohne in Berlin.",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-mein-hund",
+  "text": "Das ist mein Hund.",
+  "voice": "m"
+ },
+ {
+  "key": "nein-nur-ein-bisschen-halsschmerzen",
+  "text": "Nein, nur ein bisschen Halsschmerzen.",
+  "voice": "m"
+ },
+ {
+  "key": "sie-sollen-viel-trinken-und-im-bett-bleiben",
+  "text": "Sie sollen viel trinken und im Bett bleiben.",
+  "voice": "f"
+ },
+ {
+  "key": "danke-muss-ich-tabletten-nehmen",
+  "text": "Danke. Muss ich Tabletten nehmen?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-moechte-eine-wohnung",
+  "text": "Ich möchte eine Wohnung.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-moechte-eine-fahrkarte-nach-hamburg-bitte",
+  "text": "Ich möchte eine Fahrkarte nach Hamburg, bitte.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-wohne-in-hamburg",
+  "text": "Ich wohne in Hamburg.",
+  "voice": "m"
+ },
+ {
+  "key": "einfach-oder-hin-und-zurueck",
+  "text": "Einfach oder hin und zurück?",
+  "voice": "m"
+ },
+ {
+  "key": "hin-und-zurueck-bitte",
+  "text": "Hin und zurück, bitte.",
+  "voice": "m"
+ },
+ {
+  "key": "zwei-kilo",
+  "text": "Zwei Kilo.",
+  "voice": "m"
+ },
+ {
+  "key": "das-kostet-neunundvierzig-euro",
+  "text": "Das kostet neunundvierzig Euro.",
+  "voice": "m"
+ },
+ {
+  "key": "wo-ist-die-kueche",
+  "text": "Wo ist die Küche?",
+  "voice": "m"
+ },
+ {
+  "key": "kann-ich-mit-karte-bezahlen",
+  "text": "Kann ich mit Karte bezahlen?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-natuerlich-der-zug-faehrt-um-neun-uhr-von-gleis-vier",
+  "text": "Ja, natürlich. Der Zug fährt um neun Uhr von Gleis vier.",
+  "voice": "m"
+ },
+ {
+  "key": "vielen-dank-hat-der-zug-verspaetung",
+  "text": "Vielen Dank! Hat der Zug Verspätung?",
+  "voice": "m"
+ },
+ {
+  "key": "das-gleis-ist-blau",
+  "text": "Das Gleis ist blau.",
+  "voice": "m"
+ },
+ {
+  "key": "hier-ist-frau-sudha-sie-haben-wegen-der-wohnung-angerufen",
+  "text": "Hier ist Frau Sudha. Sie haben wegen der Wohnung angerufen?",
+  "voice": "f"
+ },
+ {
+  "key": "ja-guten-tag-ist-die-wohnung-noch-frei",
+  "text": "Ja, guten Tag. Ist die Wohnung noch frei?",
+  "voice": "m"
+ },
+ {
+  "key": "nein-ich-habe-keine-zeit",
+  "text": "Nein, ich habe keine Zeit.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-moechte-ein-brot",
+  "text": "Ich möchte ein Brot.",
+  "voice": "m"
+ },
+ {
+  "key": "ja-sie-ist-noch-frei-sie-hat-zwei-zimmer-und-kostet-650-euro",
+  "text": "Ja, sie ist noch frei. Sie hat zwei Zimmer und kostet 650 Euro.",
+  "voice": "f"
+ },
+ {
+  "key": "ist-die-miete-kalt-oder-warm",
+  "text": "Ist die Miete kalt oder warm?",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-ein-kuchen",
+  "text": "Das ist ein Kuchen.",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-die-warmmiete-mit-heizung",
+  "text": "Das ist die Warmmiete, mit Heizung.",
+  "voice": "f"
+ },
+ {
+  "key": "guten-appetit",
+  "text": "Guten Appetit!",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bin-ingenieur-gewesen",
+  "text": "Ich bin Ingenieur gewesen.",
+  "voice": "m"
+ },
+ {
+  "key": "gut-kann-ich-die-wohnung-am-samstag-besichtigen",
+  "text": "Gut. Kann ich die Wohnung am Samstag besichtigen?",
+  "voice": "m"
+ },
+ {
+  "key": "samstag-um-elf-uhr-passt-wie-ist-ihr-name",
+  "text": "Samstag um elf Uhr passt. Wie ist Ihr Name?",
+  "voice": "f"
+ },
+ {
+  "key": "mein-name-ist-adhi-vielen-dank-bis-samstag",
+  "text": "Mein Name ist Adhi. Vielen Dank, bis Samstag!",
+  "voice": "m"
+ },
+ {
+  "key": "ich-wohne-im-bett",
+  "text": "Ich wohne im Bett.",
+  "voice": "m"
+ },
+ {
+  "key": "auf-dem-markt",
+  "text": "Auf dem Markt.",
+  "voice": "m"
+ },
+ {
+  "key": "hallo-adhi-hast-du-kurz-zeit",
+  "text": "Hallo Adhi, hast du kurz Zeit?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-natuerlich-was-gibt-es",
+  "text": "Ja, natürlich. Was gibt es?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-gestern-gekocht",
+  "text": "Ich habe gestern gekocht.",
+  "voice": "m"
+ },
+ {
+  "key": "koenntest-du-mir-bitte-mit-dem-computer-helfen",
+  "text": "Könntest du mir bitte mit dem Computer helfen?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-gern-was-ist-das-problem",
+  "text": "Ja, gern. Was ist das Problem?",
+  "voice": "m"
+ },
+ {
+  "key": "der-bildschirm-bleibt-schwarz",
+  "text": "Der Bildschirm bleibt schwarz.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-trinke-gern-tee",
+  "text": "Ich trinke gern Tee.",
+  "voice": "m"
+ },
+ {
+  "key": "das-buero-ist-gross",
+  "text": "Das Büro ist groß.",
+  "voice": "m"
+ },
+ {
+  "key": "hast-du-den-stecker-eingesteckt",
+  "text": "Hast du den Stecker eingesteckt?",
+  "voice": "m"
+ },
+ {
+  "key": "oh-der-stecker-war-raus-vielen-dank-du-hast-mir-sehr-geholfen",
+  "text": "Oh, der Stecker war raus! Vielen Dank, du hast mir sehr geholfen.",
+  "voice": "m"
+ },
+ {
+  "key": "gern-geschehen-dafuer-sind-kollegen-da",
+  "text": "Gern geschehen! Dafür sind Kollegen da.",
+  "voice": "m"
+ },
+ {
+  "key": "nein-das-ist-nicht-richtig",
+  "text": "Nein, das ist nicht richtig.",
+  "voice": "m"
+ },
+ {
   "key": "das-broetchen",
   "text": "das Brötchen",
   "voice": "m"
