@@ -4,11 +4,9 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { saveQuiz } from "@/app/actions";
 import Icon from "@/components/Icon";
-import Pic from "@/components/Pic";
 import SaveNote, { type SaveState } from "@/components/SaveNote";
 import { useSpeak } from "@/components/useSpeak";
 import { cards, type Card } from "@/content/vocab";
-import { picFor } from "@/content/pics";
 import { localDay } from "@/lib/activity";
 import { buildQuestion } from "@/lib/deck-quiz";
 import { seededShuffle } from "@/lib/weekly";
@@ -49,7 +47,6 @@ export default function WeeklyQuiz({ ids, week }: { ids: string[]; week: string 
   }
 
   const q = questions[i];
-  const card = byId.get(q.cardId)!;
   const answered = chosen !== null;
 
   function pick(o: string) {
@@ -87,7 +84,6 @@ export default function WeeklyQuiz({ ids, week }: { ids: string[]; week: string 
           <button onClick={() => say(q.prompt)} aria-label="Play the word" className="mt-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-pri text-white shadow-[0_4px_0_var(--color-pri-dark)]"><Icon name="volume" size={30} /></button>
         ) : (
           <div className="mt-4 flex flex-col items-center gap-3">
-            <Pic pic={picFor(card.id)} size={44} />
             <p className="font-display text-3xl font-extrabold">{q.prompt}</p>
             <button onClick={() => say(q.prompt)} className="inline-flex h-10 items-center gap-2 rounded-full bg-pill px-4 text-sm font-extrabold text-pri"><Icon name="volume" size={18} /> Listen</button>
           </div>

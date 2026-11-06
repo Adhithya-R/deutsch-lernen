@@ -182,7 +182,6 @@ export default function DeckStudy({ ids, title, learn, loggedIn, back }: Props) 
           </button>
         ) : (
           <div className="mt-4 flex flex-col items-center gap-3">
-            <Pic pic={picFor(card.id)} size={44} />
             <p className="font-display text-3xl font-extrabold leading-tight">{q.prompt}</p>
             {q.kind === "meaning" && (
               <button onClick={() => say(q.prompt)} className="inline-flex h-10 items-center gap-2 rounded-full bg-pill px-4 text-sm font-extrabold text-pri">
