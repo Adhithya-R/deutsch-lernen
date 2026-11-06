@@ -67,7 +67,7 @@ async function Inner({ params }: { params: PageProps<"/exam/[level]/[skill]">["p
           listening={listeningTasks(e)}
           writing={e.writing.tasks.find((t) => t.kind === "email") ?? e.writing.tasks[0]}
           speaking={e.speaking}
-          minutes={e.level === "a1" ? { reading: 25, listening: 20, writing: 20 } : { reading: 30, listening: 25, writing: 30 }}
+          minutes={e.level === "a1" ? { reading: 25, listening: 20, writing: 20 } : { reading: 30, listening: 30, writing: 30 }}
         />
       )}
       {skill === "writing" && (

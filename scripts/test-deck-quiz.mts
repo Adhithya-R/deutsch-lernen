@@ -103,3 +103,17 @@ assert.equal(weak[1].href, "/exam/a1/reading");
 assert.equal(target("exam", "speak-phrases-1")?.href, "/speaking/phrases-1");
 assert.equal(target("lesson", "nope"), null);
 console.log("weak topics ok");
+
+// ---- leagues ----
+import { leagueOf, nextLeague, podium } from "../src/lib/league.ts";
+assert.equal(leagueOf(0).id, "bronze");
+assert.equal(leagueOf(49).id, "bronze");
+assert.equal(leagueOf(50).id, "silver");
+assert.equal(leagueOf(150).id, "gold");
+assert.equal(leagueOf(9999).id, "diamond");
+assert.equal(leagueOf(NaN).id, "bronze");
+assert.deepEqual(nextLeague(40), { league: leagueOf(50), missing: 10 });
+assert.equal(nextLeague(400), null);
+assert.deepEqual(podium([{ name: "A", xp: 30 }, { name: "B", xp: 90 }, { name: "C", xp: 90 }, { name: "D", xp: 10 }, { name: "E", xp: 0 }]).map((r) => `${r.place}${r.name}`), ["1B", "1C", "3A"], "ties share a place; places after the third are cut");
+assert.deepEqual(podium([]), []);
+console.log("league ok");
