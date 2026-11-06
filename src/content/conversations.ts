@@ -1,7 +1,7 @@
 // Conversation practice: a partner says something, you choose the reply that fits.
 // Every turn has exactly one right reply. The right reply moves to a different place in each turn.
 import type { Gender } from "./people.ts";
-import { role, speaker } from "./people.ts";
+import { speaker } from "./people.ts";
 
 export type Line = { de: string; en: string; ta: string };
 export type Option = { de: string; en: string; ok: boolean };
@@ -12,7 +12,7 @@ export type Scenario = {
   sub: string;
   level: "A1" | "A2";
   landmarks: [string, string];
-  partner: { name: string; initial: string; gender: Gender };
+  partner: { name: string; initial: string; gender: Gender; as?: string };
   turns: Turn[];
 };
 
@@ -35,7 +35,7 @@ export const scenarios: Scenario[] = [
     sub: "Order a drink and pay",
     level: "A1",
     landmarks: ["TN002", "DE001"],
-    partner: role("Die Kellnerin", "K", "f"),
+    partner: speaker("Nethra", "waitress"),
     turns: [
       turn(L("Guten Tag! Was möchten Sie trinken?", "Good day! What would you like to drink?", "வணக்கம்! என்ன குடிக்க விரும்புகிறீர்கள்?"),
         L("Einen Kaffee, bitte.", "A coffee, please.", "ஒரு காபி, தயவுசெய்து."),
@@ -57,7 +57,7 @@ export const scenarios: Scenario[] = [
     sub: "Introduce yourself",
     level: "A1",
     landmarks: ["TN003", "DE003"],
-    partner: speaker("Ram"),
+    partner: speaker("Ram", "classmate"),
     turns: [
       turn(L("Hallo! Ich bin Ram. Wie heißt du?", "Hello! I am Ram. What is your name?", "வணக்கம்! நான் ராம். உன் பெயர் என்ன?"),
         L("Hallo Ram, ich heiße Adhi.", "Hello Ram, my name is Adhi.", "வணக்கம் ராம், என் பெயர் ஆதி."),
@@ -79,7 +79,7 @@ export const scenarios: Scenario[] = [
     sub: "Describe how you feel",
     level: "A2",
     landmarks: ["TN011", "DE020"],
-    partner: role("Die Ärztin", "Ä", "f"),
+    partner: speaker("Ruby", "doctor"),
     turns: [
       turn(L("Guten Tag. Was fehlt Ihnen?", "Good day. What is wrong?", "வணக்கம். உங்களுக்கு என்ன பிரச்சினை?"),
         L("Ich habe Kopfschmerzen und Fieber.", "I have a headache and a fever.", "எனக்கு தலைவலியும் காய்ச்சலும் உள்ளது."),
@@ -101,7 +101,7 @@ export const scenarios: Scenario[] = [
     sub: "Buy a train ticket",
     level: "A2",
     landmarks: ["TN006", "DE018"],
-    partner: role("Der Mitarbeiter", "M", "m"),
+    partner: speaker("Arvind", "station staff"),
     turns: [
       turn(L("Guten Tag. Wie kann ich Ihnen helfen?", "Good day. How can I help you?", "வணக்கம். நான் உங்களுக்கு எப்படி உதவலாம்?"),
         L("Ich möchte eine Fahrkarte nach Hamburg, bitte.", "I would like a ticket to Hamburg, please.", "எனக்கு ஹாம்பர்க்குக்கு ஒரு பயணச்சீட்டு வேண்டும்."),
@@ -123,7 +123,7 @@ export const scenarios: Scenario[] = [
     sub: "Ask about rent and a viewing",
     level: "A2",
     landmarks: ["TN009", "DE007"],
-    partner: speaker("Sudha"),
+    partner: speaker("Sudha", "landlady"),
     turns: [
       turn(L("Hier ist Frau Sudha. Sie haben wegen der Wohnung angerufen?", "This is Ms Sudha. You called about the flat?", "நான் திருமதி சுதா. வீட்டைப் பற்றி அழைத்தீர்களா?"),
         L("Ja, guten Tag. Ist die Wohnung noch frei?", "Yes, good day. Is the flat still available?", "ஆம், வணக்கம். வீடு இன்னும் காலியாக உள்ளதா?"),
@@ -145,7 +145,7 @@ export const scenarios: Scenario[] = [
     sub: "Polite requests at work",
     level: "A2",
     landmarks: ["TN005", "DE006"],
-    partner: speaker("Sanjay"),
+    partner: speaker("Sanjay", "colleague"),
     turns: [
       turn(L("Hallo Adhi, hast du kurz Zeit?", "Hello Adhi, do you have a moment?", "வணக்கம் ஆதி, சற்று நேரம் இருக்கிறதா?"),
         L("Ja, natürlich. Was gibt es?", "Yes, of course. What is it?", "ஆம், நிச்சயமாக. என்ன விஷயம்?"),
@@ -167,7 +167,7 @@ export const scenarios: Scenario[] = [
     sub: "Ask where things are and buy them",
     level: "A1",
     landmarks: ["TN024", "DE015"],
-    partner: role("Der Verkäufer", "V", "m"),
+    partner: speaker("Akshay", "shop assistant"),
     turns: [
       turn(L("Guten Tag! Kann ich Ihnen helfen?", "Good day! Can I help you?", "வணக்கம்! நான் உங்களுக்கு உதவலாமா?"),
         L("Ja, ich suche Äpfel. Wo sind sie?", "Yes, I am looking for apples. Where are they?", "ஆம், நான் ஆப்பிள் தேடுகிறேன். அவை எங்கே?"),
@@ -189,7 +189,7 @@ export const scenarios: Scenario[] = [
     sub: "Ask for medicine for a sore throat",
     level: "A2",
     landmarks: ["TN021", "DE009"],
-    partner: role("Die Apothekerin", "A", "f"),
+    partner: speaker("Risha", "pharmacist"),
     turns: [
       turn(L("Guten Tag. Was kann ich für Sie tun?", "Good day. What can I do for you?", "வணக்கம். நான் உங்களுக்கு என்ன செய்யலாம்?"),
         L("Ich habe Halsschmerzen. Haben Sie etwas dagegen?", "I have a sore throat. Do you have something for it?", "எனக்கு தொண்டை வலி. அதற்கு ஏதாவது உள்ளதா?"),
@@ -211,7 +211,7 @@ export const scenarios: Scenario[] = [
     sub: "Register your flat",
     level: "A2",
     landmarks: ["TN012", "DE011"],
-    partner: role("Die Beamtin", "B", "f"),
+    partner: speaker("Kavitha", "official"),
     turns: [
       turn(L("Guten Morgen. Haben Sie einen Termin?", "Good morning. Do you have an appointment?", "காலை வணக்கம். உங்களுக்கு நேரம் வாங்கியுள்ளதா?"),
         L("Ja, mein Termin ist um zehn Uhr.", "Yes, my appointment is at ten o'clock.", "ஆம், என் நேரம் பத்து மணிக்கு."),
@@ -225,6 +225,94 @@ export const scenarios: Scenario[] = [
       turn(L("Bitte füllen Sie dieses Formular aus und unterschreiben Sie unten.", "Please fill in this form and sign at the bottom.", "தயவுசெய்து இந்தப் படிவத்தை நிரப்பி கீழே கையெழுத்திடுங்கள்."),
         L("Gern. Muss ich auch etwas bezahlen?", "Gladly. Do I have to pay anything too?", "சரி. நான் ஏதாவது பணம் செலுத்த வேண்டுமா?"),
         [L("Ich möchte Nudeln mit Soße.", "I would like pasta with sauce.", "எனக்கு சாஸுடன் பாஸ்தா வேண்டும்."), L("Gute Nacht, bis morgen.", "Good night, until tomorrow.", "இனிய இரவு, நாளை சந்திப்போம்.")], 0),
+    ],
+  },
+  {
+    id: "directions",
+    title: "Asking the way",
+    sub: "Find the station and the post office",
+    level: "A1",
+    landmarks: ["TN006", "DE010"],
+    partner: speaker("Yuvan", "passer-by"),
+    turns: [
+      turn(L("Hallo! Kann ich Ihnen helfen?", "Hello! Can I help you?", "வணக்கம்! நான் உங்களுக்கு உதவலாமா?"),
+        L("Ja, bitte. Wo ist der Bahnhof?", "Yes, please. Where is the station?", "ஆம், தயவுசெய்து. ரயில் நிலையம் எங்கே?"),
+        [L("Ich komme aus Indien.", "I come from India.", "நான் இந்தியாவிலிருந்து வருகிறேன்."), L("Das Wetter ist schön.", "The weather is nice.", "வானிலை நன்றாக உள்ளது.")], 0),
+      turn(L("Gehen Sie geradeaus und dann links.", "Go straight ahead and then left.", "நேராகச் சென்று பிறகு இடதுபுறம் திரும்புங்கள்."),
+        L("Ist das weit von hier?", "Is that far from here?", "இங்கிருந்து தூரமா?"),
+        [L("Ich heiße Adhi.", "My name is Adhi.", "என் பெயர் ஆதி."), L("Zwei Kilo Äpfel, bitte.", "Two kilos of apples, please.", "இரண்டு கிலோ ஆப்பிள், தயவுசெய்து.")], 1),
+      turn(L("Nein, nur fünf Minuten zu Fuß.", "No, only five minutes on foot.", "இல்லை, நடந்தால் ஐந்து நிமிடம் மட்டுமே."),
+        L("Und wo ist die Post?", "And where is the post office?", "அஞ்சல் அலுவலகம் எங்கே?"),
+        [L("Ich bin müde.", "I am tired.", "நான் களைப்பாக இருக்கிறேன்."), L("Der Zug fährt um acht.", "The train leaves at eight.", "ரயில் எட்டு மணிக்குப் புறப்படும்.")], 2),
+      turn(L("Die Post ist neben der Bank, gegenüber vom Park.", "The post office is next to the bank, opposite the park.", "அஞ்சல் அலுவலகம் வங்கிக்கு அருகில், பூங்காவுக்கு எதிரே உள்ளது."),
+        L("Vielen Dank für Ihre Hilfe!", "Thank you very much for your help!", "உங்கள் உதவிக்கு மிக்க நன்றி!"),
+        [L("Das ist zu teuer.", "That is too expensive.", "இது மிகவும் விலை அதிகம்."), L("Ich habe Hunger.", "I am hungry.", "எனக்குப் பசிக்கிறது.")], 0),
+    ],
+  },
+  {
+    id: "bank",
+    title: "At the bank",
+    sub: "Open an account",
+    level: "A2",
+    landmarks: ["TN013", "DE012"],
+    partner: speaker("Sadhana", "bank clerk"),
+    turns: [
+      turn(L("Guten Tag. Wie kann ich Ihnen helfen?", "Good day. How can I help you?", "வணக்கம். நான் உங்களுக்கு எப்படி உதவலாம்?"),
+        L("Guten Tag. Ich möchte ein Konto eröffnen.", "Good day. I would like to open an account.", "வணக்கம். நான் ஒரு கணக்கு தொடங்க விரும்புகிறேன்."),
+        [L("Ich möchte einen Tee.", "I would like a tea.", "எனக்கு ஒரு தேநீர் வேண்டும்."), L("Ich suche den Bahnhof.", "I am looking for the station.", "நான் ரயில் நிலையம் தேடுகிறேன்.")], 0),
+      turn(L("Gern. Haben Sie Ihren Pass und Ihren Mietvertrag dabei?", "Gladly. Do you have your passport and your rental contract with you?", "சரி. உங்கள் கடவுச்சீட்டும் வாடகை ஒப்பந்தமும் உங்களிடம் உள்ளதா?"),
+        L("Ja, hier sind sie.", "Yes, here they are.", "ஆம், இதோ."),
+        [L("Nein, ich habe Kopfschmerzen.", "No, I have a headache.", "இல்லை, எனக்கு தலைவலி."), L("Das ist mein Hobby.", "That is my hobby.", "இது என் பொழுதுபோக்கு.")], 1),
+      turn(L("Möchten Sie auch eine Karte für das Konto?", "Would you also like a card for the account?", "கணக்குக்கு ஒரு அட்டையும் வேண்டுமா?"),
+        L("Ja, bitte. Was kostet die Karte im Monat?", "Yes, please. What does the card cost per month?", "ஆம், தயவுசெய்து. அட்டைக்கு மாதம் எவ்வளவு?"),
+        [L("Ich wohne in Berlin.", "I live in Berlin.", "நான் பெர்லினில் வசிக்கிறேன்."), L("Es ist heute kalt.", "It is cold today.", "இன்று குளிராக உள்ளது.")], 2),
+      turn(L("Die Karte ist kostenlos. Bitte unterschreiben Sie hier.", "The card is free. Please sign here.", "அட்டை இலவசம். தயவுசெய்து இங்கே கையெழுத்திடுங்கள்."),
+        L("Gern. Wann bekomme ich die Karte?", "Gladly. When do I get the card?", "சரி. அட்டை எப்போது கிடைக்கும்?"),
+        [L("Ich habe schon gegessen.", "I have already eaten.", "நான் ஏற்கனவே சாப்பிட்டுவிட்டேன்."), L("Gute Nacht!", "Good night!", "இனிய இரவு!")], 0),
+    ],
+  },
+  {
+    id: "interview",
+    title: "A job interview",
+    sub: "Talk about yourself and your skills",
+    level: "A2",
+    landmarks: ["TN019", "DE016"],
+    partner: speaker("Medwin", "manager"),
+    turns: [
+      turn(L("Guten Tag und herzlich willkommen. Bitte erzählen Sie etwas über sich.", "Good day and welcome. Please tell me something about yourself.", "வணக்கம், வருக. உங்களைப் பற்றி சிறிது சொல்லுங்கள்."),
+        L("Ich komme aus Indien und wohne seit einem Jahr in Berlin. Ich bin Ingenieur.", "I come from India and have lived in Berlin for a year. I am an engineer.", "நான் இந்தியாவிலிருந்து வருகிறேன், ஒரு வருடமாக பெர்லினில் வசிக்கிறேன். நான் ஒரு பொறியாளர்."),
+        [L("Ich habe Hunger und möchte essen.", "I am hungry and would like to eat.", "எனக்குப் பசிக்கிறது, சாப்பிட விரும்புகிறேன்."), L("Das Wetter ist heute schön.", "The weather is nice today.", "இன்று வானிலை நன்றாக உள்ளது.")], 0),
+      turn(L("Welche Sprachen sprechen Sie?", "Which languages do you speak?", "நீங்கள் எந்த மொழிகளைப் பேசுகிறீர்கள்?"),
+        L("Ich spreche Tamil, Englisch und Deutsch auf Niveau A2.", "I speak Tamil, English and German at A2 level.", "நான் தமிழ், ஆங்கிலம், A2 நிலையில் ஜெர்மன் பேசுகிறேன்."),
+        [L("Ich fahre mit dem Bus.", "I go by bus.", "நான் பேருந்தில் போகிறேன்."), L("Ich habe zwei Brüder.", "I have two brothers.", "எனக்கு இரண்டு சகோதரர்கள் உள்ளனர்.")], 1),
+      turn(L("Warum möchten Sie bei uns arbeiten?", "Why would you like to work with us?", "எங்களுடன் ஏன் வேலை செய்ய விரும்புகிறீர்கள்?"),
+        L("Weil Ihre Firma modern ist und ich viel lernen möchte.", "Because your company is modern and I want to learn a lot.", "உங்கள் நிறுவனம் நவீனமானது, நான் நிறைய கற்க விரும்புகிறேன்."),
+        [L("Weil heute Montag ist.", "Because today is Monday.", "ஏனெனில் இன்று திங்கள்."), L("Ich trinke gern Kaffee.", "I like drinking coffee.", "எனக்கு காபி குடிக்கப் பிடிக்கும்.")], 2),
+      turn(L("Wann könnten Sie anfangen?", "When could you start?", "நீங்கள் எப்போது தொடங்க முடியும்?"),
+        L("Ich könnte nächsten Monat anfangen.", "I could start next month.", "நான் அடுத்த மாதம் தொடங்க முடியும்."),
+        [L("Ich war gestern im Kino.", "I was at the cinema yesterday.", "நான் நேற்று திரையரங்கில் இருந்தேன்."), L("Das Büro ist groß.", "The office is big.", "அலுவலகம் பெரியது.")], 0),
+    ],
+  },
+  {
+    id: "viewing",
+    title: "Viewing a flat",
+    sub: "Ask about the flat and the neighbourhood",
+    level: "A2",
+    landmarks: ["TN023", "DE021"],
+    partner: speaker("Thanisha", "landlady"),
+    turns: [
+      turn(L("Guten Tag! Kommen Sie herein. Das ist die Wohnung.", "Good day! Come in. This is the flat.", "வணக்கம்! உள்ளே வாருங்கள். இதுதான் அந்த வீடு."),
+        L("Guten Tag. Sie ist sehr hell. Wie viele Zimmer hat sie?", "Good day. It is very bright. How many rooms does it have?", "வணக்கம். இது மிகவும் வெளிச்சமாக உள்ளது. எத்தனை அறைகள்?"),
+        [L("Ich möchte ein Brot.", "I would like a bread.", "எனக்கு ஒரு ரொட்டி வேண்டும்."), L("Ich bin müde.", "I am tired.", "நான் களைப்பாக இருக்கிறேன்.")], 0),
+      turn(L("Sie hat zwei Zimmer, eine Küche und einen kleinen Balkon.", "It has two rooms, a kitchen and a small balcony.", "இரண்டு அறைகள், ஒரு சமையலறை, ஒரு சிறிய பால்கனி உள்ளன."),
+        L("Gibt es hier in der Nähe einen Supermarkt?", "Is there a supermarket near here?", "இங்கே அருகில் பேரங்காடி உள்ளதா?"),
+        [L("Ich habe Kopfschmerzen.", "I have a headache.", "எனக்கு தலைவலி."), L("Das ist mein Bruder.", "That is my brother.", "இது என் சகோதரர்.")], 1),
+      turn(L("Ja, direkt an der Ecke. Die Bushaltestelle ist auch ganz nah.", "Yes, right on the corner. The bus stop is also very close.", "ஆம், மூலையிலேயே. பேருந்து நிறுத்தமும் மிக அருகில்."),
+        L("Wie hoch ist die Kaution?", "How high is the deposit?", "வைப்புத்தொகை எவ்வளவு?"),
+        [L("Ich habe schon gegessen.", "I have already eaten.", "நான் ஏற்கனவே சாப்பிட்டேன்."), L("Es regnet heute.", "It is raining today.", "இன்று மழை பெய்கிறது.")], 2),
+      turn(L("Die Kaution beträgt zwei Kaltmieten. Gefällt Ihnen die Wohnung?", "The deposit is two months' cold rent. Do you like the flat?", "வைப்புத்தொகை இரண்டு மாத குளிர் வாடகை. வீடு உங்களுக்குப் பிடித்திருக்கிறதா?"),
+        L("Ja, sehr. Ich würde sie gern nehmen.", "Yes, very much. I would like to take it.", "ஆம், மிகவும். நான் இதை எடுத்துக்கொள்ள விரும்புகிறேன்."),
+        [L("Nein, ich fahre nach Hamburg.", "No, I am going to Hamburg.", "இல்லை, நான் ஹாம்பர்க் போகிறேன்."), L("Das Fenster ist rot.", "The window is red.", "ஜன்னல் சிவப்பு.")], 0),
     ],
   },
 ];

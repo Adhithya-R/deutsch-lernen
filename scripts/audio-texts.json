@@ -2195,8 +2195,8 @@
   "voice": "f"
  },
  {
-  "key": "und-shylash-yuvan-medwin-und-kavi-bringen-das-essen-mit",
-  "text": "Und Shylash, Yuvan, Medwin und Kavi bringen das Essen mit.",
+  "key": "und-shylash-yuvan-medwin-und-kaviarasan-bringen-das-essen-mit",
+  "text": "Und Shylash, Yuvan, Medwin und Kaviarasan bringen das Essen mit.",
   "voice": "m"
  },
  {
@@ -2245,8 +2245,8 @@
   "voice": "m"
  },
  {
-  "key": "adhi-ich-moechte-idli-kochen-hilfst-du-mir",
-  "text": "Adhi, ich möchte Idli kochen. Hilfst du mir?",
+  "key": "kaviarasan-ich-moechte-idli-kochen-hilfst-du-mir",
+  "text": "Kaviarasan, ich möchte Idli kochen. Hilfst du mir?",
   "voice": "f"
  },
  {
@@ -2410,8 +2410,8 @@
   "voice": "m"
  },
  {
-  "key": "danke-adhi-frohes-deepavali-die-lichter-sind-sehr-schoen",
-  "text": "Danke, Adhi! Frohes Deepavali! Die Lichter sind sehr schön.",
+  "key": "danke-dhinesh-frohes-deepavali-die-lichter-sind-sehr-schoen",
+  "text": "Danke, Dhinesh! Frohes Deepavali! Die Lichter sind sehr schön.",
   "voice": "m"
  },
  {
@@ -2495,8 +2495,8 @@
   "voice": "m"
  },
  {
-  "key": "adhi-du-siehst-krank-aus-was-ist-los",
-  "text": "Adhi, du siehst krank aus. Was ist los?",
+  "key": "sudharsan-du-siehst-krank-aus-was-ist-los",
+  "text": "Sudharsan, du siehst krank aus. Was ist los?",
   "voice": "f"
  },
  {
@@ -2510,8 +2510,8 @@
   "voice": "f"
  },
  {
-  "key": "guten-tag-adhi-setzen-sie-sich-bitte-seit-wann-haben-sie-fieber",
-  "text": "Guten Tag, Adhi. Setzen Sie sich bitte. Seit wann haben Sie Fieber?",
+  "key": "guten-tag-sudharsan-setzen-sie-sich-bitte-seit-wann-haben-sie-fieber",
+  "text": "Guten Tag, Sudharsan. Setzen Sie sich bitte. Seit wann haben Sie Fieber?",
   "voice": "f"
  },
  {
@@ -2590,13 +2590,13 @@
   "voice": "m"
  },
  {
-  "key": "gute-besserung-adhi",
-  "text": "Gute Besserung, Adhi!",
+  "key": "gute-besserung-sudharsan",
+  "text": "Gute Besserung, Sudharsan!",
   "voice": "m"
  },
  {
-  "key": "guten-morgen-adhi-heute-ist-ihr-erster-arbeitstag-wie-war-die-fahrt",
-  "text": "Guten Morgen, Adhi. Heute ist Ihr erster Arbeitstag. Wie war die Fahrt?",
+  "key": "guten-morgen-akshay-heute-ist-ihr-erster-arbeitstag-wie-war-die-fahrt",
+  "text": "Guten Morgen, Akshay. Heute ist Ihr erster Arbeitstag. Wie war die Fahrt?",
   "voice": "m"
  },
  {
@@ -2610,8 +2610,8 @@
   "voice": "m"
  },
  {
-  "key": "hallo-adhi-hast-du-schon-kaffee-getrunken",
-  "text": "Hallo Adhi! Hast du schon Kaffee getrunken?",
+  "key": "hallo-akshay-hast-du-schon-kaffee-getrunken",
+  "text": "Hallo Akshay! Hast du schon Kaffee getrunken?",
   "voice": "f"
  },
  {
@@ -2680,8 +2680,8 @@
   "voice": "m"
  },
  {
-  "key": "adhi-wir-fahren-am-samstag-nach-hamburg-kommst-du-mit",
-  "text": "Adhi, wir fahren am Samstag nach Hamburg. Kommst du mit?",
+  "key": "shylash-wir-fahren-am-samstag-nach-hamburg-kommst-du-mit",
+  "text": "Shylash, wir fahren am Samstag nach Hamburg. Kommst du mit?",
   "voice": "m"
  },
  {
@@ -2750,8 +2750,8 @@
   "voice": "m"
  },
  {
-  "key": "was-hast-du-am-wochenende-gemacht-adhi",
-  "text": "Was hast du am Wochenende gemacht, Adhi?",
+  "key": "was-hast-du-am-wochenende-gemacht-arvind",
+  "text": "Was hast du am Wochenende gemacht, Arvind?",
   "voice": "f"
  },
  {
@@ -3010,8 +3010,8 @@
   "voice": "m"
  },
  {
-  "key": "adhi-hast-du-schon-deine-wohnung-angemeldet",
-  "text": "Adhi, hast du schon deine Wohnung angemeldet?",
+  "key": "sanjay-hast-du-schon-deine-wohnung-angemeldet",
+  "text": "Sanjay, hast du schon deine Wohnung angemeldet?",
   "voice": "m"
  },
  {
@@ -3375,8 +3375,8 @@
   "voice": "m"
  },
  {
-  "key": "guten-tag-hier-spricht-adhi-aus-wohnung-drei-die-heizung-ist-kaputt",
-  "text": "Guten Tag, hier spricht Adhi aus Wohnung drei. Die Heizung ist kaputt.",
+  "key": "guten-tag-hier-spricht-medwin-aus-wohnung-drei-die-heizung-ist-kaputt",
+  "text": "Guten Tag, hier spricht Medwin aus Wohnung drei. Die Heizung ist kaputt.",
   "voice": "m"
  },
  {
@@ -3405,8 +3405,8 @@
   "voice": "m"
  },
  {
-  "key": "adhi-wenn-du-moechtest-kannst-du-heute-abend-bei-mir-essen-bei-mir-ist-es-warm",
-  "text": "Adhi, wenn du möchtest, kannst du heute Abend bei mir essen. Bei mir ist es warm.",
+  "key": "medwin-wenn-du-moechtest-kannst-du-heute-abend-bei-mir-essen-bei-mir-ist-es-warm",
+  "text": "Medwin, wenn du möchtest, kannst du heute Abend bei mir essen. Bei mir ist es warm.",
   "voice": "m"
  },
  {
@@ -3465,8 +3465,8 @@
   "voice": "m"
  },
  {
-  "key": "adhi-in-deutschland-trennt-man-den-muell",
-  "text": "Adhi, in Deutschland trennt man den Müll.",
+  "key": "dhinesh-in-deutschland-trennt-man-den-muell",
+  "text": "Dhinesh, in Deutschland trennt man den Müll.",
   "voice": "f"
  },
  {
@@ -4492,6 +4492,226 @@
  {
   "key": "ich-moechte-nudeln-mit-sosse",
   "text": "Ich möchte Nudeln mit Soße.",
+  "voice": "m"
+ },
+ {
+  "key": "hallo-kann-ich-ihnen-helfen",
+  "text": "Hallo! Kann ich Ihnen helfen?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-bitte-wo-ist-der-bahnhof",
+  "text": "Ja, bitte. Wo ist der Bahnhof?",
+  "voice": "m"
+ },
+ {
+  "key": "gehen-sie-geradeaus-und-dann-links",
+  "text": "Gehen Sie geradeaus und dann links.",
+  "voice": "m"
+ },
+ {
+  "key": "ist-das-weit-von-hier",
+  "text": "Ist das weit von hier?",
+  "voice": "m"
+ },
+ {
+  "key": "zwei-kilo-aepfel-bitte",
+  "text": "Zwei Kilo Äpfel, bitte.",
+  "voice": "m"
+ },
+ {
+  "key": "nein-nur-fuenf-minuten-zu-fuss",
+  "text": "Nein, nur fünf Minuten zu Fuß.",
+  "voice": "m"
+ },
+ {
+  "key": "der-zug-faehrt-um-acht",
+  "text": "Der Zug fährt um acht.",
+  "voice": "m"
+ },
+ {
+  "key": "und-wo-ist-die-post",
+  "text": "Und wo ist die Post?",
+  "voice": "m"
+ },
+ {
+  "key": "die-post-ist-neben-der-bank-gegenueber-vom-park",
+  "text": "Die Post ist neben der Bank, gegenüber vom Park.",
+  "voice": "m"
+ },
+ {
+  "key": "vielen-dank-fuer-ihre-hilfe",
+  "text": "Vielen Dank für Ihre Hilfe!",
+  "voice": "m"
+ },
+ {
+  "key": "guten-tag-ich-moechte-ein-konto-eroeffnen",
+  "text": "Guten Tag. Ich möchte ein Konto eröffnen.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-suche-den-bahnhof",
+  "text": "Ich suche den Bahnhof.",
+  "voice": "m"
+ },
+ {
+  "key": "gern-haben-sie-ihren-pass-und-ihren-mietvertrag-dabei",
+  "text": "Gern. Haben Sie Ihren Pass und Ihren Mietvertrag dabei?",
+  "voice": "f"
+ },
+ {
+  "key": "ja-hier-sind-sie",
+  "text": "Ja, hier sind sie.",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-mein-hobby",
+  "text": "Das ist mein Hobby.",
+  "voice": "m"
+ },
+ {
+  "key": "moechten-sie-auch-eine-karte-fuer-das-konto",
+  "text": "Möchten Sie auch eine Karte für das Konto?",
+  "voice": "f"
+ },
+ {
+  "key": "es-ist-heute-kalt",
+  "text": "Es ist heute kalt.",
+  "voice": "m"
+ },
+ {
+  "key": "ja-bitte-was-kostet-die-karte-im-monat",
+  "text": "Ja, bitte. Was kostet die Karte im Monat?",
+  "voice": "m"
+ },
+ {
+  "key": "die-karte-ist-kostenlos-bitte-unterschreiben-sie-hier",
+  "text": "Die Karte ist kostenlos. Bitte unterschreiben Sie hier.",
+  "voice": "f"
+ },
+ {
+  "key": "gern-wann-bekomme-ich-die-karte",
+  "text": "Gern. Wann bekomme ich die Karte?",
+  "voice": "m"
+ },
+ {
+  "key": "guten-tag-und-herzlich-willkommen-bitte-erzaehlen-sie-etwas-ueber-sich",
+  "text": "Guten Tag und herzlich willkommen. Bitte erzählen Sie etwas über sich.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-komme-aus-indien-und-wohne-seit-einem-jahr-in-berlin-ich-bin-ingenieur",
+  "text": "Ich komme aus Indien und wohne seit einem Jahr in Berlin. Ich bin Ingenieur.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-hunger-und-moechte-essen",
+  "text": "Ich habe Hunger und möchte essen.",
+  "voice": "m"
+ },
+ {
+  "key": "welche-sprachen-sprechen-sie",
+  "text": "Welche Sprachen sprechen Sie?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-spreche-tamil-englisch-und-deutsch-auf-niveau-a2",
+  "text": "Ich spreche Tamil, Englisch und Deutsch auf Niveau A2.",
+  "voice": "m"
+ },
+ {
+  "key": "warum-moechten-sie-bei-uns-arbeiten",
+  "text": "Warum möchten Sie bei uns arbeiten?",
+  "voice": "m"
+ },
+ {
+  "key": "weil-heute-montag-ist",
+  "text": "Weil heute Montag ist.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-trinke-gern-kaffee",
+  "text": "Ich trinke gern Kaffee.",
+  "voice": "m"
+ },
+ {
+  "key": "weil-ihre-firma-modern-ist-und-ich-viel-lernen-moechte",
+  "text": "Weil Ihre Firma modern ist und ich viel lernen möchte.",
+  "voice": "m"
+ },
+ {
+  "key": "wann-koennten-sie-anfangen",
+  "text": "Wann könnten Sie anfangen?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-koennte-naechsten-monat-anfangen",
+  "text": "Ich könnte nächsten Monat anfangen.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-war-gestern-im-kino",
+  "text": "Ich war gestern im Kino.",
+  "voice": "m"
+ },
+ {
+  "key": "guten-tag-kommen-sie-herein-das-ist-die-wohnung",
+  "text": "Guten Tag! Kommen Sie herein. Das ist die Wohnung.",
+  "voice": "f"
+ },
+ {
+  "key": "guten-tag-sie-ist-sehr-hell-wie-viele-zimmer-hat-sie",
+  "text": "Guten Tag. Sie ist sehr hell. Wie viele Zimmer hat sie?",
+  "voice": "m"
+ },
+ {
+  "key": "sie-hat-zwei-zimmer-eine-kueche-und-einen-kleinen-balkon",
+  "text": "Sie hat zwei Zimmer, eine Küche und einen kleinen Balkon.",
+  "voice": "f"
+ },
+ {
+  "key": "gibt-es-hier-in-der-naehe-einen-supermarkt",
+  "text": "Gibt es hier in der Nähe einen Supermarkt?",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-mein-bruder",
+  "text": "Das ist mein Bruder.",
+  "voice": "m"
+ },
+ {
+  "key": "ja-direkt-an-der-ecke-die-bushaltestelle-ist-auch-ganz-nah",
+  "text": "Ja, direkt an der Ecke. Die Bushaltestelle ist auch ganz nah.",
+  "voice": "f"
+ },
+ {
+  "key": "es-regnet-heute",
+  "text": "Es regnet heute.",
+  "voice": "m"
+ },
+ {
+  "key": "wie-hoch-ist-die-kaution",
+  "text": "Wie hoch ist die Kaution?",
+  "voice": "m"
+ },
+ {
+  "key": "die-kaution-betraegt-zwei-kaltmieten-gefaellt-ihnen-die-wohnung",
+  "text": "Die Kaution beträgt zwei Kaltmieten. Gefällt Ihnen die Wohnung?",
+  "voice": "f"
+ },
+ {
+  "key": "ja-sehr-ich-wuerde-sie-gern-nehmen",
+  "text": "Ja, sehr. Ich würde sie gern nehmen.",
+  "voice": "m"
+ },
+ {
+  "key": "nein-ich-fahre-nach-hamburg",
+  "text": "Nein, ich fahre nach Hamburg.",
+  "voice": "m"
+ },
+ {
+  "key": "das-fenster-ist-rot",
+  "text": "Das Fenster ist rot.",
   "voice": "m"
  },
  {

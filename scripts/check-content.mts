@@ -43,6 +43,14 @@ for (const c of chapters) {
 chapters.forEach((c) => Object.entries(c.speakers).forEach(([k, sp]) => !["m", "f"].includes(sp.gender) && bad(`chapter ${c.slug}: speaker ${k} has no gender`)));
 const storyText = JSON.stringify(chapters);
 NAMES.forEach((n) => !storyText.includes(n) && bad(`classmate ${n} is not in any story`));
+// everyone should really take part, and nobody should dominate
+const spoken: Record<string, number> = {};
+let spokenTotal = 0;
+chapters.forEach((c) => c.lines.forEach((ln) => { const n = c.speakers[ln.who].name; spoken[n] = (spoken[n] ?? 0) + 1; spokenTotal++; }));
+NAMES.forEach((n) => (spoken[n] ?? 0) < 3 && bad(`classmate ${n} speaks only ${spoken[n] ?? 0} story lines (needs at least 3)`));
+Object.entries(spoken).forEach(([n, k]) => NAMES.includes(n) && k / spokenTotal > 0.12 && bad(`${n} speaks ${Math.round((k / spokenTotal) * 100)}% of all story lines (max 12%)`));
+scenarios.forEach((sc) => !NAMES.includes(sc.partner.name) && bad(`conversation ${sc.id}: partner "${sc.partner.name}" is not a classmate`));
+if (new Set(scenarios.map((sc) => sc.partner.name)).size < Math.min(scenarios.length, 10)) bad("conversation partners repeat too much");
 const OLD = /\b(Tom|Priya|Nina|Maria|Julia|Anna|Eva|Jan|Katja|Peter|Lisa|Weber|Keller|Braun|Krishnan|Lopez|Müller|Wagner|Lena)\b/;
 const allText = JSON.stringify([chapters, lessons, cards, exams, topics, scenarios]);
 const oldHit = allText.match(OLD);

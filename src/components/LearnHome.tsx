@@ -58,7 +58,7 @@ export default function LearnHome({ data, loading = false }: { data: LearnData; 
       <Skyline ids={currentChapter?.landmarks ?? SKY_IDS.learn} mood={currentChapter?.mood ?? SKY_MOOD.learn} height={170} />
       <div className="px-4 pt-4">
         <p className="text-[13px] font-extrabold uppercase tracking-wider text-pri">
-          Adhis Reise · Chapter {Math.min(done.size + 1, chapters.length)} of {chapters.length}
+          Your journey · Chapter {Math.min(done.size + 1, chapters.length)} of {chapters.length}
         </p>
         <h1 className="text-3xl font-extrabold">{current ? current.title : "Alle Kapitel geschafft!"}</h1>
 

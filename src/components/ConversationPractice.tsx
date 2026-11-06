@@ -82,16 +82,19 @@ export default function ConversationPractice({ scenario }: { scenario: Scenario 
           const me = b.who === "me";
           return (
             <div key={i} className={`pop flex items-end gap-2.5 ${me ? "flex-row-reverse" : ""}`}>
-              <div title={me ? "Adhi" : partner.name} className={`grid h-10 w-10 shrink-0 place-items-center rounded-full border-b-4 border-black/25 font-display text-lg font-extrabold text-white ${me ? "bg-pri" : "bg-[#8a6500]"}`}>
-                {me ? "A" : partner.initial}
+              <div title={me ? "You" : partner.name} className={`grid h-10 w-10 shrink-0 place-items-center rounded-full border-b-4 border-black/25 font-display text-lg font-extrabold text-white ${me ? "bg-pri" : "bg-[#8a6500]"}`}>
+                {me ? "Du" : partner.initial}
               </div>
-              <div className={`max-w-[80%] rounded-3xl p-3.5 shadow-[0_3px_0_var(--color-line)] ${me ? "rounded-br-md bg-pill" : "rounded-bl-md bg-white"}`}>
+              <div className="max-w-[80%]">
+                <p className={`mb-0.5 px-1 text-xs font-extrabold text-muted ${me ? "text-right" : ""}`}>{me ? "You" : `${partner.name}${partner.as ? ` · ${partner.as}` : ""}`}</p>
+              <div className={`rounded-3xl p-3.5 shadow-[0_3px_0_var(--color-line)] ${me ? "rounded-br-md bg-pill" : "rounded-bl-md bg-white"}`}>
                 <div className="flex items-start justify-between gap-2">
                   <p className="text-[17px] font-extrabold leading-relaxed">{b.de}</p>
                   <button onClick={() => say(b.de)} aria-label={`Listen: ${b.de}`} className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/70 text-pri"><Icon name="volume" size={18} /></button>
                 </div>
                 <p className="mt-1 text-sm text-muted">{b.en}</p>
                 {b.ta && <p lang="ta" className="ta-only mt-0.5 text-sm text-muted">{b.ta}</p>}
+              </div>
               </div>
             </div>
           );

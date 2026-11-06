@@ -9,7 +9,7 @@ import type { Mood } from "../lib/landmarks.ts";
 export type Word = { de: string; en: string; ta: string; ex: string; exEn: string; exTa: string; pic?: string };
 export type Part = string | { t: string; k: string }; // plain text, or a tappable word (k = key in `words`)
 export type Line = { who: string; parts: Part[]; en: string; ta: string };
-export type Speaker = { name: string; initial: string; gender: "m" | "f" };
+export type Speaker = { name: string; initial: string; gender: "m" | "f"; as?: string };
 
 export type Question =
   | { type: "choice"; q: string; options: string[]; answer: string; tipEn: string; tipTa: string }
@@ -43,7 +43,7 @@ export const chapters: Chapter[] = [
     mood: "dawn",
     title: "Ankunft",
     sub: "Arrival in Frankfurt",
-    speakers: { a: ADHI, b: role("Der Beamte", "B", "m"), p: speaker("Poovai"), k: speaker("Akshay") },
+    speakers: { a: ADHI, b: speaker("Kaviarasan", "border officer"), p: speaker("Poovai"), k: speaker("Akshay") },
     lines: [
       { who: "b", parts: ["Guten Tag! Ihren ", W("Pass", "pass"), ", ", W("bitte", "bitte"), "."], en: "Good day! Your passport, please.", ta: "வணக்கம்! உங்கள் கடவுச்சீட்டு, தயவுசெய்து." },
       { who: "a", parts: ["Guten Tag. Hier ist mein ", W("Pass", "pass"), "."], en: "Good day. Here is my passport.", ta: "வணக்கம். இதோ என் கடவுச்சீட்டு." },
@@ -81,7 +81,7 @@ export const chapters: Chapter[] = [
     mood: "noon",
     title: "Neue Freunde",
     sub: "Introduce yourself",
-    speakers: { a: ADHI, l: role("Die Lehrerin", "L", "f"), t: speaker("Thanisha"), m: speaker("Mrithula"), s: speaker("Sudharsan"), r: speaker("Ruby") },
+    speakers: { a: ADHI, l: speaker("Risha", "teacher"), t: speaker("Thanisha"), m: speaker("Mrithula"), s: speaker("Sudharsan"), r: speaker("Ruby") },
     lines: [
       { who: "l", parts: ["Guten Morgen! Willkommen im Deutschkurs. Wie ", W("heißt", "heissen"), " du?"], en: "Good morning! Welcome to the German course. What is your name?", ta: "காலை வணக்கம்! ஜெர்மன் வகுப்புக்கு நல்வரவு. உன் பெயர் என்ன?" },
       { who: "a", parts: ["Ich ", W("heiße", "heissen"), " Adhi. Ich ", W("komme aus", "kommen"), " Madurai."], en: "My name is Adhi. I come from Madurai.", ta: "என் பெயர் ஆதி. நான் மதுரையிலிருந்து வருகிறேன்." },
@@ -119,7 +119,7 @@ export const chapters: Chapter[] = [
     mood: "snow",
     title: "Die Wohnung",
     sub: "Your first flat",
-    speakers: { a: ADHI, v: role("Der Vermieter", "V", "m"), r: speaker("Ram"), d: speaker("Dhinesh"), s: speaker("Sudha") },
+    speakers: { a: ADHI, v: speaker("Yogesh", "landlord"), r: speaker("Ram"), d: speaker("Dhinesh"), s: speaker("Sudha") },
     lines: [
       { who: "v", parts: ["Guten Tag! Willkommen. Das ist die Wohnung."], en: "Good day! Welcome. This is the flat.", ta: "வணக்கம்! வாருங்கள். இதுதான் அந்த வீடு." },
       { who: "r", parts: ["Guten Tag. Die Wohnung ist ", W("schön", "schoen"), "! Wie viele ", W("Zimmer", "zimmer"), " hat sie?"], en: "Good day. The flat is nice! How many rooms does it have?", ta: "வணக்கம். வீடு அழகாக இருக்கிறது! இதில் எத்தனை அறைகள் உள்ளன?" },
@@ -159,7 +159,7 @@ export const chapters: Chapter[] = [
     mood: "balloons",
     title: "Auf dem Markt",
     sub: "Buy fruit and tea",
-    speakers: { a: ADHI, m: role("Der Verkäufer", "V", "m"), r: speaker("Risha"), s: speaker("Sadhana") },
+    speakers: { a: speaker("Yogesh"), m: speaker("Shylash", "seller"), r: speaker("Risha"), s: speaker("Sadhana") },
     lines: [
       { who: "m", parts: ["Guten Morgen! Was ", W("darf", "darf"), " es sein?"], en: "Good morning! What can I get you?", ta: "காலை வணக்கம்! உங்களுக்கு என்ன வேண்டும்?" },
       { who: "r", parts: ["Guten Morgen! Ich ", W("möchte", "moechte"), " ein ", W("Kilo", "kilo"), " Äpfel und zwei Bananen, bitte."], en: "Good morning! I would like a kilo of apples and two bananas, please.", ta: "காலை வணக்கம்! எனக்கு ஒரு கிலோ ஆப்பிளும் இரண்டு வாழைப்பழமும் வேண்டும்." },
@@ -205,7 +205,7 @@ export const chapters: Chapter[] = [
       { who: "s", parts: ["Das klingt super! ", W("Um wie viel Uhr", "uhr"), " beginnt es?"], en: "That sounds great! What time does it start?", ta: "அருமையாக இருக்கிறது! எத்தனை மணிக்குத் தொடங்கும்?" },
       { who: "a", parts: ["Um zehn Uhr. Kommt bitte ", W("pünktlich", "puenktlich"), "!"], en: "At ten o'clock. Please come on time!", ta: "பத்து மணிக்கு. தயவுசெய்து சரியான நேரத்தில் வாருங்கள்!" },
       { who: "k", parts: ["Gerne! Ich ", W("bringe", "mitbringen"), " Kuchen ", W("mit", "mitbringen"), "."], en: "Gladly! I'll bring cake.", ta: "மகிழ்ச்சியுடன்! நான் கேக் கொண்டு வருகிறேன்." },
-      { who: "v", parts: ["Und Shylash, Yuvan, Medwin und Kavi bringen das Essen mit."], en: "And Shylash, Yuvan, Medwin and Kavi bring the food.", ta: "ஷைலேஷ், யுவன், மெட்வின், கவி ஆகியோர் உணவு கொண்டு வருகிறார்கள்." },
+      { who: "v", parts: ["Und Shylash, Yuvan, Medwin und Kaviarasan bringen das Essen mit."], en: "And Shylash, Yuvan, Medwin and Kaviarasan bring the food.", ta: "ஷைலேஷ், யுவன், மெட்வின், கவியரசன் ஆகியோர் உணவு கொண்டு வருகிறார்கள்." },
       { who: "a", parts: ["Wunderbar. Bis Sonntag!"], en: "Wonderful. See you on Sunday!", ta: "அருமை. ஞாயிறு சந்திப்போம்!" },
     ],
     words: {
@@ -236,9 +236,9 @@ export const chapters: Chapter[] = [
     mood: "steam",
     title: "Idli für alle",
     sub: "Cook a Tamil breakfast",
-    speakers: { a: ADHI, r: speaker("Rithika"), p: speaker("Poovai") },
+    speakers: { a: speaker("Kaviarasan"), r: speaker("Rithika"), p: speaker("Poovai") },
     lines: [
-      { who: "r", parts: ["Adhi, ich möchte Idli kochen. ", W("Hilfst", "helfen"), " du mir?"], en: "Adhi, I would like to cook idli. Will you help me?", ta: "ஆதி, நான் இட்லி செய்ய விரும்புகிறேன். எனக்கு உதவுவாயா?" },
+      { who: "r", parts: ["Kaviarasan, ich möchte Idli kochen. ", W("Hilfst", "helfen"), " du mir?"], en: "Kaviarasan, I would like to cook idli. Will you help me?", ta: "கவியரசன், நான் இட்லி செய்ய விரும்புகிறேன். எனக்கு உதவுவாயா?" },
       { who: "a", parts: ["Ja, gern! Was brauchen wir?"], en: "Yes, gladly! What do we need?", ta: "ஆம், மகிழ்ச்சியுடன்! நமக்கு என்ன வேண்டும்?" },
       { who: "r", parts: ["Wir brauchen Reis, ", W("Linsen", "linsen"), " und Salz."], en: "We need rice, lentils and salt.", ta: "நமக்கு அரிசி, பருப்பு, உப்பு வேண்டும்." },
       { who: "a", parts: ["Gut. Ich wasche den Reis und die Linsen."], en: "Good. I wash the rice and the lentils.", ta: "சரி. நான் அரிசியையும் பருப்பையும் கழுவுகிறேன்." },
@@ -273,7 +273,7 @@ export const chapters: Chapter[] = [
     mood: "confetti",
     title: "Das Kolam",
     sub: "Colours at the door",
-    speakers: { a: ADHI, r: speaker("Rithika"), m: speaker("Mrithula"), n: role("Der Nachbar", "N", "m") },
+    speakers: { a: speaker("Medwin"), r: speaker("Rithika"), m: speaker("Mrithula"), n: speaker("Yuvan", "neighbour") },
     lines: [
       { who: "n", parts: ["Guten Morgen! Was machst du da?"], en: "Good morning! What are you doing there?", ta: "காலை வணக்கம்! நீ அங்கே என்ன செய்கிறாய்?" },
       { who: "r", parts: ["Guten Morgen! Ich ", W("male", "malen"), " ein Kolam vor die Tür."], en: "Good morning! I'm drawing a kolam in front of the door.", ta: "காலை வணக்கம்! நான் வாசலில் ஒரு கோலம் வரைகிறேன்." },
@@ -310,10 +310,10 @@ export const chapters: Chapter[] = [
     mood: "fireworks",
     title: "Deepavali in Berlin",
     sub: "A festival of lights",
-    speakers: { a: ADHI, m: speaker("Medwin"), y: speaker("Yuvan"), p: speaker("Poovai"), r: speaker("Ruby") },
+    speakers: { a: speaker("Dhinesh"), m: speaker("Medwin"), y: speaker("Yuvan"), p: speaker("Poovai"), r: speaker("Ruby") },
     lines: [
       { who: "a", parts: ["Frohes Deepavali, Medwin! Heute ist das ", W("Lichterfest", "lichterfest"), "."], en: "Happy Deepavali, Medwin! Today is the festival of lights.", ta: "இனிய தீபாவளி, மெட்வின்! இன்று ஒளித் திருவிழா." },
-      { who: "m", parts: ["Danke, Adhi! Frohes Deepavali! Die Lichter sind sehr schön."], en: "Thank you, Adhi! Happy Deepavali! The lights are very beautiful.", ta: "நன்றி ஆதி! இனிய தீபாவளி! விளக்குகள் மிகவும் அழகாக உள்ளன." },
+      { who: "m", parts: ["Danke, Dhinesh! Frohes Deepavali! Die Lichter sind sehr schön."], en: "Thank you, Dhinesh! Happy Deepavali! The lights are very beautiful.", ta: "நன்றி தினேஷ்! இனிய தீபாவளி! விளக்குகள் மிகவும் அழகாக உள்ளன." },
       { who: "a", parts: ["Wir stellen viele kleine ", W("Lampen", "lampen"), " vor die Tür."], en: "We put many small lamps in front of the door.", ta: "நாங்கள் வாசலில் பல சிறிய விளக்குகளை வைக்கிறோம்." },
       { who: "y", parts: ["Ich habe ", W("Süßigkeiten", "suessigkeiten"), " für alle. Nimm bitte!"], en: "I have sweets for everyone. Please take some!", ta: "என்னிடம் எல்லோருக்கும் இனிப்புகள் உள்ளன. தயவுசெய்து எடுத்துக்கொள்!" },
       { who: "p", parts: ["Mmm, ", W("lecker", "lecker"), "! Was ist das?"], en: "Mmm, tasty! What is that?", ta: "ம்ம், சுவையாக இருக்கிறது! இது என்ன?" },
@@ -348,12 +348,12 @@ export const chapters: Chapter[] = [
     mood: "rain",
     title: "Beim Arzt",
     sub: "A2 · At the doctor",
-    speakers: { a: ADHI, t: speaker("Thanisha"), d: role("Die Ärztin", "Ä", "f") },
+    speakers: { a: speaker("Sudharsan"), t: speaker("Thanisha"), d: speaker("Sadhana", "doctor") },
     lines: [
-      { who: "t", parts: ["Adhi, du siehst krank aus. Was ist los?"], en: "Adhi, you look ill. What is wrong?", ta: "ஆதி, நீ உடம்பு சரியில்லாதவன் போல் இருக்கிறாய். என்ன ஆச்சு?" },
+      { who: "t", parts: ["Sudharsan, du siehst krank aus. Was ist los?"], en: "Sudharsan, you look ill. What is wrong?", ta: "சுதர்சன், நீ உடம்பு சரியில்லாதவன் போல் இருக்கிறாய். என்ன ஆச்சு?" },
       { who: "a", parts: ["Ich habe ", W("Kopfschmerzen", "kopfschmerzen"), " und ", W("Fieber", "fieber"), "."], en: "I have a headache and a fever.", ta: "எனக்கு தலைவலியும் காய்ச்சலும் இருக்கிறது." },
       { who: "t", parts: ["Du musst zum Arzt gehen. Ich rufe an und mache einen ", W("Termin", "termin"), "."], en: "You must go to the doctor. I'll call and make an appointment.", ta: "நீ மருத்துவரிடம் போக வேண்டும். நான் அழைத்து நேரம் வாங்குகிறேன்." },
-      { who: "d", parts: ["Guten Tag, Adhi. Setzen Sie sich bitte. Seit wann haben Sie Fieber?"], en: "Good day, Adhi. Please sit down. Since when have you had a fever?", ta: "வணக்கம் ஆதி. தயவுசெய்து உட்காருங்கள். எப்போதிருந்து காய்ச்சல்?" },
+      { who: "d", parts: ["Guten Tag, Sudharsan. Setzen Sie sich bitte. Seit wann haben Sie Fieber?"], en: "Good day, Sudharsan. Please sit down. Since when have you had a fever?", ta: "வணக்கம் சுதர்சன். தயவுசெய்து உட்காருங்கள். எப்போதிருந்து காய்ச்சல்?" },
       { who: "a", parts: ["Seit gestern. Und mein Hals tut weh."], en: "Since yesterday. And my throat hurts.", ta: "நேற்றிலிருந்து. தொண்டையும் வலிக்கிறது." },
       { who: "d", parts: ["Sie haben eine ", W("Erkältung", "erkaeltung"), ". Sie sollen viel Tee trinken und im Bett bleiben."], en: "You have a cold. You should drink a lot of tea and stay in bed.", ta: "உங்களுக்கு சளி பிடித்திருக்கிறது. நிறைய தேநீர் குடித்து படுக்கையில் இருக்க வேண்டும்." },
       { who: "a", parts: ["Muss ich ", W("Tabletten", "tabletten"), " nehmen?"], en: "Do I have to take tablets?", ta: "நான் மாத்திரைகள் எடுக்க வேண்டுமா?" },
@@ -365,7 +365,7 @@ export const chapters: Chapter[] = [
       termin: { de: "der Termin", en: "appointment", ta: "முன்பதிவு நேரம்", ex: "Ich habe einen Termin.", exEn: "I have an appointment.", exTa: "எனக்கு ஒரு நேரம் உள்ளது.", pic: "📅" },
       erkaeltung: { de: "die Erkältung", en: "a cold", ta: "சளி", ex: "Ich habe eine Erkältung.", exEn: "I have a cold.", exTa: "எனக்கு சளி.", pic: "🤧" },
       tabletten: { de: "die Tabletten", en: "tablets", ta: "மாத்திரைகள்", ex: "Nehmen Sie die Tabletten.", exEn: "Take the tablets.", exTa: "மாத்திரைகளை எடுங்கள்.", pic: "💊" },
-      besserung: { de: "Gute Besserung!", en: "Get well soon!", ta: "விரைவில் குணமடையுங்கள்!", ex: "Gute Besserung, Adhi!", exEn: "Get well soon, Adhi!", exTa: "விரைவில் குணமடையுங்கள், ஆதி!", pic: "💐" },
+      besserung: { de: "Gute Besserung!", en: "Get well soon!", ta: "விரைவில் குணமடையுங்கள்!", ex: "Gute Besserung, Sudharsan!", exEn: "Get well soon, Sudharsan!", exTa: "விரைவில் குணமடையுங்கள், சுதர்சன்!", pic: "💐" },
     },
     culture: {
       tn: "Many families first try home remedies such as ginger tea or pepper rasam, and then visit a clinic.",
@@ -387,12 +387,12 @@ export const chapters: Chapter[] = [
     mood: "evening",
     title: "Die Arbeit",
     sub: "A2 · Your first job",
-    speakers: { a: ADHI, c: role("Der Chef", "C", "m"), p: speaker("Poovai") },
+    speakers: { a: speaker("Akshay"), c: speaker("Arvind", "boss"), p: speaker("Poovai") },
     lines: [
-      { who: "c", parts: ["Guten Morgen, Adhi. Heute ist Ihr erster ", W("Arbeitstag", "arbeitstag"), ". Wie war die Fahrt?"], en: "Good morning, Adhi. Today is your first working day. How was the journey?", ta: "காலை வணக்கம் ஆதி. இன்று உங்கள் முதல் வேலை நாள். பயணம் எப்படி இருந்தது?" },
+      { who: "c", parts: ["Guten Morgen, Akshay. Heute ist Ihr erster ", W("Arbeitstag", "arbeitstag"), ". Wie war die Fahrt?"], en: "Good morning, Akshay. Today is your first working day. How was the journey?", ta: "காலை வணக்கம் அக்ஷய். இன்று உங்கள் முதல் வேலை நாள். பயணம் எப்படி இருந்தது?" },
       { who: "a", parts: ["Gut, danke. Ich bin mit der U-Bahn ", W("gefahren", "gefahren"), "."], en: "Good, thanks. I went by underground.", ta: "நன்றாக இருந்தது, நன்றி. நான் மெட்ரோவில் வந்தேன்." },
       { who: "c", parts: ["Hier ist Ihr ", W("Platz", "platz"), ". Poovai zeigt Ihnen alles."], en: "Here is your desk. Poovai will show you everything.", ta: "இதோ உங்கள் இடம். பூவை உங்களுக்கு எல்லாவற்றையும் காட்டுவார்." },
-      { who: "p", parts: ["Hallo Adhi! Hast du schon Kaffee getrunken?"], en: "Hello Adhi! Have you already had coffee?", ta: "வணக்கம் ஆதி! நீ ஏற்கனவே காபி குடித்தாயா?" },
+      { who: "p", parts: ["Hallo Akshay! Hast du schon Kaffee getrunken?"], en: "Hello Akshay! Have you already had coffee?", ta: "வணக்கம் அக்ஷய்! நீ ஏற்கனவே காபி குடித்தாயா?" },
       { who: "a", parts: ["Nein, noch nicht. Wo ist die Küche?"], en: "No, not yet. Where is the kitchen?", ta: "இல்லை, இன்னும் இல்லை. சமையலறை எங்கே?" },
       { who: "p", parts: ["Dort links. Wir essen um zwölf Uhr, ", W("weil", "weil"), " dann die ", W("Kantine", "kantine"), " öffnet."], en: "Over there on the left. We eat at twelve, because the canteen opens then.", ta: "அங்கே இடப்புறம். நாங்கள் பன்னிரண்டு மணிக்கு சாப்பிடுவோம், ஏனெனில் அப்போது உணவகம் திறக்கும்." },
       { who: "a", parts: ["Danke! Ich freue mich auf die Arbeit."], en: "Thanks! I'm looking forward to the work.", ta: "நன்றி! வேலைக்காக ஆவலாக இருக்கிறேன்." },
@@ -424,9 +424,9 @@ export const chapters: Chapter[] = [
     mood: "autumn",
     title: "Mit dem Zug",
     sub: "A2 · A trip to Hamburg",
-    speakers: { a: ADHI, s: speaker("Sanjay"), k: role("Die Schaffnerin", "S", "f") },
+    speakers: { a: speaker("Shylash"), s: speaker("Sanjay"), k: speaker("Mrithula", "conductor") },
     lines: [
-      { who: "s", parts: ["Adhi, wir fahren am Samstag nach Hamburg. Kommst du mit?"], en: "Adhi, on Saturday we are going to Hamburg. Are you coming along?", ta: "ஆதி, சனிக்கிழமை நாங்கள் ஹாம்பர்க் போகிறோம். நீயும் வருகிறாயா?" },
+      { who: "s", parts: ["Shylash, wir fahren am Samstag nach Hamburg. Kommst du mit?"], en: "Shylash, on Saturday we are going to Hamburg. Are you coming along?", ta: "ஷைலேஷ், சனிக்கிழமை நாங்கள் ஹாம்பர்க் போகிறோம். நீயும் வருகிறாயா?" },
       { who: "a", parts: ["Gern! Wie kommen wir ", W("zum", "zum"), " Bahnhof?"], en: "Gladly! How do we get to the station?", ta: "மகிழ்ச்சியுடன்! ரயில் நிலையத்துக்கு எப்படிப் போவது?" },
       { who: "s", parts: ["Mit der U-Bahn. Wir treffen uns um acht Uhr am ", W("Gleis", "gleis"), " fünf."], en: "By underground. We meet at eight o'clock at platform five.", ta: "மெட்ரோவில். எட்டு மணிக்கு ஐந்தாம் நடைமேடையில் சந்திப்போம்." },
       { who: "k", parts: ["Guten Tag, Ihre ", W("Fahrkarten", "fahrkarte"), " bitte."], en: "Good day, your tickets please.", ta: "வணக்கம், உங்கள் பயணச்சீட்டுகள் தயவுசெய்து." },
@@ -461,9 +461,9 @@ export const chapters: Chapter[] = [
     mood: "sunset",
     title: "Das Wochenende",
     sub: "A2 · What did you do?",
-    speakers: { a: ADHI, r: speaker("Ruby"), k: speaker("Akshay"), s: speaker("Sadhana") },
+    speakers: { a: speaker("Arvind"), r: speaker("Ruby"), k: speaker("Akshay"), s: speaker("Sadhana") },
     lines: [
-      { who: "r", parts: ["Was hast du am Wochenende gemacht, Adhi?"], en: "What did you do at the weekend, Adhi?", ta: "ஆதி, வார இறுதியில் என்ன செய்தாய்?" },
+      { who: "r", parts: ["Was hast du am Wochenende gemacht, Arvind?"], en: "What did you do at the weekend, Arvind?", ta: "அரவிந்த், வார இறுதியில் என்ன செய்தாய்?" },
       { who: "a", parts: ["Ich habe mit Akshay einen ", W("Ausflug", "ausflug"), " gemacht. Wir sind an den See gefahren."], en: "I went on a trip with Akshay. We went to the lake.", ta: "நான் அக்ஷயுடன் ஒரு சுற்றுலா போனேன். நாங்கள் ஏரிக்குப் போனோம்." },
       { who: "k", parts: ["Das Wasser war kalt, aber die Sonne war schön."], en: "The water was cold, but the sun was lovely.", ta: "தண்ணீர் குளிராக இருந்தது, ஆனால் வெயில் அழகாக இருந்தது." },
       { who: "r", parts: ["Habt ihr euch gut ", W("erholt", "erholen"), "?"], en: "Did you relax well?", ta: "நீங்கள் நன்றாக ஓய்வெடுத்தீர்களா?" },
@@ -497,7 +497,7 @@ export const chapters: Chapter[] = [
     mood: "rainbow",
     title: "Im Restaurant",
     sub: "A2 · Order a meal",
-    speakers: { a: ADHI, k: role("Der Kellner", "K", "m"), s: speaker("Shylash"), v: speaker("Kavitha") },
+    speakers: { a: speaker("Ram"), k: speaker("Dhinesh", "waiter"), s: speaker("Shylash"), v: speaker("Kavitha") },
     lines: [
       { who: "k", parts: ["Guten Abend! Hier ist die ", W("Speisekarte", "speisekarte"), ". Was möchten Sie trinken?"], en: "Good evening! Here is the menu. What would you like to drink?", ta: "மாலை வணக்கம்! இதோ உணவுப் பட்டியல். என்ன குடிக்க விரும்புகிறீர்கள்?" },
       { who: "s", parts: ["Ich nehme ein Wasser, bitte."], en: "I'll have a water, please.", ta: "நான் ஒரு தண்ணீர் எடுத்துக்கொள்கிறேன்." },
@@ -536,7 +536,7 @@ export const chapters: Chapter[] = [
     mood: "night",
     title: "Ein Abend im Kino",
     sub: "A2 · Plan an evening out",
-    speakers: { a: ADHI, m: speaker("Medwin"), n: speaker("Nethra") },
+    speakers: { a: speaker("Yogesh"), m: speaker("Medwin"), n: speaker("Nethra") },
     lines: [
       { who: "m", parts: ["Hast du am Freitag Zeit? Wir gehen ins Kino."], en: "Do you have time on Friday? We are going to the cinema.", ta: "வெள்ளிக்கிழமை உனக்கு நேரம் இருக்கிறதா? நாங்கள் திரையரங்குக்குப் போகிறோம்." },
       { who: "a", parts: ["Gern! Welcher Film läuft denn?"], en: "Gladly! Which film is on?", ta: "மகிழ்ச்சி! எந்தப் படம் ஓடுகிறது?" },
@@ -574,9 +574,9 @@ export const chapters: Chapter[] = [
     mood: "petals",
     title: "Im Bürgeramt",
     sub: "A2 · Register your flat",
-    speakers: { a: ADHI, d: speaker("Dhinesh"), b: role("Die Beamtin", "B", "f") },
+    speakers: { a: speaker("Sanjay"), d: speaker("Dhinesh"), b: speaker("Thanisha", "official") },
     lines: [
-      { who: "d", parts: ["Adhi, hast du schon deine Wohnung ", W("angemeldet", "anmelden"), "?"], en: "Adhi, have you already registered your flat?", ta: "ஆதி, நீ உன் வீட்டை ஏற்கனவே பதிவு செய்துவிட்டாயா?" },
+      { who: "d", parts: ["Sanjay, hast du schon deine Wohnung ", W("angemeldet", "anmelden"), "?"], en: "Sanjay, have you already registered your flat?", ta: "சஞ்சய், நீ உன் வீட்டை ஏற்கனவே பதிவு செய்துவிட்டாயா?" },
       { who: "a", parts: ["Noch nicht. Ich habe nächste Woche einen Termin im Bürgeramt."], en: "Not yet. I have an appointment at the registration office next week.", ta: "இன்னும் இல்லை. அடுத்த வாரம் குடிமக்கள் அலுவலகத்தில் எனக்கு நேரம் உள்ளது." },
       { who: "d", parts: ["Vergiss nicht, ", W("dass", "dass"), " du deinen Pass und den ", W("Mietvertrag", "mietvertrag"), " mitbringen musst."], en: "Don't forget that you have to bring your passport and the rental contract.", ta: "நீ உன் கடவுச்சீட்டையும் வாடகை ஒப்பந்தத்தையும் கொண்டு வர வேண்டும் என்பதை மறக்காதே." },
       { who: "b", parts: ["Guten Tag. Wie kann ich Ihnen helfen?"], en: "Good day. How can I help you?", ta: "வணக்கம். நான் உங்களுக்கு எப்படி உதவலாம்?" },
@@ -613,7 +613,7 @@ export const chapters: Chapter[] = [
     mood: "breeze",
     title: "Die Prüfung",
     sub: "A2 · Get ready for the exam",
-    speakers: { a: ADHI, l: role("Die Lehrerin", "L", "f"), s: speaker("Sudha"), u: speaker("Sudharsan") },
+    speakers: { a: speaker("Yuvan"), l: speaker("Poovai", "teacher"), s: speaker("Sudha"), u: speaker("Sudharsan") },
     lines: [
       { who: "l", parts: ["Nächsten Monat ist die Prüfung. Wie ", W("bereitet", "vorbereiten"), " ihr euch vor?"], en: "Next month is the exam. How are you preparing?", ta: "அடுத்த மாதம் தேர்வு. நீங்கள் எப்படி தயாராகிறீர்கள்?" },
       { who: "s", parts: ["Ich lerne jeden Tag zwanzig Minuten Wörter."], en: "I learn words for twenty minutes every day.", ta: "நான் தினமும் இருபது நிமிடம் சொற்கள் கற்கிறேன்." },
@@ -689,7 +689,7 @@ export const chapters: Chapter[] = [
     mood: "balloons",
     title: "Im Kaufhaus",
     sub: "A2 · Buy clothes",
-    speakers: { a: ADHI, r: speaker("Ruby"), v: role("Die Verkäuferin", "V", "f") },
+    speakers: { a: speaker("Kaviarasan"), r: speaker("Ruby"), v: speaker("Rithika", "shop assistant") },
     lines: [
       { who: "v", parts: ["Guten Tag! Suchen Sie etwas Bestimmtes?"], en: "Good day! Are you looking for something in particular?", ta: "வணக்கம்! குறிப்பிட்ட ஏதாவது தேடுகிறீர்களா?" },
       { who: "r", parts: ["Ja, ich suche eine warme Jacke. Haben Sie die auch in Grün?"], en: "Yes, I am looking for a warm jacket. Do you also have it in green?", ta: "ஆம், நான் ஒரு சூடான ஜாக்கெட் தேடுகிறேன். அது பச்சை நிறத்திலும் உள்ளதா?" },
@@ -727,15 +727,15 @@ export const chapters: Chapter[] = [
     mood: "snow",
     title: "Die Heizung ist kaputt",
     sub: "A2 · Report a problem",
-    speakers: { a: ADHI, h: role("Der Hausmeister", "H", "m"), v: speaker("Arvind") },
+    speakers: { a: speaker("Medwin"), h: speaker("Ram", "caretaker"), v: speaker("Arvind") },
     lines: [
-      { who: "a", parts: ["Guten Tag, hier spricht Adhi aus Wohnung drei. Die ", W("Heizung", "heizung"), " ist ", W("kaputt", "kaputt"), "."], en: "Good day, this is Adhi from flat three. The heating is broken.", ta: "வணக்கம், நான் மூன்றாம் வீட்டிலிருந்து ஆதி பேசுகிறேன். வெப்பமூட்டி பழுதாகிவிட்டது." },
+      { who: "a", parts: ["Guten Tag, hier spricht Medwin aus Wohnung drei. Die ", W("Heizung", "heizung"), " ist ", W("kaputt", "kaputt"), "."], en: "Good day, this is Medwin from flat three. The heating is broken.", ta: "வணக்கம், நான் மூன்றாம் வீட்டிலிருந்து மெட்வின் பேசுகிறேன். வெப்பமூட்டி பழுதாகிவிட்டது." },
       { who: "h", parts: ["Das tut mir leid. Seit wann ", W("funktioniert", "funktionieren"), " sie nicht?"], en: "I'm sorry about that. Since when has it not worked?", ta: "மன்னிக்கவும். எப்போதிருந்து அது வேலை செய்யவில்லை?" },
       { who: "a", parts: ["Seit zwei Tagen. Es ist sehr kalt in der Wohnung."], en: "For two days. It is very cold in the flat.", ta: "இரண்டு நாட்களாக. வீட்டில் மிகவும் குளிராக உள்ளது." },
       { who: "h", parts: ["Ich schicke morgen einen ", W("Techniker", "techniker"), ". Wären Sie dann zu Hause?"], en: "I'll send a technician tomorrow. Would you be at home then?", ta: "நாளை ஒரு தொழில்நுட்பரை அனுப்புகிறேன். அப்போது நீங்கள் வீட்டில் இருப்பீர்களா?" },
       { who: "a", parts: ["Ja, morgen Vormittag bin ich da. Könnten Sie vielleicht früher kommen?"], en: "Yes, I'll be there tomorrow morning. Could you perhaps come earlier?", ta: "ஆம், நாளை காலை நான் இருப்பேன். சற்று முன்னதாக வர முடியுமா?" },
       { who: "h", parts: ["Ich ", W("versuche", "versuchen"), " es. Ich rufe Sie in einer Stunde an."], en: "I'll try. I'll call you in an hour.", ta: "முயற்சிக்கிறேன். ஒரு மணி நேரத்தில் உங்களை அழைக்கிறேன்." },
-      { who: "v", parts: ["Adhi, wenn du möchtest, kannst du heute Abend bei mir essen. Bei mir ist es warm."], en: "Adhi, if you like you can eat at my place this evening. It is warm at mine.", ta: "ஆதி, விரும்பினால் இன்று மாலை என் வீட்டில் சாப்பிடலாம். என் வீட்டில் வெப்பமாக உள்ளது." },
+      { who: "v", parts: ["Medwin, wenn du möchtest, kannst du heute Abend bei mir essen. Bei mir ist es warm."], en: "Medwin, if you like you can eat at my place this evening. It is warm at mine.", ta: "மெட்வின், விரும்பினால் இன்று மாலை என் வீட்டில் சாப்பிடலாம். என் வீட்டில் வெப்பமாக உள்ளது." },
       { who: "a", parts: ["Das wäre sehr nett, Arvind. Vielen Dank!"], en: "That would be very kind, Arvind. Thank you very much!", ta: "அது மிகவும் அன்பாக இருக்கும் அரவிந்த். மிக்க நன்றி!" },
     ],
     words: {
@@ -765,9 +765,9 @@ export const chapters: Chapter[] = [
     mood: "rainbow",
     title: "Müll trennen",
     sub: "A2 · Sorting rubbish",
-    speakers: { a: ADHI, v: speaker("Kavitha"), s: speaker("Sanjay") },
+    speakers: { a: speaker("Dhinesh"), v: speaker("Kavitha"), s: speaker("Sanjay") },
     lines: [
-      { who: "v", parts: ["Adhi, in Deutschland trennt man den ", W("Müll", "muell"), "."], en: "Adhi, in Germany you separate the rubbish.", ta: "ஆதி, ஜெர்மனியில் குப்பையைப் பிரித்துப் போடுவார்கள்." },
+      { who: "v", parts: ["Dhinesh, in Deutschland trennt man den ", W("Müll", "muell"), "."], en: "Dhinesh, in Germany you separate the rubbish.", ta: "தினேஷ், ஜெர்மனியில் குப்பையைப் பிரித்துப் போடுவார்கள்." },
       { who: "a", parts: ["Ja, ich habe vier Mülltonnen gesehen. Was kommt wohin?"], en: "Yes, I saw four bins. What goes where?", ta: "ஆம், நான்கு குப்பைத் தொட்டிகளைப் பார்த்தேன். எது எங்கே போடுவது?" },
       { who: "v", parts: ["Papier kommt in die blaue ", W("Tonne", "tonne"), ", Plastik meistens in die gelbe."], en: "Paper goes in the blue bin, plastic mostly in the yellow one.", ta: "காகிதம் நீலத் தொட்டியில், பிளாஸ்டிக் பெரும்பாலும் மஞ்சள் தொட்டியில்." },
       { who: "a", parts: ["Und was passiert mit den Flaschen?"], en: "And what happens to the bottles?", ta: "பாட்டில்களுக்கு என்ன நடக்கும்?" },

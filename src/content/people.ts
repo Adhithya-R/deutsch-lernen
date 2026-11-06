@@ -1,7 +1,7 @@
 // The class. Every person in the stories is one of these classmates (plus unnamed roles such as the
 // officer or the seller). The gender decides the voice (Thorsten = m, Kerstin = f) and the German
 // forms used for that person. These are the app's ASSUMPTIONS from the names: please correct any here.
-//   Kavi is left without a gender on purpose: Kavi never speaks and is never called "he" or "she".
+//   Confirmed by the owner: Kaviarasan is male. Yogesh was added later: his gender is still an assumption (male), please confirm.
 
 export type Gender = "m" | "f";
 export type Person = { name: string; initial: string; gender: Gender | null };
@@ -19,7 +19,7 @@ export const CLASSMATES: Person[] = [
   p("Sudha", "f"),
   p("Ram", "m"),
   p("Dhinesh", "m"),
-  p("Kavi", null),
+  p("Kaviarasan", "m"),
   p("Risha", "f"),
   p("Rithika", "f"),
   p("Sadhana", "f"),
@@ -30,15 +30,16 @@ export const CLASSMATES: Person[] = [
   p("Kavitha", "f"),
   p("Medwin", "m"),
   p("Nethra", "f"),
+  p("Yogesh", "m"),
 ];
 
 export const NAMES = CLASSMATES.map((c) => c.name);
 
-/** A classmate who speaks in a story. Speaking needs a gender, so Kavi cannot be chosen. */
-export function speaker(name: string): { name: string; initial: string; gender: Gender } {
+/** A classmate who speaks in a story or talk. `as` is the part they play, such as "doctor". */
+export function speaker(name: string, as?: string): { name: string; initial: string; gender: Gender; as?: string } {
   const c = CLASSMATES.find((x) => x.name === name);
   if (!c || !c.gender) throw new Error(`${name} cannot speak: unknown or no gender set`);
-  return { name: c.name, initial: c.initial, gender: c.gender };
+  return { name: c.name, initial: c.initial, gender: c.gender, ...(as ? { as } : {}) };
 }
 
 /** An unnamed role, such as the officer or the seller. */

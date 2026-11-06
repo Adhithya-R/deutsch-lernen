@@ -50,7 +50,9 @@ export default function Story({ chapter }: { chapter: Chapter }) {
                 >
                   {sp.initial}
                 </div>
-                <div className={`max-w-[80%] rounded-3xl p-3.5 shadow-[0_3px_0_var(--color-line)] ${me ? "rounded-br-md bg-pill" : "rounded-bl-md bg-white"}`}>
+                <div className="max-w-[80%]">
+                <p className={`mb-0.5 px-1 text-xs font-extrabold text-muted ${me ? "text-right" : ""}`}>{sp.name}{sp.as ? ` · ${sp.as}` : ""}</p>
+                <div className={`rounded-3xl p-3.5 shadow-[0_3px_0_var(--color-line)] ${me ? "rounded-br-md bg-pill" : "rounded-bl-md bg-white"}`}>
                   <div className="flex items-start justify-between gap-2">
                     <p className="text-[17.5px] font-extrabold leading-relaxed">
                       {l.parts.map((p, j) =>
@@ -77,6 +79,7 @@ export default function Story({ chapter }: { chapter: Chapter }) {
                   </div>
                   <p className="mt-1 text-sm text-muted">{l.en}</p>
                   <p lang="ta" className="ta-only mt-0.5 text-sm text-muted">{l.ta}</p>
+                </div>
                 </div>
               </div>
             );
