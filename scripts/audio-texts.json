@@ -2275,13 +2275,13 @@
   "voice": "m"
  },
  {
-  "key": "hallo-adhi-hier-sind-wir",
-  "text": "Hallo Adhi! Hier sind wir!",
+  "key": "hallo-ram-hier-sind-wir",
+  "text": "Hallo Ram! Hier sind wir!",
   "voice": "f"
  },
  {
-  "key": "willkommen-adhi-wie-war-der-flug",
-  "text": "Willkommen, Adhi! Wie war der Flug?",
+  "key": "willkommen-ram-wie-war-der-flug",
+  "text": "Willkommen, Ram! Wie war der Flug?",
   "voice": "m"
  },
  {
@@ -2340,34 +2340,34 @@
   "voice": "f"
  },
  {
-  "key": "ich-heisse-adhi-ich-komme-aus-madurai",
-  "text": "Ich heiße Adhi. Ich komme aus Madurai.",
-  "voice": "m"
- },
- {
-  "key": "hallo-adhi-ich-heisse-thanisha-ich-komme-aus-chennai",
-  "text": "Hallo Adhi! Ich heiße Thanisha. Ich komme aus Chennai.",
+  "key": "ich-heisse-risha-ich-komme-aus-madurai",
+  "text": "Ich heiße Risha. Ich komme aus Madurai.",
   "voice": "f"
  },
  {
-  "key": "hallo-ich-bin-mrithula-ich-wohne-in-berlin",
-  "text": "Hallo! Ich bin Mrithula. Ich wohne in Berlin.",
+  "key": "hallo-risha-ich-heisse-ruby-ich-komme-aus-chennai",
+  "text": "Hallo Risha! Ich heiße Ruby. Ich komme aus Chennai.",
   "voice": "f"
  },
  {
-  "key": "ich-heisse-sudharsan-und-das-ist-ruby-wir-kommen-aus-coimbatore",
-  "text": "Ich heiße Sudharsan. Und das ist Ruby. Wir kommen aus Coimbatore.",
+  "key": "hallo-ich-bin-nethra-ich-wohne-in-berlin",
+  "text": "Hallo! Ich bin Nethra. Ich wohne in Berlin.",
+  "voice": "f"
+ },
+ {
+  "key": "ich-heisse-akshay-und-das-ist-mrithula-wir-kommen-aus-coimbatore",
+  "text": "Ich heiße Akshay. Und das ist Mrithula. Wir kommen aus Coimbatore.",
   "voice": "m"
  },
  {
-  "key": "hallo-adhi-wo-liegt-madurai",
-  "text": "Hallo Adhi! Wo liegt Madurai?",
+  "key": "hallo-risha-wo-liegt-madurai",
+  "text": "Hallo Risha! Wo liegt Madurai?",
   "voice": "f"
  },
  {
   "key": "in-indien-in-tamil-nadu-dort-gibt-es-einen-grossen-tempel",
   "text": "In Indien, in Tamil Nadu. Dort gibt es einen großen Tempel.",
-  "voice": "m"
+  "voice": "f"
  },
  {
   "key": "sehr-gut-jetzt-arbeiten-wir-zusammen",
@@ -2380,8 +2380,8 @@
   "voice": "m"
  },
  {
-  "key": "ich-heisse-adhi",
-  "text": "Ich heiße Adhi.",
+  "key": "ich-heisse-risha",
+  "text": "Ich heiße Risha.",
   "voice": "m"
  },
  {
@@ -2447,7 +2447,7 @@
  {
   "key": "ja-wir-nehmen-die-wohnung-danke",
   "text": "Ja, wir nehmen die Wohnung. Danke!",
-  "voice": "m"
+  "voice": "f"
  },
  {
   "key": "glueckwunsch-am-samstag-helfe-ich-euch-beim-umzug",
@@ -2537,7 +2537,7 @@
  {
   "key": "dann-nehme-ich-den-tee-auch-wie-viel-ist-das-zusammen",
   "text": "Dann nehme ich den Tee auch. Wie viel ist das zusammen?",
-  "voice": "m"
+  "voice": "f"
  },
  {
   "key": "das-macht-neun-euro-zwanzig-danke-und-einen-schoenen-tag",
@@ -2605,8 +2605,8 @@
   "voice": "f"
  },
  {
-  "key": "und-shylash-yuvan-medwin-und-kaviarasan-bringen-das-essen-mit",
-  "text": "Und Shylash, Yuvan, Medwin und Kaviarasan bringen das Essen mit.",
+  "key": "und-adhi-arvind-akshay-und-kaviarasan-bringen-das-essen-mit",
+  "text": "Und Adhi, Arvind, Akshay und Kaviarasan bringen das Essen mit.",
   "voice": "m"
  },
  {
@@ -2655,14 +2655,14 @@
   "voice": "m"
  },
  {
-  "key": "kaviarasan-ich-moechte-idli-kochen-hilfst-du-mir",
-  "text": "Kaviarasan, ich möchte Idli kochen. Hilfst du mir?",
+  "key": "rithika-ich-moechte-idli-kochen-hilfst-du-mir",
+  "text": "Rithika, ich möchte Idli kochen. Hilfst du mir?",
   "voice": "f"
  },
  {
   "key": "ja-gern-was-brauchen-wir",
   "text": "Ja, gern! Was brauchen wir?",
-  "voice": "m"
+  "voice": "f"
  },
  {
   "key": "wir-brauchen-reis-linsen-und-salz",
@@ -2672,7 +2672,7 @@
  {
   "key": "gut-ich-wasche-den-reis-und-die-linsen",
   "text": "Gut. Ich wasche den Reis und die Linsen.",
-  "voice": "m"
+  "voice": "f"
  },
  {
   "key": "hallo-ihr-zwei-mischt-den-teig-und-wartet-bis-morgen",
@@ -2687,7 +2687,7 @@
  {
   "key": "mmm-das-riecht-gut-wer-moechte-idli-essen",
   "text": "Mmm, das riecht gut! Wer möchte Idli essen?",
-  "voice": "m"
+  "voice": "f"
  },
  {
   "key": "ich-und-ich-bringe-chutney-mit",
@@ -2765,14 +2765,14 @@
   "voice": "f"
  },
  {
-  "key": "hallo-rithika-darf-ich-auch-malen",
-  "text": "Hallo Rithika! Darf ich auch malen?",
+  "key": "hallo-ruby-darf-ich-auch-malen",
+  "text": "Hallo Ruby! Darf ich auch malen?",
   "voice": "f"
  },
  {
   "key": "ja-natuerlich-hier-ist-mehl-fuer-dich",
   "text": "Ja, natürlich! Hier ist Mehl für dich.",
-  "voice": "m"
+  "voice": "f"
  },
  {
   "key": "malen",
@@ -2815,13 +2815,13 @@
   "voice": "m"
  },
  {
-  "key": "frohes-deepavali-medwin-heute-ist-das-lichterfest",
-  "text": "Frohes Deepavali, Medwin! Heute ist das Lichterfest.",
+  "key": "frohes-deepavali-sanjay-heute-ist-das-lichterfest",
+  "text": "Frohes Deepavali, Sanjay! Heute ist das Lichterfest.",
   "voice": "m"
  },
  {
-  "key": "danke-dhinesh-frohes-deepavali-die-lichter-sind-sehr-schoen",
-  "text": "Danke, Dhinesh! Frohes Deepavali! Die Lichter sind sehr schön.",
+  "key": "danke-yuvan-frohes-deepavali-die-lichter-sind-sehr-schoen",
+  "text": "Danke, Yuvan! Frohes Deepavali! Die Lichter sind sehr schön.",
   "voice": "m"
  },
  {
@@ -2905,8 +2905,8 @@
   "voice": "m"
  },
  {
-  "key": "sudharsan-du-siehst-krank-aus-was-ist-los",
-  "text": "Sudharsan, du siehst krank aus. Was ist los?",
+  "key": "akshay-du-siehst-krank-aus-was-ist-los",
+  "text": "Akshay, du siehst krank aus. Was ist los?",
   "voice": "f"
  },
  {
@@ -2920,8 +2920,8 @@
   "voice": "f"
  },
  {
-  "key": "guten-tag-sudharsan-setzen-sie-sich-bitte-seit-wann-haben-sie-fieber",
-  "text": "Guten Tag, Sudharsan. Setzen Sie sich bitte. Seit wann haben Sie Fieber?",
+  "key": "guten-tag-akshay-setzen-sie-sich-bitte-seit-wann-haben-sie-fieber",
+  "text": "Guten Tag, Akshay. Setzen Sie sich bitte. Seit wann haben Sie Fieber?",
   "voice": "f"
  },
  {
@@ -3000,13 +3000,13 @@
   "voice": "m"
  },
  {
-  "key": "gute-besserung-sudharsan",
-  "text": "Gute Besserung, Sudharsan!",
+  "key": "gute-besserung-akshay",
+  "text": "Gute Besserung, Akshay!",
   "voice": "m"
  },
  {
-  "key": "guten-morgen-akshay-heute-ist-ihr-erster-arbeitstag-wie-war-die-fahrt",
-  "text": "Guten Morgen, Akshay. Heute ist Ihr erster Arbeitstag. Wie war die Fahrt?",
+  "key": "guten-morgen-sudharsan-heute-ist-ihr-erster-arbeitstag-wie-war-die-fahrt",
+  "text": "Guten Morgen, Sudharsan. Heute ist Ihr erster Arbeitstag. Wie war die Fahrt?",
   "voice": "m"
  },
  {
@@ -3015,13 +3015,13 @@
   "voice": "m"
  },
  {
-  "key": "hier-ist-ihr-platz-poovai-zeigt-ihnen-alles",
-  "text": "Hier ist Ihr Platz. Poovai zeigt Ihnen alles.",
+  "key": "hier-ist-ihr-platz-sudha-zeigt-ihnen-alles",
+  "text": "Hier ist Ihr Platz. Sudha zeigt Ihnen alles.",
   "voice": "m"
  },
  {
-  "key": "hallo-akshay-hast-du-schon-kaffee-getrunken",
-  "text": "Hallo Akshay! Hast du schon Kaffee getrunken?",
+  "key": "hallo-sudharsan-hast-du-schon-kaffee-getrunken",
+  "text": "Hallo Sudharsan! Hast du schon Kaffee getrunken?",
   "voice": "f"
  },
  {
@@ -3090,14 +3090,14 @@
   "voice": "m"
  },
  {
-  "key": "shylash-wir-fahren-am-samstag-nach-hamburg-kommst-du-mit",
-  "text": "Shylash, wir fahren am Samstag nach Hamburg. Kommst du mit?",
+  "key": "mrithula-wir-fahren-am-samstag-nach-hamburg-kommst-du-mit",
+  "text": "Mrithula, wir fahren am Samstag nach Hamburg. Kommst du mit?",
   "voice": "m"
  },
  {
   "key": "gern-wie-kommen-wir-zum-bahnhof",
   "text": "Gern! Wie kommen wir zum Bahnhof?",
-  "voice": "m"
+  "voice": "f"
  },
  {
   "key": "mit-der-u-bahn-wir-treffen-uns-um-acht-uhr-am-gleis-fuenf",
@@ -3112,7 +3112,7 @@
  {
   "key": "bitte-schoen-faehrt-dieser-zug-nach-hamburg",
   "text": "Bitte schön. Fährt dieser Zug nach Hamburg?",
-  "voice": "m"
+  "voice": "f"
  },
  {
   "key": "ja-aber-er-hat-zwanzig-minuten-verspaetung",
@@ -3127,7 +3127,7 @@
  {
   "key": "ich-sitze-gern-am-fenster",
   "text": "Ich sitze gern am Fenster.",
-  "voice": "m"
+  "voice": "f"
  },
  {
   "key": "zum-zu-dem",
@@ -3165,8 +3165,8 @@
   "voice": "f"
  },
  {
-  "key": "ich-habe-mit-akshay-einen-ausflug-gemacht-wir-sind-an-den-see-gefahren",
-  "text": "Ich habe mit Akshay einen Ausflug gemacht. Wir sind an den See gefahren.",
+  "key": "ich-habe-mit-medwin-einen-ausflug-gemacht-wir-sind-an-den-see-gefahren",
+  "text": "Ich habe mit Medwin einen Ausflug gemacht. Wir sind an den See gefahren.",
   "voice": "m"
  },
  {
@@ -3252,7 +3252,7 @@
  {
   "key": "ich-haette-gern-die-gemuesesuppe-und-danach-nudeln-mit-tomatensosse",
   "text": "Ich hätte gern die Gemüsesuppe und danach Nudeln mit Tomatensoße.",
-  "voice": "m"
+  "voice": "f"
  },
  {
   "key": "ist-der-salat-frisch",
@@ -3267,7 +3267,7 @@
  {
   "key": "das-essen-war-lecker-die-rechnung-bitte",
   "text": "Das Essen war lecker! Die Rechnung, bitte.",
-  "voice": "m"
+  "voice": "f"
  },
  {
   "key": "zusammen-oder-getrennt",
@@ -3420,8 +3420,8 @@
   "voice": "m"
  },
  {
-  "key": "sanjay-hast-du-schon-deine-wohnung-angemeldet",
-  "text": "Sanjay, hast du schon deine Wohnung angemeldet?",
+  "key": "kaviarasan-hast-du-schon-deine-wohnung-angemeldet",
+  "text": "Kaviarasan, hast du schon deine Wohnung angemeldet?",
   "voice": "m"
  },
  {
@@ -3537,7 +3537,7 @@
  {
   "key": "wenn-ich-viel-uebe-bestehe-ich-die-pruefung",
   "text": "Wenn ich viel übe, bestehe ich die Prüfung.",
-  "voice": "m"
+  "voice": "f"
  },
  {
   "key": "sehr-gut-ueben-sie-auch-das-sprechen-sprechen-sie-mit-ihren-freunden-deutsch",
@@ -3552,7 +3552,7 @@
  {
   "key": "gute-idee-ich-habe-keine-angst-mehr",
   "text": "Gute Idee! Ich habe keine Angst mehr.",
-  "voice": "m"
+  "voice": "f"
  },
  {
   "key": "viel-erfolg-ihr-schafft-das",
@@ -3610,8 +3610,8 @@
   "voice": "m"
  },
  {
-  "key": "hallo-adhi-wie-geht-es-dir",
-  "text": "Hallo Adhi! Wie geht es dir?",
+  "key": "hallo-dhinesh-wie-geht-es-dir",
+  "text": "Hallo Dhinesh! Wie geht es dir?",
   "voice": "f"
  },
  {
@@ -3720,9 +3720,9 @@
   "voice": "f"
  },
  {
-  "key": "die-jacke-steht-dir-gut-ruby",
-  "text": "Die Jacke steht dir gut, Ruby!",
-  "voice": "m"
+  "key": "die-jacke-steht-dir-gut-rithika",
+  "text": "Die Jacke steht dir gut, Rithika!",
+  "voice": "f"
  },
  {
   "key": "aber-sie-ist-zu-teuer-haben-sie-eine-guenstigere-jacke",
@@ -3785,8 +3785,8 @@
   "voice": "m"
  },
  {
-  "key": "guten-tag-hier-spricht-medwin-aus-wohnung-drei-die-heizung-ist-kaputt",
-  "text": "Guten Tag, hier spricht Medwin aus Wohnung drei. Die Heizung ist kaputt.",
+  "key": "guten-tag-hier-spricht-adhi-aus-wohnung-drei-die-heizung-ist-kaputt",
+  "text": "Guten Tag, hier spricht Adhi aus Wohnung drei. Die Heizung ist kaputt.",
   "voice": "m"
  },
  {
@@ -3815,13 +3815,13 @@
   "voice": "m"
  },
  {
-  "key": "medwin-wenn-du-moechtest-kannst-du-heute-abend-bei-mir-essen-bei-mir-ist-es-warm",
-  "text": "Medwin, wenn du möchtest, kannst du heute Abend bei mir essen. Bei mir ist es warm.",
+  "key": "adhi-wenn-du-moechtest-kannst-du-heute-abend-bei-mir-essen-bei-mir-ist-es-warm",
+  "text": "Adhi, wenn du möchtest, kannst du heute Abend bei mir essen. Bei mir ist es warm.",
   "voice": "m"
  },
  {
-  "key": "das-waere-sehr-nett-arvind-vielen-dank",
-  "text": "Das wäre sehr nett, Arvind. Vielen Dank!",
+  "key": "das-waere-sehr-nett-ram-vielen-dank",
+  "text": "Das wäre sehr nett, Ram. Vielen Dank!",
   "voice": "m"
  },
  {
@@ -3875,8 +3875,8 @@
   "voice": "m"
  },
  {
-  "key": "dhinesh-in-deutschland-trennt-man-den-muell",
-  "text": "Dhinesh, in Deutschland trennt man den Müll.",
+  "key": "sanjay-in-deutschland-trennt-man-den-muell",
+  "text": "Sanjay, in Deutschland trennt man den Müll.",
   "voice": "f"
  },
  {
@@ -3962,6 +3962,156 @@
  {
   "key": "ich-wohne-hier",
   "text": "Ich wohne hier.",
+  "voice": "m"
+ },
+ {
+  "key": "shylash-am-freitag-machen-wir-ein-klassenfest-hast-du-zeit",
+  "text": "Shylash, am Freitag machen wir ein Klassenfest. Hast du Zeit?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-gern-was-soll-ich-mitbringen",
+  "text": "Ja, gern! Was soll ich mitbringen?",
+  "voice": "m"
+ },
+ {
+  "key": "wir-brauchen-getraenke-kuchen-und-musik",
+  "text": "Wir brauchen Getränke, Kuchen und Musik.",
+  "voice": "f"
+ },
+ {
+  "key": "ich-kann-tee-und-kaffee-mitbringen-und-ich-habe-einen-lautsprecher-fuer-die-musik",
+  "text": "Ich kann Tee und Kaffee mitbringen. Und ich habe einen Lautsprecher für die Musik.",
+  "voice": "m"
+ },
+ {
+  "key": "prima-wer-macht-die-einladung",
+  "text": "Prima! Wer macht die Einladung?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-schreibe-eine-nachricht-an-alle-in-der-gruppe",
+  "text": "Ich schreibe eine Nachricht an alle in der Gruppe.",
+  "voice": "f"
+ },
+ {
+  "key": "und-wann-fangen-wir-an",
+  "text": "Und wann fangen wir an?",
+  "voice": "m"
+ },
+ {
+  "key": "um-sechs-uhr-dann-essen-tanzen-und-feiern-wir-zusammen",
+  "text": "Um sechs Uhr. Dann essen, tanzen und feiern wir zusammen!",
+  "voice": "m"
+ },
+ {
+  "key": "die-getraenke",
+  "text": "die Getränke",
+  "voice": "m"
+ },
+ {
+  "key": "wir-kaufen-getraenke",
+  "text": "Wir kaufen Getränke.",
+  "voice": "m"
+ },
+ {
+  "key": "der-lautsprecher",
+  "text": "der Lautsprecher",
+  "voice": "m"
+ },
+ {
+  "key": "der-lautsprecher-ist-laut",
+  "text": "Der Lautsprecher ist laut.",
+  "voice": "m"
+ },
+ {
+  "key": "anfangen",
+  "text": "anfangen",
+  "voice": "m"
+ },
+ {
+  "key": "der-kurs-faengt-um-acht-an",
+  "text": "Der Kurs fängt um acht an.",
+  "voice": "m"
+ },
+ {
+  "key": "sudha-morgen-ist-der-letzte-kurstag-ich-bin-ein-bisschen-traurig",
+  "text": "Sudha, morgen ist der letzte Kurstag. Ich bin ein bisschen traurig.",
+  "voice": "f"
+ },
+ {
+  "key": "ich-auch-aber-wir-bleiben-freunde-und-treffen-uns-weiter",
+  "text": "Ich auch. Aber wir bleiben Freunde und treffen uns weiter.",
+  "voice": "f"
+ },
+ {
+  "key": "was-machst-du-nach-dem-kurs",
+  "text": "Was machst du nach dem Kurs?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-moechte-die-pruefung-machen-und-dann-eine-arbeit-suchen-und-du",
+  "text": "Ich möchte die Prüfung machen und dann eine Arbeit suchen. Und du?",
+  "voice": "f"
+ },
+ {
+  "key": "ich-werde-noch-ein-jahr-in-berlin-bleiben-und-deutsch-ueben",
+  "text": "Ich werde noch ein Jahr in Berlin bleiben und Deutsch üben.",
+  "voice": "f"
+ },
+ {
+  "key": "ich-wuerde-gern-nach-hamburg-ziehen",
+  "text": "Ich würde gern nach Hamburg ziehen.",
+  "voice": "m"
+ },
+ {
+  "key": "das-klingt-gut-wir-schreiben-uns-und-telefonieren-oft",
+  "text": "Das klingt gut! Wir schreiben uns und telefonieren oft.",
+  "voice": "f"
+ },
+ {
+  "key": "versprochen-vielen-dank-fuer-die-schoene-zeit-mit-euch",
+  "text": "Versprochen! Vielen Dank für die schöne Zeit mit euch!",
+  "voice": "f"
+ },
+ {
+  "key": "letzte",
+  "text": "letzte",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-der-letzte-tag",
+  "text": "Das ist der letzte Tag.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-werde",
+  "text": "ich werde",
+  "voice": "m"
+ },
+ {
+  "key": "ich-werde-lernen",
+  "text": "Ich werde lernen.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-wuerde-gern",
+  "text": "ich würde gern",
+  "voice": "m"
+ },
+ {
+  "key": "ich-wuerde-gern-reisen",
+  "text": "Ich würde gern reisen.",
+  "voice": "m"
+ },
+ {
+  "key": "versprochen",
+  "text": "versprochen",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-versprochen",
+  "text": "Das ist versprochen.",
   "voice": "m"
  },
  {
@@ -4720,6 +4870,11 @@
   "voice": "m"
  },
  {
+  "key": "ich-heisse-adhi",
+  "text": "Ich heiße Adhi.",
+  "voice": "m"
+ },
+ {
   "key": "die-aepfel-sind-dort-hinten-neben-den-bananen",
   "text": "Die Äpfel sind dort hinten, neben den Bananen.",
   "voice": "m"
@@ -5447,6 +5602,141 @@
  {
   "key": "gern-ist-die-adresse-so-richtig",
   "text": "Gern. Ist die Adresse so richtig?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-moechte-ein-buch-ausleihen",
+  "text": "Ich möchte ein Buch ausleihen.",
+  "voice": "m"
+ },
+ {
+  "key": "haben-sie-einen-bibliotheksausweis",
+  "text": "Haben Sie einen Bibliotheksausweis?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-das-ist-mein-hund",
+  "text": "Ja, das ist mein Hund.",
+  "voice": "m"
+ },
+ {
+  "key": "nein-noch-nicht-wie-bekomme-ich-einen",
+  "text": "Nein, noch nicht. Wie bekomme ich einen?",
+  "voice": "m"
+ },
+ {
+  "key": "das-wetter-ist-gut",
+  "text": "Das Wetter ist gut.",
+  "voice": "m"
+ },
+ {
+  "key": "sie-brauchen-ihren-pass-der-ausweis-kostet-zehn-euro-im-jahr",
+  "text": "Sie brauchen Ihren Pass. Der Ausweis kostet zehn Euro im Jahr.",
+  "voice": "m"
+ },
+ {
+  "key": "gut-hier-ist-mein-pass-vielen-dank",
+  "text": "Gut, hier ist mein Pass. Vielen Dank!",
+  "voice": "m"
+ },
+ {
+  "key": "bitte-sehr-die-buecher-duerfen-sie-vier-wochen-behalten",
+  "text": "Bitte sehr. Die Bücher dürfen Sie vier Wochen behalten.",
+  "voice": "m"
+ },
+ {
+  "key": "danke-wo-finde-ich-die-buecher-fuer-deutschlerner",
+  "text": "Danke! Wo finde ich die Bücher für Deutschlerner?",
+  "voice": "m"
+ },
+ {
+  "key": "guten-tag-suchen-sie-ein-neues-handy",
+  "text": "Guten Tag. Suchen Sie ein neues Handy?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-mein-handy-ist-kaputt-ich-brauche-ein-guenstiges",
+  "text": "Ja, mein Handy ist kaputt. Ich brauche ein günstiges.",
+  "voice": "m"
+ },
+ {
+  "key": "nein-ich-suche-den-bahnhof",
+  "text": "Nein, ich suche den Bahnhof.",
+  "voice": "m"
+ },
+ {
+  "key": "dieses-hier-kostet-hundertneunundvierzig-euro-und-hat-einen-guten-akku",
+  "text": "Dieses hier kostet hundertneunundvierzig Euro und hat einen guten Akku.",
+  "voice": "m"
+ },
+ {
+  "key": "das-gefaellt-mir-gibt-es-dazu-auch-eine-garantie",
+  "text": "Das gefällt mir. Gibt es dazu auch eine Garantie?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-zwei-jahre-garantie-brauchen-sie-auch-einen-vertrag-fuer-das-internet",
+  "text": "Ja, zwei Jahre Garantie. Brauchen Sie auch einen Vertrag für das Internet?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-fahre-mit-dem-zug",
+  "text": "Ich fahre mit dem Zug.",
+  "voice": "m"
+ },
+ {
+  "key": "ja-bitte-was-kostet-der-vertrag-im-monat",
+  "text": "Ja, bitte. Was kostet der Vertrag im Monat?",
+  "voice": "m"
+ },
+ {
+  "key": "zwanzig-euro-im-monat-bitte-unterschreiben-sie-hier",
+  "text": "Zwanzig Euro im Monat. Bitte unterschreiben Sie hier.",
+  "voice": "m"
+ },
+ {
+  "key": "gern-kann-ich-das-handy-heute-mitnehmen",
+  "text": "Gern. Kann ich das Handy heute mitnehmen?",
+  "voice": "m"
+ },
+ {
+  "key": "hallo-willkommen-im-sportstudio-was-kann-ich-fuer-sie-tun",
+  "text": "Hallo! Willkommen im Sportstudio. Was kann ich für Sie tun?",
+  "voice": "f"
+ },
+ {
+  "key": "hallo-ich-moechte-mich-anmelden-was-kostet-die-mitgliedschaft",
+  "text": "Hallo. Ich möchte mich anmelden. Was kostet die Mitgliedschaft?",
+  "voice": "m"
+ },
+ {
+  "key": "die-mitgliedschaft-kostet-dreissig-euro-im-monat",
+  "text": "Die Mitgliedschaft kostet dreißig Euro im Monat.",
+  "voice": "f"
+ },
+ {
+  "key": "kann-ich-vorher-einmal-kostenlos-trainieren",
+  "text": "Kann ich vorher einmal kostenlos trainieren?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-ein-probetraining-ist-kostenlos-wann-haben-sie-zeit",
+  "text": "Ja, ein Probetraining ist kostenlos. Wann haben Sie Zeit?",
+  "voice": "f"
+ },
+ {
+  "key": "am-mittwochabend-haben-sie-da-geoeffnet",
+  "text": "Am Mittwochabend. Haben Sie da geöffnet?",
+  "voice": "m"
+ },
+ {
+  "key": "mittwoch-bis-einundzwanzig-uhr-bringen-sie-bitte-ein-handtuch-mit",
+  "text": "Mittwoch bis einundzwanzig Uhr. Bringen Sie bitte ein Handtuch mit.",
+  "voice": "f"
+ },
+ {
+  "key": "natuerlich-ich-freue-mich-darauf-bis-mittwoch",
+  "text": "Natürlich. Ich freue mich darauf. Bis Mittwoch!",
   "voice": "m"
  },
  {

@@ -45,12 +45,17 @@ const storyText = JSON.stringify(chapters);
 NAMES.forEach((n) => !storyText.includes(n) && bad(`classmate ${n} is not in any story`));
 // everyone should really take part, and nobody should dominate
 const spoken: Record<string, number> = {};
-let spokenTotal = 0;
-chapters.forEach((c) => c.lines.forEach((ln) => { const n = c.speakers[ln.who].name; spoken[n] = (spoken[n] ?? 0) + 1; spokenTotal++; }));
-NAMES.forEach((n) => (spoken[n] ?? 0) < 3 && bad(`classmate ${n} speaks only ${spoken[n] ?? 0} story lines (needs at least 3)`));
-Object.entries(spoken).forEach(([n, k]) => NAMES.includes(n) && k / spokenTotal > 0.12 && bad(`${n} speaks ${Math.round((k / spokenTotal) * 100)}% of all story lines (max 12%)`));
+chapters.forEach((c) => c.lines.forEach((ln) => { const n = c.speakers[ln.who].name; spoken[n] = (spoken[n] ?? 0) + 1; }));
+NAMES.forEach((n) => (spoken[n] ?? 0) < 6 && bad(`classmate ${n} speaks only ${spoken[n] ?? 0} story lines (needs at least 6)`));
+const counts = NAMES.map((n) => spoken[n] ?? 0);
+if (Math.max(...counts) - Math.min(...counts) > 3) bad(`story lines are not equal: ${NAMES.map((n) => `${n} ${spoken[n] ?? 0}`).join(", ")}`);
+NAMES.forEach((n) => {
+  const leads = chapters.filter((c) => c.speakers.a.name === n).length;
+  if (leads !== 1) bad(`${n} leads ${leads} chapters (every classmate should lead exactly one)`);
+  const talks = scenarios.filter((sc) => sc.partner.name === n).length;
+  if (talks !== 1) bad(`${n} is the partner in ${talks} conversation talks (should be exactly one)`);
+});
 scenarios.forEach((sc) => !NAMES.includes(sc.partner.name) && bad(`conversation ${sc.id}: partner "${sc.partner.name}" is not a classmate`));
-if (new Set(scenarios.map((sc) => sc.partner.name)).size < Math.min(scenarios.length, 10)) bad("conversation partners repeat too much");
 const OLD = /\b(Tom|Priya|Nina|Maria|Julia|Anna|Eva|Jan|Katja|Peter|Lisa|Weber|Keller|Braun|Krishnan|Lopez|Müller|Wagner|Lena)\b/;
 const allText = JSON.stringify([chapters, lessons, cards, exams, topics, scenarios]);
 const oldHit = allText.match(OLD);
