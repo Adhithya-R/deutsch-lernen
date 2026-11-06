@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Baloo_Thambi_2, Nunito, Noto_Sans_Tamil } from "next/font/google";
 import { Suspense } from "react";
 import AuthLinks from "@/components/AuthLinks";
-import FooterLinks from "@/components/FooterLinks";
+import SiteFooter from "@/components/SiteFooter";
 import SiteNav from "@/components/SiteNav";
 import ThemeShell from "@/components/ThemeShell";
 import "./globals.css";
@@ -48,7 +48,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               }
             />
           }
-          footer={<FooterLinks />}
+          footer={<SiteFooter />}
         >
           {children}
         </ThemeShell>
