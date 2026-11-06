@@ -1,4 +1,3 @@
-import PageNav from "@/components/PageNav";
 
 export const metadata = { title: "Privacy and notes · மொழி-Brücke" };
 
@@ -35,7 +34,6 @@ export default function PrivacyPage() {
       <p className="mt-2">The stories, exercises and exam practice were written for this app. They are <b>not official papers of the Goethe-Institut</b>. Exam formats and times shown here are approximate, so check them with your teacher and the official sample tests.</p>
       <p className="mt-2">The Tamil and German texts can contain mistakes. If you find one, please use <b>Report a problem</b>.</p>
 
-      <PageNav back={{ href: "/me", label: "Me" }} />
     </main>
   );
 }

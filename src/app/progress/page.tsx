@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Suspense } from "react";
 import GoalPicker from "@/components/GoalPicker";
 import Icon, { type IconName } from "@/components/Icon";
-import PageNav from "@/components/PageNav";
 import ScreenTop from "@/components/ScreenTop";
 import WeekChart from "@/components/WeekChart";
 import { chapters } from "@/content/chapters";
@@ -25,7 +24,6 @@ export default function ProgressPage() {
         <Suspense fallback={<div className="h-64 animate-pulse rounded-3xl bg-white/70" aria-hidden="true" />}>
           <Content />
         </Suspense>
-        <PageNav back={{ href: "/", label: "Home" }} next={{ href: "/flashcards", label: "Words" }} />
       </div>
     </main>
   );

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import { FeedbackForm } from "@/components/AccountForms";
-import PageNav from "@/components/PageNav";
 import { safeNext } from "@/lib/account";
 import { getSession } from "@/lib/supabase/session";
 
@@ -15,7 +14,6 @@ export default function FeedbackPage({ searchParams }: PageProps<"/feedback">) {
       <Suspense fallback={<div className="mt-5 h-64 animate-pulse rounded-3xl bg-white/70" aria-hidden="true" />}>
         <Body searchParams={searchParams} />
       </Suspense>
-      <PageNav back={{ href: "/me", label: "Me" }} />
     </main>
   );
 }

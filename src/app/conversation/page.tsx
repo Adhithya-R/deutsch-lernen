@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Icon from "@/components/Icon";
-import PageNav from "@/components/PageNav";
 import ScreenTop from "@/components/ScreenTop";
 import { scenarios } from "@/content/conversations";
 
@@ -26,7 +25,6 @@ export default function ConversationPage() {
             </li>
           ))}
         </ul>
-        <PageNav back={{ href: "/exam", label: "Exam" }} next={{ href: "/speaking", label: "Speaking" }} />
       </div>
     </main>
   );

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Icon from "@/components/Icon";
-import PageNav from "@/components/PageNav";
 import SpeakButton from "@/components/SpeakButton";
 import { emailSteps, phrases } from "@/content/exam";
 
@@ -57,7 +56,6 @@ export default function EmailCoachPage() {
         <Link href="/exam/a1/writing" className="btn3d">Practise A1 writing</Link>
         <Link href="/exam/a2/writing" className="btn3d btn3d-ghost">Practise A2 writing</Link>
       </div>
-      <PageNav back={{ href: "/exam", label: "Exam" }} next={{ href: "/exam/a1/writing", label: "A1 writing" }} />
     </main>
   );
 }

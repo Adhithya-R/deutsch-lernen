@@ -1,5 +1,4 @@
 import Link from "next/link";
-import PageNav from "@/components/PageNav";
 import ScreenTop from "@/components/ScreenTop";
 import { topics } from "@/content/bruecke";
 
@@ -24,7 +23,6 @@ export default function BrueckePage() {
             </li>
           ))}
         </ul>
-        <PageNav back={{ href: "/exam", label: "Exam" }} next={{ href: "/me", label: "Me" }} />
       </div>
     </main>
   );

@@ -3,7 +3,6 @@ import { Suspense } from "react";
 import { logout } from "@/app/actions";
 import Icon from "@/components/Icon";
 import LangToggle from "@/components/LangToggle";
-import PageNav from "@/components/PageNav";
 import ScreenTop from "@/components/ScreenTop";
 import { getSession } from "@/lib/supabase/session";
 
@@ -56,7 +55,6 @@ export default function MePage() {
           <span className="flex-1">Privacy and notes</span>
           <Icon name="chev" size={20} className="text-muted" />
         </Link>
-        <PageNav back={{ href: "/bruecke", label: "Brücke" }} />
       </div>
     </main>
   );

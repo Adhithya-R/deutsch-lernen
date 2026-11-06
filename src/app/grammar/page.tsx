@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import PageNav from "@/components/PageNav";
 import { LessonRow } from "@/components/Rows";
 import ScreenTop from "@/components/ScreenTop";
 import { lessons } from "@/content/lessons";
@@ -16,7 +15,6 @@ export default function GrammarPage() {
         <Suspense fallback={<List done={[]} />}>
           <Loaded />
         </Suspense>
-        <PageNav back={{ href: "/", label: "Home" }} next={{ href: "/cheatsheets", label: "Cheat sheets" }} />
       </div>
     </main>
   );

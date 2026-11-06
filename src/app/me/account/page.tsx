@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { DeleteForm, NameForm, PasswordForm } from "@/components/AccountForms";
 import Icon from "@/components/Icon";
-import PageNav from "@/components/PageNav";
 import { getSession } from "@/lib/supabase/session";
 
 export const metadata = { title: "Account settings · மொழி-Brücke" };
@@ -14,7 +13,6 @@ export default function AccountPage() {
       <Suspense fallback={<div className="mt-5 h-64 animate-pulse rounded-3xl bg-white/70" aria-hidden="true" />}>
         <Body />
       </Suspense>
-      <PageNav back={{ href: "/me", label: "Me" }} />
     </main>
   );
 }

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Icon from "@/components/Icon";
-import PageNav from "@/components/PageNav";
 import ScreenTop from "@/components/ScreenTop";
 import { exams } from "@/content/exam";
 
@@ -56,7 +55,6 @@ export default function ExamPage() {
         <p className="rounded-2xl bg-white p-3.5 text-sm text-muted shadow-[0_3px_0_var(--color-line)]">
           All practice texts here are written for this app in the style of the exams. For the official format and free sample tests, look for “Modelltest” on the Goethe-Institut website, and ask your teacher.
         </p>
-        <PageNav back={{ href: "/flashcards", label: "Words" }} next={{ href: "/bruecke", label: "Brücke" }} />
       </div>
     </main>
   );

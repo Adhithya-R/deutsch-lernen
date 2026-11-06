@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import Icon from "@/components/Icon";
-import PageNav from "@/components/PageNav";
 import ScreenTop from "@/components/ScreenTop";
 import { cards, decks } from "@/content/vocab";
 import { getSession } from "@/lib/supabase/session";
@@ -18,7 +17,6 @@ export default function FlashcardsPage() {
         <Suspense fallback={<Decks stats={null} loggedIn={false} dueTotal={0} />}>
           <Loader />
         </Suspense>
-        <PageNav back={{ href: "/", label: "Home" }} next={{ href: "/exam", label: "Exam" }} />
       </div>
     </main>
   );

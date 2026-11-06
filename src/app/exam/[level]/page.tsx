@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import PageNav from "@/components/PageNav";
 import Icon, { type IconName } from "@/components/Icon";
 import ScreenTop from "@/components/ScreenTop";
 import { levelOf } from "@/content/exam";
@@ -69,7 +68,6 @@ async function Inner({ params }: { params: PageProps<"/exam/[level]">["params"] 
           ))}
         </ul>
         <p className="text-sm text-muted">Usually about 60% of the points are needed to pass.</p>
-        <PageNav back={{ href: "/exam", label: "Exam" }} next={{ href: `/exam/${e.level}/reading`, label: "Reading" }} />
       </div>
     </main>
   );

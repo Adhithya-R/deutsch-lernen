@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Icon from "@/components/Icon";
-import PageNav from "@/components/PageNav";
 import ScreenTop from "@/components/ScreenTop";
 import { sheets } from "@/content/cheatsheets";
 
@@ -32,7 +31,6 @@ export default function CheatSheetsPage() {
             <Icon name="chev" size={20} className="text-muted" />
           </Link>
         ))}
-        <PageNav back={{ href: "/grammar", label: "Grammar" }} />
       </div>
     </main>
   );
