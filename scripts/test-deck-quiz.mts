@@ -56,3 +56,14 @@ assert.ok(!matchSpeech("aus aus aus aus", "aus").pass, "a repeated word cannot b
 assert.equal(bestMatch("Guten Tag", ["gute nacht", "guten tag"]).score, 1);
 assert.deepEqual(matchSpeech("Wo ist die Bank?", "wo ist bank").words.map((w) => w.ok), [true, true, false, true]);
 console.log("speech match ok");
+
+// ---- progress export ----
+import { buildExport, exportFileName } from "../src/lib/export.ts";
+const ex = buildExport("a@b.c", { profile: { display_name: "Adhi", level: "A1" }, lessons: [{ lesson_slug: "x" }], flashcards: [{}, {}], activity: [{ day: "2026-11-05", xp: 12 }, { day: "2026-11-06", xp: 0 }], quizzes: [], drafts: [] }, new Date("2026-11-06T10:00:00Z"));
+assert.equal(ex.summary.totalXp, 12);
+assert.equal(ex.summary.activeDays, 1);
+assert.equal(ex.summary.wordsStarted, 2);
+assert.equal(ex.account.name, "Adhi");
+assert.equal(exportFileName(new Date("2026-11-06T10:00:00Z")), "moli-bruecke-progress-2026-11-06.json");
+assert.equal(buildExport(undefined, { profile: null, lessons: [], flashcards: [], activity: [], quizzes: [], drafts: [] }).account.email, null);
+console.log("export ok");

@@ -37,10 +37,25 @@ export default function MePage() {
           <span className="flex-1">Study group</span>
           <Icon name="chev" size={20} className="text-muted" />
         </Link>
+        <Suspense fallback={null}>
+          <ExportCard />
+        </Suspense>
         <SetupCheck />
         <PageNav back={{ href: "/bruecke", label: "Brücke" }} />
       </div>
     </main>
+  );
+}
+
+async function ExportCard() {
+  const { userId } = await getSession();
+  if (!userId) return null;
+  return (
+    <section className={card}>
+      <h2 className="text-lg font-extrabold">Backup</h2>
+      <p className="mb-3 mt-1 text-sm text-muted">Download a copy of your progress: chapters, flashcards, quiz scores, XP and writing drafts.</p>
+      <a href="/me/export" download className="btn3d btn3d-ghost">Download my progress</a>
+    </section>
   );
 }
 
