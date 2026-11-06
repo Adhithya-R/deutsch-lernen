@@ -1840,6 +1840,416 @@
   "voice": "m"
  },
  {
+  "key": "der-kurs",
+  "text": "der Kurs",
+  "voice": "m"
+ },
+ {
+  "key": "der-kurs-beginnt-am-montag",
+  "text": "Der Kurs beginnt am Montag.",
+  "voice": "m"
+ },
+ {
+  "key": "die-lehrerin",
+  "text": "die Lehrerin",
+  "voice": "m"
+ },
+ {
+  "key": "die-lehrerin-erklaert-die-grammatik",
+  "text": "Die Lehrerin erklärt die Grammatik.",
+  "voice": "m"
+ },
+ {
+  "key": "die-pruefung",
+  "text": "die Prüfung",
+  "voice": "m"
+ },
+ {
+  "key": "die-pruefung-ist-im-dezember",
+  "text": "Die Prüfung ist im Dezember.",
+  "voice": "m"
+ },
+ {
+  "key": "die-hausaufgabe",
+  "text": "die Hausaufgabe",
+  "voice": "m"
+ },
+ {
+  "key": "ich-mache-meine-hausaufgabe",
+  "text": "Ich mache meine Hausaufgabe.",
+  "voice": "m"
+ },
+ {
+  "key": "der-test",
+  "text": "der Test",
+  "voice": "m"
+ },
+ {
+  "key": "morgen-schreiben-wir-einen-test",
+  "text": "Morgen schreiben wir einen Test.",
+  "voice": "m"
+ },
+ {
+  "key": "die-note",
+  "text": "die Note",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-eine-gute-note",
+  "text": "Ich habe eine gute Note.",
+  "voice": "m"
+ },
+ {
+  "key": "die-uebung",
+  "text": "die Übung",
+  "voice": "m"
+ },
+ {
+  "key": "die-uebung-ist-leicht",
+  "text": "Die Übung ist leicht.",
+  "voice": "m"
+ },
+ {
+  "key": "das-heft",
+  "text": "das Heft",
+  "voice": "m"
+ },
+ {
+  "key": "ich-schreibe-ins-heft",
+  "text": "Ich schreibe ins Heft.",
+  "voice": "m"
+ },
+ {
+  "key": "der-stift",
+  "text": "der Stift",
+  "voice": "m"
+ },
+ {
+  "key": "hast-du-einen-stift",
+  "text": "Hast du einen Stift?",
+  "voice": "m"
+ },
+ {
+  "key": "das-woerterbuch",
+  "text": "das Wörterbuch",
+  "voice": "m"
+ },
+ {
+  "key": "ich-suche-das-wort-im-woerterbuch",
+  "text": "Ich suche das Wort im Wörterbuch.",
+  "voice": "m"
+ },
+ {
+  "key": "der-teller",
+  "text": "der Teller",
+  "voice": "m"
+ },
+ {
+  "key": "der-teller-ist-sauber",
+  "text": "Der Teller ist sauber.",
+  "voice": "m"
+ },
+ {
+  "key": "die-tasse",
+  "text": "die Tasse",
+  "voice": "m"
+ },
+ {
+  "key": "eine-tasse-tee-bitte",
+  "text": "Eine Tasse Tee, bitte.",
+  "voice": "m"
+ },
+ {
+  "key": "das-glas",
+  "text": "das Glas",
+  "voice": "m"
+ },
+ {
+  "key": "ein-glas-wasser-bitte",
+  "text": "Ein Glas Wasser, bitte.",
+  "voice": "m"
+ },
+ {
+  "key": "der-loeffel",
+  "text": "der Löffel",
+  "voice": "m"
+ },
+ {
+  "key": "ich-esse-die-suppe-mit-dem-loeffel",
+  "text": "Ich esse die Suppe mit dem Löffel.",
+  "voice": "m"
+ },
+ {
+  "key": "die-gabel",
+  "text": "die Gabel",
+  "voice": "m"
+ },
+ {
+  "key": "die-gabel-liegt-links",
+  "text": "Die Gabel liegt links.",
+  "voice": "m"
+ },
+ {
+  "key": "das-messer",
+  "text": "das Messer",
+  "voice": "m"
+ },
+ {
+  "key": "das-messer-ist-scharf",
+  "text": "Das Messer ist scharf.",
+  "voice": "m"
+ },
+ {
+  "key": "die-pfanne",
+  "text": "die Pfanne",
+  "voice": "m"
+ },
+ {
+  "key": "die-pfanne-ist-heiss",
+  "text": "Die Pfanne ist heiß.",
+  "voice": "m"
+ },
+ {
+  "key": "der-herd",
+  "text": "der Herd",
+  "voice": "m"
+ },
+ {
+  "key": "der-herd-ist-an",
+  "text": "Der Herd ist an.",
+  "voice": "m"
+ },
+ {
+  "key": "der-kuehlschrank",
+  "text": "der Kühlschrank",
+  "voice": "m"
+ },
+ {
+  "key": "die-milch-ist-im-kuehlschrank",
+  "text": "Die Milch ist im Kühlschrank.",
+  "voice": "m"
+ },
+ {
+  "key": "das-rezept",
+  "text": "das Rezept",
+  "voice": "m"
+ },
+ {
+  "key": "ich-brauche-das-rezept-fuer-idli",
+  "text": "Ich brauche das Rezept für Idli.",
+  "voice": "m"
+ },
+ {
+  "key": "der-hund",
+  "text": "der Hund",
+  "voice": "m"
+ },
+ {
+  "key": "der-hund-spielt-im-park",
+  "text": "Der Hund spielt im Park.",
+  "voice": "m"
+ },
+ {
+  "key": "die-katze",
+  "text": "die Katze",
+  "voice": "m"
+ },
+ {
+  "key": "die-katze-schlaeft",
+  "text": "Die Katze schläft.",
+  "voice": "m"
+ },
+ {
+  "key": "der-vogel",
+  "text": "der Vogel",
+  "voice": "m"
+ },
+ {
+  "key": "der-vogel-singt",
+  "text": "Der Vogel singt.",
+  "voice": "m"
+ },
+ {
+  "key": "der-baum",
+  "text": "der Baum",
+  "voice": "m"
+ },
+ {
+  "key": "der-baum-ist-sehr-alt",
+  "text": "Der Baum ist sehr alt.",
+  "voice": "m"
+ },
+ {
+  "key": "die-blume",
+  "text": "die Blume",
+  "voice": "m"
+ },
+ {
+  "key": "die-blume-ist-schoen",
+  "text": "Die Blume ist schön.",
+  "voice": "m"
+ },
+ {
+  "key": "der-fluss",
+  "text": "der Fluss",
+  "voice": "m"
+ },
+ {
+  "key": "der-fluss-ist-lang",
+  "text": "Der Fluss ist lang.",
+  "voice": "m"
+ },
+ {
+  "key": "der-see",
+  "text": "der See",
+  "voice": "m"
+ },
+ {
+  "key": "wir-schwimmen-im-see",
+  "text": "Wir schwimmen im See.",
+  "voice": "m"
+ },
+ {
+  "key": "der-berg",
+  "text": "der Berg",
+  "voice": "m"
+ },
+ {
+  "key": "der-berg-ist-hoch",
+  "text": "Der Berg ist hoch.",
+  "voice": "m"
+ },
+ {
+  "key": "das-meer",
+  "text": "das Meer",
+  "voice": "m"
+ },
+ {
+  "key": "das-meer-ist-blau",
+  "text": "Das Meer ist blau.",
+  "voice": "m"
+ },
+ {
+  "key": "der-wald",
+  "text": "der Wald",
+  "voice": "m"
+ },
+ {
+  "key": "wir-gehen-im-wald-spazieren",
+  "text": "Wir gehen im Wald spazieren.",
+  "voice": "m"
+ },
+ {
+  "key": "aufstehen",
+  "text": "aufstehen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-stehe-um-sechs-uhr-auf",
+  "text": "Ich stehe um sechs Uhr auf.",
+  "voice": "m"
+ },
+ {
+  "key": "fruehstuecken",
+  "text": "frühstücken",
+  "voice": "m"
+ },
+ {
+  "key": "wir-fruehstuecken-zusammen",
+  "text": "Wir frühstücken zusammen.",
+  "voice": "m"
+ },
+ {
+  "key": "duschen",
+  "text": "duschen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-dusche-am-morgen",
+  "text": "Ich dusche am Morgen.",
+  "voice": "m"
+ },
+ {
+  "key": "sich-anziehen",
+  "text": "sich anziehen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-ziehe-mich-schnell-an",
+  "text": "Ich ziehe mich schnell an.",
+  "voice": "m"
+ },
+ {
+  "key": "schlafen",
+  "text": "schlafen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-schlafe-acht-stunden",
+  "text": "Ich schlafe acht Stunden.",
+  "voice": "m"
+ },
+ {
+  "key": "morgens",
+  "text": "morgens",
+  "voice": "m"
+ },
+ {
+  "key": "morgens-trinke-ich-tee",
+  "text": "Morgens trinke ich Tee.",
+  "voice": "m"
+ },
+ {
+  "key": "abends",
+  "text": "abends",
+  "voice": "m"
+ },
+ {
+  "key": "abends-lerne-ich-deutsch",
+  "text": "Abends lerne ich Deutsch.",
+  "voice": "m"
+ },
+ {
+  "key": "immer",
+  "text": "immer",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bin-immer-puenktlich",
+  "text": "Ich bin immer pünktlich.",
+  "voice": "m"
+ },
+ {
+  "key": "oft",
+  "text": "oft",
+  "voice": "m"
+ },
+ {
+  "key": "wir-treffen-uns-oft",
+  "text": "Wir treffen uns oft.",
+  "voice": "m"
+ },
+ {
+  "key": "manchmal",
+  "text": "manchmal",
+  "voice": "m"
+ },
+ {
+  "key": "manchmal-koche-ich-idli",
+  "text": "Manchmal koche ich Idli.",
+  "voice": "m"
+ },
+ {
+  "key": "nie",
+  "text": "nie",
+  "voice": "m"
+ },
+ {
+  "key": "ich-trinke-nie-bier",
+  "text": "Ich trinke nie Bier.",
+  "voice": "m"
+ },
+ {
   "key": "guten-tag-ihren-pass-bitte",
   "text": "Guten Tag! Ihren Pass, bitte.",
   "voice": "m"
@@ -4715,6 +5125,331 @@
   "voice": "m"
  },
  {
+  "key": "guten-tag-wohin-moechten-sie-fahren",
+  "text": "Guten Tag. Wohin möchten Sie fahren?",
+  "voice": "m"
+ },
+ {
+  "key": "zum-marienplatz-bitte-was-kostet-die-fahrkarte",
+  "text": "Zum Marienplatz, bitte. Was kostet die Fahrkarte?",
+  "voice": "m"
+ },
+ {
+  "key": "eine-fahrt-kostet-drei-euro",
+  "text": "Eine Fahrt kostet drei Euro.",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-ein-hund",
+  "text": "Das ist ein Hund.",
+  "voice": "m"
+ },
+ {
+  "key": "hier-sind-drei-euro-danke",
+  "text": "Hier sind drei Euro. Danke!",
+  "voice": "m"
+ },
+ {
+  "key": "bitte-sehr-setzen-sie-sich-doch",
+  "text": "Bitte sehr. Setzen Sie sich doch.",
+  "voice": "m"
+ },
+ {
+  "key": "wie-viele-haltestellen-sind-es-noch",
+  "text": "Wie viele Haltestellen sind es noch?",
+  "voice": "m"
+ },
+ {
+  "key": "noch-vier-haltestellen-ich-sage-ihnen-bescheid",
+  "text": "Noch vier Haltestellen. Ich sage Ihnen Bescheid.",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-sehr-nett-vielen-dank",
+  "text": "Das ist sehr nett. Vielen Dank!",
+  "voice": "m"
+ },
+ {
+  "key": "hallo-am-samstag-habe-ich-geburtstag-hast-du-zeit",
+  "text": "Hallo! Am Samstag habe ich Geburtstag. Hast du Zeit?",
+  "voice": "f"
+ },
+ {
+  "key": "ja-sehr-gern-wann-beginnt-die-feier",
+  "text": "Ja, sehr gern! Wann beginnt die Feier?",
+  "voice": "m"
+ },
+ {
+  "key": "nein-ich-bin-muede",
+  "text": "Nein, ich bin müde.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-keinen-hunger",
+  "text": "Ich habe keinen Hunger.",
+  "voice": "m"
+ },
+ {
+  "key": "um-sechs-uhr-bei-mir-zu-hause",
+  "text": "Um sechs Uhr bei mir zu Hause.",
+  "voice": "f"
+ },
+ {
+  "key": "super-soll-ich-etwas-mitbringen",
+  "text": "Super! Soll ich etwas mitbringen?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-bring-bitte-einen-salat-mit",
+  "text": "Ja, bring bitte einen Salat mit.",
+  "voice": "f"
+ },
+ {
+  "key": "ich-habe-einen-termin-beim-arzt",
+  "text": "Ich habe einen Termin beim Arzt.",
+  "voice": "m"
+ },
+ {
+  "key": "gern-ich-mache-einen-salat-mit-tomaten",
+  "text": "Gern. Ich mache einen Salat mit Tomaten.",
+  "voice": "m"
+ },
+ {
+  "key": "wunderbar-dann-bis-samstag",
+  "text": "Wunderbar! Dann bis Samstag.",
+  "voice": "f"
+ },
+ {
+  "key": "bis-samstag-ich-freue-mich-schon",
+  "text": "Bis Samstag! Ich freue mich schon.",
+  "voice": "m"
+ },
+ {
+  "key": "guten-tag-haben-sie-einen-termin",
+  "text": "Guten Tag! Haben Sie einen Termin?",
+  "voice": "f"
+ },
+ {
+  "key": "ja-um-vierzehn-uhr-ich-moechte-einen-haarschnitt",
+  "text": "Ja, um vierzehn Uhr. Ich möchte einen Haarschnitt.",
+  "voice": "m"
+ },
+ {
+  "key": "nein-ich-moechte-ein-brot",
+  "text": "Nein, ich möchte ein Brot.",
+  "voice": "m"
+ },
+ {
+  "key": "gern-wie-moechten-sie-die-haare-haben",
+  "text": "Gern. Wie möchten Sie die Haare haben?",
+  "voice": "f"
+ },
+ {
+  "key": "nur-ein-bisschen-kuerzer-bitte",
+  "text": "Nur ein bisschen kürzer, bitte.",
+  "voice": "m"
+ },
+ {
+  "key": "ist-die-laenge-so-richtig",
+  "text": "Ist die Länge so richtig?",
+  "voice": "f"
+ },
+ {
+  "key": "nein-ich-habe-hunger",
+  "text": "Nein, ich habe Hunger.",
+  "voice": "m"
+ },
+ {
+  "key": "das-wetter-ist-kalt",
+  "text": "Das Wetter ist kalt.",
+  "voice": "m"
+ },
+ {
+  "key": "ja-das-ist-perfekt-vielen-dank",
+  "text": "Ja, das ist perfekt. Vielen Dank!",
+  "voice": "m"
+ },
+ {
+  "key": "das-macht-fuenfundzwanzig-euro",
+  "text": "Das macht fünfundzwanzig Euro.",
+  "voice": "f"
+ },
+ {
+  "key": "bitte-schoen-stimmt-so",
+  "text": "Bitte schön. Stimmt so!",
+  "voice": "m"
+ },
+ {
+  "key": "praxis-doktor-sudha-guten-tag-was-kann-ich-fuer-sie-tun",
+  "text": "Praxis Doktor Sudha, guten Tag. Was kann ich für Sie tun?",
+  "voice": "m"
+ },
+ {
+  "key": "guten-tag-ich-brauche-einen-termin-bitte",
+  "text": "Guten Tag. Ich brauche einen Termin, bitte.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-moechte-eine-pizza",
+  "text": "Ich möchte eine Pizza.",
+  "voice": "m"
+ },
+ {
+  "key": "haben-sie-schmerzen-oder-ist-es-nur-eine-kontrolle",
+  "text": "Haben Sie Schmerzen oder ist es nur eine Kontrolle?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-seit-drei-tagen-rueckenschmerzen",
+  "text": "Ich habe seit drei Tagen Rückenschmerzen.",
+  "voice": "m"
+ },
+ {
+  "key": "das-tut-mir-leid-passt-ihnen-dienstag-um-neun-uhr",
+  "text": "Das tut mir leid. Passt Ihnen Dienstag um neun Uhr?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-das-ist-ein-hund",
+  "text": "Ja, das ist ein Hund.",
+  "voice": "m"
+ },
+ {
+  "key": "dienstag-geht-gut-um-neun-uhr-bin-ich-da",
+  "text": "Dienstag geht gut. Um neun Uhr bin ich da.",
+  "voice": "m"
+ },
+ {
+  "key": "bitte-bringen-sie-ihre-versichertenkarte-mit",
+  "text": "Bitte bringen Sie Ihre Versichertenkarte mit.",
+  "voice": "m"
+ },
+ {
+  "key": "natuerlich-vielen-dank-und-auf-wiederhoeren",
+  "text": "Natürlich. Vielen Dank und auf Wiederhören!",
+  "voice": "m"
+ },
+ {
+  "key": "ich-moechte-einen-kuchen",
+  "text": "Ich möchte einen Kuchen.",
+  "voice": "m"
+ },
+ {
+  "key": "ja-ich-moechte-dieses-hemd-umtauschen-es-ist-zu-klein",
+  "text": "Ja, ich möchte dieses Hemd umtauschen. Es ist zu klein.",
+  "voice": "m"
+ },
+ {
+  "key": "haben-sie-den-kassenzettel-dabei",
+  "text": "Haben Sie den Kassenzettel dabei?",
+  "voice": "m"
+ },
+ {
+  "key": "nein-ich-wohne-in-berlin",
+  "text": "Nein, ich wohne in Berlin.",
+  "voice": "m"
+ },
+ {
+  "key": "ja-hier-ist-er-ich-habe-das-hemd-gestern-gekauft",
+  "text": "Ja, hier ist er. Ich habe das Hemd gestern gekauft.",
+  "voice": "m"
+ },
+ {
+  "key": "welche-groesse-moechten-sie-jetzt",
+  "text": "Welche Größe möchten Sie jetzt?",
+  "voice": "m"
+ },
+ {
+  "key": "eine-nummer-groesser-bitte-haben-sie-das-hemd-auch-in-blau",
+  "text": "Eine Nummer größer, bitte. Haben Sie das Hemd auch in Blau?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-hier-das-hemd-in-blau-ist-gleich-teuer-passt-es-ihnen",
+  "text": "Ja, hier. Das Hemd in Blau ist gleich teuer. Passt es Ihnen?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-es-passt-gut-ich-nehme-es-danke",
+  "text": "Ja, es passt gut. Ich nehme es. Danke!",
+  "voice": "m"
+ },
+ {
+  "key": "nein-ich-verstehe-nicht",
+  "text": "Nein, ich verstehe nicht.",
+  "voice": "m"
+ },
+ {
+  "key": "das-fenster-ist-offen",
+  "text": "Das Fenster ist offen.",
+  "voice": "m"
+ },
+ {
+  "key": "guten-tag-was-moechten-sie-schicken",
+  "text": "Guten Tag. Was möchten Sie schicken?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-moechte-ein-paket-nach-indien-schicken",
+  "text": "Ich möchte ein Paket nach Indien schicken.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-moechte-ein-glas-wasser",
+  "text": "Ich möchte ein Glas Wasser.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-suche-ein-kino",
+  "text": "Ich suche ein Kino.",
+  "voice": "m"
+ },
+ {
+  "key": "was-ist-in-dem-paket-und-wie-schwer-ist-es",
+  "text": "Was ist in dem Paket? Und wie schwer ist es?",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-mein-freund",
+  "text": "Das ist mein Freund.",
+  "voice": "m"
+ },
+ {
+  "key": "es-sind-buecher-und-kleidung-es-wiegt-vier-kilo",
+  "text": "Es sind Bücher und Kleidung. Es wiegt vier Kilo.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-heute-geburtstag",
+  "text": "Ich habe heute Geburtstag.",
+  "voice": "m"
+ },
+ {
+  "key": "dann-kostet-es-vierunddreissig-euro-moechten-sie-es-versichern",
+  "text": "Dann kostet es vierunddreißig Euro. Möchten Sie es versichern?",
+  "voice": "m"
+ },
+ {
+  "key": "nein-ich-fahre-mit-dem-bus",
+  "text": "Nein, ich fahre mit dem Bus.",
+  "voice": "m"
+ },
+ {
+  "key": "ja-bitte-wie-lange-dauert-es-bis-madurai",
+  "text": "Ja, bitte. Wie lange dauert es bis Madurai?",
+  "voice": "m"
+ },
+ {
+  "key": "etwa-zehn-bis-vierzehn-tage-bitte-schreiben-sie-hier-die-adresse-auf",
+  "text": "Etwa zehn bis vierzehn Tage. Bitte schreiben Sie hier die Adresse auf.",
+  "voice": "m"
+ },
+ {
+  "key": "gern-ist-die-adresse-so-richtig",
+  "text": "Gern. Ist die Adresse so richtig?",
+  "voice": "m"
+ },
+ {
   "key": "das-broetchen",
   "text": "das Brötchen",
   "voice": "m"
@@ -4822,11 +5557,6 @@
  {
   "key": "prost",
   "text": "Prost!",
-  "voice": "m"
- },
- {
-  "key": "aufstehen",
-  "text": "aufstehen",
   "voice": "m"
  },
  {
@@ -4975,11 +5705,6 @@
   "voice": "m"
  },
  {
-  "key": "die-note",
-  "text": "die Note",
-  "voice": "m"
- },
- {
   "key": "bestanden",
   "text": "bestanden",
   "voice": "m"
@@ -4987,11 +5712,6 @@
  {
   "key": "der-deutschkurs",
   "text": "der Deutschkurs",
-  "voice": "m"
- },
- {
-  "key": "die-hausaufgabe",
-  "text": "die Hausaufgabe",
   "voice": "m"
  },
  {
