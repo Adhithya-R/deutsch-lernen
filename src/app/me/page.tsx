@@ -26,6 +26,11 @@ export default function MePage() {
           <LangToggle />
         </section>
 
+        <Link href="/me/account" className={`${card} flex items-center gap-3 font-extrabold`}>
+          <Icon name="user" size={22} className="text-pri" />
+          <span className="flex-1">Account settings</span>
+          <Icon name="chev" size={20} className="text-muted" />
+        </Link>
         <Link href="/progress" className={`${card} flex items-center gap-3 font-extrabold`}>
           <Icon name="star" size={22} className="text-pri" />
           <span className="flex-1">My level &amp; progress</span>
@@ -39,6 +44,16 @@ export default function MePage() {
         <Link href="/group" className={`${card} flex items-center gap-3 font-extrabold`}>
           <Icon name="users" size={22} className="text-pri" />
           <span className="flex-1">Study group</span>
+          <Icon name="chev" size={20} className="text-muted" />
+        </Link>
+        <Link href="/feedback?from=/me" className={`${card} flex items-center gap-3 font-extrabold`}>
+          <Icon name="info" size={22} className="text-pri" />
+          <span className="flex-1">Report a problem</span>
+          <Icon name="chev" size={20} className="text-muted" />
+        </Link>
+        <Link href="/privacy" className={`${card} flex items-center gap-3 font-extrabold`}>
+          <Icon name="doc" size={22} className="text-pri" />
+          <span className="flex-1">Privacy and notes</span>
           <Icon name="chev" size={20} className="text-muted" />
         </Link>
         <PageNav back={{ href: "/bruecke", label: "Brücke" }} />

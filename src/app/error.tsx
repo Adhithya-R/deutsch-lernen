@@ -10,6 +10,7 @@ export default function ErrorPage({ reset }: { error: Error; reset: () => void }
       <div className="mt-6 grid gap-3">
         <button onClick={reset} className="btn3d">Try again</button>
         <Link href="/" className="btn3d btn3d-ghost">Home</Link>
+        <Link href="/feedback" className="text-sm font-extrabold text-pri underline">Report this problem</Link>
       </div>
     </main>
   );

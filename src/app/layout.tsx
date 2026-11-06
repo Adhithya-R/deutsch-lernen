@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Baloo_Thambi_2, Nunito, Noto_Sans_Tamil } from "next/font/google";
 import { Suspense } from "react";
 import AuthLinks from "@/components/AuthLinks";
+import FooterLinks from "@/components/FooterLinks";
 import SiteNav from "@/components/SiteNav";
 import ThemeShell from "@/components/ThemeShell";
 import "./globals.css";
@@ -47,11 +48,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               }
             />
           }
-          footer={
-            <footer className="mt-12 hidden border-t-2 border-line bg-white py-6 text-center text-sm text-muted lg:block">
-              <span lang="ta">மொழி</span>-Brücke · A bridge from Tamil to German · Made for our study group
-            </footer>
-          }
+          footer={<FooterLinks />}
         >
           {children}
         </ThemeShell>

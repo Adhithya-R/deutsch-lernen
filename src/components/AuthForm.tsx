@@ -42,6 +42,10 @@ export default function AuthForm({ mode }: { mode: "login" | "signup" }) {
             required
           />
         </label>
+        {isLogin && (
+          <p className="text-right text-sm"><Link href="/forgot-password" className="font-semibold text-pri underline">Forgot your password?</Link></p>
+        )}
+        {!isLogin && <p className="text-xs text-muted">By signing up you accept the notes on <Link href="/privacy" className="font-semibold text-pri underline">privacy and the learning material</Link>.</p>}
         {state?.error && <p role="alert" className="text-sm font-medium text-bad">{state.error}</p>}
         <button disabled={pending} className="btn3d">
           {pending ? "Please wait…" : isLogin ? "Log in" : "Sign up"}

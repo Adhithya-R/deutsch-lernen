@@ -117,3 +117,28 @@ assert.equal(nextLeague(400), null);
 assert.deepEqual(podium([{ name: "A", xp: 30 }, { name: "B", xp: 90 }, { name: "C", xp: 90 }, { name: "D", xp: 10 }, { name: "E", xp: 0 }]).map((r) => `${r.place}${r.name}`), ["1B", "1C", "3A"], "ties share a place; places after the third are cut");
 assert.deepEqual(podium([]), []);
 console.log("league ok");
+
+// ---- account checks ----
+import { checkEmail, checkFeedback, checkName, checkNewPassword, confirmsDelete, safeNext } from "../src/lib/account.ts";
+assert.equal(checkName("  Adhi  "), null);
+assert.ok(checkName("A"));
+assert.ok(checkName("x".repeat(41)));
+assert.ok(checkName("<b>hi</b>"));
+assert.equal(checkEmail("a@b.co"), null);
+assert.ok(checkEmail("a@b"));
+assert.ok(checkEmail("no spaces@x.com"));
+assert.equal(checkNewPassword("abcdefgh", "abcdefgh"), null);
+assert.ok(checkNewPassword("short", "short"));
+assert.ok(checkNewPassword("abcdefgh", "abcdefgX"));
+assert.ok(checkNewPassword(" abcdefgh", " abcdefgh"));
+assert.ok(checkNewPassword("a".repeat(73), "a".repeat(73)));
+assert.equal(checkFeedback("Audio does not play"), null);
+assert.ok(checkFeedback("hi"));
+assert.ok(checkFeedback("x".repeat(1001)));
+assert.equal(safeNext("/reset-password"), "/reset-password");
+assert.equal(safeNext("//evil.com"), "/");
+assert.equal(safeNext("https://evil.com"), "/");
+assert.equal(safeNext("/\\evil.com"), "/");
+assert.equal(safeNext(null), "/");
+assert.ok(confirmsDelete(" delete ") && !confirmsDelete("del"));
+console.log("account checks ok");

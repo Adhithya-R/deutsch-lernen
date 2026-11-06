@@ -1,15 +1,17 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { chapterBySlug, doneKey, markChapter } from "@/content/chapters";
 import { cards } from "@/content/vocab";
 import { plausibleDay } from "@/lib/activity";
+import { checkEmail, checkFeedback, checkName, checkNewPassword, cleanName, confirmsDelete, safeNext } from "@/lib/account";
 import { NEW_CARD, review, type CardState, type Grade } from "@/lib/srs";
 import { createClient } from "@/lib/supabase/server";
 import { getSession } from "@/lib/supabase/session";
 
-export type FormState = { error?: string } | undefined;
+export type FormState = { error?: string; notice?: string } | undefined;
 
 /** What every save reports back, so the screen can say "+3 XP" or explain what went wrong. */
 export type SaveResult = { ok: boolean; xp: number; error?: string };
@@ -20,7 +22,7 @@ function explain(error: { code?: string; message?: string } | null | undefined):
   if (!error) return "Could not save.";
   const text = `${error.code ?? ""} ${error.message ?? ""}`;
   if (/42P01|PGRST20[45]|does not exist|schema cache|Could not find/i.test(text)) {
-    return "The database is not set up yet. Run supabase/setup.sql in Supabase, then check Me > Setup check.";
+    return "The database is not set up yet. Run supabase/setup.sql in the Supabase SQL editor.";
   }
   return "Could not save. Check your connection and try again.";
 }
@@ -34,14 +36,13 @@ export async function signup(_: FormState, formData: FormData): Promise<FormStat
   const invite = String(formData.get("invite") ?? "").trim();
 
   if (!process.env.INVITE_CODE || invite !== process.env.INVITE_CODE) {
-    return { error: "Wrong invite code. Ask Adhi for the code." };
+    return { error: "Wrong invite code. Ask the person who invited you." };
   }
-  if (!name || !email || password.length < 8) {
-    return { error: "Enter your name, email and a password of at least 8 characters." };
-  }
+  const bad = checkName(name) ?? checkEmail(email) ?? checkNewPassword(password, password);
+  if (bad) return { error: bad };
 
   const supabase = await createClient();
-  const { data, error } = await supabase.auth.signUp({ email, password, options: { data: { display_name: name } } });
+  const { data, error } = await supabase.auth.signUp({ email, password, options: { data: { display_name: cleanName(name) } } });
   if (error) return { error: error.message };
   if (!data.session) return { error: "Account created. Check your email to confirm it, then log in." };
   redirect("/");
@@ -55,6 +56,80 @@ export async function login(_: FormState, formData: FormData): Promise<FormState
   });
   if (error) return { error: "Wrong email or password." };
   redirect("/");
+}
+
+/* ----------------------- forgot password, account settings ---------------------- */
+
+async function siteUrl(): Promise<string> {
+  if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "");
+  const h = await headers();
+  const host = h.get("x-forwarded-host") ?? h.get("host") ?? "localhost:3000";
+  const proto = h.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
+  return `${proto}://${host}`;
+}
+
+/** Sends the reset link. The answer is always the same, so nobody can find out who has an account. */
+export async function requestReset(_: FormState, formData: FormData): Promise<FormState> {
+  const email = String(formData.get("email") ?? "").trim();
+  const bad = checkEmail(email);
+  if (bad) return { error: bad };
+  const supabase = await createClient();
+  const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: `${await siteUrl()}/auth/callback?next=/reset-password` });
+  if (error && (error.status === 429 || /rate|too many|seconds/i.test(error.message))) {
+    return { error: "Too many emails were sent just now. Please wait a few minutes and try again, or ask the group admin to reset your password." };
+  }
+  return { notice: "If an account exists for this email, a link to choose a new password is on its way. Open it on this same device and browser. Check the spam folder too." };
+}
+
+export async function updatePassword(_: FormState, formData: FormData): Promise<FormState> {
+  const bad = checkNewPassword(String(formData.get("password") ?? ""), String(formData.get("confirm") ?? ""));
+  if (bad) return { error: bad };
+  const { supabase, userId } = await getSession();
+  if (!userId) return { error: "This link has expired. Please request a new one." };
+  const { error } = await supabase.auth.updateUser({ password: String(formData.get("password")) });
+  if (error) {
+    return { error: /same|different/i.test(error.message) ? "Choose a password you have not used before." : "Could not change the password. Try again." };
+  }
+  return { notice: "Your password was changed." };
+}
+
+export async function updateName(_: FormState, formData: FormData): Promise<FormState> {
+  const name = cleanName(String(formData.get("name") ?? ""));
+  const bad = checkName(name);
+  if (bad) return { error: bad };
+  const { supabase, userId } = await getSession();
+  if (!userId) return { error: "Log in first." };
+  const { error } = await supabase.from("profiles").update({ display_name: name }).eq("id", userId);
+  if (error) return { error: explain(error) };
+  await supabase.auth.updateUser({ data: { display_name: name } });
+  revalidatePath("/", "layout");
+  return { notice: "Your name was saved." };
+}
+
+/** Removes the account and all its data for good. Needs the DELETE confirmation and the SQL function from setup.sql. */
+export async function deleteAccount(_: FormState, formData: FormData): Promise<FormState> {
+  if (!confirmsDelete(String(formData.get("confirm") ?? ""))) return { error: "Type DELETE (in capital letters) to confirm." };
+  const { supabase, userId } = await getSession();
+  if (!userId) return { error: "Log in first." };
+  const { error } = await supabase.rpc("delete_my_account");
+  if (error) {
+    return { error: /42883|PGRST202|does not exist|schema cache|Could not find/i.test(`${error.code} ${error.message}`) ? "Deleting is not set up yet. Please ask the group admin." : "Could not delete the account. Try again." };
+  }
+  await supabase.auth.signOut();
+  redirect("/?deleted=1");
+}
+
+/** A problem report from a logged-in learner. The owner reads them in the Supabase dashboard. */
+export async function sendFeedback(_: FormState, formData: FormData): Promise<FormState> {
+  const message = String(formData.get("message") ?? "");
+  const bad = checkFeedback(message);
+  if (bad) return { error: bad };
+  const { supabase, userId } = await getSession();
+  if (!userId) return { error: "Log in to send a report, so we can answer you." };
+  const page = safeNext(String(formData.get("page") ?? ""), "").slice(0, 200);
+  const { error } = await supabase.from("feedback").insert({ user_id: userId, page, message: message.trim() });
+  if (error) return { error: explain(error) };
+  return { notice: "Thank you! Your report was sent." };
 }
 
 export async function logout() {
@@ -204,7 +279,7 @@ export async function checkSetup(day: string) {
   const { supabase, userId } = await getSession();
   if (!userId) return { loggedIn: false, items: [] as { name: string; ok: boolean }[] };
 
-  const tables = ["profiles", "lesson_progress", "flashcard_state", "daily_activity", "quiz_results", "writing_drafts"];
+  const tables = ["profiles", "lesson_progress", "flashcard_state", "daily_activity", "quiz_results", "writing_drafts", "feedback"];
   const items: { name: string; ok: boolean }[] = [];
   for (const t of tables) {
     const { error } = await supabase.from(t).select("*", { head: true, count: "exact" });

@@ -196,3 +196,34 @@ $$;
 
 revoke all on function public.last_week_leaderboard() from public, anon;
 grant execute on function public.last_week_leaderboard() to authenticated;
+
+-- ---------- problem reports from learners (only the owner can read them, in the dashboard) ----------
+create table if not exists public.feedback (
+  id bigint generated always as identity primary key,
+  user_id uuid references auth.users(id) on delete set null,
+  page text not null default '',
+  message text not null check (char_length(message) between 5 and 1000),
+  created_at timestamptz not null default now()
+);
+alter table public.feedback enable row level security;
+drop policy if exists "feedback_insert_own" on public.feedback;
+create policy "feedback_insert_own" on public.feedback for insert to authenticated with check (auth.uid() = user_id);
+-- no select policy on purpose: learners cannot read reports. Open Table Editor -> feedback to read them.
+
+-- ---------- a learner can delete their own account (and with it all their data) ----------
+create or replace function public.delete_my_account()
+returns void
+language plpgsql
+security definer
+set search_path = ''
+as $$
+begin
+  if auth.uid() is null then
+    raise exception 'not logged in';
+  end if;
+  delete from auth.users where id = auth.uid(); -- every table above is removed with it (on delete cascade)
+end;
+$$;
+
+revoke all on function public.delete_my_account() from public, anon;
+grant execute on function public.delete_my_account() to authenticated;
