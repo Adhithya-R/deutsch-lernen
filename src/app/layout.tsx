@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Baloo_Thambi_2, Nunito, Noto_Sans_Tamil } from "next/font/google";
 import { Suspense } from "react";
 import AuthLinks from "@/components/AuthLinks";
-import AppSplash from "@/components/AppSplash";
 import SiteFooter from "@/components/SiteFooter";
 import SiteNav from "@/components/SiteNav";
 import ThemeShell from "@/components/ThemeShell";
@@ -25,7 +24,7 @@ export const viewport: Viewport = {
 };
 
 // Runs before the first paint so English-only users never see Tamil flash by.
-const LANG_SCRIPT = `try{var l=localStorage.getItem('lang');if(l==='en'||l==='both')document.documentElement.dataset.lang=l;if(window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true)document.documentElement.dataset.appSplash='show'}catch(e){}`;
+const LANG_SCRIPT = `try{var l=localStorage.getItem('lang');if(l==='en'||l==='both')document.documentElement.dataset.lang=l}catch(e){}`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -39,7 +38,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: LANG_SCRIPT }} />
       </head>
       <body className="min-h-dvh">
-        <AppSplash />
         <ThemeShell
           header={
             <SiteNav

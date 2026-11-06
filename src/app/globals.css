@@ -1,23 +1,5 @@
 @import "tailwindcss";
 
-.app-splash {
-  position: fixed;
-  z-index: 10000;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  background: #063b2b;
-}
-.app-splash img {
-  width: min(76vmin, 512px);
-  height: auto;
-  border-radius: 22%;
-}
-html[data-app-splash="show"] .app-splash {
-  display: flex;
-}
-
 /* ---------- Colour worlds: each tab has its own calm, accessible palette ---------- */
 :root,
 [data-tab="learn"] {
