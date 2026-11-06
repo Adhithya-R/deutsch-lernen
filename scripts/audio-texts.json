@@ -4115,6 +4115,661 @@
   "voice": "m"
  },
  {
+  "key": "schau-mal-shylash-es-schneit",
+  "text": "Schau mal, Shylash! Es schneit!",
+  "voice": "f"
+ },
+ {
+  "key": "wow-das-ist-mein-erster-schnee-in-madurai-gibt-es-keinen-schnee",
+  "text": "Wow! Das ist mein erster Schnee. In Madurai gibt es keinen Schnee.",
+  "voice": "m"
+ },
+ {
+  "key": "dann-brauchst-du-eine-warme-jacke-eine-muetze-und-handschuhe",
+  "text": "Dann brauchst du eine warme Jacke, eine Mütze und Handschuhe.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-nur-eine-duenne-jacke-wo-kann-ich-warme-kleidung-kaufen",
+  "text": "Ich habe nur eine dünne Jacke. Wo kann ich warme Kleidung kaufen?",
+  "voice": "m"
+ },
+ {
+  "key": "im-kaufhaus-gibt-es-heute-angebote-wir-gehen-zusammen-hin",
+  "text": "Im Kaufhaus gibt es heute Angebote. Wir gehen zusammen hin.",
+  "voice": "f"
+ },
+ {
+  "key": "aber-vorsicht-der-boden-ist-glatt",
+  "text": "Aber Vorsicht! Der Boden ist glatt.",
+  "voice": "m"
+ },
+ {
+  "key": "danke-fuer-die-warnung-ich-gehe-ganz-langsam",
+  "text": "Danke für die Warnung. Ich gehe ganz langsam.",
+  "voice": "m"
+ },
+ {
+  "key": "und-danach-trinken-wir-einen-heissen-tee",
+  "text": "Und danach trinken wir einen heißen Tee.",
+  "voice": "f"
+ },
+ {
+  "key": "schneien",
+  "text": "schneien",
+  "voice": "m"
+ },
+ {
+  "key": "es-schneit-heute",
+  "text": "Es schneit heute.",
+  "voice": "m"
+ },
+ {
+  "key": "die-muetze",
+  "text": "die Mütze",
+  "voice": "m"
+ },
+ {
+  "key": "die-muetze-ist-warm",
+  "text": "Die Mütze ist warm.",
+  "voice": "m"
+ },
+ {
+  "key": "die-handschuhe",
+  "text": "die Handschuhe",
+  "voice": "m"
+ },
+ {
+  "key": "ich-brauche-handschuhe",
+  "text": "Ich brauche Handschuhe.",
+  "voice": "m"
+ },
+ {
+  "key": "glatt",
+  "text": "glatt",
+  "voice": "m"
+ },
+ {
+  "key": "die-strasse-ist-glatt",
+  "text": "Die Straße ist glatt.",
+  "voice": "m"
+ },
+ {
+  "key": "thanisha-mitte-april-feiern-wir-das-tamilische-neujahr-hast-du-lust-zu-kommen",
+  "text": "Thanisha, Mitte April feiern wir das tamilische Neujahr. Hast du Lust zu kommen?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-sehr-gern-was-gibt-es-zu-essen",
+  "text": "Ja, sehr gern! Was gibt es zu essen?",
+  "voice": "f"
+ },
+ {
+  "key": "es-gibt-mango-pachadi-das-schmeckt-suess-sauer-und-scharf-zugleich",
+  "text": "Es gibt Mango-Pachadi. Das schmeckt süß, sauer und scharf zugleich.",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-wie-das-leben-suess-sauer-und-manchmal-scharf",
+  "text": "Das ist wie das Leben: süß, sauer und manchmal scharf.",
+  "voice": "f"
+ },
+ {
+  "key": "genau-und-wir-malen-wieder-ein-grosses-kolam-vor-die-tuer",
+  "text": "Genau! Und wir malen wieder ein großes Kolam vor die Tür.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-gestern-schon-die-mangos-und-das-mehl-gekauft",
+  "text": "Ich habe gestern schon die Mangos und das Mehl gekauft.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-bringe-blumen-und-fruechte-mit",
+  "text": "Ich bringe Blumen und Früchte mit.",
+  "voice": "f"
+ },
+ {
+  "key": "wunderbar-dann-wird-es-ein-schoenes-neujahrsfest",
+  "text": "Wunderbar! Dann wird es ein schönes Neujahrsfest.",
+  "voice": "m"
+ },
+ {
+  "key": "sauer",
+  "text": "sauer",
+  "voice": "m"
+ },
+ {
+  "key": "die-mango-ist-sauer",
+  "text": "Die Mango ist sauer.",
+  "voice": "m"
+ },
+ {
+  "key": "scharf",
+  "text": "scharf",
+  "voice": "m"
+ },
+ {
+  "key": "das-curry-ist-scharf",
+  "text": "Das Curry ist scharf.",
+  "voice": "m"
+ },
+ {
+  "key": "gekauft",
+  "text": "gekauft",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-brot-gekauft",
+  "text": "Ich habe Brot gekauft.",
+  "voice": "m"
+ },
+ {
+  "key": "das-neujahr",
+  "text": "das Neujahr",
+  "voice": "m"
+ },
+ {
+  "key": "frohes-neujahr",
+  "text": "Frohes Neujahr!",
+  "voice": "m"
+ },
+ {
+  "key": "yogesh-was-machst-du-da-du-schreibst-so-viel",
+  "text": "Yogesh, was machst du da? Du schreibst so viel.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-schreibe-einen-brief-an-meine-grosseltern-in-madurai",
+  "text": "Ich schreibe einen Brief an meine Großeltern in Madurai.",
+  "voice": "m"
+ },
+ {
+  "key": "einen-echten-brief-mit-papier-und-briefmarke",
+  "text": "Einen echten Brief? Mit Papier und Briefmarke?",
+  "voice": "f"
+ },
+ {
+  "key": "ja-sie-haben-kein-smartphone-ein-brief-macht-ihnen-eine-grosse-freude",
+  "text": "Ja, sie haben kein Smartphone. Ein Brief macht ihnen eine große Freude.",
+  "voice": "m"
+ },
+ {
+  "key": "was-schreibst-du-ihnen",
+  "text": "Was schreibst du ihnen?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-erzaehle-ihnen-von-meiner-arbeit-vom-schnee-und-von-meinen-freunden",
+  "text": "Ich erzähle ihnen von meiner Arbeit, vom Schnee und von meinen Freunden.",
+  "voice": "m"
+ },
+ {
+  "key": "bestimmt-freuen-sie-sich-soll-ich-dir-briefmarken-schenken",
+  "text": "Bestimmt freuen sie sich! Soll ich dir Briefmarken schenken?",
+  "voice": "f"
+ },
+ {
+  "key": "und-schick-bitte-ein-foto-mit-dann-sehen-sie-wie-du-jetzt-lebst",
+  "text": "Und schick bitte ein Foto mit! Dann sehen sie, wie du jetzt lebst.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-schreibe-einen-brief",
+  "text": "Ich schreibe einen Brief.",
+  "voice": "m"
+ },
+ {
+  "key": "die-grosseltern",
+  "text": "die Großeltern",
+  "voice": "m"
+ },
+ {
+  "key": "meine-grosseltern-wohnen-in-madurai",
+  "text": "Meine Großeltern wohnen in Madurai.",
+  "voice": "m"
+ },
+ {
+  "key": "erzaehlen",
+  "text": "erzählen",
+  "voice": "m"
+ },
+ {
+  "key": "ich-erzaehle-eine-geschichte",
+  "text": "Ich erzähle eine Geschichte.",
+  "voice": "m"
+ },
+ {
+  "key": "das-foto",
+  "text": "das Foto",
+  "voice": "m"
+ },
+ {
+  "key": "das-foto-ist-schoen",
+  "text": "Das Foto ist schön.",
+  "voice": "m"
+ },
+ {
+  "key": "am-sonntag-machen-wir-eine-fahrradtour-kommst-du-mit-sadhana",
+  "text": "Am Sonntag machen wir eine Fahrradtour. Kommst du mit, Sadhana?",
+  "voice": "m"
+ },
+ {
+  "key": "gern-aber-ich-habe-kein-fahrrad",
+  "text": "Gern, aber ich habe kein Fahrrad.",
+  "voice": "f"
+ },
+ {
+  "key": "du-kannst-mein-altes-fahrrad-leihen",
+  "text": "Du kannst mein altes Fahrrad leihen.",
+  "voice": "m"
+ },
+ {
+  "key": "danke-ist-die-strecke-weit",
+  "text": "Danke! Ist die Strecke weit?",
+  "voice": "f"
+ },
+ {
+  "key": "nicht-sehr-fuenfzehn-kilometer-am-fluss-entlang-der-weg-ist-flach-und-schoen",
+  "text": "Nicht sehr: fünfzehn Kilometer am Fluss entlang. Der Weg ist flach und schön.",
+  "voice": "m"
+ },
+ {
+  "key": "das-klingt-besser-als-ein-tag-im-bett",
+  "text": "Das klingt besser als ein Tag im Bett.",
+  "voice": "f"
+ },
+ {
+  "key": "vergiss-nicht-den-helm-und-eine-flasche-wasser",
+  "text": "Vergiss nicht den Helm und eine Flasche Wasser!",
+  "voice": "m"
+ },
+ {
+  "key": "und-wenn-wir-muede-sind-machen-wir-ein-picknick",
+  "text": "Und wenn wir müde sind, machen wir ein Picknick.",
+  "voice": "m"
+ },
+ {
+  "key": "die-fahrradtour",
+  "text": "die Fahrradtour",
+  "voice": "m"
+ },
+ {
+  "key": "wir-machen-eine-fahrradtour",
+  "text": "Wir machen eine Fahrradtour.",
+  "voice": "m"
+ },
+ {
+  "key": "leihen",
+  "text": "leihen",
+  "voice": "m"
+ },
+ {
+  "key": "kann-ich-dein-buch-leihen",
+  "text": "Kann ich dein Buch leihen?",
+  "voice": "m"
+ },
+ {
+  "key": "die-strecke",
+  "text": "die Strecke",
+  "voice": "m"
+ },
+ {
+  "key": "die-strecke-ist-kurz",
+  "text": "Die Strecke ist kurz.",
+  "voice": "m"
+ },
+ {
+  "key": "der-helm",
+  "text": "der Helm",
+  "voice": "m"
+ },
+ {
+  "key": "ich-trage-einen-helm",
+  "text": "Ich trage einen Helm.",
+  "voice": "m"
+ },
+ {
+  "key": "das-picknick",
+  "text": "das Picknick",
+  "voice": "m"
+ },
+ {
+  "key": "wir-machen-ein-picknick",
+  "text": "Wir machen ein Picknick.",
+  "voice": "m"
+ },
+ {
+  "key": "hier-riecht-es-so-gut-was-kochst-du-kavitha",
+  "text": "Hier riecht es so gut! Was kochst du, Kavitha?",
+  "voice": "f"
+ },
+ {
+  "key": "ich-koche-biryani-fuer-alle-nachbarn-im-haus",
+  "text": "Ich koche Biryani für alle Nachbarn im Haus.",
+  "voice": "f"
+ },
+ {
+  "key": "das-ist-das-gericht-das-ich-schon-lange-probieren-moechte",
+  "text": "Das ist das Gericht, das ich schon lange probieren möchte.",
+  "voice": "f"
+ },
+ {
+  "key": "der-reis-wird-mit-gewuerzen-und-gemuese-gekocht",
+  "text": "Der Reis wird mit Gewürzen und Gemüse gekocht.",
+  "voice": "f"
+ },
+ {
+  "key": "sind-die-gewuerze-scharf-ich-esse-nicht-so-scharf",
+  "text": "Sind die Gewürze scharf? Ich esse nicht so scharf.",
+  "voice": "f"
+ },
+ {
+  "key": "keine-sorge-ich-mache-auch-raita-mit-joghurt-das-kuehlt",
+  "text": "Keine Sorge, ich mache auch Raita mit Joghurt. Das kühlt.",
+  "voice": "f"
+ },
+ {
+  "key": "dann-bringe-ich-teller-und-besteck-mit",
+  "text": "Dann bringe ich Teller und Besteck mit.",
+  "voice": "f"
+ },
+ {
+  "key": "und-ich-decke-den-tisch-im-hof",
+  "text": "Und ich decke den Tisch im Hof.",
+  "voice": "f"
+ },
+ {
+  "key": "wird-gekocht",
+  "text": "wird … gekocht",
+  "voice": "m"
+ },
+ {
+  "key": "das-essen-wird-gekocht",
+  "text": "Das Essen wird gekocht.",
+  "voice": "m"
+ },
+ {
+  "key": "die-gewuerze",
+  "text": "die Gewürze",
+  "voice": "m"
+ },
+ {
+  "key": "ich-brauche-gewuerze",
+  "text": "Ich brauche Gewürze.",
+  "voice": "m"
+ },
+ {
+  "key": "das-besteck",
+  "text": "das Besteck",
+  "voice": "m"
+ },
+ {
+  "key": "das-besteck-liegt-auf-dem-tisch",
+  "text": "Das Besteck liegt auf dem Tisch.",
+  "voice": "m"
+ },
+ {
+  "key": "den-tisch-decken",
+  "text": "den Tisch decken",
+  "voice": "m"
+ },
+ {
+  "key": "ich-decke-den-tisch",
+  "text": "Ich decke den Tisch.",
+  "voice": "m"
+ },
+ {
+  "key": "hilfe-mein-nachbar-ist-gestuerzt-und-liegt-auf-dem-boden",
+  "text": "Hilfe! Mein Nachbar ist gestürzt und liegt auf dem Boden!",
+  "voice": "m"
+ },
+ {
+  "key": "bleib-ruhig-sudharsan-rufst-du-den-notruf-an-die-nummer-ist-die-112",
+  "text": "Bleib ruhig, Sudharsan. Rufst du den Notruf an? Die Nummer ist die 112.",
+  "voice": "m"
+ },
+ {
+  "key": "ja-ich-rufe-sofort-an-was-muss-ich-sagen",
+  "text": "Ja, ich rufe sofort an. Was muss ich sagen?",
+  "voice": "m"
+ },
+ {
+  "key": "sag-deinen-namen-die-adresse-und-was-passiert-ist",
+  "text": "Sag deinen Namen, die Adresse und was passiert ist.",
+  "voice": "m"
+ },
+ {
+  "key": "notruf-wie-kann-ich-helfen-was-ist-passiert",
+  "text": "Notruf, wie kann ich helfen? Was ist passiert?",
+  "voice": "m"
+ },
+ {
+  "key": "mein-nachbar-ist-gestuerzt-und-antwortet-nicht-wir-sind-in-der-lindenstrasse-zehn",
+  "text": "Mein Nachbar ist gestürzt und antwortet nicht. Wir sind in der Lindenstraße zehn.",
+  "voice": "m"
+ },
+ {
+  "key": "bleiben-sie-bei-ihm-der-krankenwagen-ist-in-fuenf-minuten-da",
+  "text": "Bleiben Sie bei ihm. Der Krankenwagen ist in fünf Minuten da.",
+  "voice": "m"
+ },
+ {
+  "key": "gut-gemacht-ich-hole-eine-decke",
+  "text": "Gut gemacht! Ich hole eine Decke.",
+  "voice": "m"
+ },
+ {
+  "key": "gestuerzt",
+  "text": "gestürzt",
+  "voice": "m"
+ },
+ {
+  "key": "er-ist-gestuerzt",
+  "text": "Er ist gestürzt.",
+  "voice": "m"
+ },
+ {
+  "key": "der-notruf",
+  "text": "der Notruf",
+  "voice": "m"
+ },
+ {
+  "key": "ich-waehle-den-notruf",
+  "text": "Ich wähle den Notruf.",
+  "voice": "m"
+ },
+ {
+  "key": "der-krankenwagen",
+  "text": "der Krankenwagen",
+  "voice": "m"
+ },
+ {
+  "key": "der-krankenwagen-kommt",
+  "text": "Der Krankenwagen kommt.",
+  "voice": "m"
+ },
+ {
+  "key": "die-decke",
+  "text": "die Decke",
+  "voice": "m"
+ },
+ {
+  "key": "ich-hole-eine-decke",
+  "text": "Ich hole eine Decke.",
+  "voice": "m"
+ },
+ {
+  "key": "risha-stimmt-es-du-ziehst-nach-hamburg-um",
+  "text": "Risha, stimmt es? Du ziehst nach Hamburg um?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-ich-habe-dort-eine-neue-arbeit-gefunden",
+  "text": "Ja! Ich habe dort eine neue Arbeit gefunden.",
+  "voice": "f"
+ },
+ {
+  "key": "ich-gratuliere-wann-ist-der-umzug",
+  "text": "Ich gratuliere! Wann ist der Umzug?",
+  "voice": "f"
+ },
+ {
+  "key": "am-ersten-samstag-im-monat-wenn-ihr-zeit-habt-koennt-ihr-mir-helfen",
+  "text": "Am ersten Samstag im Monat. Wenn ihr Zeit habt, könnt ihr mir helfen.",
+  "voice": "f"
+ },
+ {
+  "key": "natuerlich-helfen-wir-wir-packen-die-kartons-zusammen",
+  "text": "Natürlich helfen wir. Wir packen die Kartons zusammen.",
+  "voice": "m"
+ },
+ {
+  "key": "hast-du-schon-einen-transporter-gemietet",
+  "text": "Hast du schon einen Transporter gemietet?",
+  "voice": "f"
+ },
+ {
+  "key": "ja-ich-habe-ihn-fuer-den-vormittag-gemietet",
+  "text": "Ja, ich habe ihn für den Vormittag gemietet.",
+  "voice": "f"
+ },
+ {
+  "key": "dann-ist-alles-gut-organisiert-wir-besuchen-dich-bald-in-hamburg",
+  "text": "Dann ist alles gut organisiert. Wir besuchen dich bald in Hamburg!",
+  "voice": "m"
+ },
+ {
+  "key": "umziehen",
+  "text": "umziehen",
+  "voice": "m"
+ },
+ {
+  "key": "wir-ziehen-nach-bonn-um",
+  "text": "Wir ziehen nach Bonn um.",
+  "voice": "m"
+ },
+ {
+  "key": "gratulieren",
+  "text": "gratulieren",
+  "voice": "m"
+ },
+ {
+  "key": "ich-gratuliere-dir",
+  "text": "Ich gratuliere dir!",
+  "voice": "m"
+ },
+ {
+  "key": "der-karton",
+  "text": "der Karton",
+  "voice": "m"
+ },
+ {
+  "key": "der-karton-ist-schwer",
+  "text": "Der Karton ist schwer.",
+  "voice": "m"
+ },
+ {
+  "key": "der-transporter",
+  "text": "der Transporter",
+  "voice": "m"
+ },
+ {
+  "key": "der-transporter-ist-gross",
+  "text": "Der Transporter ist groß.",
+  "voice": "m"
+ },
+ {
+  "key": "ruby-die-ergebnisse-sind-da-hast-du-schon-nachgeschaut",
+  "text": "Ruby, die Ergebnisse sind da! Hast du schon nachgeschaut?",
+  "voice": "m"
+ },
+ {
+  "key": "nein-ich-habe-angst-schaust-du-mit-mir-zusammen",
+  "text": "Nein, ich habe Angst. Schaust du mit mir zusammen?",
+  "voice": "f"
+ },
+ {
+  "key": "natuerlich-los-oeffne-die-e-mail",
+  "text": "Natürlich. Los, öffne die E-Mail!",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-bestanden-ich-habe-vierundachtzig-punkte",
+  "text": "Ich habe bestanden! Ich habe vierundachtzig Punkte!",
+  "voice": "f"
+ },
+ {
+  "key": "herzlichen-glueckwunsch-das-ist-super",
+  "text": "Herzlichen Glückwunsch! Das ist super!",
+  "voice": "m"
+ },
+ {
+  "key": "heute-feiern-wir-ich-lade-euch-alle-zum-essen-ein",
+  "text": "Heute feiern wir! Ich lade euch alle zum Essen ein.",
+  "voice": "m"
+ },
+ {
+  "key": "danke-euch-beiden-ohne-euch-haette-ich-es-nicht-geschafft",
+  "text": "Danke euch beiden. Ohne euch hätte ich es nicht geschafft.",
+  "voice": "f"
+ },
+ {
+  "key": "wir-lernen-weiter-das-naechste-ziel-ist-b1",
+  "text": "Wir lernen weiter. Das nächste Ziel ist B1!",
+  "voice": "m"
+ },
+ {
+  "key": "das-ergebnis",
+  "text": "das Ergebnis",
+  "voice": "m"
+ },
+ {
+  "key": "das-ergebnis-ist-gut",
+  "text": "Das Ergebnis ist gut.",
+  "voice": "m"
+ },
+ {
+  "key": "bestanden",
+  "text": "bestanden",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-die-pruefung-bestanden",
+  "text": "Ich habe die Prüfung bestanden.",
+  "voice": "m"
+ },
+ {
+  "key": "die-punkte",
+  "text": "die Punkte",
+  "voice": "m"
+ },
+ {
+  "key": "ich-habe-viele-punkte",
+  "text": "Ich habe viele Punkte.",
+  "voice": "m"
+ },
+ {
+  "key": "der-glueckwunsch",
+  "text": "der Glückwunsch",
+  "voice": "m"
+ },
+ {
+  "key": "herzlichen-glueckwunsch",
+  "text": "Herzlichen Glückwunsch!",
+  "voice": "m"
+ },
+ {
+  "key": "das-ziel",
+  "text": "das Ziel",
+  "voice": "m"
+ },
+ {
+  "key": "mein-ziel-ist-b1",
+  "text": "Mein Ziel ist B1.",
+  "voice": "m"
+ },
+ {
   "key": "ich-bin-poovai",
   "text": "Ich bin Poovai.",
   "voice": "m"
@@ -5840,11 +6495,6 @@
   "voice": "m"
  },
  {
-  "key": "das-besteck",
-  "text": "das Besteck",
-  "voice": "m"
- },
- {
   "key": "prost",
   "text": "Prost!",
   "voice": "m"
@@ -5915,18 +6565,8 @@
   "voice": "m"
  },
  {
-  "key": "die-muetze",
-  "text": "die Mütze",
-  "voice": "m"
- },
- {
   "key": "der-schal",
   "text": "der Schal",
-  "voice": "m"
- },
- {
-  "key": "die-handschuhe",
-  "text": "die Handschuhe",
   "voice": "m"
  },
  {
@@ -5992,11 +6632,6 @@
  {
   "key": "die-lehrerin-der-lehrer",
   "text": "die Lehrerin / der Lehrer",
-  "voice": "m"
- },
- {
-  "key": "bestanden",
-  "text": "bestanden",
   "voice": "m"
  },
  {

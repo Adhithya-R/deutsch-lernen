@@ -16,7 +16,7 @@ export type LearnData = {
   byDay?: Record<string, number>; // XP per day (recent days)
 };
 
-const X = Array.from({ length: 30 }, (_, i) => [50, 30, 70, 30, 50, 70][i % 6]); // zig-zag position of each stop, in % (30 stops)
+const X = Array.from({ length: 60 }, (_, i) => [50, 30, 70, 30, 50, 70][i % 6]); // zig-zag position of each stop, in % (60 stops)
 const ROW = 152;
 
 type Stop = { title: string; sub: string; state: "done" | "cur" | "lock"; href?: string };

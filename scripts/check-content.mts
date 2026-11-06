@@ -51,7 +51,7 @@ const counts = NAMES.map((n) => spoken[n] ?? 0);
 if (Math.max(...counts) - Math.min(...counts) > 3) bad(`story lines are not equal: ${NAMES.map((n) => `${n} ${spoken[n] ?? 0}`).join(", ")}`);
 NAMES.forEach((n) => {
   const leads = chapters.filter((c) => c.speakers.a.name === n).length;
-  if (leads !== 1) bad(`${n} leads ${leads} chapters (every classmate should lead exactly one)`);
+  if (leads < 1 || leads > 2) bad(`${n} leads ${leads} chapters (every classmate should lead one or two)`);
   const talks = scenarios.filter((sc) => sc.partner.name === n).length;
   if (talks !== 1) bad(`${n} is the partner in ${talks} conversation talks (should be exactly one)`);
 });
