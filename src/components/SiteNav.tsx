@@ -14,7 +14,9 @@ export default function SiteNav({ auth }: { auth: ReactNode }) {
     <header className="sticky top-0 z-30 border-b-2 border-line bg-white">
       <div className="mx-auto flex h-14 max-w-5xl items-center gap-4 px-4 lg:h-16 lg:gap-8 lg:px-8">
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
-          <Image src="/logo.webp" alt="" width={36} height={36} className="rounded-[9px]" priority />
+          <span className="logo-frame grid h-10 w-10 place-items-center rounded-xl border border-sky-100 bg-gradient-to-br from-sky-50 via-white to-emerald-50 p-0.5 shadow-sm">
+            <Image src="/logo.webp" alt="" width={36} height={36} className="rounded-[9px]" priority />
+          </span>
           <span className="whitespace-nowrap font-display text-xl font-extrabold tracking-tight">
             <span lang="ta">மொழி</span>-Brücke
           </span>

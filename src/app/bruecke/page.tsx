@@ -10,6 +10,13 @@ export default function BrueckePage() {
       <ScreenTop tab="bruecke" kicker="Culture bridge" title="Brücke" height={150} />
       <div className="px-4 pb-6 pt-3">
         <p className="text-muted">Pick a topic. See Tamil Nadu and Germany side by side, hear the German words, then take a short quiz.</p>
+        <Link href="/bruecke/landmarks" className="mt-4 flex items-center justify-between rounded-2xl border-2 border-line bg-gradient-to-r from-white to-pill/50 p-4 shadow-[0_3px_0_var(--color-line)]">
+          <span>
+            <span className="block font-extrabold">Explore 50 famous places</span>
+            <span className="mt-0.5 block text-sm text-muted">Tamil Nadu and Germany, side by side</span>
+          </span>
+          <span aria-hidden="true" className="ml-3 text-xl font-extrabold text-pri">→</span>
+        </Link>
         <ul className="mt-4 grid gap-3">
           {topics.map((t, n) => (
             <li key={t.id}>

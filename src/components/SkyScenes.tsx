@@ -51,17 +51,29 @@ const Bird = ({ x, y }: { x: number; y: number }) => (
   </svg>
 );
 
-function Bridge() {
-  // A far, faint arch bridge: the "Brücke" in Brücke.
+export function BridgeScene({ mood }: { mood: Mood }) {
+  // A symbolic connection between the two landmark silhouettes, varied by each page's scene.
   const y = (t: number) => 70 - 160 * t * (1 - t);
   const hangers = [60, 100, 140, 180, 220, 260, 300, 340];
+  const cableStyle = ["dawn", "rain", "snow", "night", "fireworks"].includes(mood);
+  const evening = ["evening", "sunset", "night", "fireworks"].includes(mood);
   return (
-    <svg className="abs" style={{ left: 0, right: 0, bottom: 28, width: "100%", height: 70, opacity: 0.28 }} viewBox="0 0 400 80" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M-10 70Q200 -10 410 70" fill="none" stroke="var(--tab-accd)" strokeWidth="5" vectorEffect="non-scaling-stroke" />
-      <path d="M0 64H400" stroke="var(--tab-accd)" strokeWidth="4" vectorEffect="non-scaling-stroke" />
-      {hangers.map((x) => (
-        <path key={x} d={`M${x} 64V${y((x + 10) / 420) + 2}`} stroke="var(--tab-accd)" strokeWidth="2" vectorEffect="non-scaling-stroke" />
-      ))}
+    <svg className={`abs skyline-bridge ${cableStyle ? "cable" : "stone"} ${evening ? "glow" : ""}`} style={{ left: 0, right: 0, bottom: 28, width: "100%", height: 70 }} viewBox="0 0 400 80" preserveAspectRatio="none" aria-hidden="true">
+      {cableStyle ? (
+        <>
+          <path d="M-10 18Q200 88 410 18" fill="none" stroke="var(--tab-accd)" strokeWidth="3" vectorEffect="non-scaling-stroke" />
+          <path d="M0 64H400" stroke="var(--tab-accd)" strokeWidth="4" vectorEffect="non-scaling-stroke" />
+          {[40, 360].map((x) => <path key={x} d={`M${x} 4V68`} stroke="var(--tab-accd)" strokeWidth="5" vectorEffect="non-scaling-stroke" />)}
+          {hangers.map((x) => <path key={x} d={`M${x} ${y((x + 10) / 420)}V64`} stroke="var(--tab-accd)" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />)}
+        </>
+      ) : (
+        <>
+          <path d="M-10 70Q200 -10 410 70" fill="none" stroke="var(--tab-accd)" strokeWidth="5" vectorEffect="non-scaling-stroke" />
+          <path d="M0 64H400" stroke="var(--tab-accd)" strokeWidth="4" vectorEffect="non-scaling-stroke" />
+          {[0, 100, 200, 300, 400].map((x) => <path key={x} d={`M${x} 64V${Math.max(34, y(x / 400) + 3)}`} stroke="var(--tab-accd)" strokeWidth="2" vectorEffect="non-scaling-stroke" />)}
+        </>
+      )}
+      {evening && [70, 130, 200, 270, 330].map((x) => <circle key={x} className="bridge-light" cx={x} cy="62" r="2.4" />)}
     </svg>
   );
 }
@@ -182,7 +194,6 @@ export function SceneBack({ mood }: { mood: Mood }) {
       return (
         <>
           <div className="abs sun-low red" style={{ left: "17%", bottom: -6 }} aria-hidden="true" />
-          <Bridge />
           <div className="vbirds" style={{ top: 30 }} aria-hidden="true">
             <Bird x={0} y={0} /><Bird x={-14} y={9} /><Bird x={14} y={9} /><Bird x={-28} y={18} /><Bird x={28} y={18} />
           </div>

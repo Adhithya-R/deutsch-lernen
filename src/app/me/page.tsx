@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import { logout } from "@/app/actions";
@@ -55,6 +56,13 @@ export default function MePage() {
           <span className="flex-1">Privacy and notes</span>
           <Icon name="chev" size={20} className="text-muted" />
         </Link>
+        <a href="/icon.png" download="mozhi-bruecke-app-icon.png" className={`${card} flex items-center gap-3 font-extrabold`}>
+          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-sky-100 to-emerald-100 p-1">
+            <Image src="/icon.png" alt="" width={32} height={32} className="rounded-lg" />
+          </span>
+          <span className="flex-1">Download app icon (PNG)</span>
+          <Icon name="out" size={18} className="text-muted" />
+        </a>
       </div>
     </main>
   );

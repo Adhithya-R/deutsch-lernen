@@ -20,7 +20,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#ffffff",
+  themeColor: "#f0f7ff",
 };
 
 // Runs before the first paint so English-only users never see Tamil flash by.

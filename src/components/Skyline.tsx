@@ -2,7 +2,7 @@
 // Which landmarks come from content/landmarks.json by id; the weather is a `mood` (see SkyScenes.tsx).
 import type { ReactNode } from "react";
 import { drawingFor } from "@/components/landmarks";
-import { SceneBack, SceneFront } from "@/components/SkyScenes";
+import { BridgeScene, SceneBack, SceneFront } from "@/components/SkyScenes";
 import SkyInfo from "@/components/SkyInfo";
 import { labelName, landmark, type Landmark, type Mood } from "@/lib/landmarks";
 
@@ -13,6 +13,7 @@ export default function Skyline({ ids, mood, height = 150, children }: { ids: st
   return (
     <div className="sky" style={{ height }}>
       <SceneBack mood={mood} />
+      <BridgeScene mood={mood} />
 
       {items.map((l, i) => {
         const { w, C } = drawingFor(l.id, `${l.type} ${l.name}`);
