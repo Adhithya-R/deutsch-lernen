@@ -17,11 +17,11 @@
   --tab-soft: #f8dce7;
 }
 [data-tab="exam"] {
-  --tab-bg: #edf3f7;
-  --tab-band: #b5c6d2;
-  --tab-acc: #49657b;
-  --tab-accd: #2d4558;
-  --tab-soft: #dce7ee;
+  --tab-bg: #f4f2ef;
+  --tab-band: #c9c1b6;
+  --tab-acc: #796047;
+  --tab-accd: #4e3d30;
+  --tab-soft: #e9e2d8;
 }
 [data-tab="bruecke"] {
   --tab-bg: #eef6f2;
@@ -195,22 +195,9 @@ html[data-lang="en"] .ta-only {
   text-shadow: 0 1px 2px rgb(0 0 0 / 45%);
   backdrop-filter: blur(5px);
 }
-.sky-photo-rain {
-  position: absolute;
-  z-index: 2;
-  inset: 0;
-  background-image: linear-gradient(106deg, transparent 46%, rgb(238 247 255 / 32%) 47% 48%, transparent 49%);
-  background-size: 16px 34px;
-  animation: hero-rain-fall 0.7s linear infinite;
-  pointer-events: none;
-}
 @keyframes hero-light-drift {
   from { background-position: 0 0, 0% 0; }
   to { background-position: 0 0, 100% 0; }
-}
-@keyframes hero-rain-fall {
-  from { background-position: 0 0; }
-  to { background-position: -16px 34px; }
 }
 .sky .lm {
   position: absolute;

@@ -24,7 +24,6 @@ export default function Skyline({ ids, mood, height = 150, children }: { ids: st
             preload
             className="sky-photo-image"
           />
-          {scene === "exam" ? <span className="sky-photo-rain" aria-hidden="true" /> : null}
         </>
       ) : (
         <>
