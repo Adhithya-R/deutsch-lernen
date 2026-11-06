@@ -1,5 +1,6 @@
 import Link from "next/link";
 import DailyGoal from "@/components/DailyGoal";
+import LevelCard from "@/components/LevelCard";
 import Icon, { type IconName } from "@/components/Icon";
 import Skyline from "@/components/Skyline";
 import { chapters, upcoming } from "@/content/chapters";
@@ -60,6 +61,8 @@ export default function LearnHome({ data, loading = false }: { data: LearnData; 
           Adhis Reise · Chapter {Math.min(done.size + 1, chapters.length)} of {chapters.length}
         </p>
         <h1 className="text-3xl font-extrabold">{current ? current.title : "Alle Kapitel geschafft!"}</h1>
+
+        {!loading && data.loggedIn && <LevelCard xp={data.xp} />}
 
         <div className="mt-3.5 flex gap-2">
           <Chip icon="flame" value={loading ? "–" : data.streak} label={data.streak === 1 ? "day streak" : "day streak"} />

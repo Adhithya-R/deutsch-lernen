@@ -67,3 +67,39 @@ assert.equal(ex.account.name, "Adhi");
 assert.equal(exportFileName(new Date("2026-11-06T10:00:00Z")), "moli-bruecke-progress-2026-11-06.json");
 assert.equal(buildExport(undefined, { profile: null, lessons: [], flashcards: [], activity: [], quizzes: [], drafts: [] }).account.email, null);
 console.log("export ok");
+
+// ---- level ----
+import { levelOf, startOfLevel, isGoal } from "../src/lib/level.ts";
+assert.equal(levelOf(0).level, 1);
+assert.equal(levelOf(49).level, 1);
+assert.equal(levelOf(50).level, 2);
+assert.equal(levelOf(149).level, 2);
+assert.equal(levelOf(150).level, 3);
+assert.equal(levelOf(50).into, 0);
+assert.equal(levelOf(75).pct, 25); // 25 of the 100 XP that level 2 needs
+assert.equal(levelOf(100).toNext, 50);
+assert.equal(levelOf(-5).level, 1);
+assert.equal(levelOf(NaN).level, 1);
+assert.equal(levelOf(1000000).title.de, "Meister");
+assert.equal(startOfLevel(5), 500);
+for (let x = 0; x < 3000; x += 7) { const l = levelOf(x); assert.ok(l.pct >= 0 && l.pct <= 100 && l.into >= 0 && l.toNext > 0, `bad level at ${x}`); }
+assert.ok(isGoal(20) && !isGoal(15));
+console.log("level ok");
+
+// ---- weak topics ----
+import { weakTopics, target } from "../src/lib/weak.ts";
+const weak = weakTopics([
+  { kind: "lesson", ref: "passiv", score: 1, total: 4 },
+  { kind: "lesson", ref: "pronouns", score: 4, total: 4 },
+  { kind: "culture", ref: "bruecke-food", score: 2, total: 3 },
+  { kind: "talk", ref: "talk-cafe", score: 3, total: 4 },
+  { kind: "exam", ref: "a1-reading", score: 3, total: 10 },
+  { kind: "lesson", ref: "does-not-exist", score: 0, total: 5 },
+  { kind: "lesson", ref: "plural", score: 0, total: 2 },
+]);
+assert.deepEqual(weak.map((w) => w.pct), [25, 30, 67], "weakest first; strong, unknown and tiny quizzes left out");
+assert.equal(weak[0].href, "/lessons/passiv");
+assert.equal(weak[1].href, "/exam/a1/reading");
+assert.equal(target("exam", "speak-phrases-1")?.href, "/speaking/phrases-1");
+assert.equal(target("lesson", "nope"), null);
+console.log("weak topics ok");

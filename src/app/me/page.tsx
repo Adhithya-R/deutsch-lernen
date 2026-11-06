@@ -26,6 +26,11 @@ export default function MePage() {
           <LangToggle />
         </section>
 
+        <Link href="/progress" className={`${card} flex items-center gap-3 font-extrabold`}>
+          <Icon name="star" size={22} className="text-pri" />
+          <span className="flex-1">My level &amp; progress</span>
+          <Icon name="chev" size={20} className="text-muted" />
+        </Link>
         <Link href="/cheatsheets" className={`${card} flex items-center gap-3 font-extrabold`}>
           <Icon name="table" size={22} className="text-pri" />
           <span className="flex-1">Cheat sheets &amp; grammar</span>
