@@ -4300,6 +4300,201 @@
   "voice": "m"
  },
  {
+  "key": "guten-tag-kann-ich-ihnen-helfen",
+  "text": "Guten Tag! Kann ich Ihnen helfen?",
+  "voice": "m"
+ },
+ {
+  "key": "ja-ich-suche-aepfel-wo-sind-sie",
+  "text": "Ja, ich suche Äpfel. Wo sind sie?",
+  "voice": "m"
+ },
+ {
+  "key": "die-aepfel-sind-dort-hinten-neben-den-bananen",
+  "text": "Die Äpfel sind dort hinten, neben den Bananen.",
+  "voice": "m"
+ },
+ {
+  "key": "danke-wie-viel-kostet-ein-kilo",
+  "text": "Danke! Wie viel kostet ein Kilo?",
+  "voice": "m"
+ },
+ {
+  "key": "das-obst-ist-blau",
+  "text": "Das Obst ist blau.",
+  "voice": "m"
+ },
+ {
+  "key": "ein-kilo-kostet-zwei-euro-neunzig",
+  "text": "Ein Kilo kostet zwei Euro neunzig.",
+  "voice": "m"
+ },
+ {
+  "key": "gute-nacht-bis-morgen",
+  "text": "Gute Nacht, bis morgen.",
+  "voice": "m"
+ },
+ {
+  "key": "dann-nehme-ich-zwei-kilo-bitte",
+  "text": "Dann nehme ich zwei Kilo, bitte.",
+  "voice": "m"
+ },
+ {
+  "key": "sonst-noch-etwas",
+  "text": "Sonst noch etwas?",
+  "voice": "m"
+ },
+ {
+  "key": "nein-danke-das-ist-alles",
+  "text": "Nein, danke. Das ist alles.",
+  "voice": "m"
+ },
+ {
+  "key": "ja-ich-bin-muede",
+  "text": "Ja, ich bin müde.",
+  "voice": "m"
+ },
+ {
+  "key": "guten-morgen-wie-geht-s",
+  "text": "Guten Morgen, wie geht's?",
+  "voice": "m"
+ },
+ {
+  "key": "guten-tag-was-kann-ich-fuer-sie-tun",
+  "text": "Guten Tag. Was kann ich für Sie tun?",
+  "voice": "f"
+ },
+ {
+  "key": "ich-habe-halsschmerzen-haben-sie-etwas-dagegen",
+  "text": "Ich habe Halsschmerzen. Haben Sie etwas dagegen?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-moechte-eine-fahrkarte",
+  "text": "Ich möchte eine Fahrkarte.",
+  "voice": "m"
+ },
+ {
+  "key": "haben-sie-auch-fieber",
+  "text": "Haben Sie auch Fieber?",
+  "voice": "f"
+ },
+ {
+  "key": "ja-ich-wohne-in-madurai",
+  "text": "Ja, ich wohne in Madurai.",
+  "voice": "m"
+ },
+ {
+  "key": "nein-kein-fieber-aber-ich-bin-sehr-muede",
+  "text": "Nein, kein Fieber, aber ich bin sehr müde.",
+  "voice": "m"
+ },
+ {
+  "key": "der-zug-kommt-um-acht",
+  "text": "Der Zug kommt um acht.",
+  "voice": "m"
+ },
+ {
+  "key": "dann-empfehle-ich-diese-tabletten-nehmen-sie-zweimal-am-tag-eine-tablette",
+  "text": "Dann empfehle ich diese Tabletten. Nehmen Sie zweimal am Tag eine Tablette.",
+  "voice": "f"
+ },
+ {
+  "key": "wie-viel-kostet-die-miete",
+  "text": "Wie viel kostet die Miete?",
+  "voice": "m"
+ },
+ {
+  "key": "vor-oder-nach-dem-essen",
+  "text": "Vor oder nach dem Essen?",
+  "voice": "m"
+ },
+ {
+  "key": "nach-dem-essen-mit-einem-glas-wasser-das-kostet-sieben-euro-fuenfzig",
+  "text": "Nach dem Essen, mit einem Glas Wasser. Das kostet sieben Euro fünfzig.",
+  "voice": "f"
+ },
+ {
+  "key": "gut-ich-nehme-sie-kann-ich-mit-karte-zahlen",
+  "text": "Gut, ich nehme sie. Kann ich mit Karte zahlen?",
+  "voice": "m"
+ },
+ {
+  "key": "das-ist-zu-gross",
+  "text": "Das ist zu groß.",
+  "voice": "m"
+ },
+ {
+  "key": "guten-morgen-haben-sie-einen-termin",
+  "text": "Guten Morgen. Haben Sie einen Termin?",
+  "voice": "f"
+ },
+ {
+  "key": "ja-mein-termin-ist-um-zehn-uhr",
+  "text": "Ja, mein Termin ist um zehn Uhr.",
+  "voice": "m"
+ },
+ {
+  "key": "nein-ich-moechte-einen-kaffee",
+  "text": "Nein, ich möchte einen Kaffee.",
+  "voice": "m"
+ },
+ {
+  "key": "was-moechten-sie-heute-erledigen",
+  "text": "Was möchten Sie heute erledigen?",
+  "voice": "f"
+ },
+ {
+  "key": "ich-moechte-ein-brot-kaufen",
+  "text": "Ich möchte ein Brot kaufen.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-moechte-meine-wohnung-anmelden",
+  "text": "Ich möchte meine Wohnung anmelden.",
+  "voice": "m"
+ },
+ {
+  "key": "ich-fahre-nach-hamburg",
+  "text": "Ich fahre nach Hamburg.",
+  "voice": "m"
+ },
+ {
+  "key": "haben-sie-ihren-pass-und-den-mietvertrag-dabei",
+  "text": "Haben Sie Ihren Pass und den Mietvertrag dabei?",
+  "voice": "f"
+ },
+ {
+  "key": "nein-ich-habe-kopfschmerzen",
+  "text": "Nein, ich habe Kopfschmerzen.",
+  "voice": "m"
+ },
+ {
+  "key": "ja-das-wetter-ist-schoen",
+  "text": "Ja, das Wetter ist schön.",
+  "voice": "m"
+ },
+ {
+  "key": "ja-hier-sind-beide-dokumente",
+  "text": "Ja, hier sind beide Dokumente.",
+  "voice": "m"
+ },
+ {
+  "key": "bitte-fuellen-sie-dieses-formular-aus-und-unterschreiben-sie-unten",
+  "text": "Bitte füllen Sie dieses Formular aus und unterschreiben Sie unten.",
+  "voice": "f"
+ },
+ {
+  "key": "gern-muss-ich-auch-etwas-bezahlen",
+  "text": "Gern. Muss ich auch etwas bezahlen?",
+  "voice": "m"
+ },
+ {
+  "key": "ich-moechte-nudeln-mit-sosse",
+  "text": "Ich möchte Nudeln mit Soße.",
+  "voice": "m"
+ },
+ {
   "key": "das-broetchen",
   "text": "das Brötchen",
   "voice": "m"
