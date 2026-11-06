@@ -18,7 +18,24 @@ export type Landmark = {
 export type Mood = "dawn" | "noon" | "evening" | "rain" | "sunset" | "autumn" | "snow" | "balloons" | "festival" | "rainbow" | "steam" | "confetti" | "fireworks" | "night" | "petals" | "breeze";
 
 export const LANDMARKS = data as Landmark[];
-export const landmark = (id: string) => LANDMARKS.find((l) => l.id === id);
+
+// This screen-only landmark stays out of the 50-place catalogue.
+const HERO_LANDMARKS: Landmark[] = [
+  {
+    id: "TN026",
+    name: "Jumma Masjid Mosque, Thittuvilai",
+    country: "India",
+    state: "Tamil Nadu",
+    city: "Thittuvilai",
+    type: "Mosque",
+    architectural_style: "Regional Islamic",
+    unesco: false,
+    year_built: 1500,
+    description: "Historic mosque in Thittuvilai, known for its white and blue facade, domes and slender minarets.",
+  },
+];
+
+export const landmark = (id: string) => LANDMARKS.find((l) => l.id === id) ?? HERO_LANDMARKS.find((l) => l.id === id);
 
 /**
  * Which landmarks each tab shows. Every module gets its own pair so screens do not repeat.
@@ -46,6 +63,7 @@ const SHORT: Record<string, string> = {
   TN011: "Chennai Central",
   TN021: "Velankanni Basilica",
   TN012: "Ripon Building",
+  TN026: "Jumma Masjid",
   DE019: "New Town Hall",
   DE015: "St. Michael's",
 };

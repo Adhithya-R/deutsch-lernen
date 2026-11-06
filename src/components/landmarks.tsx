@@ -113,29 +113,21 @@ function ShoreTemple() {
   );
 }
 
-// TN004 Valluvar Kottam, Chennai: temple chariot of stone
-function ValluvarKottam() {
+// TN004 St. Thomas Cathedral Basilica, Chennai: Neo-Gothic nave and spire
+function StThomasBasilica() {
   return (
-    <Svg vb="0 0 120 140">
-      <rect x="6" y="128" width="108" height="12" />
-      <rect x="16" y="96" width="88" height="6" />
-      <rect x="20" y="100" width="80" height="28" />
-      <circle cx="32" cy="122" r="14" />
-      <circle cx="32" cy="122" r="6" className="lit" />
-      <circle cx="88" cy="122" r="14" />
-      <circle cx="88" cy="122" r="6" className="lit" />
-      {[40, 32, 24, 18].map((w, i) => {
-        const y = 82 - i * 14;
-        return (
-          <g key={i}>
-            <rect x={60 - w / 2} y={y} width={w} height={14} />
-            <rect x={60 - w / 2 - 2} y={y} width={w + 4} height={2.5} />
-            {w >= 24 && <Arch x={57.5} y={y + 4} w={5} h={8} />}
-          </g>
-        );
-      })}
-      <polygon points="53,40 67,40 60,8" />
-      <circle cx="60" cy="6" r="2.5" />
+    <Svg vb="0 0 130 150">
+      <rect x="8" y="140" width="114" height="10" />
+      <rect x="22" y="82" width="86" height="58" />
+      <polygon points="18,84 65,65 112,84" />
+      <rect x="50" y="48" width="30" height="72" />
+      <polygon points="46,50 84,50 65,8" />
+      <rect x="63" y="0" width="4" height="10" />
+      <path d="M57 5H73M65 -1V11" stroke="var(--tab-accd)" strokeWidth="2" />
+      {[30, 46, 84, 100].map((x) => <Arch key={x} x={x} y={93} w={9} h={23} />)}
+      <Arch x={59} y={72} w={12} h={30} />
+      <rect x="27" y="83" width="4" height="57" />
+      <rect x="99" y="83" width="4" height="57" />
     </Svg>
   );
 }
@@ -685,7 +677,7 @@ export const DRAWINGS: Record<string, { w: number; C: ComponentType }> = {
   TN001: { w: 92, C: Brihadeeswarar },
   TN002: { w: 104, C: Meenakshi },
   TN003: { w: 124, C: ShoreTemple },
-  TN004: { w: 96, C: ValluvarKottam },
+  TN004: { w: 108, C: StThomasBasilica },
   TN006: { w: 124, C: FortStGeorge },
   TN011: { w: 132, C: ChennaiCentral },
   DE001: { w: 150, C: BrandenburgGate },

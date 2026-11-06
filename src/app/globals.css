@@ -10,11 +10,11 @@
   --tab-soft: #f4e1cf;
 }
 [data-tab="words"] {
-  --tab-bg: #fff6ec;
-  --tab-band: #f1c790;
-  --tab-acc: #9d641f;
-  --tab-accd: #664315;
-  --tab-soft: #f6e4cb;
+  --tab-bg: #fff1f6;
+  --tab-band: #f1bdd0;
+  --tab-acc: #b44770;
+  --tab-accd: #77304c;
+  --tab-soft: #f8dce7;
 }
 [data-tab="exam"] {
   --tab-bg: #edf3f7;
@@ -169,16 +169,19 @@ html[data-lang="en"] .ta-only {
   position: absolute;
   z-index: 1;
   inset: 0;
-  background: linear-gradient(180deg, rgb(6 16 28 / 5%) 38%, rgb(6 16 28 / 20%) 67%, rgb(6 16 28 / 62%) 100%);
+  background-image:
+    linear-gradient(180deg, rgb(6 16 28 / 5%) 38%, rgb(6 16 28 / 20%) 67%, rgb(6 16 28 / 62%) 100%),
+    linear-gradient(110deg, transparent 24%, rgb(255 255 255 / 7%) 50%, transparent 76%);
+  background-size: 100% 100%, 200% 100%;
+  background-position: 0 0, 0 0;
+  animation: hero-light-drift 32s ease-in-out infinite alternate;
   content: "";
   pointer-events: none;
 }
 .sky-photo-image {
   z-index: 0;
   object-fit: cover;
-  object-position: center 55%;
-  transform: scale(1.035);
-  animation: hero-photo-drift 30s ease-in-out infinite alternate;
+  object-position: center;
 }
 .sky--photo .lm-label {
   z-index: 2;
@@ -201,9 +204,9 @@ html[data-lang="en"] .ta-only {
   animation: hero-rain-fall 0.7s linear infinite;
   pointer-events: none;
 }
-@keyframes hero-photo-drift {
-  from { transform: scale(1.035) translate3d(-0.35%, -0.15%, 0); }
-  to { transform: scale(1.09) translate3d(0.45%, 0.2%, 0); }
+@keyframes hero-light-drift {
+  from { background-position: 0 0, 0% 0; }
+  to { background-position: 0 0, 100% 0; }
 }
 @keyframes hero-rain-fall {
   from { background-position: 0 0; }

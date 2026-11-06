@@ -4,7 +4,7 @@ import LevelCard from "@/components/LevelCard";
 import Icon, { type IconName } from "@/components/Icon";
 import Skyline from "@/components/Skyline";
 import { chapters, upcoming } from "@/content/chapters";
-import { SKY_IDS, SKY_MOOD } from "@/lib/landmarks";
+import { SKY_MOOD } from "@/lib/landmarks";
 
 export type LearnData = {
   loggedIn: boolean;
@@ -55,7 +55,7 @@ export default function LearnHome({ data, loading = false }: { data: LearnData; 
 
   return (
     <main className="mx-auto w-full max-w-md lg:max-w-xl">
-      <Skyline ids={currentChapter?.landmarks ?? SKY_IDS.learn} mood={currentChapter?.mood ?? SKY_MOOD.learn} height={170} />
+      <Skyline ids={["TN002", "DE009"]} mood={currentChapter?.mood ?? SKY_MOOD.learn} height={170} />
       <div className="px-4 pt-4">
         <p className="text-[13px] font-extrabold uppercase tracking-wider text-pri">
           Your journey · Chapter {Math.min(done.size + 1, chapters.length)} of {chapters.length}

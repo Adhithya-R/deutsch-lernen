@@ -10,7 +10,7 @@ const card = "flex items-center gap-3 rounded-2xl border-2 border-line bg-white 
 export default function ExamPage() {
   return (
     <main className="mx-auto w-full max-w-md lg:max-w-xl">
-      <ScreenTop tab="exam" kicker="Goethe-Institut exams" title="Exam" />
+      <ScreenTop tab="exam" ids={["TN026", "DE002"]} kicker="Goethe-Institut exams" title="Exam" />
       <div className="flex flex-col gap-3 px-4 pt-4">
         <p className="text-muted">Practise reading, listening, writing and speaking, then try a mini mock test.</p>
 

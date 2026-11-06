@@ -13,7 +13,7 @@ export default function Skyline({ ids, mood, height = 150, children }: { ids: st
   const scene = PHOTO_SCENES[ids.join("|")];
 
   return (
-    <div className={`sky${scene ? " sky--photo" : ""}`} style={{ height }} data-photo-scene={scene}>
+    <div className={`sky${scene ? " sky--photo" : ""}`} style={scene ? { aspectRatio: "3 / 1" } : { height }} data-photo-scene={scene}>
       {scene ? (
         <>
           <Image
@@ -24,7 +24,7 @@ export default function Skyline({ ids, mood, height = 150, children }: { ids: st
             preload
             className="sky-photo-image"
           />
-          {scene === "exam" && <span className="sky-photo-rain" aria-hidden="true" />}
+          {scene === "exam" ? <span className="sky-photo-rain" aria-hidden="true" /> : null}
         </>
       ) : (
         <>
@@ -71,9 +71,9 @@ export default function Skyline({ ids, mood, height = 150, children }: { ids: st
 // The tab banners use separate photographic scenes. All other landmark pairings
 // retain their purpose-built animated skyline so chapter and topic views stay unique.
 const PHOTO_SCENES: Record<string, string> = {
-  "TN001|DE009": "home",
+  "TN002|DE009": "home",
   "TN004|DE025": "words",
-  "TN006|DE002": "exam",
+  "TN026|DE002": "exam",
   "TN001|DE004|DE003": "bruecke",
   "TN011|DE018": "me",
 };
