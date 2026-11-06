@@ -5248,6 +5248,44 @@
   ]
  },
  {
+  "key": "exam-a1-l4-1",
+  "voice": "m",
+  "segments": [
+   {
+    "voice": "f",
+    "text": "Guten Morgen, was bekommen Sie?"
+   },
+   {
+    "voice": "m",
+    "text": "Vier Brötchen und ein Brot, bitte."
+   },
+   {
+    "voice": "f",
+    "text": "Das macht fünf Euro vierzig."
+   }
+  ]
+ },
+ {
+  "key": "exam-a1-l4-2",
+  "voice": "m",
+  "segments": [
+   {
+    "voice": "m",
+    "text": "Hallo Nethra, hier ist Medwin. Ich komme heute später, um halb sieben. Bis dann!"
+   }
+  ]
+ },
+ {
+  "key": "exam-a1-l4-3",
+  "voice": "m",
+  "segments": [
+   {
+    "voice": "f",
+    "text": "Achtung, eine Durchsage. Der Bus Linie fünfzehn fährt heute nicht. Bitte nehmen Sie die Linie zwanzig."
+   }
+  ]
+ },
+ {
   "key": "liebe-thanisha-morgen-moechte-ich-einkaufen-treffen-wir-uns-um-10-uhr-vor-dem-supermarkt-i",
   "text": "Liebe Thanisha, morgen möchte ich einkaufen. Treffen wir uns um 10 Uhr vor dem Supermarkt? Ich brauche Obst und Brot. Kommst du mit? Viele Grüße, Sadhana",
   "voice": "f"
@@ -5260,6 +5298,11 @@
  {
   "key": "liebe-frau-kavitha-ich-bin-krank-und-kann-morgen-nicht-kommen-am-montag-komme-ich-wieder-k",
   "text": "Liebe Frau Kavitha, ich bin krank und kann morgen nicht kommen. Am Montag komme ich wieder. Können Sie mir bitte die Hausaufgaben schicken? Viele Grüße, Adhi",
+  "voice": "f"
+ },
+ {
+  "key": "liebe-rithika-vielen-dank-fuer-die-einladung-ich-komme-sehr-gern-ich-bringe-einen-kuchen-m",
+  "text": "Liebe Rithika, vielen Dank für die Einladung! Ich komme sehr gern. Ich bringe einen Kuchen mit. Ich bin um 18 Uhr bei dir. Viele Grüße, Sadhana",
   "voice": "f"
  },
  {
@@ -5479,6 +5522,38 @@
   ]
  },
  {
+  "key": "exam-a2-l4-1",
+  "voice": "m",
+  "segments": [
+   {
+    "voice": "f",
+    "text": "Das Wetter für morgen: Im Norden ist es regnerisch bei zwölf Grad. Im Süden scheint die Sonne, es wird bis zu zwanzig Grad warm. Am Wochenende wird es kälter."
+   }
+  ]
+ },
+ {
+  "key": "exam-a2-l4-2",
+  "voice": "m",
+  "segments": [
+   {
+    "voice": "f",
+    "text": "Wohin fährst du im Urlaub?"
+   },
+   {
+    "voice": "m",
+    "text": "Nach Italien, mit dem Auto. Ich fahre mit meiner Familie."
+   },
+   {
+    "voice": "f",
+    "text": "Wie lange bleibt ihr?"
+   },
+   {
+    "voice": "m",
+    "text": "Zwei Wochen. Wir fahren im Juli."
+   }
+  ]
+ },
+ {
   "key": "liebe-frau-kavitha-ich-kann-morgen-leider-nicht-kommen-weil-ich-krank-bin-am-donnerstag-ko",
   "text": "Liebe Frau Kavitha, ich kann morgen leider nicht kommen, weil ich krank bin. Am Donnerstag komme ich wieder. Können Sie mir bitte die Hausaufgaben schicken? Vielen Dank! Viele Grüße, Sadhana",
   "voice": "f"
@@ -5496,6 +5571,11 @@
  {
   "key": "liebe-ruby-ich-habe-seit-montag-einen-neuen-job-in-einer-firma-in-berlin-ich-arbeite-im-bu",
   "text": "Liebe Ruby, ich habe seit Montag einen neuen Job in einer Firma in Berlin. Ich arbeite im Büro und schreibe viele E-Mails. Mein Chef ist sehr nett und die Kollegen helfen mir. Hast du am Wochenende Zeit? Dann erzähle ich dir mehr. Viele Grüße, Adhi",
+  "voice": "f"
+ },
+ {
+  "key": "sehr-geehrte-damen-und-herren-ich-habe-letzte-woche-eine-jacke-bestellt-leider-ist-sie-zu-",
+  "text": "Sehr geehrte Damen und Herren, ich habe letzte Woche eine Jacke bestellt. Leider ist sie zu klein. Ich möchte die Jacke gern umtauschen und eine größere Jacke bekommen. Bitte schicken Sie mir die neue Jacke so schnell wie möglich. Bitte antworten Sie mir bis nächsten Freitag. Mit freundlichen Grüßen, Adhi",
   "voice": "f"
  },
  {

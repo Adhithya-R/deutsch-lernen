@@ -120,6 +120,24 @@ const a1: LevelContent = {
         { q: "Nethra soll Kavitha kurz schreiben.", options: TF, answer: "Richtig" },
       ],
     },
+    {
+      id: "a1-r4",
+      title: "Timetable, sign and text message",
+      instruction: "Read the texts and answer the questions.",
+      texts: [
+        { label: "Timetable of a course", lines: ["Deutschkurs A1 · Stundenplan", "Montag: Grammatik, 18.00–19.30 Uhr", "Mittwoch: Sprechen, 18.00–19.30 Uhr", "Samstag: Wiederholung, 10.00–12.00 Uhr"] },
+        { label: "Sign at a library", lines: ["Stadtbibliothek", "Montag bis Freitag: 9–19 Uhr", "Samstag: 10–14 Uhr", "Sie können Bücher vier Wochen behalten."] },
+        { label: "Text message from Yogesh", lines: ["Hallo Ram, ich bin schon da. Ich warte vor dem Kino. Kommst du bald? Der Film beginnt in zehn Minuten. Yogesh"] },
+      ],
+      items: [
+        { q: "Wann ist der Sprechkurs?", options: ["Am Montag", "Am Mittwoch", "Am Samstag"], answer: "Am Mittwoch" },
+        { q: "Am Samstag dauert der Kurs zwei Stunden.", options: TF, answer: "Richtig", tip: "10.00–12.00 Uhr = two hours." },
+        { q: "Wie lange darf man ein Buch behalten?", options: ["Eine Woche", "Vier Wochen", "Ein Jahr"], answer: "Vier Wochen" },
+        { q: "Die Bibliothek ist am Sonntag offen.", options: TF, answer: "Falsch", tip: "Only Monday to Saturday." },
+        { q: "Wo wartet Yogesh?", options: ["Vor dem Kino", "Im Café", "Am Bahnhof"], answer: "Vor dem Kino" },
+        { q: "Wann beginnt der Film?", options: ["In zehn Minuten", "In einer Stunde", "Morgen"], answer: "In zehn Minuten" },
+      ],
+    },
   ],
   listening: [
     {
@@ -169,6 +187,23 @@ const a1: LevelContent = {
         { q: "Text 3: Wann schließt das Schwimmbad?", options: ["Um 16 Uhr", "Um 18 Uhr", "Um 20 Uhr"], answer: "Um 18 Uhr", tip: "achtzehn Uhr = 18:00." },
       ],
     },
+    {
+      id: "a1-l4",
+      title: "Bakery, message and bus announcement",
+      instruction: "You hear three texts. Listen and choose the answer. You may play each one twice.",
+      clips: [
+        { id: "1", label: "Text 1", segments: [{ voice: "f", text: "Guten Morgen, was bekommen Sie?" }, { voice: "m", text: "Vier Brötchen und ein Brot, bitte." }, { voice: "f", text: "Das macht fünf Euro vierzig." }] },
+        { id: "2", label: "Text 2", segments: [{ voice: "m", text: "Hallo Nethra, hier ist Medwin. Ich komme heute später, um halb sieben. Bis dann!" }] },
+        { id: "3", label: "Text 3", segments: [{ voice: "f", text: "Achtung, eine Durchsage. Der Bus Linie fünfzehn fährt heute nicht. Bitte nehmen Sie die Linie zwanzig." }] },
+      ],
+      items: [
+        { q: "Text 1: Was kauft der Mann?", options: ["Vier Brötchen und ein Brot", "Ein Brot und einen Kuchen", "Nur Brötchen"], answer: "Vier Brötchen und ein Brot" },
+        { q: "Text 1: Was kostet es?", options: ["5,04 €", "5,40 €", "4,50 €"], answer: "5,40 €", tip: "fünf Euro vierzig = 5,40 €." },
+        { q: "Text 2: Wann kommt Medwin?", options: ["Um 18.30 Uhr", "Um 6.00 Uhr", "Um 19.30 Uhr"], answer: "Um 18.30 Uhr", tip: "halb sieben = 6.30 pm." },
+        { q: "Text 3: Welche Linie fährt heute nicht?", options: ["Linie 15", "Linie 20", "Linie 50"], answer: "Linie 15" },
+        { q: "Text 3: Was sollen die Fahrgäste tun?", options: ["Die Linie 20 nehmen", "Nach Hause gehen", "Ein Taxi rufen"], answer: "Die Linie 20 nehmen" },
+      ],
+    },
   ],
   writing: {
     form: {
@@ -214,6 +249,16 @@ const a1: LevelContent = {
         min: 20,
         max: 35,
         sample: "Liebe Frau Kavitha, ich bin krank und kann morgen nicht kommen. Am Montag komme ich wieder. Können Sie mir bitte die Hausaufgaben schicken? Viele Grüße, Adhi",
+      },
+      {
+        id: "a1-w4",
+        kind: "message",
+        title: "Short message: reply to an invitation",
+        situation: "Ihre Freundin Rithika lädt Sie zu ihrem Geburtstag ein. Schreiben Sie ihr eine Antwort.",
+        points: ["Sagen Sie, dass Sie gern kommen.", "Was bringen Sie mit?", "Wann kommen Sie?"],
+        min: 20,
+        max: 35,
+        sample: "Liebe Rithika, vielen Dank für die Einladung! Ich komme sehr gern. Ich bringe einen Kuchen mit. Ich bin um 18 Uhr bei dir. Viele Grüße, Sadhana",
       },
     ],
   },
@@ -385,6 +430,29 @@ const a2: LevelContent = {
         { q: "Was macht Thanisha morgen?", options: ["Sie geht noch einmal hin und macht Fotos.", "Sie unterschreibt den Vertrag.", "Sie ruft Ram an."], answer: "Sie geht noch einmal hin und macht Fotos." },
       ],
     },
+    {
+      id: "a2-r5",
+      title: "A blog post",
+      instruction: "Read the text and answer the questions.",
+      texts: [
+        {
+          label: "My first year in Berlin (blog by Dhinesh)",
+          lines: [
+            "Vor einem Jahr bin ich nach Berlin gezogen. Am Anfang war alles neu und schwer für mich: die Sprache, das Wetter und das Essen.",
+            "Ich habe jeden Tag Deutsch gelernt und viele Leute kennengelernt. Meine Nachbarn haben mir oft geholfen.",
+            "Jetzt habe ich eine Arbeit in einer Firma und eine kleine Wohnung. Im Winter vermisse ich die Sonne, aber ich koche oft indisches Essen für meine Freunde.",
+            "Nächstes Jahr möchte ich meine Familie nach Berlin einladen.",
+          ],
+        },
+      ],
+      items: [
+        { q: "Was war am Anfang schwer?", options: ["Die Sprache, das Wetter und das Essen", "Nur die Arbeit", "Nur die Wohnung"], answer: "Die Sprache, das Wetter und das Essen" },
+        { q: "Wer hat Dhinesh oft geholfen?", options: ["Seine Nachbarn", "Sein Chef", "Seine Lehrerin"], answer: "Seine Nachbarn" },
+        { q: "Dhinesh hat jetzt eine große Wohnung.", options: TF, answer: "Falsch", tip: "“eine kleine Wohnung”" },
+        { q: "Was vermisst er im Winter?", options: ["Die Sonne", "Seine Freunde", "Das Essen"], answer: "Die Sonne" },
+        { q: "Was möchte er nächstes Jahr machen?", options: ["Seine Familie einladen", "Nach Indien ziehen", "Eine neue Arbeit suchen"], answer: "Seine Familie einladen" },
+      ],
+    },
   ],
   listening: [
     {
@@ -456,6 +524,31 @@ const a2: LevelContent = {
         { q: "Station: Wo kann man eine Fahrkarte kaufen?", options: ["Am Automaten", "Im Zug", "Im Hotel"], answer: "Am Automaten" },
       ],
     },
+    {
+      id: "a2-l4",
+      title: "Weather report and holiday plans",
+      instruction: "Listen and choose the answers. You may play each text twice.",
+      clips: [
+        { id: "1", label: "Weather report", segments: [{ voice: "f", text: "Das Wetter für morgen: Im Norden ist es regnerisch bei zwölf Grad. Im Süden scheint die Sonne, es wird bis zu zwanzig Grad warm. Am Wochenende wird es kälter." }] },
+        {
+          id: "2",
+          label: "Conversation",
+          segments: [
+            { voice: "f", text: "Wohin fährst du im Urlaub?" },
+            { voice: "m", text: "Nach Italien, mit dem Auto. Ich fahre mit meiner Familie." },
+            { voice: "f", text: "Wie lange bleibt ihr?" },
+            { voice: "m", text: "Zwei Wochen. Wir fahren im Juli." },
+          ],
+        },
+      ],
+      items: [
+        { q: "Weather: Wie ist das Wetter im Süden?", options: ["Sonnig und warm", "Regnerisch und kalt", "Windig"], answer: "Sonnig und warm" },
+        { q: "Weather: Wie warm wird es im Süden?", options: ["Bis zu 12 Grad", "Bis zu 20 Grad", "Bis zu 30 Grad"], answer: "Bis zu 20 Grad" },
+        { q: "Weather: Am Wochenende wird es wärmer.", options: TF, answer: "Falsch", tip: "“kälter” = colder." },
+        { q: "Conversation: Womit fährt er nach Italien?", options: ["Mit dem Auto", "Mit dem Zug", "Mit dem Flugzeug"], answer: "Mit dem Auto" },
+        { q: "Conversation: Wie lange bleiben sie?", options: ["Eine Woche", "Zwei Wochen", "Einen Monat"], answer: "Zwei Wochen" },
+      ],
+    },
   ],
   writing: {
     tasks: [
@@ -498,6 +591,16 @@ const a2: LevelContent = {
         min: 40,
         max: 70,
         sample: "Liebe Ruby, ich habe seit Montag einen neuen Job in einer Firma in Berlin. Ich arbeite im Büro und schreibe viele E-Mails. Mein Chef ist sehr nett und die Kollegen helfen mir. Hast du am Wochenende Zeit? Dann erzähle ich dir mehr. Viele Grüße, Adhi",
+      },
+      {
+        id: "a2-w5",
+        kind: "email",
+        title: "Part 2: a complaint",
+        situation: "Sie haben im Internet eine Jacke bestellt, aber sie ist zu klein. Schreiben Sie an den Kundenservice.",
+        points: ["Was ist das Problem?", "Was möchten Sie?", "Wann erwarten Sie eine Antwort?"],
+        min: 40,
+        max: 70,
+        sample: "Sehr geehrte Damen und Herren, ich habe letzte Woche eine Jacke bestellt. Leider ist sie zu klein. Ich möchte die Jacke gern umtauschen und eine größere Jacke bekommen. Bitte schicken Sie mir die neue Jacke so schnell wie möglich. Bitte antworten Sie mir bis nächsten Freitag. Mit freundlichen Grüßen, Adhi",
       },
     ],
   },

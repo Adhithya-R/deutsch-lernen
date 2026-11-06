@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import FormPractice from "@/components/FormPractice";
+import FullMock from "@/components/FullMock";
 import Icon from "@/components/Icon";
 import PageNav from "@/components/PageNav";
 import PracticeRunner, { type PTask } from "@/components/PracticeRunner";
@@ -10,8 +11,8 @@ import WritingCoach from "@/components/WritingCoach";
 import { clipKey, levelOf, type LevelContent } from "@/content/exam";
 import { getSession } from "@/lib/supabase/session";
 
-const SKILLS = ["reading", "listening", "writing", "speaking", "mock"] as const;
-const TITLES: Record<string, string> = { reading: "Reading", listening: "Listening", writing: "Writing", speaking: "Speaking", mock: "Mini mock test" };
+const SKILLS = ["reading", "listening", "writing", "speaking", "mock", "full"] as const;
+const TITLES: Record<string, string> = { reading: "Reading", listening: "Listening", writing: "Writing", speaking: "Speaking", mock: "Mini mock test", full: "Full practice exam" };
 
 export function generateStaticParams() {
   return ["a1", "a2"].flatMap((level) => SKILLS.map((skill) => ({ level, skill })));
@@ -57,6 +58,17 @@ async function Inner({ params }: { params: PageProps<"/exam/[level]/[skill]">["p
           </p>
           <PracticeRunner tasks={[...readingTasks(e), ...listeningTasks(e)]} minutes={e.level === "a1" ? 40 : 55} kind="mock" refId={`${e.level}-mock`} />
         </>
+      )}
+      {skill === "full" && (
+        <FullMock
+          level={e.level}
+          name={e.name}
+          reading={readingTasks(e)}
+          listening={listeningTasks(e)}
+          writing={e.writing.tasks.find((t) => t.kind === "email") ?? e.writing.tasks[0]}
+          speaking={e.speaking}
+          minutes={e.level === "a1" ? { reading: 25, listening: 20, writing: 20 } : { reading: 30, listening: 25, writing: 30 }}
+        />
       )}
       {skill === "writing" && (
         <div className="flex flex-col gap-5">

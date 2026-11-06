@@ -28,6 +28,7 @@ async function Inner({ params }: { params: PageProps<"/exam/[level]">["params"] 
     { skill: "listening", title: "Listening", sub: `${e.listening.length} tasks with audio`, icon: "volume" },
     { skill: "writing", title: "Writing", sub: `${e.writing.tasks.length + (e.writing.form ? 1 : 0)} tasks with a coach`, icon: "pencil" },
     { skill: "speaking", title: "Speaking", sub: `${e.speaking.length} parts with model answers`, icon: "users" },
+    { skill: "full", title: "Full practice exam", sub: "All four parts in order, with timers", icon: "grad" },
     { skill: "mock", title: "Mini mock test", sub: "Reading and listening, with a timer", icon: "grad" },
   ];
 
