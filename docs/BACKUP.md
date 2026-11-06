@@ -3,7 +3,7 @@
 Your data lives in **Supabase**, not in Vercel or GitHub. The code is safe on GitHub; the learners' progress is only in the database.
 
 ## What each learner can do
-Me → **Download my progress** saves one JSON file with their chapters, flashcards, quiz scores, XP and writing drafts.
+Open **/me/export** (while logged in; the page is not linked in the app) to save one JSON file with their chapters, flashcards, quiz scores, XP and writing drafts.
 
 ## What you should do (about 10 minutes, once a month, and before big changes)
 1. Open the Supabase dashboard → your project → **Table Editor**.
