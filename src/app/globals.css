@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+.app-splash {
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  display: none;
+  overflow: hidden;
+  background: #062d1d;
+}
+.app-splash img {
+  object-fit: cover;
+}
+html[data-app-splash="show"] .app-splash {
+  display: block;
+}
+
 /* ---------- Colour worlds: each tab has its own calm, accessible palette ---------- */
 :root,
 [data-tab="learn"] {
