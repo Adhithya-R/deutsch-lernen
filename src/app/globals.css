@@ -105,6 +105,9 @@ h3 {
 html[data-lang="en"] .ta-only {
   display: none !important;
 }
+html[data-lang="both"] .en-only {
+  display: none !important;
+}
 
 :focus-visible {
   outline: 3px solid var(--tab-acc);
