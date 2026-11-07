@@ -42,11 +42,15 @@ export default function SiteFooter() {
         <span lang="en" className="en-only">{en}</span>
         <span lang="ta" className="ta-only">{ta}</span>
       </p>
-      <div className="relative mx-auto mt-2 flex w-full max-w-md items-center justify-between px-1" aria-label="A bridge between India and Germany">
+      <div className="relative mx-auto mt-2 flex w-full max-w-md items-center justify-between px-1">
         <span className="absolute left-8 right-8 top-1/2 border-t border-pri/40" aria-hidden="true" />
         <IndiaFlag />
-        <span className="relative grid h-9 w-12 place-items-center rounded-full bg-white text-pri">
-          <Icon name="bridge" size={38} />
+        <span className="relative flex min-w-0 flex-1 items-center justify-center gap-1.5 bg-white px-2 text-pri">
+          <Icon name="bridge" size={28} className="shrink-0" />
+          <span className="max-w-64 text-center text-[11px] font-extrabold leading-tight">
+            <span lang="de" className="en-only">Tamil Nadu und Deutschland – durch eine Brücke verbunden.</span>
+            <span className="ta-only"><span lang="de">Tamil Nadu und Deutschland – </span><span lang="ta">நம்மை இணைக்கும்</span><span lang="de"> Brücke.</span></span>
+          </span>
         </span>
         <GermanyFlag />
       </div>
