@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import PageNav from "@/components/PageNav";
+import Pic from "@/components/Pic";
 import Quiz from "@/components/Quiz";
 import ScreenTop from "@/components/ScreenTop";
 import SpeakButton from "@/components/SpeakButton";
@@ -38,7 +39,10 @@ export default async function TopicPage({ params }: PageProps<"/bruecke/[topic]"
                 <p className="text-[11.5px] font-extrabold uppercase tracking-wider text-pri-dark">Tamil Nadu</p>
                 <ul className="mt-2 space-y-2.5">
                   {s.tn.map((it) => (
-                    <li key={it.big}><p className="font-extrabold">{it.big}</p><p className="text-sm text-muted">{it.text}</p></li>
+                    <li key={it.big} className="flex items-start gap-2">
+                      <Pic pic={it.pic} size={22} />
+                      <div><p className="font-extrabold">{it.big}</p><p className="text-sm text-muted">{it.text}</p></div>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -47,10 +51,13 @@ export default async function TopicPage({ params }: PageProps<"/bruecke/[topic]"
                 <ul className="mt-2 space-y-2.5">
                   {s.de.map((it) => (
                     <li key={it.big} className="flex items-start justify-between gap-2">
-                      <div>
-                        <p className="font-extrabold">{it.big}</p>
+                      <div className="flex min-w-0 items-start gap-2">
+                        <Pic pic={it.pic} size={22} />
+                        <div>
+                          <p className="font-extrabold">{it.big}</p>
                         <p className="text-sm text-muted">{it.text}</p>
                         {it.ta && <p lang="ta" className="ta-only text-sm">{it.ta}</p>}
+                        </div>
                       </div>
                       <SpeakButton text={it.big} />
                     </li>

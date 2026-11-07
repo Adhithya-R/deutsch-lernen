@@ -3,7 +3,7 @@
 import type { Exercise } from "./lessons.ts";
 import type { Mood } from "../lib/landmarks.ts";
 
-export type Item = { big: string; text: string; ta?: string };
+export type Item = { big: string; text: string; ta?: string; pic: string };
 export type Section = { id: string; en: string; ta: string; tn: Item[]; de: Item[] };
 export type Topic = {
   id: string;
@@ -16,7 +16,83 @@ export type Topic = {
   quiz: Exercise[];
 };
 
-const i = (big: string, text: string, ta?: string): Item => ({ big, text, ta });
+const CULTURE_PICTURES: [RegExp, string][] = [
+  [/idli|sambar|biryani|curd rice|rice and curry|meals on a banana leaf|pongal/i, "🍛"],
+  [/idiyappam/i, "🍜"],
+  [/dosa|pancake/i, "🥞"],
+  [/vada|schnitzel/i, "🍽️"],
+  [/frühstück|breakfast/i, "🍳"],
+  [/poori|chapati|bread|brötchen/i, "🫓"],
+  [/müsli|oats/i, "🥣"],
+  [/\bei\b|egg|osterei/i, "🥚"],
+  [/marmelade|jam/i, "🍓"],
+  [/potato|kartoffel/i, "🥔"],
+  [/nudel|noodle|pasta/i, "🍝"],
+  [/suppe|soup/i, "🍲"],
+  [/abendbrot|salat|salad/i, "🥗"],
+  [/käse|cheese/i, "🧀"],
+  [/wurst|sausage/i, "🌭"],
+  [/kaapi|kaffee|coffee/i, "☕"],
+  [/murukku|sundal|snack/i, "🍘"],
+  [/coconut/i, "🥥"],
+  [/kuchen|cake|lebkuchen/i, "🍰"],
+  [/brezel|pretzel/i, "🥨"],
+  [/apfelschorle|mineralwasser|water/i, "🥤"],
+  [/vanakkam|guten tag|greeting|titles|herr \/ frau|frau \/ herr|sie und du/i, "👋"],
+  [/pünktlich|flexible time|termin|appointment|time|early start|aufstehen|sonntag|feierabend|pause|open late/i, "⏰"],
+  [/shoe/i, "👟"],
+  [/drink/i, "🍵"],
+  [/anmelden|gastgeschenk|gift/i, "🎁"],
+  [/ruhezeit|quiet/i, "🤫"],
+  [/eating by hand|second helpings|besteck|prost/i, "🍽️"],
+  [/sir and madam|teacher/i, "👩‍🏫"],
+  [/school|schule|lehrerin|lehrer|homework|hausaufgabe|deutschkurs|learning|note|marks|bestanden|pause|break/i, "📚"],
+  [/collection|müll|rubbish|recycling|pfand/i, "♻️"],
+  [/even days|sunrise|sunset/i, "🌞"],
+  [/tamil and english|language/i, "💬"],
+  [/supermarkt|shopping|bargaining|festpreis|rabatt|cloth bag|tüte|kassenzettel/i, "🛍️"],
+  [/rickshaw/i, "🛺"],
+  [/u-bahn|s-bahn|metro/i, "🚇"],
+  [/tram|straßenbahn/i, "🚋"],
+  [/bus/i, "🚌"],
+  [/train|rail|ice|gleis|bahn/i, "🚆"],
+  [/bicycle|fahrrad/i, "🚲"],
+  [/ticket|fahrkarte|entwerten/i, "🎫"],
+  [/delay|verspätung/i, "⏳"],
+  [/traffic|fahren/i, "🚦"],
+  [/saree|veshti|dirndl|lederhose/i, "🥻"],
+  [/shirt|hemd/i, "👕"],
+  [/jeans/i, "👖"],
+  [/dress|kleid/i, "👗"],
+  [/cotton|silk/i, "🧵"],
+  [/jacke|jacket/i, "🧥"],
+  [/mütze|hat/i, "🧢"],
+  [/schal|scarf/i, "🧣"],
+  [/handschuhe|gloves/i, "🧤"],
+  [/deepavali/i, "🪔"],
+  [/puthandu/i, "🌺"],
+  [/weihnachtsmarkt|christmas/i, "🎄"],
+  [/silvester|new year/i, "🎆"],
+  [/ostern|easter/i, "🐣"],
+  [/kolam/i, "🎨"],
+  [/harvest|erntedankfest/i, "🌾"],
+  [/house|housing|haus|mietwohnung|wohnung|wg/i, "🏠"],
+  [/kaltmiete|warmmiete|kaution|deposit|konto|bank/i, "💶"],
+  [/heizung|heater|heat|fans and ac|air/i, "🌡️"],
+  [/lüften|window/i, "🪟"],
+  [/frühling|spring/i, "🌷"],
+  [/sommerzeit|clocks/i, "🕰️"],
+  [/sommer|summer|hot/i, "☀️"],
+  [/herbst|autumn/i, "🍂"],
+  [/winter|schnee|snow/i, "❄️"],
+  [/regen|rain|umbrella|regenschirm|monsoon/i, "🌧️"],
+  [/hell|dunkel|light|daylight/i, "🌅"],
+  [/upi|cash|bar|karte|card|paying/i, "💳"],
+  [/festpreis|price|rabatt|discount/i, "🏷️"],
+];
+
+const culturePic = (big: string) => CULTURE_PICTURES.find(([pattern]) => pattern.test(big))?.[1] ?? "🌉";
+const i = (big: string, text: string, ta?: string): Item => ({ big, text, ta, pic: culturePic(big) });
 
 export const topics: Topic[] = [
   {
