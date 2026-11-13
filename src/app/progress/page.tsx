@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import GoalPicker from "@/components/GoalPicker";
 import Icon, { type IconName } from "@/components/Icon";
 import ScreenTop from "@/components/ScreenTop";
+import QuestBoard from "@/components/QuestBoard";
 import WeekChart from "@/components/WeekChart";
 import { chapters } from "@/content/chapters";
 import { lessons } from "@/content/lessons";
@@ -57,9 +58,9 @@ async function Content() {
 
   const [activity, states, lessonRows, quizRows] = await Promise.all([
     supabase.from("daily_activity").select("day,xp"),
-    supabase.from("flashcard_state").select("card_id"),
+    supabase.from("flashcard_state").select("card_id,updated_at"),
     supabase.from("lesson_progress").select("lesson_slug,status"),
-    supabase.from("quiz_results").select("kind,ref,score,total"),
+    supabase.from("quiz_results").select("kind,ref,score,total,updated_at"),
   ]);
 
   const byDay: Record<string, number> = Object.fromEntries((activity.data ?? []).map((r) => [String(r.day), Number(r.xp)]));
@@ -97,6 +98,12 @@ async function Content() {
         <Stat icon="checkc" value={(quizRows.data ?? []).length} label="quizzes done" />
       </div>
 
+      <QuestBoard
+        byDay={byDay}
+        reviewedAt={(states.data ?? []).map((row) => String(row.updated_at))}
+        quizAt={(quizRows.data ?? []).map((row) => String(row.updated_at))}
+      />
+
       <section className={card}>
         <h2 className="text-lg font-extrabold">Last 7 days</h2>
         <div className="mt-3"><WeekChart byDay={byDay} /></div>
@@ -129,3 +136,4 @@ async function Content() {
     </div>
   );
 }
+
