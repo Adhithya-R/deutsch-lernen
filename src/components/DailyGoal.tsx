@@ -15,7 +15,7 @@ export default function DailyGoal({ byDay }: { byDay: Record<string, number> }) 
   const pct = Math.min(100, Math.round((xp / goal) * 100));
   const met = xp >= goal;
   return (
-    <div className="brand-daily-goal mt-3 rounded-2xl p-3.5">
+    <div className="mt-3 rounded-2xl bg-white p-3.5 shadow-[0_3px_0_var(--color-line)]">
       <div className="flex items-center justify-between text-sm font-extrabold">
         <span className="flex items-center gap-1.5">{met && <Icon name="checkc" size={18} className="text-ok" />} Daily goal</span>
         <span className={met ? "text-ok" : "text-muted"}>{met ? "Done! Super." : `${xp} / ${goal} XP`}</span>
