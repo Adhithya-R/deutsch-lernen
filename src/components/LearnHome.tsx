@@ -21,16 +21,20 @@ const ROW = 152;
 
 type Stop = { title: string; sub: string; state: "done" | "cur" | "lock"; href?: string };
 
-function Chip({ icon, value, label }: { icon: IconName; value: string | number; label: string }) {
-  return (
-    <div className="flex flex-1 items-center gap-2 rounded-2xl bg-white px-3 py-2.5 shadow-[0_3px_0_var(--color-line)]">
+function Chip({ icon, value, label, href }: { icon: IconName; value: string | number; label: string; href?: string }) {
+  const body = (
+    <>
       <Icon name={icon} size={22} className="shrink-0 text-pri" />
       <div className="min-w-0">
         <b className="block font-display text-xl font-extrabold leading-none">{value}</b>
         <small className="block text-[11.5px] font-semibold leading-tight text-muted">{label}</small>
       </div>
-    </div>
+    </>
   );
+  const cls = "flex flex-1 items-center gap-2 rounded-2xl bg-white px-3 py-2.5 text-left shadow-[0_3px_0_var(--color-line)]";
+  return href
+    ? <Link href={href} className={`${cls} transition-transform active:translate-y-0.5`} aria-label={`${value} ${label}. Open streak details.`}>{body}</Link>
+    : <div className={cls}>{body}</div>;
 }
 
 /** `loading`: progress is still being fetched, so show neutral placeholders instead of the logged-out view. */
@@ -65,7 +69,7 @@ export default function LearnHome({ data, loading = false }: { data: LearnData; 
         {!loading && data.loggedIn && <LevelCard xp={data.xp} />}
 
         <div className="mt-3.5 flex gap-2">
-          <Chip icon="flame" value={loading ? "–" : data.streak} label={data.streak === 1 ? "day streak" : "day streak"} />
+          <Chip icon="flame" value={loading ? "–" : data.streak} label="day streak" href={loading ? undefined : "/streak"} />
           <Chip icon="star" value={loading ? "–" : data.xp} label="XP" />
           <Chip icon="cards" value={loading ? "–" : `${data.learned}/${data.words}`} label="words learned" />
         </div>
