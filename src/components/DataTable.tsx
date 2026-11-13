@@ -1,10 +1,15 @@
-import type { Table } from "@/content/lessons";
+import type { Bilingual, Table } from "@/content/lessons";
 import { isTamilColumn, Mixed } from "@/lib/tamil";
 
-export default function DataTable({ table }: { table: Table }) {
+export default function DataTable({ table, explanation }: { table: Table; explanation?: Bilingual }) {
   const ta = table.headers.map(isTamilColumn);
   return (
-    <div className="overflow-x-auto rounded-2xl border-2 border-line bg-white">
+    <div className="overflow-hidden rounded-2xl border-2 border-line bg-white">
+      {explanation && <div className="border-b-2 border-line bg-sand-2 px-4 py-3 text-sm leading-relaxed">
+        <p>{explanation.en}</p>
+        <p lang="ta" className="ta-only mt-1 text-muted">{explanation.ta}</p>
+      </div>}
+      <div className="overflow-x-auto">
       <table className="w-full min-w-[20rem] text-left text-[14.5px]">
         <caption className="border-b-2 border-line bg-sand-2 px-4 py-2.5 text-left text-sm font-extrabold">
           <Mixed text={table.title} />
@@ -32,6 +37,8 @@ export default function DataTable({ table }: { table: Table }) {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }
+

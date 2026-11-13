@@ -7,6 +7,8 @@ import PageNav from "@/components/PageNav";
 import Quiz from "@/components/Quiz";
 import SpeakButton from "@/components/SpeakButton";
 import { lessons } from "@/content/lessons";
+import { grammarGuides } from "@/content/grammar-guides";
+import { grammarPractice } from "@/content/grammar-practice";
 import { getSession } from "@/lib/supabase/session";
 
 export function generateStaticParams() {
@@ -17,6 +19,7 @@ export default async function LessonPage({ params }: PageProps<"/lessons/[slug]"
   const { slug } = await params;
   const lesson = lessons.find((l) => l.slug === slug);
   if (!lesson) notFound();
+  const guide = grammarGuides[lesson.slug];
   const sameLevel = lessons.filter((l) => l.level === lesson.level);
   const index = sameLevel.indexOf(lesson);
   const prev = sameLevel[index - 1];
@@ -41,13 +44,30 @@ export default async function LessonPage({ params }: PageProps<"/lessons/[slug]"
       </header>
 
       <section className="mt-4 space-y-1 text-[16px] leading-relaxed">
-        <p>{lesson.intro.en}</p>
-        <p lang="ta" className="ta-only text-muted">{lesson.intro.ta}</p>
+        <h2 className="text-xl font-extrabold">Start with the idea</h2>
+        <p>{guide?.foundation?.en ?? lesson.intro.en}</p>
+        <p lang="ta" className="ta-only text-muted">{guide?.foundation?.ta ?? lesson.intro.ta}</p>
       </section>
 
+      {guide && <section className="mt-5 rounded-2xl border-2 border-line bg-white p-4">
+        <h2 className="text-xl font-extrabold">Build the rule step by step</h2>
+        <ol className="mt-3 space-y-4">
+          {guide.steps.map((step, i) => <li key={i} className="flex gap-3 leading-relaxed">
+            <span className="grid size-7 shrink-0 place-items-center rounded-full bg-pill font-extrabold text-pri-dark">{i + 1}</span>
+            <div><p>{step.en}</p><p lang="ta" className="ta-only mt-1 text-muted">{step.ta}</p></div>
+          </li>)}
+        </ol>
+      </section>}
+
       <div className="mt-5 space-y-4">
-        {lesson.tables?.map((t) => <DataTable key={t.title} table={t} />)}
+        {lesson.tables?.map((t) => <DataTable key={t.title} table={t} explanation={guide?.table} />)}
       </div>
+
+      {guide && <aside className="mt-5 rounded-2xl border-2 border-pri/30 bg-pill/50 p-4 leading-relaxed">
+        <h2 className="font-extrabold">Common mistake to avoid</h2>
+        <p className="mt-1">{guide.mistake.en}</p>
+        <p lang="ta" className="ta-only mt-1 text-muted">{guide.mistake.ta}</p>
+      </aside>}
 
       <section className="mt-8">
         <h2 className="text-xl font-extrabold">Examples</h2>
@@ -66,10 +86,10 @@ export default async function LessonPage({ params }: PageProps<"/lessons/[slug]"
       </section>
 
       <section className="mt-8">
-        <h2 className="text-xl font-extrabold">Practice</h2>
-        <p className="mt-1 text-sm text-muted">Answer every question and check it. Score 60% or more to complete the lesson.</p>
+        <h2 className="text-xl font-extrabold">Practice · 30 questions</h2>
+        <p className="mt-1 text-sm text-muted">Work through each question in order. Your answer is explained after you check it. Score 60% or more to complete the lesson.</p>
         <div className="mt-3">
-          <Quiz exercises={lesson.exercises} refId={lesson.slug} />
+          <Quiz exercises={grammarPractice(lesson)} refId={lesson.slug} />
         </div>
       </section>
 
@@ -92,3 +112,4 @@ async function Status({ slug }: { slug: string }) {
     </p>
   );
 }
+

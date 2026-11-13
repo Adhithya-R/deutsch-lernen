@@ -7,12 +7,13 @@ import SaveNote, { type SaveState } from "@/components/SaveNote";
 import type { Exercise } from "@/content/lessons";
 import { localDay } from "@/lib/activity";
 
-const norm = (s: string) => s.trim().toLowerCase();
+const norm = (s: string) => s.trim().toLowerCase().replace(/[.!?]+$/, "").replace(/\s+/g, " ");
 
 export default function Quiz({ exercises, refId, kind = "lesson" }: { exercises: Exercise[]; refId: string; kind?: "lesson" | "culture" }) {
   const [given, setGiven] = useState<Record<number, string>>({});
   const [checked, setChecked] = useState<Record<number, boolean>>({});
   const [note, setNote] = useState<SaveState>(null);
+  const [active, setActive] = useState(0);
 
   const isOk = (i: number) => norm(given[i] ?? "") === norm(exercises[i].answer);
   const correct = exercises.filter((_, i) => checked[i] && isOk(i)).length;
@@ -33,7 +34,12 @@ export default function Quiz({ exercises, refId, kind = "lesson" }: { exercises:
 
   return (
     <div className="space-y-3">
+      {kind === "lesson" && <div className="mb-4">
+        <div className="mb-2 flex justify-between text-sm font-bold"><span>Question {Math.min(active + 1, exercises.length)} of {exercises.length}</span><span>{correct} correct</span></div>
+        <div className="h-2 overflow-hidden rounded-full bg-line"><div className="h-full rounded-full bg-pri transition-[width]" style={{ width: `${(Object.keys(checked).length / exercises.length) * 100}%` }} /></div>
+      </div>}
       {exercises.map((e, i) => {
+        if (kind === "lesson" && i !== active) return null;
         const done = checked[i];
         const ok = done && isOk(i);
         return (
@@ -88,13 +94,12 @@ export default function Quiz({ exercises, refId, kind = "lesson" }: { exercises:
                   <Icon name={ok ? "checkc" : "crossc"} size={18} />
                   {ok ? "Richtig!" : `Falsch. Answer: ${e.answer}`}
                 </p>
-                {e.tip && (
-                  <p className="mt-1 text-muted">
-                    {e.tip.en} <span lang="ta" className="ta-only">{e.tip.ta}</span>
-                  </p>
-                )}
+                <p className="mt-1 text-muted">
+                  {e.tip?.en ?? "Compare the answer with the rule and examples above. Pay attention to the word form and its place in the sentence."} <span lang="ta" className="ta-only">{e.tip?.ta ?? "மேலுள்ள விதியுடனும் எடுத்துக்காட்டுகளுடனும் பதிலை ஒப்பிடுங்கள். சொல்லின் வடிவத்தையும் வாக்கியத்தில் அதன் இடத்தையும் கவனிக்கவும்."}</span>
+                </p>
               </div>
             )}
+            {done && kind === "lesson" && i < exercises.length - 1 && <button onClick={() => setActive(i + 1)} className="btn3d mt-3 !min-h-11 !w-auto !text-sm px-6 !border-b-4">Continue</button>}
           </div>
         );
       })}
@@ -107,3 +112,4 @@ export default function Quiz({ exercises, refId, kind = "lesson" }: { exercises:
     </div>
   );
 }
+
