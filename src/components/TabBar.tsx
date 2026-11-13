@@ -4,11 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Icon from "@/components/Icon";
 import NavPending from "@/components/NavPending";
-import { TABS, tabFor } from "@/lib/tabs";
+import { TABS, mainTabFor } from "@/lib/tabs";
 
 // Bottom navigation on phones. On laptops the same five links sit in the top bar.
 export default function TabBar() {
-  const current = tabFor(usePathname());
+  const current = mainTabFor(usePathname());
   return (
     <nav
       aria-label="Main"
@@ -35,3 +35,4 @@ export default function TabBar() {
     </nav>
   );
 }
+

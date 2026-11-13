@@ -10,6 +10,11 @@ const PAGE_COPY: Record<TabId, { slogan: string; en: string; ta: string }> = {
     en: "With every lesson, Tamil Nadu and Germany grow closer.",
     ta: "ஒவ்வொரு பாடத்திலும், தமிழ்நாடும் ஜெர்மனியும் இன்னும் நெருக்கமாகின்றன.",
   },
+  grammar: {
+    slogan: "Mit jedem Grammatikschritt wächst deine Brücke zum Deutschen.",
+    en: "Each grammar step strengthens your bridge to German.",
+    ta: "ஒவ்வொரு இலக்கணப் படியும் ஜெர்மன் மொழிக்கான உங்கள் பாலத்தை வலுப்படுத்துகிறது.",
+  },
   words: {
     slogan: "Jedes neue Wort baut eine Brücke zwischen Tamil Nadu und Deutschland.",
     en: "Every new word builds a bridge between Tamil Nadu and Germany.",

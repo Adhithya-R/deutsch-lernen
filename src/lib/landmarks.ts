@@ -44,6 +44,7 @@ export const landmark = (id: string) => LANDMARKS.find((l) => l.id === id) ?? HE
  */
 export const SKY_IDS: Record<TabId, string[]> = {
   learn: ["TN001", "DE004"],
+  grammar: ["TN005", "DE002"],
   words: ["TN004", "DE025"],
   exam: ["TN006", "DE002"],
   bruecke: ["TN001", "DE004", "DE003"],
@@ -52,6 +53,7 @@ export const SKY_IDS: Record<TabId, string[]> = {
 
 export const SKY_MOOD: Record<TabId, Mood> = {
   learn: "noon",
+  grammar: "noon",
   words: "evening",
   exam: "rain",
   bruecke: "sunset",
@@ -72,3 +74,4 @@ export function labelName(l: Landmark, crowded: boolean) {
   const n = l.name;
   return crowded && n.length > 18 ? n.replace(/\s+(Temple|Castle|Palace|Building|Cathedral)$/, "") : n;
 }
+

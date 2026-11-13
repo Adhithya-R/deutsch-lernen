@@ -5,11 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import NavPending from "@/components/NavPending";
-import { TABS, tabFor } from "@/lib/tabs";
+import { TABS, mainTabFor } from "@/lib/tabs";
 
 // Top bar: brand and account. On laptops it also carries the five section links.
 export default function SiteNav({ auth }: { auth: ReactNode }) {
-  const current = tabFor(usePathname());
+  const current = mainTabFor(usePathname());
   return (
     <header className="sticky top-0 z-30 border-b-2 border-line bg-white">
       <div className="mx-auto flex h-14 max-w-5xl items-center gap-4 px-4 lg:h-16 lg:gap-8 lg:px-8">
@@ -43,3 +43,4 @@ export default function SiteNav({ auth }: { auth: ReactNode }) {
     </header>
   );
 }
+

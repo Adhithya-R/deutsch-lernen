@@ -21,11 +21,11 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#f0f7ff",
+  themeColor: "#111b1f",
 };
 
 // Runs before the first paint so English-only users never see Tamil flash by.
-const LANG_SCRIPT = `try{var l=localStorage.getItem('lang');if(l==='en'||l==='both')document.documentElement.dataset.lang=l;var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.dataset.theme='dark';if(window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true)document.documentElement.dataset.appSplash='show'}catch(e){}`;
+const LANG_SCRIPT = `document.documentElement.dataset.theme='dark';try{var l=localStorage.getItem('lang');if(l==='en'||l==='both')document.documentElement.dataset.lang=l;var t=localStorage.getItem('theme');if(t==='light')delete document.documentElement.dataset.theme;else document.documentElement.dataset.theme='dark';if(window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true)document.documentElement.dataset.appSplash='show'}catch(e){}`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -58,3 +58,4 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     </html>
   );
 }
+

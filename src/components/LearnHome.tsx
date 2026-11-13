@@ -148,17 +148,6 @@ export default function LearnHome({ data, loading = false }: { data: LearnData; 
         </div>
         </section>
 
-        <div className="mt-4 grid grid-cols-2 gap-2.5">
-          <Link href="/grammar" className="flex items-center gap-2.5 rounded-2xl bg-white p-3.5 font-extrabold shadow-[0_3px_0_var(--color-line)]">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-pill text-pri"><Icon name="pencil" size={20} /></span>
-            Grammar
-          </Link>
-          <Link href="/cheatsheets" className="flex items-center gap-2.5 rounded-2xl bg-white p-3.5 font-extrabold shadow-[0_3px_0_var(--color-line)]">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-pill text-pri"><Icon name="table" size={20} /></span>
-            Cheat sheets
-          </Link>
-        </div>
-
         {!loading && !data.loggedIn && (
           <p className="mt-4 rounded-2xl bg-white p-3.5 text-sm shadow-[0_3px_0_var(--color-line)]">
             <Link href="/signup" className="font-extrabold text-pri underline">Create an account</Link> to save your progress and unlock new chapters.
@@ -168,3 +157,4 @@ export default function LearnHome({ data, loading = false }: { data: LearnData; 
     </main>
   );
 }
+

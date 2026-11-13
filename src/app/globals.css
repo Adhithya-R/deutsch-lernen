@@ -17,7 +17,8 @@ html[data-app-splash="show"] .app-splash {
 
 /* ---------- Colour worlds: each tab has its own calm, accessible palette ---------- */
 :root,
-[data-tab="learn"] {
+[data-tab="learn"],
+[data-tab="grammar"] {
   --tab-bg: #fff7ef;
   --tab-band: #edc497;
   --tab-acc: #a45b2a;
@@ -53,7 +54,8 @@ html[data-app-splash="show"] .app-splash {
   --tab-soft: #dfe7f1;
 }
 
-html[data-theme="dark"] [data-tab="learn"] {
+html[data-theme="dark"] [data-tab="learn"],
+html[data-theme="dark"] [data-tab="grammar"] {
   --tab-bg: #111b1f; --tab-band: #3e302b; --tab-acc: #e6a46b; --tab-accd: #a4663b; --tab-soft: #342923;
 }
 html[data-theme="dark"] [data-tab="words"] {
