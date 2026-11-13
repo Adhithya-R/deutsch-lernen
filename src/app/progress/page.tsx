@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import GoalPicker from "@/components/GoalPicker";
+import AchievementBoard from "@/components/AchievementBoard";
 import Icon, { type IconName } from "@/components/Icon";
 import ScreenTop from "@/components/ScreenTop";
 import QuestBoard from "@/components/QuestBoard";
@@ -103,6 +104,8 @@ async function Content() {
         reviewedAt={(states.data ?? []).map((row) => String(row.updated_at))}
         quizAt={(quizRows.data ?? []).map((row) => String(row.updated_at))}
       />
+
+      <AchievementBoard words={learned} chapters={chaptersDone} streak={streak} />
 
       <section className={card}>
         <h2 className="text-lg font-extrabold">Last 7 days</h2>
