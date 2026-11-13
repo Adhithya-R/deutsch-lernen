@@ -72,24 +72,37 @@ export default function LearnHome({ data, loading = false }: { data: LearnData; 
 
         {data.loggedIn && !loading && <DailyGoal byDay={data.byDay ?? {}} />}
 
-        <div className="mt-3 grid grid-cols-2 gap-2.5">
-          <Link href="/grammar" className="flex items-center gap-2.5 rounded-2xl bg-white p-3.5 font-extrabold shadow-[0_3px_0_var(--color-line)]">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-pill text-pri"><Icon name="pencil" size={20} /></span>
-            Grammar
-          </Link>
-          <Link href="/cheatsheets" className="flex items-center gap-2.5 rounded-2xl bg-white p-3.5 font-extrabold shadow-[0_3px_0_var(--color-line)]">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-pill text-pri"><Icon name="table" size={20} /></span>
-            Cheat sheets
-          </Link>
-        </div>
-
-        {!loading && !data.loggedIn && (
-          <p className="mt-4 rounded-2xl bg-white p-3.5 text-sm shadow-[0_3px_0_var(--color-line)]">
-            <Link href="/signup" className="font-extrabold text-pri underline">Create an account</Link> to save your progress and unlock new chapters.
-          </p>
+        {current?.href && (
+          <section className="learn-next mt-4 rounded-3xl p-4 shadow-[0_4px_0_var(--color-line)]" aria-label="Continue learning">
+            <div className="flex items-center justify-between gap-3">
+              <div className="min-w-0">
+                <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-pri-dark">Dein nächster Schritt</p>
+                <h2 className="mt-1 font-display text-xl font-extrabold leading-tight">Kapitel {Math.min(done.size + 1, chapters.length)} · {current.title}</h2>
+                <p className="mt-0.5 text-sm text-muted">{current.sub}</p>
+                <p className="mt-1 text-xs text-muted">
+                  <span className="en-only">Continue your story</span>
+                  <span lang="ta" className="ta-only">உங்கள் கதையைத் தொடருங்கள்</span>
+                </p>
+              </div>
+              <Link href={current.href} className="learn-next-button" aria-label={`Continue chapter ${current.title}`}><Icon name="play" size={22} /></Link>
+            </div>
+          </section>
         )}
 
-        <div className={`relative mt-5 ${loading ? "animate-pulse" : ""}`} aria-busy={loading}>
+        <section className="mt-5" aria-label="Chapter learning path">
+          <div className="mb-3 flex items-end justify-between gap-3">
+            <div>
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-pri">Dein Lernweg</p>
+              <h2 className="font-display text-2xl font-extrabold">Kapitelpfad</h2>
+            </div>
+            <p className="pb-1 text-xs font-bold text-muted">{done.size} / {chapters.length} geschafft</p>
+          </div>
+          <div className="mb-3 flex flex-wrap gap-x-4 gap-y-1 text-[11px] font-bold text-muted" aria-label="Path key">
+            <span className="inline-flex items-center gap-1.5"><i className="h-2.5 w-2.5 rounded-full bg-[#2e9b4a]" />Geschafft</span>
+            <span className="inline-flex items-center gap-1.5"><i className="h-2.5 w-2.5 rounded-full bg-pri" />Jetzt</span>
+            <span className="inline-flex items-center gap-1.5"><i className="h-2.5 w-2.5 rounded-full bg-[#cdb89f]" />Gesperrt</span>
+          </div>
+        <div className={`relative ${loading ? "animate-pulse" : ""}`} aria-busy={loading}>
           <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox={`0 0 100 ${stops.length * ROW}`} preserveAspectRatio="none" aria-hidden="true">
             <path d={path} fill="none" stroke="var(--tab-band)" strokeWidth="6" strokeLinecap="round" strokeDasharray="1 14" vectorEffect="non-scaling-stroke" />
           </svg>
@@ -97,12 +110,12 @@ export default function LearnHome({ data, loading = false }: { data: LearnData; 
             const node = (
               <>
                 {s.state === "cur" && (
-                  <span className="absolute -top-[34px] left-1/2 -translate-x-1/2 rounded-xl bg-white px-3 py-0.5 font-display text-sm font-extrabold text-pri shadow-[0_3px_0_var(--color-line)]">
-                    START
+                  <span className="absolute -top-[34px] left-1/2 -translate-x-1/2 rounded-xl bg-white px-3 py-0.5 font-display text-xs font-extrabold uppercase tracking-wider text-pri shadow-[0_3px_0_var(--color-line)]">
+                    Jetzt
                   </span>
                 )}
                 <span
-                  className={`grid h-[78px] w-[78px] place-items-center rounded-full border-b-[7px] ${
+                  className={`learn-stop learn-stop--${s.state} grid h-[78px] w-[78px] place-items-center rounded-full border-b-[7px] ${
                     s.state === "done"
                       ? "border-[#1d6d33] bg-[#2e9b4a] text-white"
                       : s.state === "cur"
@@ -129,6 +142,24 @@ export default function LearnHome({ data, loading = false }: { data: LearnData; 
             );
           })}
         </div>
+        </section>
+
+        <div className="mt-4 grid grid-cols-2 gap-2.5">
+          <Link href="/grammar" className="flex items-center gap-2.5 rounded-2xl bg-white p-3.5 font-extrabold shadow-[0_3px_0_var(--color-line)]">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-pill text-pri"><Icon name="pencil" size={20} /></span>
+            Grammar
+          </Link>
+          <Link href="/cheatsheets" className="flex items-center gap-2.5 rounded-2xl bg-white p-3.5 font-extrabold shadow-[0_3px_0_var(--color-line)]">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-pill text-pri"><Icon name="table" size={20} /></span>
+            Cheat sheets
+          </Link>
+        </div>
+
+        {!loading && !data.loggedIn && (
+          <p className="mt-4 rounded-2xl bg-white p-3.5 text-sm shadow-[0_3px_0_var(--color-line)]">
+            <Link href="/signup" className="font-extrabold text-pri underline">Create an account</Link> to save your progress and unlock new chapters.
+          </p>
+        )}
       </div>
     </main>
   );
