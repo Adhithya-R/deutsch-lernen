@@ -56,15 +56,13 @@ export default function SiteFooter() {
 
 function IndiaFlag() {
   return (
-    <span role="img" aria-label="Indian flag" className="relative z-10 block aspect-[3/2] w-9 overflow-hidden rounded-[2px] border border-black/10">
-      <span className="absolute inset-x-0 top-0 h-1/3 bg-[#ff9933]" />
-      <span className="absolute inset-x-0 top-1/3 h-1/3 bg-white" />
-      <span className="absolute inset-x-0 bottom-0 h-1/3 bg-[#138808]" />
-      <svg viewBox="0 0 24 24" className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2" fill="none" stroke="#000080" strokeWidth="1.8" aria-hidden="true">
-        <circle cx="12" cy="12" r="8" />
-        <path d="M12 4v16M4 12h16M6.35 6.35l11.3 11.3m0-11.3-11.3 11.3" />
-      </svg>
-    </span>
+    <svg role="img" aria-label="Indian flag" viewBox="0 0 36 24" className="relative z-10 block h-6 w-9 overflow-hidden rounded-[2px] border border-black/20 shadow-sm">
+      <rect width="36" height="8" fill="#ff9933" />
+      <rect y="8" width="36" height="8" fill="#fff" />
+      <rect y="16" width="36" height="8" fill="#138808" />
+      <circle cx="18" cy="12" r="3.15" fill="none" stroke="#000080" strokeWidth=".85" />
+      <path d="M18 8.85v6.3M14.85 12h6.3M15.77 9.77l4.46 4.46m0-4.46-4.46 4.46" fill="none" stroke="#000080" strokeWidth=".55" />
+    </svg>
   );
 }
 
@@ -77,3 +75,4 @@ function GermanyFlag() {
     </span>
   );
 }
+
