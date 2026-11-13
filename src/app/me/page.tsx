@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { logout } from "@/app/actions";
 import Icon from "@/components/Icon";
 import LangToggle from "@/components/LangToggle";
+import ThemeToggle from "@/components/ThemeToggle";
 import ScreenTop from "@/components/ScreenTop";
 import { getSession } from "@/lib/supabase/session";
 
@@ -23,6 +24,15 @@ export default function MePage() {
           <h2 className="text-lg font-extrabold">Language help</h2>
           <p className="mb-3 mt-1 text-sm text-muted">The app is in English. Tamil shows only as help: word meanings, translations and tips.</p>
           <LangToggle />
+        </section>
+
+        <section className={card}>
+          <h2 className="text-lg font-extrabold">Appearance</h2>
+          <p className="mb-3 mt-1 text-sm text-muted">
+            <span className="en-only">Choose a light or dark look for every page.</span>
+            <span lang="ta" className="ta-only">எல்லாப் பக்கங்களுக்கும் ஒளி அல்லது இருள் தோற்றத்தைத் தேர்ந்தெடுக்கவும்.</span>
+          </p>
+          <ThemeToggle />
         </section>
 
         <Link href="/me/account" className={`${card} flex items-center gap-3 font-extrabold`}>

@@ -53,8 +53,27 @@ html[data-app-splash="show"] .app-splash {
   --tab-soft: #dfe7f1;
 }
 
+html[data-theme="dark"] [data-tab="learn"] {
+  --tab-bg: #111b1f; --tab-band: #3e302b; --tab-acc: #e6a46b; --tab-accd: #a4663b; --tab-soft: #342923;
+}
+html[data-theme="dark"] [data-tab="words"] {
+  --tab-bg: #1e151d; --tab-band: #47283a; --tab-acc: #ef85b1; --tab-accd: #a84e78; --tab-soft: #392331;
+}
+html[data-theme="dark"] [data-tab="exam"] {
+  --tab-bg: #141b22; --tab-band: #293b4a; --tab-acc: #8bbbe2; --tab-accd: #537d9d; --tab-soft: #25313c;
+}
+html[data-theme="dark"] [data-tab="bruecke"] {
+  --tab-bg: #12201b; --tab-band: #29443a; --tab-acc: #76c6ac; --tab-accd: #417e6a; --tab-soft: #23372f;
+}
+html[data-theme="dark"] [data-tab="me"] {
+  --tab-bg: #161b29; --tab-band: #303d58; --tab-acc: #9fb5e0; --tab-accd: #60759e; --tab-soft: #272f43;
+}
+
 /* Carry each banner's light and color through the full page and shared chrome. */
 [data-tab] {
+  --line-color: color-mix(in srgb, var(--tab-acc) 18%, white);
+  --surface-soft: color-mix(in srgb, var(--tab-bg) 70%, white);
+  --surface-band: color-mix(in srgb, var(--tab-band) 24%, white);
   background-image: radial-gradient(ellipse at 50% -180px, color-mix(in srgb, var(--tab-band) 42%, transparent), transparent 760px) !important;
 }
 [data-tab] > header,
@@ -66,17 +85,74 @@ html[data-app-splash="show"] .app-splash {
 :root {
   --background: #fbfcfd;
   --foreground: #26333c;
+  --surface: #fff;
+  --muted: #5c6970;
+  --ok-bg: #dff3e0;
+  --ok-fg: #1b5e20;
+  --bad-bg: #ffe1de;
+  --bad-fg: #8c1d18;
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #111b1f;
+  --foreground: #edf2f2;
+  --surface: #1b292e;
+  --muted: #adbbc0;
+  --ok-bg: #193b29;
+  --ok-fg: #c3edce;
+  --bad-bg: #472a2a;
+  --bad-fg: #ffc6bf;
+}
+html[data-theme="dark"] [data-tab] {
+  --line-color: color-mix(in srgb, var(--tab-acc) 34%, #111b1f);
+  --surface-soft: color-mix(in srgb, var(--tab-soft) 68%, #111b1f);
+  --surface-band: color-mix(in srgb, var(--tab-band) 32%, #111b1f);
+  background-image: radial-gradient(ellipse at 50% -180px, color-mix(in srgb, var(--tab-band) 30%, transparent), transparent 760px) !important;
+}
+html[data-theme="dark"] [data-tab] > header,
+html[data-theme="dark"] [data-tab] > footer,
+html[data-theme="dark"] [data-tab] > nav[aria-label="Main"] {
+  background-color: color-mix(in srgb, #111b1f 82%, var(--tab-band)) !important;
+}
+html[data-theme="dark"] [data-tab] .bg-white {
+  background-color: var(--surface) !important;
+}
+html[data-theme="dark"] [data-tab] .bg-white\/70,
+html[data-theme="dark"] [data-tab] .bg-white\/75,
+html[data-theme="dark"] [data-tab] .bg-white\/80 {
+  background-color: color-mix(in srgb, var(--surface) 78%, transparent) !important;
+}
+html[data-theme="dark"] [data-tab] .bg-black\/5,
+html[data-theme="dark"] [data-tab] .bg-black\/10 {
+  background-color: rgb(255 255 255 / 9%) !important;
+}
+html[data-theme="dark"] [data-tab] .bg-ok-bg { background-color: var(--ok-bg) !important; color: var(--ok-fg) !important; }
+html[data-theme="dark"] [data-tab] .bg-bad-bg { background-color: var(--bad-bg) !important; color: var(--bad-fg) !important; }
+html[data-theme="dark"] .logo-frame {
+  border-color: rgb(255 255 255 / 14%);
+  background: #1b292e;
+}
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select {
+  color-scheme: dark;
+  color: var(--foreground);
+}
+html[data-theme="dark"] .learn-stop--lock {
+  border-bottom-color: var(--line-color) !important;
+  background-color: var(--tab-soft) !important;
+  color: var(--muted) !important;
 }
 
 /* pri / pill follow the active tab, so every existing component re-colours automatically. */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-ink: #26333c;
-  --color-muted: #5c6970;
-  --color-line: color-mix(in srgb, var(--tab-acc) 18%, white);
-  --color-sand: color-mix(in srgb, var(--tab-bg) 70%, white);
-  --color-sand-2: color-mix(in srgb, var(--tab-band) 24%, white);
+  --color-ink: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line-color);
+  --color-sand: var(--surface-soft);
+  --color-sand-2: var(--surface-band);
   --color-pri: var(--tab-acc);
   --color-pri-dark: var(--tab-accd);
   --color-pill: var(--tab-soft);
@@ -87,9 +163,9 @@ html[data-app-splash="show"] .app-splash {
   --color-butter: #fff1c2;
   --color-butter-ink: #4a3600;
   --color-ok: #2e7d32;
-  --color-ok-bg: #dff3e0;
+  --color-ok-bg: var(--ok-bg);
   --color-bad: #b3261e;
-  --color-bad-bg: #ffe1de;
+  --color-bad-bg: var(--bad-bg);
   --color-teal: #0f6b64;
   --font-sans: var(--font-nunito);
   --font-display: var(--font-baloo);
@@ -160,6 +236,11 @@ html[data-lang="both"] .en-only {
   color: #8a7462;
   cursor: not-allowed;
   transform: none;
+}
+html[data-theme="dark"] .btn3d[disabled] {
+  background: #344148;
+  border-bottom-color: #26343a;
+  color: #afbbc0;
 }
 .btn3d.ok {
   background: #2e8a47;

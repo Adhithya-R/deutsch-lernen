@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 };
 
 // Runs before the first paint so English-only users never see Tamil flash by.
-const LANG_SCRIPT = `try{var l=localStorage.getItem('lang');if(l==='en'||l==='both')document.documentElement.dataset.lang=l;if(window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true)document.documentElement.dataset.appSplash='show'}catch(e){}`;
+const LANG_SCRIPT = `try{var l=localStorage.getItem('lang');if(l==='en'||l==='both')document.documentElement.dataset.lang=l;var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.dataset.theme='dark';if(window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true)document.documentElement.dataset.appSplash='show'}catch(e){}`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
