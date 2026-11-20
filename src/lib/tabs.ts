@@ -5,7 +5,7 @@ export type MainTabId = Exclude<TabId, "bruecke">;
 
 export const TABS: { id: MainTabId; label: string; href: string; icon: IconName }[] = [
   { id: "learn", label: "Home", href: "/", icon: "home" },
-  { id: "grammar", label: "Practice", href: "/grammar", icon: "pencil" },
+  { id: "grammar", label: "Practice", href: "/practice", icon: "pencil" },
   { id: "words", label: "Words", href: "/flashcards", icon: "cards" },
   { id: "exam", label: "Exam", href: "/exam", icon: "grad" },
   { id: "me", label: "Me", href: "/me", icon: "user" },
@@ -16,7 +16,7 @@ export function tabFor(pathname: string): TabId {
   if (pathname.startsWith("/flashcards")) return "words";
   if (pathname.startsWith("/exam") || pathname.startsWith("/speaking") || pathname.startsWith("/conversation")) return "exam";
   if (pathname.startsWith("/bruecke")) return "bruecke";
-  if (pathname.startsWith("/grammar") || pathname.startsWith("/cheatsheets")) return "grammar";
+  if (pathname.startsWith("/practice") || pathname.startsWith("/grammar") || pathname.startsWith("/cheatsheets")) return "grammar";
   if (["/me", "/login", "/signup", "/group", "/progress", "/privacy", "/feedback"].some((p) => pathname.startsWith(p))) return "me";
   return "learn";
 }
