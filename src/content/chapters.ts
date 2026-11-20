@@ -1166,6 +1166,181 @@ export const chapters: Chapter[] = [
     ],
     pass: 2,
   },
+
+  /* ------------------------------------------------------------------ 31 (A1) */
+  {
+    slug: "im-cafe",
+    n: 31,
+    landmarks: ["TN010", "DE016"],
+    mood: "dawn",
+    title: "Im Café",
+    sub: "A1 · Order a drink and a snack",
+    speakers: {
+      a: speaker("Adhi"),
+      p: speaker("Poovai", "barista"),
+      t: speaker("Thanisha"),
+      s: speaker("Sanjay"),
+      y: speaker("Yogesh"),
+      r: speaker("Rithika"),
+    },
+    lines: [
+      { who: "p", parts: ["Guten Morgen! Was möchten Sie?"], en: "Good morning! What would you like?", ta: "காலை வணக்கம்! உங்களுக்கு என்ன வேண்டும்?" },
+      { who: "a", parts: ["Ich möchte einen ", W("Tee", "tee"), ", bitte."], en: "I would like a tea, please.", ta: "எனக்கு ஒரு தேநீர் வேண்டும், தயவுசெய்து." },
+      { who: "t", parts: ["Ich nehme einen ", W("Kaffee", "kaffee"), " mit Milch."], en: "I will have a coffee with milk.", ta: "நான் பாலுடன் ஒரு காபி எடுத்துக்கொள்கிறேன்." },
+      { who: "a", parts: ["Haben Sie auch ", W("Apfelkuchen", "kuchen"), "?"], en: "Do you also have apple cake?", ta: "உங்களிடம் ஆப்பிள் கேக் இருக்கிறதா?" },
+      { who: "s", parts: ["Der Kuchen ist heute frisch."], en: "The cake is fresh today.", ta: "இன்று கேக் புதியதாக இருக்கிறது." },
+      { who: "y", parts: ["Ich nehme ein Stück Kuchen."], en: "I will have a piece of cake.", ta: "நான் ஒரு துண்டு கேக் எடுத்துக்கொள்கிறேன்." },
+      { who: "r", parts: ["Was ", W("kostet", "kosten"), " alles zusammen?"], en: "How much is everything together?", ta: "எல்லாம் சேர்த்து எவ்வளவு?" },
+      { who: "a", parts: ["Es kostet acht Euro. Wir bezahlen zusammen."], en: "It costs eight euros. We will pay together.", ta: "எட்டு யூரோ ஆகிறது. நாங்கள் ஒன்றாகச் செலுத்துகிறோம்." },
+    ],
+    words: {
+      tee: { de: "der Tee", en: "tea", ta: "தேநீர்", ex: "Ich trinke einen Tee.", exEn: "I am drinking a tea.", exTa: "நான் தேநீர் குடிக்கிறேன்.", pic: "🍵" },
+      kaffee: { de: "der Kaffee", en: "coffee", ta: "காபி", ex: "Der Kaffee ist heiß.", exEn: "The coffee is hot.", exTa: "காபி சூடாக இருக்கிறது.", pic: "☕" },
+      kuchen: { de: "der Kuchen", en: "cake", ta: "கேக்", ex: "Der Kuchen ist frisch.", exEn: "The cake is fresh.", exTa: "கேக் புதியதாக இருக்கிறது.", pic: "🍰" },
+      kosten: { de: "kosten", en: "to cost", ta: "விலை ஆகு", ex: "Was kostet der Tee?", exEn: "How much is the tea?", exTa: "தேநீரின் விலை என்ன?", pic: "💶" },
+    },
+    culture: {
+      tn: "Tea and filter coffee are everyday favourites in Tamil Nadu. People often stop for a quick drink and a conversation.",
+      de: "Many German cafés serve coffee with cake in the afternoon. A simple order uses “Ich möchte …, bitte.”",
+    },
+    quiz: [
+      { type: "choice", q: "Du möchtest Tee bestellen. Was sagst du?", options: ["Ich möchte einen Tee, bitte.", "Ich möchte ein Tee, bitte.", "Ich möchte eine Tee, bitte."], answer: "Ich möchte einen Tee, bitte.", tipEn: "Tee is masculine: der Tee. After möchten, the object takes accusative: einen Tee.", tipTa: "Tee ஆண்பால்: der Tee. möchten-க்குப் பிறகு Akkusativ: einen Tee." },
+      { type: "choice", q: "Was ___ der Kaffee?", options: ["kostet", "kosten", "koste"], answer: "kostet", tipEn: "For one thing, kosten becomes kostet: Was kostet der Kaffee?", tipTa: "ஒரு பொருளுக்கு kostet: Was kostet der Kaffee?" },
+      { type: "order", q: "Build the sentence: “I would like a coffee, please.”", tiles: ["Ich", "möchte", "einen", "Kaffee,", "bitte", "möchten"], end: ".", answer: "Ich möchte einen Kaffee, bitte.", tipEn: "Use einen with the masculine noun Kaffee.", tipTa: "ஆண்பால் பெயர்ச்சொல் Kaffee உடன் einen பயன்படுத்தவும்." },
+    ],
+    pass: 2,
+  },
+
+  /* ------------------------------------------------------------------ 32 (A1) */
+  {
+    slug: "in-der-bibliothek",
+    n: 32,
+    landmarks: ["TN013", "DE017"],
+    mood: "noon",
+    title: "In der Bibliothek",
+    sub: "A1 · Find and borrow a book",
+    speakers: {
+      a: speaker("Mrithula"),
+      r: speaker("Ruby", "librarian"),
+      s: speaker("Sudha"),
+      m: speaker("Ram"),
+      d: speaker("Dhinesh"),
+      k: speaker("Kaviarasan"),
+    },
+    lines: [
+      { who: "r", parts: ["Guten Tag! Haben Sie einen Bibliotheksausweis?"], en: "Good afternoon! Do you have a library card?", ta: "மதிய வணக்கம்! உங்களிடம் நூலக அட்டை இருக்கிறதா?" },
+      { who: "a", parts: ["Nein. Ich möchte einen ", W("Ausweis", "ausweis"), ", bitte."], en: "No. I would like a library card, please.", ta: "இல்லை. எனக்கு ஒரு நூலக அட்டை வேண்டும், தயவுசெய்து." },
+      { who: "s", parts: ["Welche Bücher suchst du?"], en: "Which books are you looking for?", ta: "நீ எந்தப் புத்தகங்களைத் தேடுகிறாய்?" },
+      { who: "a", parts: ["Ich ", W("suche", "suchen"), " ein Buch über Geschichte."], en: "I am looking for a book about history.", ta: "நான் வரலாறு பற்றிய ஒரு புத்தகத்தைத் தேடுகிறேன்." },
+      { who: "m", parts: ["Hier ist ein Buch über Indien."], en: "Here is a book about India.", ta: "இதோ இந்தியா பற்றிய ஒரு புத்தகம்." },
+      { who: "d", parts: ["Das ist interessant. Ich lese auch gern."], en: "That is interesting. I also like reading.", ta: "அது சுவாரசியமாக இருக்கிறது. எனக்கும் படிக்கப் பிடிக்கும்." },
+      { who: "k", parts: ["Du kannst es bis Montag ", W("ausleihen", "ausleihen"), "."], en: "You can borrow it until Monday.", ta: "நீங்கள் அதை திங்கள் வரை கடனாகப் பெறலாம்." },
+      { who: "a", parts: ["Danke. Ich bringe das Buch am Montag zurück."], en: "Thank you. I will bring the book back on Monday.", ta: "நன்றி. திங்கட்கிழமை புத்தகத்தைத் திருப்பிக் கொடுக்கிறேன்." },
+    ],
+    words: {
+      ausweis: { de: "der Ausweis", en: "identification card", ta: "அடையாள அட்டை", ex: "Ich habe einen Ausweis.", exEn: "I have an ID card.", exTa: "என்னிடம் ஓர் அடையாள அட்டை இருக்கிறது.", pic: "🪪" },
+      suchen: { de: "suchen", en: "to look for", ta: "தேடு", ex: "Ich suche ein Buch.", exEn: "I am looking for a book.", exTa: "நான் ஒரு புத்தகத்தைத் தேடுகிறேன்.", pic: "🔎" },
+      ausleihen: { de: "ausleihen", en: "to borrow", ta: "கடனாகப் பெறு", ex: "Ich leihe ein Buch aus.", exEn: "I am borrowing a book.", exTa: "நான் ஒரு புத்தகத்தைக் கடனாகப் பெறுகிறேன்.", pic: "📚" },
+    },
+    culture: {
+      tn: "The Anna Centenary Library in Chennai is one of Asia’s largest libraries. Public libraries are important places for study and community learning.",
+      de: "German public libraries lend books, films and other media. A library card is usually needed to borrow items.",
+    },
+    quiz: [
+      { type: "choice", q: "Du brauchst eine Karte für die Bibliothek. Was fragst du?", options: ["Haben Sie einen Ausweis?", "Haben Sie ein Ausweis?", "Haben Sie eine Ausweis?"], answer: "Haben Sie einen Ausweis?", tipEn: "Ausweis is masculine. In this question, use einen Ausweis.", tipTa: "Ausweis ஆண்பால். இந்தக் கேள்வியில் einen Ausweis பயன்படுத்தவும்." },
+      { type: "choice", q: "Ich ___ ein Buch über Geschichte.", options: ["suche", "suchen", "suchst"], answer: "suche", tipEn: "With ich, the present-tense ending is usually -e: ich suche.", tipTa: "ich உடன் நிகழ்கால வினை பொதுவாக -e-இல் முடியும்: ich suche." },
+      { type: "order", q: "Build the sentence: “I bring the book back on Monday.”", tiles: ["Ich", "bringe", "das", "Buch", "am", "Montag", "zurück", "zurückbringe"], end: ".", answer: "Ich bringe das Buch am Montag zurück.", tipEn: "In a main clause, the separable prefix zurück goes to the end.", tipTa: "முக்கிய வாக்கியத்தில் பிரியும் முன்னொட்டு zurück கடைசியில் வரும்." },
+    ],
+    pass: 2,
+  },
+
+  /* ------------------------------------------------------------------ 33 (A2) */
+  {
+    slug: "im-museum",
+    n: 33,
+    landmarks: ["TN019", "DE012"],
+    mood: "evening",
+    title: "Im Museum",
+    sub: "A2 · Talk about a museum visit",
+    speakers: {
+      a: speaker("Akshay"),
+      r: speaker("Risha"),
+      s: speaker("Sadhana"),
+      h: speaker("Shylash"),
+      v: speaker("Arvind"),
+      k: speaker("Kavitha"),
+    },
+    lines: [
+      { who: "r", parts: ["Seid ihr gestern im Museum gewesen?"], en: "Were you at the museum yesterday?", ta: "நீங்கள் நேற்று அருங்காட்சியகத்தில் இருந்தீர்களா?" },
+      { who: "a", parts: ["Ja, wir sind am Samstag ins Museum ", W("gegangen", "gehen"), "."], en: "Yes, we went to the museum on Saturday.", ta: "ஆம், நாங்கள் சனிக்கிழமை அருங்காட்சியகத்திற்குச் சென்றோம்." },
+      { who: "s", parts: ["Was habt ihr dort gesehen?"], en: "What did you see there?", ta: "அங்கே நீங்கள் என்ன பார்த்தீர்கள்?" },
+      { who: "a", parts: ["Ich habe eine ", W("Ausstellung", "ausstellung"), " über die Stadt besucht."], en: "I visited an exhibition about the city.", ta: "நகரத்தைப் பற்றிய ஒரு கண்காட்சியைப் பார்த்தேன்." },
+      { who: "h", parts: ["Die ", W("Führung", "fuehrung"), " hat um zehn Uhr begonnen."], en: "The guided tour began at ten o’clock.", ta: "வழிகாட்டிச் சுற்றுலா பத்து மணிக்குத் தொடங்கியது." },
+      { who: "v", parts: ["Danach haben wir im Café eine Pause gemacht."], en: "Afterwards, we took a break in the café.", ta: "அதற்குப் பிறகு நாங்கள் கஃபேவில் ஓய்வு எடுத்தோம்." },
+      { who: "k", parts: ["Welche Ausstellung hat dir am besten gefallen?"], en: "Which exhibition did you like best?", ta: "எந்தக் கண்காட்சி உனக்கு மிகவும் பிடித்திருந்தது?" },
+      { who: "a", parts: ["Mir hat die alte Karte am besten ", W("gefallen", "gefallen"), "."], en: "I liked the old map best.", ta: "பழைய வரைபடம் எனக்கு மிகவும் பிடித்திருந்தது." },
+    ],
+    words: {
+      gehen: { de: "gehen · ist gegangen", en: "to go · went", ta: "செல் · சென்றார்", ex: "Wir sind ins Museum gegangen.", exEn: "We went to the museum.", exTa: "நாங்கள் அருங்காட்சியகத்திற்குச் சென்றோம்.", pic: "🚶" },
+      ausstellung: { de: "die Ausstellung", en: "exhibition", ta: "கண்காட்சி", ex: "Die Ausstellung ist interessant.", exEn: "The exhibition is interesting.", exTa: "கண்காட்சி சுவாரசியமாக இருக்கிறது.", pic: "🖼️" },
+      fuehrung: { de: "die Führung", en: "guided tour", ta: "வழிகாட்டிச் சுற்றுலா", ex: "Die Führung beginnt um zehn Uhr.", exEn: "The guided tour begins at ten.", exTa: "வழிகாட்டிச் சுற்றுலா பத்து மணிக்குத் தொடங்குகிறது.", pic: "🎧" },
+      gefallen: { de: "gefallen", en: "to like · be pleasing", ta: "பிடித்திரு", ex: "Das Bild gefällt mir.", exEn: "I like the picture.", exTa: "எனக்கு அந்தப் படம் பிடித்திருக்கிறது.", pic: "⭐" },
+    },
+    culture: {
+      tn: "The Government Museum in Chennai displays important archaeological finds, including Chola bronzes. Museums preserve objects and stories from the past.",
+      de: "Germany has large national museums as well as small local museums. Guided tours often explain the history behind an exhibition.",
+    },
+    quiz: [
+      { type: "choice", q: "Am Samstag ___ wir ins Museum gegangen.", options: ["sind", "haben", "seid"], answer: "sind", tipEn: "Movement to a destination commonly forms the Perfekt with sein: wir sind gegangen.", tipTa: "இடமாற்றத்தைக் குறிக்கும் gehen, Perfekt-இல் sein உடன் வரும்: wir sind gegangen." },
+      { type: "choice", q: "Die Führung hat um zehn Uhr ___.", options: ["begonnen", "beginnen", "beginnt"], answer: "begonnen", tipEn: "In the Perfekt, the past participle follows the auxiliary: hat begonnen.", tipTa: "Perfekt-இல் துணை வினைக்குப் பிறகு Partizip II வரும்: hat begonnen." },
+      { type: "order", q: "Build the sentence: “I liked the old map best.”", tiles: ["Mir", "hat", "die", "alte", "Karte", "am", "besten", "gefallen", "gefällt"], end: ".", answer: "Mir hat die alte Karte am besten gefallen.", tipEn: "With gefallen, the thing you like is the subject: die Karte hat gefallen; mir means “to me.”", tipTa: "gefallen உடன் பிடித்த பொருள் subject: die Karte hat gefallen; mir = எனக்கு." },
+    ],
+    pass: 2,
+  },
+
+  /* ------------------------------------------------------------------ 34 (A2) */
+  {
+    slug: "auf-dem-flohmarkt",
+    n: 34,
+    landmarks: ["TN012", "DE011"],
+    mood: "sunset",
+    title: "Auf dem Flohmarkt",
+    sub: "A2 · Ask about a used bicycle and its price",
+    speakers: {
+      a: speaker("Sudharsan"),
+      m: speaker("Medwin"),
+      n: speaker("Nethra"),
+      y: speaker("Yuvan"),
+      s: speaker("Sanjay"),
+      h: speaker("Shylash"),
+    },
+    lines: [
+      { who: "m", parts: ["Hast du das Fahrrad schon ausprobiert?"], en: "Have you tried the bicycle yet?", ta: "நீ ஏற்கனவே மிதிவண்டியைச் சோதித்துப் பார்த்தாயா?" },
+      { who: "a", parts: ["Ja, ich habe es gerade ", W("getestet", "testen"), "."], en: "Yes, I just tested it.", ta: "ஆம், இப்போதுதான் அதைச் சோதித்தேன்." },
+      { who: "n", parts: ["Wie viel kostet das ", W("gebrauchte", "gebraucht"), " Fahrrad?"], en: "How much is the used bicycle?", ta: "பயன்படுத்திய மிதிவண்டியின் விலை என்ன?" },
+      { who: "a", parts: ["Der ", W("Verkäufer", "verkaeufer"), " möchte achtzig Euro."], en: "The seller wants eighty euros.", ta: "விற்பனையாளர் எண்பது யூரோ கேட்கிறார்." },
+      { who: "y", parts: ["Es sieht gut aus, aber der Preis ist hoch."], en: "It looks good, but the price is high.", ta: "அது நன்றாகத் தெரிகிறது, ஆனால் விலை அதிகம்." },
+      { who: "s", parts: ["Vielleicht kannst du freundlich nach einem niedrigeren Preis fragen."], en: "Perhaps you can politely ask for a lower price.", ta: "நீ மரியாதையாகக் குறைந்த விலையைக் கேட்கலாம்." },
+      { who: "h", parts: ["Genau. Wie wäre es mit fünfundsechzig Euro?"], en: "Exactly. How about sixty-five euros?", ta: "சரியாகச் சொன்னாய். அறுபத்தைந்து யூரோ எப்படி?" },
+      { who: "a", parts: ["Gute Idee. Ich habe gefragt, und der Verkäufer hat zugestimmt."], en: "Good idea. I asked, and the seller agreed.", ta: "நல்ல யோசனை. நான் கேட்டேன்; விற்பனையாளரும் ஒப்புக்கொண்டார்." },
+    ],
+    words: {
+      testen: { de: "testen", en: "to test", ta: "சோதித்துப் பார்", ex: "Ich teste das Fahrrad.", exEn: "I am testing the bicycle.", exTa: "நான் மிதிவண்டியைச் சோதிக்கிறேன்.", pic: "🚲" },
+      gebraucht: { de: "gebraucht", en: "used / second-hand", ta: "பயன்படுத்திய", ex: "Das Fahrrad ist gebraucht.", exEn: "The bicycle is used.", exTa: "மிதிவண்டி பயன்படுத்தப்பட்டது.", pic: "♻️" },
+      verkaeufer: { de: "der Verkäufer", en: "seller", ta: "விற்பனையாளர்", ex: "Der Verkäufer ist freundlich.", exEn: "The seller is friendly.", exTa: "விற்பனையாளர் நட்பாக இருக்கிறார்.", pic: "🧑‍💼" },
+      zustimmen: { de: "zustimmen", en: "to agree", ta: "ஒப்புக்கொள்", ex: "Der Verkäufer stimmt dem Preis zu.", exEn: "The seller agrees to the price.", exTa: "விற்பனையாளர் விலைக்கு ஒப்புக்கொள்கிறார்.", pic: "🤝" },
+    },
+    culture: {
+      tn: "Local weekly markets in Tamil Nadu often sell household goods, produce and second-hand items. Friendly bargaining is common in many markets.",
+      de: "German flea markets often sell used bicycles, books and household items. Asking politely about the condition and price is helpful.",
+    },
+    quiz: [
+      { type: "choice", q: "Ich habe das Fahrrad gerade ___.", options: ["getestet", "testen", "testet"], answer: "getestet", tipEn: "The Perfekt uses haben + past participle: ich habe getestet.", tipTa: "Perfekt: haben + Partizip II: ich habe getestet." },
+      { type: "choice", q: "Der Verkäufer ___ achtzig Euro.", options: ["möchte", "möchten", "möchtest"], answer: "möchte", tipEn: "Der Verkäufer is singular and uses the verb ending -e: er möchte.", tipTa: "Der Verkäufer ஒருமை; -e முடிவைப் பயன்படுத்தவும்: er möchte." },
+      { type: "order", q: "Build the polite question: “How about sixty-five euros?”", tiles: ["Wie", "wäre", "es", "mit", "fünfundsechzig", "Euro", "sind"], end: "?", answer: "Wie wäre es mit fünfundsechzig Euro?", tipEn: "The polite suggestion uses wäre: Wie wäre es mit …?", tipTa: "மரியாதையான பரிந்துரைக்கு wäre: Wie wäre es mit …?" },
+    ],
+    pass: 2,
+  },
 ];
 
 // Chapters on the path that are planned but not written yet.
