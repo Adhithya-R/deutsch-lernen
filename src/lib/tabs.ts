@@ -5,7 +5,7 @@ export type MainTabId = Exclude<TabId, "bruecke">;
 
 export const TABS: { id: MainTabId; label: string; href: string; icon: IconName }[] = [
   { id: "learn", label: "Home", href: "/", icon: "home" },
-  { id: "grammar", label: "Grammar", href: "/grammar", icon: "pencil" },
+  { id: "grammar", label: "Practice", href: "/grammar", icon: "pencil" },
   { id: "words", label: "Words", href: "/flashcards", icon: "cards" },
   { id: "exam", label: "Exam", href: "/exam", icon: "grad" },
   { id: "me", label: "Me", href: "/me", icon: "user" },
